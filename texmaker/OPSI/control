@@ -1,0 +1,36 @@
+[Package]
+version: 3
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: texmaker
+name: texmaker
+description: Latex Editor
+advice: 
+version: 4.4.1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+texmaker (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Mike Thomas <thomas@rrzn.uni-hannover.de>  Tue, 14 Jul 2015 08:40:44 +0000
+
+
+
+
+
+
+

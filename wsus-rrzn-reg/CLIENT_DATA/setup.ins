@@ -1,0 +1,58 @@
+; RRZN-20120120-HH
+; Opsi-Paket fuer WSUS, setup.ins
+; Registry-Eintraege fuer WSUS einrichten
+; Doku: http://www.rrzn.uni-hannover.de/its_sus.html
+; Inhalte: http://www.rrzn.uni-hannover.de/fileadmin/it_sicherheit/binaries/uh-wsus.reg
+
+[Initial]
+ExitOnError=true
+
+[Actions]
+DefVar $ProductId$
+Set $ProductId$ = "wsus-rrzn-reg"
+ShowBitmap "%scriptpath%\" + $ProductId$ + ".png"  $ProductId$
+; WSUS nur fuer deutsche und englische System installieren,
+; da der RRZN-WSUS nur diese Sprachen unterstuetzt.
+DefStringList $languageInfo$
+set  $languageInfo$ = getLocaleInfoMap
+DefVar $sysLang$
+set $sysLang$ = getValue("language_id_2chars", $languageInfo$)
+if ($sysLang$ = "DE") or ($sysLang$ = "EN")
+	Registry_install
+else
+	LogError "WSUS-Server des RRZN unterstuetzt nur deutsch & englisch."
+	LogError "Windows-System meldet aber Sprache "+$sysLang$
+	isFatalError
+endif
+
+[Registry_install]
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+; Server-Adresse fuer eigentliche Updates und fuer Reports:
+set "WUServer" = "http://wsus.rrzn.uni-hannover.de"
+set "WUStatusServer" = "http://wsus.rrzn.uni-hannover.de"
+; Auch Nicht-Administratoren duerfen Updates bestaetigen/installieren:
+set "ElevateNonAdmins" = REG_DWORD:0x00000001
+;
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+set "RescheduleWaitTime" = REG_DWORD:0x0000000a
+; AutoUpdate soll aktiv sein (deaktiveren mit 1)
+set "NoAutoUpdate" = REG_DWORD:0x00000000
+; Download von Updates automatisch, aber vor Installation nachfragen:
+set "AUOptions" = REG_DWORD:0x00000003
+; wenn spaeter userseitig automatische Installation aktiviert wird,
+; automatische Installation taeglich jeweils 12 Uhr mittags:
+set "ScheduledInstallDay" = REG_DWORD:0x00000000
+set "ScheduledInstallTime" = REG_DWORD:0x0000000c
+; aber alle 2h nach Updates suchen und reporten, ist besser fuers Reporting:
+set "DetectionFrequency" = REG_DWORD:0x00000002
+set "DetectionFrequencyEnabled" = REG_DWORD:0x00000001
+; bei kleineren Updates nicht nachfragen, einfach installieren:
+set "AutoInstallMinorUpdates" = REG_DWORD:0x00000001
+; nochmaliges Nachfragen nach Neustart nach 60min:
+set "RebootRelaunchTimeoutEnabled" = REG_DWORD:0x00000001
+set "RebootRelaunchTimeout" = REG_DWORD:0x0000003c
+; nicht MS, sondern UH/RRZN-Updateserver verwenden:
+set "UseWUServer" = REG_DWORD:0x00000001
+; kein automatischer Neustart, wenn Benutzer angemeldet:
+set "NoAutoRebootWithLoggedOnUsers" = REG_DWORD:0x00000001
+

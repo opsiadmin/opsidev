@@ -1,0 +1,8 @@
+[Setup]
+Lang=en
+Dir=C:\Program Files\GIMP 2
+Group=(Default)
+NoIcons=0
+SetupType=full
+Components=gimp64,deps64,deps64\wimp,loc,gs,gimp32on64,gimp32on64\py,gimp32on64\compat
+Tasks=

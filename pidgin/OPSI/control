@@ -1,0 +1,74 @@
+[Package]
+version: 3
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: pidgin
+name: Pidgin IM
+description: multi protocol instant messaging client incl. OTR-Plugin (http://pidgin.im/)
+advice: 
+version: 2.10.11
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+pidgin (2.10.9-1) testing; urgency=low
+
+  * Initial package
+
+ -- budde <apc@rrzn.uni-hannover.de>  Fri, 04 Apr 2014 12:02:18 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,332 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;#####################################################
+[registry_file_association_bmp]
+openkey [HKEY_CLASSES_ROOT\.bmp]
+""="GIMP-2.8-bmp"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-bmp]
+""="Windows and OS/2 Bitmaps"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-bmp\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-bmp\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+[registry_file_association_cel]
+openkey [HKEY_CLASSES_ROOT\.cel]
+""="GIMP-2.8-cel"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-cel]
+""="KISS CEL"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-cel\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-cel\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_dicom]
+openkey [HKEY_CLASSES_ROOT\.dcm]
+""="GIMP-2.8-dicom"
+openkey [HKEY_CLASSES_ROOT\.dicom]
+""="GIMP-2.8-dicom"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-dicom]
+""="Digital Imaging and Communications in Medicine"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-dicom\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-dicom\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_fit]
+openkey [HKEY_CLASSES_ROOT\.fit]
+""="GIMP-2.8-fit"
+openkey [HKEY_CLASSES_ROOT\.fits]
+""="GIMP-2.8-fit"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-fit]
+""="Flexible Image Transport System"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-fit\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-fit\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_g3]
+openkey [HKEY_CLASSES_ROOT\.g3]
+""="GIMP-2.8-g3"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-g3]
+""="Fax G3 Image file"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-g3\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-g3\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_gif]
+openkey [HKEY_CLASSES_ROOT\.gif]
+""="GIMP-2.8-gif"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-gif]
+""="Compuserve GIF"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-gif\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-gif\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_ico]
+openkey [HKEY_CLASSES_ROOT\.ico]
+""="GIMP-2.8-ico"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-ico]
+""="Windows Icon"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-ico\DefaultIcon]
+""="%1"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-ico\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_jpeg]
+openkey [HKEY_CLASSES_ROOT\.jpeg]
+""="GIMP-2.8-jpeg"
+openkey [HKEY_CLASSES_ROOT\.jpg]
+""="GIMP-2.8-jpeg"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-jpeg]
+""="JPEG image"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-jpeg\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-jpeg\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_matte]
+openkey [HKEY_CLASSES_ROOT\.alpha]
+""="GIMP-2.8-matte"
+openkey [HKEY_CLASSES_ROOT\.als]
+""="GIMP-2.8-matte"
+openkey [HKEY_CLASSES_ROOT\.mask]
+""="GIMP-2.8-matte"
+openkey [HKEY_CLASSES_ROOT\.matte]
+""="GIMP-2.8-matte"
+openkey [HKEY_CLASSES_ROOT\.pix]
+""="GIMP-2.8-matte"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-matte]
+""="Alias|Wavefront PowerAnimator"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-matte\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-matte\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+
+[registry_file_association_pcx]
+openkey [HKEY_CLASSES_ROOT\.pcx]
+""="GIMP-2.8-pcx"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-pcx]
+""="ZSoft Paintbrush image"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-pcx\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-pcx\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_png]
+openkey [HKEY_CLASSES_ROOT\.png]
+""="GIMP-2.8-png"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-png]
+""="Portable Network Graphics"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-png\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-png\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_pnm]
+openkey [HKEY_CLASSES_ROOT\.pbm]
+""="GIMP-2.8-pnm"
+openkey [HKEY_CLASSES_ROOT\.pgm]
+""="GIMP-2.8-pnm"
+openkey [HKEY_CLASSES_ROOT\.pnm]
+""="GIMP-2.8-pnm"
+openkey [HKEY_CLASSES_ROOT\.ppm]
+""="GIMP-2.8-pnm"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-pnm]
+""="Netpbm format"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-pnm\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-pnm\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_ps]
+openkey [HKEY_CLASSES_ROOT\.eps]
+""="GIMP-2.8-ps"
+openkey [HKEY_CLASSES_ROOT\.ps]
+""="GIMP-2.8-ps"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-ps]
+""="PostScript, Encapsulated PostScript"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-ps\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-ps\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_psd]
+openkey [HKEY_CLASSES_ROOT\.psd]
+""="GIMP-2.8-psd"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-psd]
+""="Adobe Photoshop(tm) image"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-psd\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-psd\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_psp]
+openkey [HKEY_CLASSES_ROOT\.psp]
+""="GIMP-2.8-psp"
+openkey [HKEY_CLASSES_ROOT\.pspimage]
+""="GIMP-2.8-psp"
+openkey [HKEY_CLASSES_ROOT\.tub]
+""="GIMP-2.8-psp"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-psp]
+""="Corel PaintShopPro image"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-psp\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-psp\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+
+[registry_file_association_ras]
+openkey [HKEY_CLASSES_ROOT\.im1]
+""="GIMP-2.8-ras"
+openkey [HKEY_CLASSES_ROOT\.im24]
+""="GIMP-2.8-ras"
+openkey [HKEY_CLASSES_ROOT\.im32]
+""="GIMP-2.8-ras"
+openkey [HKEY_CLASSES_ROOT\.im8]
+""="GIMP-2.8-ras"
+openkey [HKEY_CLASSES_ROOT\.ras]
+""="GIMP-2.8-ras"
+openkey [HKEY_CLASSES_ROOT\.rs]
+""="GIMP-2.8-ras"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-ras]
+""="SUN Raster Image"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-ras\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-ras\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_sgi]
+openkey [HKEY_CLASSES_ROOT\.bw]
+""="GIMP-2.8-sgi"
+openkey [HKEY_CLASSES_ROOT\.rgb]
+""="GIMP-2.8-sgi"
+openkey [HKEY_CLASSES_ROOT\.sgi]
+""="GIMP-2.8-sgi"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-sgi]
+""="SGI image format"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-sgi\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-sgi\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_svg]
+openkey [HKEY_CLASSES_ROOT\.svg]
+""="GIMP-2.8-svg"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-svg]
+""="Scalable Vector Graphics"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-svg\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-svg\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_tga]
+openkey [HKEY_CLASSES_ROOT\.tga]
+""="GIMP-2.8-tga"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-tga]
+""="TrueVision Targa"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-tga\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-tga\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_tif]
+openkey [HKEY_CLASSES_ROOT\.tif]
+""="GIMP-2.8-tif"
+openkey [HKEY_CLASSES_ROOT\.tiff]
+""="GIMP-2.8-tif"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-tif]
+""="Tagged Image File"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-tif\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-tif\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_wmf]
+openkey [HKEY_CLASSES_ROOT\.wmf]
+""="GIMP-2.8-wmf"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-wmf]
+""="Windows Metafile"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-wmf\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-wmf\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_xbm]
+openkey [HKEY_CLASSES_ROOT\.bitmap]
+""="GIMP-2.8-xbm"
+openkey [HKEY_CLASSES_ROOT\.icon]
+""="GIMP-2.8-xbm"
+openkey [HKEY_CLASSES_ROOT\.xbm]
+""="GIMP-2.8-xbm"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-xbm]
+""="X10 and X11 Bitmap"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-xbm\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-xbm\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_xpm]
+openkey [HKEY_CLASSES_ROOT\.xpm]
+""="GIMP-2.8-xpm"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-xpm]
+""="X Pixmap"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-xpm\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-xpm\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+
+
+[registry_file_association_xrd]
+openkey [HKEY_CLASSES_ROOT\.xwd]
+""="GIMP-2.8-xwd"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-xwd]
+""="X Window Dump"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-xwd\DefaultIcon]
+""="%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe"
+openkey [HKEY_CLASSES_ROOT\GIMP-2.8-xwd\shell\open\command]
+""='"%ProgramFilesSysnativeDir%\GIMP 2\bin\gimp-2.8.exe" "%1"'
+;################################################

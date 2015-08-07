@@ -1,0 +1,69 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/en/credits/
+
+defstringlist $msiids$
+
+Set $msiids$ = addtolist($msiids$,'{CB00799C-0E4F-4FD1-A046-BD24321BCDFF}')
+Set $msiids$ = addtolist($msiids$,'{3CD73469-FE6C-470F-90DA-66F5ED549C6D}')
+Set $msiids$ = addtolist($msiids$,'{11201B36-2C9E-44FD-BF98-9B24FC027A85}')
+Set $msiids$ = addtolist($msiids$,'{ED436519-8A0E-4CD0-987C-174D134513C2}')
+Set $msiids$ = addtolist($msiids$,'{98BB5224-BC5D-4028-9D20-536C1C263AA9}')
+Set $msiids$ = addtolist($msiids$,'{2368907C-E8F6-4750-A023-254C3E2B5E8D}')
+Set $msiids$ = addtolist($msiids$,'{840C85B7-D3D6-4143-9AF9-DAE80FD54CFC}')
+
+Message "Uninstalling " + $ProductId$ + " ..."
+
+for %aktmsiid% in $msiids$ do sub_uninstall
+
+[sub_uninstall]
+set $MsiId$ = '%aktmsiid%'
+if not (GetRegistryStringValueSysnative("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + $MsiId$ + "] DisplayName") = "")
+	comment "MSI id " + $MsiId$ + " found in registry, starting msiexec to uninstall"
+	Winbatch_uninstall_msi
+	sub_check_exitcode
+	comment "Delete files"
+	Files_uninstall /Sysnative
+	comment "Cleanup registry"
+	Registry_uninstall /Sysnative /ALLNtUserdats
+endif
+
+[Winbatch_uninstall_msi]
+msiexec /x $MsiId$ /qb! REBOOT=ReallySuppress
+
+[Files_uninstall]
+del -sf "$InstallDir$\"
+
+[Registry_uninstall]
+deletekey [HKCU\Software\IvoSoft]
+
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif
+

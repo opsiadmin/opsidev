@@ -1,0 +1,49 @@
+[Initial]
+LogLevel=9
+;  Log Errors in Logfile but don't abort:
+ExitOnError=false
+; Show syntax errors in the script:
+ScriptErrorMessages=on
+; Dont trace step by step through the script:
+TraceMode=off
+; let started programs run in front of the winst window
+StayOnTop=false
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $UninstallProgram64$
+DefVar $LogDir$
+DefVar $ExitCode$
+DefVar $ProductId$
+DefVar $InstallDir64$
+DefVar $INST_SystemType$
+DefVar $INST_architecture$
+DefVar $Inst_Cmd$
+DefVar $Inst_Prg$
+ 
+Set $INST_SystemType$ = GetSystemType
+set $INST_architecture$ = GetProductProperty("install_architecture","system specific")
+ 
+ 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "Irfan View"
+Set $InstallDir64$    = "%ProgramFiles64Dir%\IrfanView"
+Set $Inst_Prg$        = "iv_uninstall.exe"
+Set $Inst_Cmd$        = "/silent"
+; ----------------------------------------------------------------
+ 
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".jpg" $ProductId$
+ 
+Message "Uninstalling " + $ProductId$ + " ..."
+ 
+if FileExists("%ScriptPath%\delsub.ins")
+        comment "Start uninstall sub section"
+        Sub "%ScriptPath%\delsub.ins"
+endif
+ 

@@ -1,0 +1,98 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: classic-shell
+name: classic shell
+description: Startbutton for Windows 8.x
+advice: 
+version: 4.2.1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.opsiscript
+uninstallScript: uninstall.opsiscript
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+classic-shell (4.2.1-1) stable; urgency=low
+
+	* update to 4.2.1
+	* win10 enabled
+	* check for update disabled
+
+-- detlef oertel <d.oertel@uib.de>  Thu, 21 May 2015 15:00:00 +0200
+
+classic-shell (4.1.9-1) stable; urgency=low
+
+	* update to 4.1.0
+	* code refresh
+
+-- detlef oertel <d.oertel@uib.de>  Fri, 16 Jan 2014 16:01:53 +0200
+
+classic-shell (4.0.2-1) stable; urgency=low
+
+	* update to 4.0.4
+
+-- detlef oertel <d.oertel@uib.de>  Fri, 21 Feb 2014 16:01:53 +0200
+
+classic-shell (4.0.2-1) stable; urgency=low
+
+	* update to 4.0.2
+	* code cleanup
+
+-- detlef oertel <d.oertel@uib.de>  Wed, 18 Dec 2013 16:01:53 +0200
+
+classic-shell (3.9.5-1) stable; urgency=low
+
+	* update to 3.9.5
+	* code cleanup
+
+-- detlef oertel <d.oertel@uib.de>  Mo, 23 Sep 2013 16:01:53 +0200
+
+classic-shell (3.6.5-1) stable; urgency=low
+
+	* initial
+
+ -- detlef oertel <d.oertel@uib.de>  Thu, 25 Feb 2013 16:01:53 +0200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+
+
+[Actions]
+requiredWinstVersion >= 4.11.2
+setloglevel = 6
+
+DefVar $LogDir$
+Set $LogDir$ = "%SystemDrive%\tmp"
+DefVar $ExitCode$
+DefVar $ProductId$
+DefVar $InstallDir$
+DefVar $OSArchitecture$
+
+set $OSArchitecture$ = GetSystemType
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "gimp"
+if $OSArchitecture$ = "64 Bit System"
+	Set $InstallDir$      = "%ProgramFiles64Dir%\GIMP 2"
+else
+	Set $InstallDir$      = "%ProgramFiles32Dir%\GIMP 2"
+endif
+; ----------------------------------------------------------------
+
+
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" "GIMP"
+
+Message "Uninstalling GNU Image Manipulation Program ..."
+
+if FileExists("%ScriptPath%\delsub.ins")
+	comment "Start uninstall sub section"
+	Sub "%ScriptPath%\delsub.ins"
+endif
+

@@ -1,0 +1,455 @@
+{
+ "check_memory": false, 
+ "enable_e10s": false, 
+ "is-sdk-bundled": false, 
+ "jetpackID": "firefox@ghostery.com", 
+ "loader": "addon-sdk/lib/sdk/loader/cuddlefish.js", 
+ "main": "background", 
+ "mainPath": "ghostery/background", 
+ "manifest": {
+  "ghostery/background": {
+   "docsSHA256": "fc895aa6018c33c5be1ff1c48e1cacfa8daca8f535690dd4fb8b5b4901748c42", 
+   "jsSHA256": "643288109fc37619a53ed917bce618273b01b7bbe5ab33db0d16e900a6e70501", 
+   "moduleName": "background", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./bugdb": "ghostery/bugdb", 
+    "./button": "ghostery/button", 
+    "./click2play": "ghostery/click2play", 
+    "./compatibility": "ghostery/compatibility", 
+    "./conf": "ghostery/conf", 
+    "./dispatcher": "ghostery/dispatcher", 
+    "./foundbugs": "ghostery/foundbugs", 
+    "./ghostrank": "ghostery/ghostrank", 
+    "./i18n": "ghostery/i18n", 
+    "./lsodb": "ghostery/lsodb", 
+    "./matcher": "ghostery/matcher", 
+    "./menu": "ghostery/menu", 
+    "./panel": "ghostery/panel", 
+    "./surrogatedb": "ghostery/surrogatedb", 
+    "./tabinfo": "ghostery/tabinfo", 
+    "./tagdb": "ghostery/tagdb", 
+    "./utils": "ghostery/utils", 
+    "./vendor/parseuri": "ghostery/vendor/parseuri", 
+    "./vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3", 
+    "chrome": "chrome", 
+    "cleaner": "ghostery/cleaner", 
+    "sdk/io/file": "sdk/io/file", 
+    "sdk/page-mod": "sdk/page-mod", 
+    "sdk/preferences/service": "sdk/preferences/service", 
+    "sdk/private-browsing": "sdk/private-browsing", 
+    "sdk/request": "sdk/request", 
+    "sdk/self": "sdk/self", 
+    "sdk/system": "sdk/system", 
+    "sdk/system/events": "sdk/system/events", 
+    "sdk/system/unload": "sdk/system/unload", 
+    "sdk/tabs": "sdk/tabs", 
+    "sdk/tabs/helpers": "sdk/tabs/helpers", 
+    "sdk/tabs/utils": "sdk/tabs/utils", 
+    "sdk/timers": "sdk/timers", 
+    "sdk/window/utils": "sdk/window/utils"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/bugdb": {
+   "docsSHA256": null, 
+   "jsSHA256": "b024b41d14ac1205d69c9ef44a7c073306b12d7c62fe3afeac4d0a84aa05fed0", 
+   "moduleName": "bugdb", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "conf": "ghostery/conf", 
+    "updatable": "ghostery/updatable", 
+    "utils": "ghostery/utils", 
+    "vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/button": {
+   "docsSHA256": null, 
+   "jsSHA256": "5afbc1e1bd2eaa744b9b5bdf9226708633bd6006c0988aafd415322f65100af2", 
+   "moduleName": "button", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./ui/desktop/button": "ghostery/ui/desktop/button", 
+    "sdk/system": "sdk/system"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/cleaner": {
+   "docsSHA256": null, 
+   "jsSHA256": "6547c9428d64712892509c5d1462358154f6769b72fa609ae8d764a3aac0182b", 
+   "moduleName": "cleaner", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "chrome": "chrome", 
+    "conf": "ghostery/conf", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "utils.js": "ghostery/utils"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/click2play": {
+   "docsSHA256": null, 
+   "jsSHA256": "c22bbeb579f6a762c547136a8df8549c2d9ebe67c0ef138302469451a931e3a6", 
+   "moduleName": "click2play", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./updatable": "ghostery/updatable", 
+    "./utils": "ghostery/utils", 
+    "vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/compatibility": {
+   "docsSHA256": null, 
+   "jsSHA256": "455ba653e8a1d6d317f84320ca81c58beabed2c8b9bdd414cb88b840599b799d", 
+   "moduleName": "compatibility", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./updatable": "ghostery/updatable", 
+    "./utils": "ghostery/utils", 
+    "./vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/conf": {
+   "docsSHA256": null, 
+   "jsSHA256": "359886056a26c8e5a2f88c8ca256b1ed8213ec389d86b8bd94d281fa2fabf796", 
+   "moduleName": "conf", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./dispatcher": "ghostery/dispatcher", 
+    "./i18n": "ghostery/i18n", 
+    "./utils": "ghostery/utils", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/timers": "sdk/timers", 
+    "vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/dispatcher": {
+   "docsSHA256": null, 
+   "jsSHA256": "13b4e1e0f6677f4ce6892dc17167f92c2caa14ecc093583a636c8be99c1c14aa", 
+   "moduleName": "dispatcher", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./utils": "ghostery/utils", 
+    "sdk/event/core": "sdk/event/core", 
+    "sdk/event/target": "sdk/event/target"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/foundbugs": {
+   "docsSHA256": null, 
+   "jsSHA256": "4c2ce5988ff3689e13e389f0540b755131494255d5be7fbab06b94fc7bf607d6", 
+   "moduleName": "foundbugs", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./bugdb": "ghostery/bugdb", 
+    "./compatibility": "ghostery/compatibility", 
+    "./tabinfo": "ghostery/tabinfo", 
+    "./tagdb": "ghostery/tagdb"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/ghostrank": {
+   "docsSHA256": null, 
+   "jsSHA256": "034135bbd2fdc806383989f4e0d04701aac6c9f23f39d511903b9584c261d9e0", 
+   "moduleName": "ghostrank", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./bugdb": "ghostery/bugdb", 
+    "./conf": "ghostery/conf", 
+    "./tabinfo": "ghostery/tabinfo", 
+    "./utils": "ghostery/utils", 
+    "sdk/request": "sdk/request", 
+    "sdk/system": "sdk/system", 
+    "sdk/timers": "sdk/timers", 
+    "vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/i18n": {
+   "docsSHA256": null, 
+   "jsSHA256": "20e1057ece69cdc2cb2b98bd3d15be3a2d06a6a0781509aa809d887bb4a72b41", 
+   "moduleName": "i18n", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./utils": "ghostery/utils", 
+    "./vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3", 
+    "sdk/l10n/locale": "sdk/l10n/locale"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/lsodb": {
+   "docsSHA256": null, 
+   "jsSHA256": "43a4fe8490bbde99b30dbb902dfd590a4da5233050d1aa69261242e483277d5e", 
+   "moduleName": "lsodb", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "conf": "ghostery/conf", 
+    "updatable": "ghostery/updatable", 
+    "utils": "ghostery/utils", 
+    "vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/matcher": {
+   "docsSHA256": null, 
+   "jsSHA256": "f45015e57e9adf8c98dd59dc0f3be3f751383d6b5fcb58a33617d2edd411c1f7", 
+   "moduleName": "matcher", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./bugdb": "ghostery/bugdb", 
+    "./conf": "ghostery/conf", 
+    "./lsodb": "ghostery/lsodb", 
+    "./utils": "ghostery/utils"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/menu": {
+   "docsSHA256": null, 
+   "jsSHA256": "02ef51e3d0fced1008e06282039e073a117f8c719c52be73da16f38eb1b7f91f", 
+   "moduleName": "menu", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./ui/desktop/menu": "ghostery/ui/desktop/menu", 
+    "./ui/mobile/menu": "ghostery/ui/mobile/menu", 
+    "sdk/system": "sdk/system"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/panel": {
+   "docsSHA256": null, 
+   "jsSHA256": "fe801333fbe5c0931c566a0f17dc39876d5f61bf2cf6f1e8031a19c27a0fefb3", 
+   "moduleName": "panel", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./conf": "ghostery/conf", 
+    "./ui/desktop/panel": "ghostery/ui/desktop/panel", 
+    "./ui/desktop/panel29": "ghostery/ui/desktop/panel29", 
+    "./ui/desktop/panel_xul": "ghostery/ui/desktop/panel_xul", 
+    "sdk/self": "sdk/self", 
+    "sdk/system": "sdk/system"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/surrogatedb": {
+   "docsSHA256": null, 
+   "jsSHA256": "8e0cf82c539fb8c513cf571f650d8e3d969a9c0d2ca5e32a343880a10feb78de", 
+   "moduleName": "surrogatedb", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./utils": "ghostery/utils", 
+    "vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/tabinfo": {
+   "docsSHA256": null, 
+   "jsSHA256": "5830cd861a5661223640ef522ef9dc1051993103b9df0988c4a5c8531ba47eae", 
+   "moduleName": "tabinfo", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "vendor/parseuri": "ghostery/vendor/parseuri"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/tagdb": {
+   "docsSHA256": null, 
+   "jsSHA256": "e4f5d047b461813fb73d63377ba179894c831f463b949611d81737494223ed07", 
+   "moduleName": "tagdb", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./updatable": "ghostery/updatable", 
+    "./utils": "ghostery/utils", 
+    "./vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/ui/desktop/button": {
+   "docsSHA256": null, 
+   "jsSHA256": "e7ecc032e7357f9196ae3731d77a59ae15fc10d177fca6c7e96dc80c93c76c5e", 
+   "moduleName": "ui/desktop/button", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "chrome": "chrome", 
+    "ghostery/utils": "ghostery/utils", 
+    "sdk/system/runtime": "sdk/system/runtime", 
+    "sdk/system/unload": "sdk/system/unload", 
+    "sdk/system/xul-app": "sdk/system/xul-app", 
+    "sdk/tabs/helpers": "sdk/tabs/helpers", 
+    "sdk/window/utils": "sdk/window/utils"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/ui/desktop/menu": {
+   "docsSHA256": null, 
+   "jsSHA256": "9002840165415cfec7efb6381612dd3b12d02a9ef50d52ebddf32f2b9810be27", 
+   "moduleName": "ui/desktop/menu", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "ghostery/i18n": "ghostery/i18n", 
+    "sdk/deprecated/window-utils": "sdk/deprecated/window-utils", 
+    "sdk/self": "sdk/self", 
+    "sdk/system/xul-app": "sdk/system/xul-app", 
+    "sdk/tabs": "sdk/tabs", 
+    "sdk/windows": "sdk/windows"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/ui/desktop/panel": {
+   "docsSHA256": null, 
+   "jsSHA256": "45558d376a1e0c0749f9c62b4ab4cd53e6906deb9a366b3b457738b46c31f8b7", 
+   "moduleName": "ui/desktop/panel", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "chrome": "chrome", 
+    "sdk/content/content": "sdk/content/content", 
+    "sdk/deprecated/api-utils": "sdk/deprecated/api-utils", 
+    "sdk/deprecated/events": "sdk/deprecated/events", 
+    "sdk/system/runtime": "sdk/system/runtime", 
+    "sdk/system/xul-app": "sdk/system/xul-app", 
+    "sdk/timers": "sdk/timers", 
+    "sdk/window/utils": "sdk/window/utils"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/ui/desktop/panel29": {
+   "docsSHA256": null, 
+   "jsSHA256": "822836b20123f9df2ff9bac530bccfab6356d366300cf07a050443b76391a74b", 
+   "moduleName": "ui/desktop/panel29", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "chrome": "chrome", 
+    "sdk/content/loader": "sdk/content/loader", 
+    "sdk/content/utils": "sdk/content/utils", 
+    "sdk/content/worker": "sdk/content/worker", 
+    "sdk/core/disposable": "sdk/core/disposable", 
+    "sdk/core/heritage": "sdk/core/heritage", 
+    "sdk/deprecated/api-utils": "sdk/deprecated/api-utils", 
+    "sdk/event/core": "sdk/event/core", 
+    "sdk/event/target": "sdk/event/target", 
+    "sdk/event/utils": "sdk/event/utils", 
+    "sdk/lang/type": "sdk/lang/type", 
+    "sdk/panel/events": "sdk/panel/events", 
+    "sdk/panel/utils": "sdk/panel/utils", 
+    "sdk/private-browsing/utils": "sdk/private-browsing/utils", 
+    "sdk/self": "sdk/self", 
+    "sdk/system/events": "sdk/system/events", 
+    "sdk/timers": "sdk/timers", 
+    "sdk/util/contract": "sdk/util/contract", 
+    "sdk/util/object": "sdk/util/object", 
+    "sdk/view/core": "sdk/view/core"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/ui/desktop/panel_xul": {
+   "docsSHA256": null, 
+   "jsSHA256": "1f2f2aa64fed39636e480a71682fa0583e5b96fe73842dd6a41ace86da5ae215", 
+   "moduleName": "ui/desktop/panel_xul", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "ghostery/conf": "ghostery/conf", 
+    "ghostery/i18n": "ghostery/i18n", 
+    "sdk/self": "sdk/self", 
+    "sdk/tabs": "sdk/tabs", 
+    "sdk/timers": "sdk/timers", 
+    "sdk/window/utils": "sdk/window/utils", 
+    "sdk/windows": "sdk/windows"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/ui/mobile/menu": {
+   "docsSHA256": null, 
+   "jsSHA256": "45b524b6fd54c960b95009264f458b26059386f67621496ee158099dd30d5ad0", 
+   "moduleName": "ui/mobile/menu", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "ghostery/i18n": "ghostery/i18n", 
+    "sdk/self": "sdk/self", 
+    "sdk/window/utils": "sdk/window/utils"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/updatable": {
+   "docsSHA256": null, 
+   "jsSHA256": "21085c05d2a05479f3c1c77315f5c972270fc590e1a5495046b99c49b12097b9", 
+   "moduleName": "updatable", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "chrome": "chrome", 
+    "utils": "ghostery/utils", 
+    "vendor/underscore-1.4.3": "ghostery/vendor/underscore-1.4.3"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/utils": {
+   "docsSHA256": null, 
+   "jsSHA256": "02c328b5a4eb549b8e43875ee98701cfb967509b77c726fb7d459c828c045549", 
+   "moduleName": "utils", 
+   "packageName": "ghostery", 
+   "requirements": {
+    "./vendor/parseuri": "ghostery/vendor/parseuri", 
+    "chrome": "chrome", 
+    "sdk/io/file": "sdk/io/file", 
+    "sdk/private-browsing": "sdk/private-browsing", 
+    "sdk/self": "sdk/self", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/system": "sdk/system", 
+    "sdk/tabs": "sdk/tabs", 
+    "sdk/tabs/helpers": "sdk/tabs/helpers", 
+    "sdk/timers": "sdk/timers"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/vendor/parseuri": {
+   "docsSHA256": null, 
+   "jsSHA256": "a348b10bc0a5851020076555e608dd34cb9cecca0e3b367dc016a3211e9f549f", 
+   "moduleName": "vendor/parseuri", 
+   "packageName": "ghostery", 
+   "requirements": {}, 
+   "sectionName": "lib"
+  }, 
+  "ghostery/vendor/underscore-1.4.3": {
+   "docsSHA256": null, 
+   "jsSHA256": "a10aa2eb9078c2e19f181ac722b1c19a29b8db1069556c508a3beb5c46289d7b", 
+   "moduleName": "vendor/underscore-1.4.3", 
+   "packageName": "ghostery", 
+   "requirements": {}, 
+   "sectionName": "lib"
+  }
+ }, 
+ "metadata": {
+  "addon-sdk": {
+   "description": "Add-on development made easy.", 
+   "keywords": [
+    "javascript", 
+    "engine", 
+    "addon", 
+    "extension", 
+    "xulrunner", 
+    "firefox", 
+    "browser"
+   ], 
+   "license": "MPL 2.0", 
+   "name": "addon-sdk"
+  }, 
+  "ghostery": {
+   "author": "Ghostery, Inc.", 
+   "homepage": "http://www.ghostery.com", 
+   "main": "background", 
+   "name": "ghostery", 
+   "permissions": {
+    "private-browsing": true
+   }, 
+   "version": "5.3.2"
+  }
+ }, 
+ "name": "ghostery", 
+ "parseable": false, 
+ "preferencesBranch": "firefox@ghostery.com", 
+ "sdkVersion": "1.16", 
+ "staticArgs": {}, 
+ "verbose": false
+}

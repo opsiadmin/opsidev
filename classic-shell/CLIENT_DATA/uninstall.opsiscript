@@ -1,0 +1,41 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/en/credits/
+
+[Actions]
+requiredWinstVersion >= "4.11.3.6"
+ScriptErrorMessages=off
+
+DefVar $MsiId$
+DefVar $ExitCode$
+DefVar $ProductId$
+DefVar $InstallDir$
+
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "classic-shell"
+Set $InstallDir$      = "%ProgramFilesSysnativeDir%\Classic Shell"
+; ----------------------------------------------------------------
+
+
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+
+Message "Uninstalling " + $ProductId$ + " ..."
+
+if FileExists("%ScriptPath%\delsub.opsiscript")
+	comment "Start uninstall sub section"
+	Sub "%ScriptPath%\delsub.opsiscript"
+endif
+
+[Winbatch_uninstall_msi]
+msiexec /x $MsiId$ /qb! REBOOT=ReallySuppress
+
+[Files_uninstall]
+del -sf "$InstallDir$\"
+
+[Registry_uninstall]
+deletekey [HKCU\Software\IvoSoft]
+

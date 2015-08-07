@@ -1,0 +1,46 @@
+[Initial]
+ 
+;Standard Text, der während der Deinstallation angezeigt wird
+Message = Bitte warten, das Produkt wird deinstalliert
+;Loglevel einstellen
+setLogLevel = 6
+;Bei Fehlern abbrechen
+ExitOnError = false
+;Syntax Fehler werden in einem separaten Fenster angezeigt
+ScriptErrorMessages = on
+;Single-Step Mode nicht verwenden
+TraceMode = off
+;Im Batchmode das Winst-Fenster nicht im Vordergrund anzeigen
+StayOnTop = false
+ 
+[Actions]
+;Name des Produkts (max. 12 Zeichen)
+DefVar $ProductName$
+Set $ProductName$ = "WinSCP"
+;Vollständiger Produktname incl. Versionsnummer
+DefVar $ProductNameFull1$
+set $ProductNameFull1$ = "WinSCP 5.7.4"
+;Dateiname des Produktbildes mit Erweiterung
+DefVar $ProductPicture$
+Set $ProductPicture$ = "logo.gif"
+;Die Variable zur Auswertung des ExitCodes
+DefVar $ExitCode$
+;Anzeigen der Deinstallationsbenachrichtigung incl. des vollen Produktnamens
+Message "Deinstalliere "+$ProductNameFull1$
+;$ProductPicture$ und $ProductName$ anzeigen
+ShowBitmap /3 "%scriptpath%\" + $ProductPicture$ $ProductName$
+ 
+Winbatch_Uninstall
+sub "%scriptpath%\check_innosetup-exitcode.ins"
+Linkfolder_Custom
+ 
+[Winbatch_Uninstall]
+"%ProgramFiles32Dir%\WinSCP\unins000.exe" /VERYSILENT /NORESTART
+ 
+[Linkfolder_Custom]
+;Startmenü Verknüpfung löschen
+Set_basefolder common_programs
+Set_subfolder ""
+delete_element "$ProductName$"
+delete_element "Pageant"
+delete_element "PuTTYGen"

@@ -1,0 +1,86 @@
+[Initial]
+LogLevel=9
+;  Log Errors in Logfile but don't abort:
+ExitOnError=false
+; Show syntax errors in the script:
+ScriptErrorMessages=on
+; Dont trace step by step through the script:
+TraceMode=off
+; let started programs run in front of the winst window
+StayOnTop=false
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId32$
+DefVar $UninstallProgram32$
+DefVar $MsiId64$
+DefVar $UninstallProgram64$
+DefVar $LogDir$
+DefVar $ExitCode$
+DefVar $ProductId$
+DefVar $InstallDir32$
+DefVar $InstallDir64$
+DefVar $LicenseRequired$
+DefVar $LicensePool$
+DefVar $INST_SystemType$
+DefVar $INST_architecture$
+DefVar $Uninst_Cmd$
+DefVar $Uninst_Prg$
+ 
+Set $INST_SystemType$ = GetSystemType
+set $INST_architecture$ = GetProductProperty("install_architecture","system specific")
+ 
+ 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "Microsoft Office (64 Bit)"
+Set $InstallDir32$    = "%ProgramFiles32Dir%\Microsoft Office"
+Set $InstallDir64$    = "%ProgramFiles64Dir%\Microsoft Office"
+Set $LicenseRequired$ = "false"
+Set $LicensePool$     = "p_" + $ProductId$
+Set $Uninst_Prg$        = "setup.exe"
+Set $Uninst_Cmd$        = " /uninstall ProPlus /config "
+; ----------------------------------------------------------------
+ 
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".jpg" $ProductId$
+ 
+Message "Deinstalliere " + $ProductId$ + ". Bitte etwas Geduld..."
+ 
+if FileExists($InstallDir64$+"\"+$Uninst_Prg$)
+    Set $Uninst_Prg$ = $InstallDir64$+"\"+$Uninst_Prg$
+    comment "Start uninstall sub section"
+    Sub "%ScriptPath%\delsub.ins"
+endif
+ 
+if FileExists("%ScriptPath%\"+$Uninst_Prg$)
+    Set $Uninst_Prg$ = "%ScriptPath%\"+$Uninst_Prg$
+    comment "Start uninstall sub section"
+    Sub "%ScriptPath%\delsub.ins"
+endif
+ 
+ 
+if $LicenseRequired$ = "true"
+        comment "Licensing required, free license used"
+        Sub_free_license
+endif
+ 
+ExitWindows /reboot
+ 
+[Sub_free_license]
+comment "License management is enabled and will be used"
+ 
+comment "Trying to free license used for the product"
+DefVar $result$
+Set $result$ = FreeLicense($LicensePool$)
+; If there is an assignment of a license pool to the product, it is possible to use
+; Set $result$ = FreeLicense("", $ProductId$)
+;
+; If there is an assignment of a license pool to a windows software id, it is possible to use
+; DefVar $WindowsSoftwareId$
+; $WindowsSoftwareId$ = "..."
+; set $result$ = FreeLicense("", "", $WindowsSoftwareId$)

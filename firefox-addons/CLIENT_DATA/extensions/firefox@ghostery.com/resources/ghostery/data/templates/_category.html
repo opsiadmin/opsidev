@@ -1,0 +1,11 @@
+<div class="category-arrow <% if (!collapsed) print('down'); %>">&nbsp;</div>
+<div class="category-checkbox">
+	<input type="checkbox" class="cat-checkbox"<% if (all_selected) print(' checked') %> <% if (disabled) print('disabled="disabled"') %>>
+</div>
+<div class="category-name" title="<%- t('category_' + id + '_desc') %>">
+	<span class="help"><%- name %></span>
+</div>
+<div class="category-stats">
+	<%- t('number_of_' + type, num_visible.toString()) %>
+	<%= t_blocking_summary(num_selected, num_visible, type, true) %>
+</div>

@@ -1,0 +1,68 @@
+<!ENTITY % connection SYSTEM "chrome://browser/locale/preferences/connection.dtd">
+%connection;
+
+<!-- ADD/EDIT PROXY -->
+<!ENTITY add.proxyLabel "Proxy 標籤：">
+<!-- COMMON -->
+<!ENTITY common.buttonlist.name "Proxy 選擇器">
+<!ENTITY common.manage.key "M">
+<!ENTITY common.manage.label "管理 Proxy">
+<!ENTITY common.preferences.key "P">
+<!ENTITY common.preferences.label "設定">
+<!ENTITY common.product.name "Proxy Selector">
+<!ENTITY common.edit.label "編輯">
+<!ENTITY common.remove.label "刪除">
+<!ENTITY common.add.label "新增">
+<!-- CONTEXT MENU -->
+<!ENTITY context.label "Proxy Selector">
+<!ENTITY context.proxies.key "P">
+<!ENTITY context.proxies.label "Proxy">
+<!-- PREFERENCES -->
+<!ENTITY prefs.button "按鈕樣式">
+<!ENTITY prefs.button.both "圖示和標籤">
+<!ENTITY prefs.button.icon "僅圖示">
+<!ENTITY prefs.button.show "顯示：">
+<!ENTITY prefs.button.text "僅標籤">
+<!ENTITY prefs.general "一般">
+<!ENTITY prefs.general.context "在右鍵選單中顯示">
+<!ENTITY prefs.general.tools "在工具選單中顯示">
+<!ENTITY prefs.switch "切換 Proxy 時">
+<!ENTITY prefs.switch.cookies "清理 cookie">
+<!ENTITY prefs.switch.refresh "重新載入當前網頁">
+<!ENTITY prefs.title "Proxy Selector 選項">
+
+<!-- ADD/EDIT PROXY AUTOMATIC TRANSLATION -->
+<!ENTITY add.title "&connectionsDialog.title;">
+<!ENTITY add.proxytitle "&proxyTitle.label;">
+<!ENTITY add.option.noproxy "&noProxyTypeRadio.label;">
+<!ENTITY add.option.noproxy.key "&noProxyTypeRadio.accesskey;">
+<!ENTITY add.option.system "&systemTypeRadio.label;">
+<!ENTITY add.option.system.key "&systemTypeRadio.accesskey;">
+<!ENTITY add.option.auto "&WPADTypeRadio.label;">
+<!ENTITY add.option.auto.key "&WPADTypeRadio.accesskey;">
+<!ENTITY add.option.manual "&manualTypeRadio.label;">
+<!ENTITY add.option.manual.key "&manualTypeRadio.accesskey;">
+<!ENTITY add.option.detect "&autoTypeRadio.label;">
+<!ENTITY add.option.detect.key "&autoTypeRadio.accesskey;">
+<!ENTITY add.ftp.proxy.label "&ftp.label;">
+<!ENTITY add.ftp.proxy.key "&ftp.accesskey;">
+<!ENTITY add.http.proxy.label "&http.label;">
+<!ENTITY add.http.proxy.key "&http.accesskey;">
+<!ENTITY add.ssl.proxy.label "&ssl.label;">
+<!ENTITY add.ssl.proxy.key "&ssl.accesskey;">
+<!ENTITY add.socks.proxy.label "&socks.label;">
+<!ENTITY add.socks.proxy.key "&socks.accesskey;">
+<!ENTITY add.socks.option.v4 "&socks4.label;">
+<!ENTITY add.socks.option.v4.key "&socks4.accesskey;">
+<!ENTITY add.socks.option.v5 "&socks5.label;">
+<!ENTITY add.socks.option.v5.key "&socks5.accesskey;">
+<!ENTITY add.port.label "&port.label;">
+<!ENTITY add.http.port.key "&HTTPport.accesskey;">
+<!ENTITY add.ssl.port.key "&SSLport.accesskey;">
+<!ENTITY add.ftp.port.key "&FTPport.accesskey;">
+<!ENTITY add.socks.port.key "&SOCKSport.accesskey;">
+<!ENTITY add.none.label "&noproxy.label;">
+<!ENTITY add.none.key "&noproxy.accesskey;">
+<!ENTITY add.none.example "&noproxyExplain.label;">
+<!ENTITY add.sharing.proxy.label "&shareproxy.label;">
+<!ENTITY add.sharing.proxy.key "&shareproxy.accesskey;">

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="proxybutton.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://mproxy/locale/locale.dtd" >
+
+<overlay id="mproxyOverlay"
+			title="Proxy Selector Overlay"
+			xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<script type="application/x-javascript" src="chrome://mproxy/content/globals.js"></script>
+	<script type="application/x-javascript" src="chrome://mproxy/content/datasource.js"></script>
+	<script type="application/x-javascript" src="chrome://mproxy/content/proxy.js"></script>
+	
+	<!-- Toolbar Element -->
+	<toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton id="mproxy-element-button" title="&common.buttonlist.name;" type="menu" class="chromeclass-toolbar-additional toolbarbutton-1"  orient="horizontal" >
+		<menupopup id="mproxy-element-list">
+			<menuseparator id="mproxy-element-dlist-separator" />
+			<menuseparator id="mproxy-element-options-separator"/>
+			<menuitem id="element_isp" label="&common.manage.label;" accesskey="&common.manage.key;" oncommand="prxSel.openProxyManager();" class="menuitem-iconic" />
+			<menuseparator />
+			<menuitem id="element_options" label="&common.preferences.label;" accesskey="&common.preferences.key;" oncommand="prxSel.openmproxyPrefs();" class="menuitem-iconic" />
+		</menupopup>
+		</toolbarbutton>
+	</toolbarpalette>
+
+	<!-- Firefox Tools Menu -->
+	<menupopup id="menu_ToolsPopup">
+		<menu id="mproxy-tools-menu" label="&common.product.name;" 
+			class="menu-iconic"
+			insertafter="devToolsSeparator">
+				<menupopup id="mproxy-menu-list" position="end_before">
+						<menuseparator id="mproxy-menu-dlist-separator" />
+						<menuseparator id="mproxy-menu-list-separator" />
+					<menuitem id="tools_isp" label="&common.manage.label;" accesskey="&common.manage.key;" oncommand="prxSel.openProxyManager();" class="menuitem-iconic" />
+						<menuseparator />
+					<menuitem id="tools_options" label="&common.preferences.label;" accesskey="&common.preferences.key;" oncommand="prxSel.openmproxyPrefs();" class="menuitem-iconic" />
+				</menupopup>
+		</menu>
+	</menupopup>
+	
+	<!-- Context Menu -->
+	<menupopup id="contentAreaContextMenu">
+		
+		<menu label="&context.label;" 
+		id="mproxy-context-menu"
+		class="menu-iconic"
+		insertafter="devToolsSeparator">
+			<menupopup id="mproxy-context-menu-popup;">
+				<menu id="mproxy-context-proxylist" 
+				label="&context.proxies.label;" 
+				accesskey="&context.proxies.key;" class="menu-iconic" >
+					<menupopup id="context-proxy-list">
+					<menuseparator id="mproxy-context-separator"/>
+                    </menupopup>
+				</menu>
+				<menuseparator />
+				<menuitem id="context_isp" label="&common.manage.label;" accesskey="&common.manage.key;" oncommand="prxSel.openProxyManager();" class="menuitem-iconic" />
+				<menuseparator />
+				<menuitem id="context_options" label="&common.preferences.label;" accesskey="&common.preferences.key;" oncommand="prxSel.openmproxyPrefs();" class="menuitem-iconic" />
+			
+			</menupopup>
+		</menu>
+	</menupopup>
+	
+	<!-- Popups -->
+	<popupset id="mainPopupSet">
+		<menupopup id="mproxy-context">
+			<menuitem id="pop_isp" label="&common.manage.label;" accesskey="&common.manage.key;" oncommand="prxSel.openProxyManager();" class="menuitem-iconic" />
+			<menuseparator />
+			<menuitem id="pop_options" label="&common.preferences.label;" accesskey="&common.preferences.key;" oncommand="prxSel.openmproxyPrefs();" class="menuitem-iconic" />
+		</menupopup>
+
+	</popupset>
+</overlay>

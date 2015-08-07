@@ -1,0 +1,37 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+
+[Initial]
+requiredWinstVersion >= "4.8.6"
+LogLevel=2
+;  Log Errors in Logfile but don't abort:
+ExitOnError=false
+; Show syntax errors in the script:
+ScriptErrorMessages=on
+; Dont trace step by step through the script:
+TraceMode=off
+; let started programs run in front of the winst window
+StayOnTop=false
+ 
+[Aktionen]
+DefVar $ProductId$
+DefVar $ExitCode$
+DefVar $OSVersion$
+
+; This should be edited
+set $ProductId$ = "w7activate"
+
+DefVar $TEMP$ 
+Set $TEMP$ = EnvVar("TEMP")
+
+comment "show product picture"
+ShowBitmap /3 "%scriptpath%\"+$ProductId$+".bmp" $ProductId$
+
+if FileExists("%ScriptPath%\delsub.ins")
+   comment  "start uninstall sub section"
+   sub "%ScriptPath%\delsub.ins"
+endif
+
+

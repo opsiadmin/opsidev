@@ -1,0 +1,283 @@
+/* About */
+#about-options > .options-row:first-of-type {
+	border-top-color: transparent;
+	padding-bottom: 0;
+}
+
+#about-links {
+	margin-bottom: 10px;
+}
+
+.about-link {
+	display: inline-block;
+	padding-bottom: 6px;
+}
+
+.about-link .vr {
+	display: inline-block;
+}
+
+.license-text {
+	background-color: #eee;
+	display: none;
+	font-size: small;
+	padding: 5px;
+}
+
+.license-link {
+	float: right;
+}
+
+/* General */
+#whitelist-div input {
+	width: 100%;
+	height: 30px;
+	border: 1px solid #d7d7d7;
+	font-size: .875em;
+	font-weight: bold;
+	padding: 0;
+}
+
+#whitelist-div select {
+	width: 100%;
+	height: 125px;
+	border: 1px solid #d7d7d7;
+}
+
+#whitelist-div .whitelist-top-header {
+	font-weight: 100;
+	padding: 35px 55px 0 55px;
+	font-size: .75em;
+}
+
+#whitelist-div .whitelist-header {
+	font-weight: bold;
+	padding: 35px 55px 0 55px;
+	font-size: .875em;
+	display: inline-block;
+}
+
+#whitelist-div .whitelist-content-left {
+	width: 62%;
+	padding: 10px 0 0 55px;
+	font-size: .875em;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#whitelist-div .whitelist-content-right {
+	padding: 10px 55px 0 15px;
+	font-size: .875em;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#whitelist-div .whitelist-content:last-of-type {
+	padding-bottom: 35px;
+}
+
+#whitelist-error {
+	border: 1px solid transparent;
+	height: 26px;
+	padding: 2px;
+	line-height: 26px;
+	top: 2px;
+	left: -2px;
+	text-align: center;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	color: #fff;
+	text-shadow: 1px 1px #555;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(214,0,0,1)), color-stop(100%,rgba(146,0,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(214,0,0,1) 0%, rgba(146,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: linear-gradient(to bottom,  rgba(214,0,0,1) 0%,rgba(146,0,0,1) 100%); /* W3C */
+	width: 100%;
+	position: relative;
+}
+
+#whitelist-error-msg-close {
+	position: absolute;
+	background: url('../images/panel/tutorial/close_hover.png') no-repeat center;
+	height: 20px;
+	width: 20px;
+	top: 5px;
+	right: 3px;
+	cursor: pointer;
+}
+
+#restore-file {
+	padding-bottom: 20px;
+}
+
+.red {
+	color: #ed1c24;
+}
+
+.highlight {
+	background-color: #fff !important;
+	-webkit-transition: background-color 4s ease;
+	-moz-transition: background-color 4s ease;
+	-o-transition: background-color 4s ease;
+	transition: background-color 4s ease;
+}
+
+.options-row {
+	border-top: 1px solid #d7d7d7;
+	width: auto;
+	position: relative;
+	margin-right: 50px;
+	margin-left: 50px;
+}
+
+.options-div .options-row:last-of-type {
+	border-bottom: 1px solid #d7d7d7;
+}
+
+#buttons-row.options-row {
+	border: none;
+}
+
+#buttons-row.options-row .options-content,
+	#footer-row.options-row .options-content,
+	#buttons-row.options-row,
+	#footer-row.options-row {
+	border-color: transparent;
+}
+
+#buttons-row.options-row .options-content {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	display: inline-block;
+}
+
+#footer-row.options-row .options-content {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.options-header {
+	text-align: left;
+	width: 210px;
+	padding-top: 30px;
+	font-size: 1.125em;
+	font-weight: normal;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 210px;
+}
+
+.options-content {
+	vertical-align: middle;
+	text-align: left;
+	border-left: 1px solid #d7d7d7;
+	padding: 15px 50px 30px 50px;
+	font-size: 1em;
+	margin-left: 210px;
+}
+
+@media screen and (max-width: 640px) {
+	.options-header {
+		width: auto;
+		position: static;
+		display: inline-block;
+		border-bottom: 1px solid #d7d7d7;
+		padding-bottom: 10px;
+	}
+
+	.options-content {
+		vertical-align: middle;
+		text-align: left;
+		border-left: 0;
+		padding: 0 0 10px 0 !important;
+		font-size: 1em;
+		margin-left: 0;
+	}
+
+	.options-div .options-row:last-of-type {
+		padding-bottom: 10px;
+	}
+
+	.tabs li {
+
+	}
+
+	.options-row {
+		margin: 0 5%;
+	}
+
+	#whitelist-div .whitelist-top-header {
+		padding: 10px 10px 0 10px;
+	}
+
+	#whitelist-div .whitelist-top-header p {
+		margin: 0;
+	}
+
+	#whitelist-div .whitelist-header {
+		padding: 10px 10px 0 10px;
+	}
+
+	#whitelist-div .whitelist-content {
+		padding: 2px 10px 0 10px;
+	}
+
+	#whitelist-div .whitelist-content-left {
+		width: 100%;
+		padding: 0 0 5px 0;
+	}
+
+	#whitelist-div .whitelist-content-right {
+		width: 100%;
+		padding: 0 0 5px 0;
+	}
+
+	#whitelist-div .whitelist-content-right button,
+		#whitelist-div .whitelist-content-right select {
+		width: 100%;
+	}
+
+	#whitelist-div #whitelist-remove-all-button {
+		margin-top: 2px !important;
+	}
+
+	#whitelist-div .whitelist-content:last-of-type {
+		padding-bottom: 5px;
+	}
+
+	#buttons-row.options-row .options-content {
+		width: 100%;
+		padding: 0;
+	}
+
+	#buttons {
+		padding-top: 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	#buttons button {
+		width: 40%;
+		float: none;
+		display: inline-block;
+	}
+
+	#buttons-row .options-header {
+		border: none;
+	}
+
+	#footer-row .options-header {
+		display: none;
+	}
+
+	#footer-row .options-content,
+		#footer-row .options-content > * {
+		padding-top: 0;
+	}
+
+	#header-top-text {
+		float: none;
+		position: absolute;
+		bottom: 5px;
+	}
+}

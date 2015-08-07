@@ -1,0 +1,37 @@
+;RRZN-20130807-WM
+
+
+[Initial]
+SetLogLevel=7
+ExitOnError=true
+ 
+[Actions]
+DefVar $LogDir$
+DefVar $ProductId$
+DefVar $InstallDir$
+DefVar $UninstallProgram$
+
+Set $LogDir$ 			= "%SystemDrive%\tmp"
+Set $ProductId$     	= "PuTTY"
+Set $InstallDir$    	= "%ProgramFiles32Dir%\PuTTY"
+Set $UninstallProgram$ 	= $InstallDir$ + "\unins000.exe"
+
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\PuTTY.png"
+Message "Uninstalling " + $ProductId$ + " ..."
+
+if FileExists($UninstallProgram$)
+	comment "Uninstall program found, starting uninstall"
+	Files_copy
+	Winbatch_uninstall
+
+else
+	comment "Uninstall program not found, abort action..."
+
+endif
+
+[Files_copy]
+copy "%ScriptPath%\putty.exe" "$InstallDir$\"
+
+[Winbatch_uninstall]
+"$UninstallProgram$" /VERYSILENT /SuppressMsgBoxes /NORESTART

@@ -1,0 +1,93 @@
+; ----------------------------------------------------------------
+; - RRZN-20130321-Simon Stamm                                    -
+; - Installation PostgreSQL ODBC Driver                          -
+; - http://www.postgresql.org/ftp/odbc/versions/msi/             -
+; ---------------------------------------------------------------- 
+
+[Initial]
+SetLogLevel=9
+; Log Errors in Logfile but don't abort
+ExitOnError=true
+; Show syntax errors in the script
+ScriptErrorMessages=on
+; Dont trace step by step through the script
+TraceMode=off
+; Let started programs run in front of the winst window
+StayOnTop=true
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $LogDir$
+DefVar $ProductId$
+DefVar $ProductName$
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $Version$
+DefVar $Inst_Prg$
+DefVar $Inst_Cmd$
+DefVar $Uninst_Prg$
+DefVar $Uninst_Cmd$
+
+; ----------------------------------------------------------------
+; - Set path for the log                                         -	
+; ---------------------------------------------------------------- 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values for setup                   -
+; ----------------------------------------------------------------
+; - $ProductId$ should be the name of the product in opsi
+; ----------------------------------------------------------------
+Set $ProductId$       = "postgresql_odbc"
+Set $ProductName$     = "PostgreSQL ODBC Driver"
+Set $Version$         = "09.01.0200"
+Set $MinimumSpace$    = "10 MB"
+; ----------------------------------------------------------------
+; - the path were we find the product after the installation     -
+; ----------------------------------------------------------------
+Set $InstallDir$      = "%ProgramFiles64Dir%\psqlODBC\"
+Set $Inst_Prg$        = "psqlodbc_x64.msi"
+Set $Inst_Cmd$        = "/passive /norestart"
+Set $Uninst_Prg$      = "unins000.exe"
+Set $Uninst_Cmd$      = "/passive /norestart"
+; ----------------------------------------------------------------
+
+; ----------------------------------------------------------------
+; - Display Product Image                                        -
+; ----------------------------------------------------------------
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductName$
+
+
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	; ----------------------------------------------------------------
+	; - Stop process and set installation status to failed           -
+	; ----------------------------------------------------------------
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductName$
+	isFatalError
+else
+
+	; ----------------------------------------------------------------
+	; - Check for older Installation                                 -
+	; ----------------------------------------------------------------
+	if FileExists($InstallDir$)
+		comment "Start uninstall sub section"
+		Sub "%ScriptPath%\delsub.ins"
+	endif
+	
+	; --------------------------------------------------------------
+	; - Start Installation                                         -
+	; --------------------------------------------------------------
+	comment "Installiere " + $ProductName$ + "..."
+
+	Message "Installiere " + $ProductName$
+	comment "Start setup program"
+	Winbatch_install
+	Sub "%ScriptPath%\check_msi_exitcode.ins"
+endif
+ 
+ 
+[Winbatch_install]
+%ScriptPath%\$Inst_Prg$ $Inst_Cmd$

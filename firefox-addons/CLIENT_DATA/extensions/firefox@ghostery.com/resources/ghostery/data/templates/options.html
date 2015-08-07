@@ -1,0 +1,390 @@
+<%= _header({
+	ratelink_url: 'https://addons.mozilla.org/en-US/firefox/addon/ghostery/',
+	show_tabs: true,
+	show_walkthrough_link: true,
+	show_walkthrough_progress: false,
+	show_walkthrough_skip: false,
+	survey_link: true,
+	MOBILE_MODE: MOBILE_MODE
+}) %>
+
+<div class="options-div" id="general-options">
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("options_sharing_header") %></h2>
+		</div>
+		<div class="options-content">
+			<%= _ghostrank({
+				tm: true
+			}) %>
+			<br />
+			<input type="checkbox" id="ghostrank"<% if (conf.ghostrank) print(' checked') %>>
+			<label for="ghostrank"><%- t("options_ghostrank") %></label>
+		</div>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("options_autoupdate_header") %>
+		</div>
+		<div class="options-content">
+			<p>
+				<%- t("walkthrough_autoupdate1") %>
+			</p>
+			<br />
+			<input type="checkbox" id="enable_autoupdate"<% if (conf.enable_autoupdate) print(' checked') %>>
+			<label id="update" for="enable_autoupdate"><%- t("options_autoupdate") %></label>
+			<br />
+			<input type="checkbox" style="visibility:hidden">
+			<span style="font-size:small; padding-left:3px">
+				<span id="apps-last-updated">
+					<%- t('library_never_updated') %>
+				</span>
+				<span id="update-now-span">
+					<a href="#" id="update-now-link" aria-label="Press to immediately update Ghostery tracker lists"><%- t('library_update_now_link') %></a>
+				</span>
+			</span>
+		</div>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("options_blocking_header") %>
+		</div>
+		<div class="options-content">
+			<p>
+				<%- t("options_blocking1") %>
+			</p>
+			<p style="margin-bottom:25px">
+				<em><%- t("note") %></em>
+				<%= t("options_blocking2") %>
+			</p>
+
+			<div id="tabs-apps-container">
+				<ul class="tabs app-browser-tabs" id="tabs-apps" role="navigation">
+					<li class="active" id="apps-tab" href="#apps" data-tab-contents-selector="#trackers-app-browser" aria-label="Tracker browser tab">
+						<a href="#"><%- t("options_trackers_tab") %></a>
+					</li>
+					<li id="apps-tab2" href="#apps" data-tab-contents-selector="#lsos-app-browser" aria-label="Cookie browser tab">
+						<a href="#"><%- t("options_lsos_tab") %></a>
+					</li>
+					<li id="sites-tab" href="#sites" data-tab-contents-selector="#whitelist-div" aria-label="Blocking-exempt sites tab">
+						<a href="#"><%- t("options_sites_tab") %></a>
+					</li>
+				</ul>
+			</div>
+			<div style="clear: both;"></div>
+
+			<%= _app_browser({ _select: _select, type: 'trackers' }) %>
+			<%= _app_browser({ _select: _select, type: 'lsos' }) %>
+			<div id="whitelist-div" class="app-browser" style="display:none;">
+				<div class="whitelist-top-header">
+					<p><%- t("site_whitelist_description") %></p>
+				</div>
+				<div class="whitelist-header">
+					<%- t("site_whitelist_help") %>
+				</div>
+				<div class="whitelist-content">
+					<div class="whitelist-content-left">
+						<input type="text" id="whitelist-add-input" value="" autocomplete="off" placeholder="example.com">
+						<div id="whitelist-error" style="display:none">
+							<span id='whitelist-error-msg'></span>
+							<span id="whitelist-error-msg-close"></span>
+						</div>
+					</div>
+					<div class="whitelist-content-right">
+						<button id="whitelist-add-button" class="blue-button">
+							<span><%- t("whitelist_add_button") %></span>
+						</button>
+					</div>
+				</div>
+
+				<div class="whitelist-header">
+					<%- t("whitelisted_sites_header") %>
+				</div>
+				<div class="whitelist-content">
+					<div class="whitelist-content-left">
+						<select multiple="multiple" id="whitelist"></select>
+					</div>
+					<div class="whitelist-content-right">
+						<button id="whitelist-remove-button" class="blue-button">
+							<span><%- t("whitelist_remove_button") %></span>
+						</button>
+						<br />
+						<button id="whitelist-remove-all-button" class="blue-button" style="margin-top:10px">
+							<span><%- t("whitelist_remove_all_button") %></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="options-div" id="advanced-options" style="display:none">
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("options_display_header") %>
+		</div>
+		<div class="options-content">
+			<p>
+				<input type="checkbox" id="show-alert"<% if (conf.show_alert) print(' checked') %>>
+				<label for="show-alert">
+					<%= t('options_alert_bubble_show', '<span id="alert-bubble-help" class="help">' + t('alert_bubble') + '</span>') %>
+				</label>
+			</p>
+			<div id="alert-bubble-options"<% if (!conf.show_alert) print (' style="display:none"') %>>
+				<p class="suboption">
+					<%= t('options_alert_bubble_position', _select({
+						id: 'alert-bubble-pos',
+						options: [
+							{ name: t("corner1"), value: 'tr' },
+							{ name: t("corner2"), value: 'tl' },
+							{ name: t("corner3"), value: 'br' },
+							{ name: t("corner4"), value: 'bl' }
+						],
+						selected: conf.alert_bubble_pos
+					})) %>
+				</p>
+				<p class="suboption">
+					<%= t('options_alert_bubble_timeout', _select({
+						id: "alert-bubble-timeout",
+						options: [60, 30, 25, 20, 15, 10, 5, 3],
+						selected: +conf.alert_bubble_timeout
+					})) %>
+				</p>
+			</div>
+
+			<p>
+				<input type="checkbox" id="expand_sources"<% if (conf.expand_sources) print(' checked') %>>
+				<label for="expand_sources"><%- t('options_script_sources') %></label>
+				<%= t('options_in_the_findings_panel') %>
+			</p>
+			<p style="<% if (!MOBILE_MODE) print('display:none') %>">
+				<input type="checkbox" id="show_button"<% if (conf.show_button) print(' checked') %>>
+				<label for="show_button"><span id="show-button" class="help"><%- t('options_show_button_firefox') %></span></label>
+			</p>
+			<p>
+				<input type="checkbox" id="show_badge"<% if (conf.show_badge) print(' checked') %>>
+				<label for="show_badge"><%= t('options_badge') %></label>
+			</p>
+			<p>
+				<input type="checkbox" id="xul_panel"<% if (conf.xul_panel) print(' checked') %>>
+				<label for="xul_panel"><span id="xul-panel" class="help"><%- t('options_xul_panel_firefox') %></span></label>
+			</p>
+
+			<% if (!MOBILE_MODE) { %>
+			<p>
+				<input type="checkbox" id="re_add_ghosty">
+				<label for="re_add_ghosty"><span><%- t('options_restore_button_help_firefox') %></span></label>
+			</p>
+			<% } %>
+		</div>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("options_blocking_header") %>
+		</div>
+		<div class="options-content">
+			<p>
+				<input type="checkbox" id="ignore-first-party"<% if (conf.ignore_first_party) print(' checked') %>>
+				<label for="ignore-first-party"><%- t("options_ignore_first_party") %></label>
+				<span id="ignore-first-party-help">
+					<%- t("options_ignore_first_party_help") %>
+				</span>
+			</p>
+		</div>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("options_autoupdate_header") %>
+		</div>
+		<div class="options-content">
+			<p>
+				<input type="checkbox" id="block-by-default"<% if (conf.block_by_default) print(' checked') %>>
+				<label for="block-by-default"><%- t("options_block_by_default") %></label>
+			</p>
+			<p>
+				<input type="checkbox" id="notify-library-updates"<% if (conf.notify_library_updates) print(' checked') %>>
+				<label for="notify-library-updates"><%- t("options_notify_of_library_updates") %></label>
+			</p>
+		</div>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("options_click2play_header") %>
+		</div>
+		<div class="options-content">
+			<p>
+				<input type="checkbox" id="click2play"<% if (conf.enable_click2play) print(' checked') %>>
+				<label for="click2play"><%- t("options_click2play1") %></label>
+			</p>
+			<p>
+				<input type="checkbox" style="visibility:hidden">
+				<label><span id="click2play-help" class="help"><%- t("options_click2play2")%></span></label>
+			</p>
+
+			<p id="show-c2p-buttons"<% if (!conf.enable_click2play) print(' style="display:none"') %>>
+				<input style="margin-left:40px" type="checkbox" id="click2play-buttons"<% if (conf.enable_click2play_social) print(' checked') %>>
+				<label for="click2play-buttons"><%- t("options_click2play_buttons1") %></label>
+				<span id="click2play-buttons-help" class="help">
+					<%- t("options_click2play_buttons2") %>
+				</span>
+			</p>
+		</div>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("options_language_header") %>
+		</div>
+		<div class="options-content">
+			<p>
+			<%
+			// ensure that "Show Ghostery in LANGUAGE" is grammatical in that language
+			languages[conf.language] = t('options_language_language');
+
+			// convert to _select's format
+			languages = _(languages)
+				.chain()
+				.reduce(function (memo, value, key) {
+					memo.push({
+						name: value,
+						value: key
+					});
+					return memo;
+				}, [])
+				.sortBy(function (l) { return l.value; })
+				.value();
+			%>
+			<%= t('options_language', _select({
+				id: 'language',
+				options: languages,
+				selected: conf.language
+			})) %>
+			</p>
+		</div>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t('options_backup_header') %>
+		</div>
+		<div class="options-content">
+			<p>
+				<a href="backup.html"><%- t('options_backup') %></a>
+			</p>
+		</div>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("options_performance_header_firefox") %>
+		</div>
+		<div class="options-content">
+			<p>
+				<input type="checkbox" id="block-images"<% if (conf.block_images) print(' checked') %>>
+				<label for="block-images"><%- t("options_block_images_firefox") %></label>
+			</p>
+			<p>
+				<input type="checkbox" id="block-frames"<% if (conf.block_frames) print(' checked') %>>
+				<label for="block-frames"><%- t("options_block_frames_firefox") %></label>
+			</p>
+			<p>
+				<input type="checkbox" id="block-objects"<% if (conf.block_objects) print(' checked') %>>
+				<label for="block-objects"><%- t("options_block_objects_firefox") %></label>
+			</p>
+			<p>
+				<input type="checkbox" id="prevent-redirection"<% if (conf.prevent_redirection) print(' checked') %>>
+				<label for="prevent-redirection"><%- t("options_prevent_redirection") %></label>
+			</p>
+			<p>
+				<input type="checkbox" id="delete-fl-sl-cookies"<% if (conf.delete_fl_sl_cookies) print(' checked') %>>
+				<label for="delete-fl-sl-cookies"><%- t("options_delete_fl_sl_cookies_firefox") %></label>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="options-div" id="about-options" style="display:none">
+	
+	<div class="options-row">
+		<h1><%- t("help_version_text", "Firefox", ghostery_version) %></h1>
+		<p>
+			<%- t("short_description") %>
+		</p>
+		<p id="about-links">
+			<a class="about-link" href="https://www.ghostery.com/<%- conf.language %>/eula" target="_blank"><%- t("license_link") %></a>
+			<span class="vr"></span>
+			<a class="about-link" href="https://www.ghostery.com/<%- conf.language %>/privacy-addon" target="_blank"><%- t("privacy_policy_link") %></a>
+			<span class="vr"></span>
+			<a class="about-link" href="https://www.ghostery.com" target="_blank"><%- t("homepage_link") %></a>
+		</p>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("help_help_header") %>
+		</div>
+		<div class="options-content">
+			<p>
+				<%= t("help_text1") %>
+			</p>
+			<p>
+				<%= t("help_text2") %>
+			</p>
+		</div>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t("help_credits_header") %>
+		</div>
+		<div class="options-content">
+			<p>
+				<%- t("credits_description") %>
+			</p>
+			<ul id="code-libraries">
+				<% _(libraries)
+					.chain()
+					.sortBy(function (l) { return l.name.toLowerCase() })
+					.each(function (library, i) {
+						library.id = i %>
+						<%= _library_li(library, { variable: 'library' }) %>
+					<% }) %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div>
+	<div class="options-row" id="buttons-row">
+		<div class="options-header">&nbsp;</div>
+		<div class="options-content">
+			<div id="buttons">
+				<button class="save-button blue-button" disabled>
+					<span><%- t("options_save_button") %></span>
+				</button>
+				<button class="cancel-button blue-button" disabled>
+					<span><%- t("options_cancel_button") %></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="options-row" id="footer-row">
+		<div class="options-header">&nbsp;</div>
+		<div class="options-content">
+			<%= _footer() %>
+		</div>
+	</div>
+</div>
+
+<div id="saving-options-notice-overlay"></div>
+<div id="saving-options-notice">
+	<div><%- t("options_saving_exit_message") %></div>
+</div>
+
+<%= _block_by_default_helper() %>

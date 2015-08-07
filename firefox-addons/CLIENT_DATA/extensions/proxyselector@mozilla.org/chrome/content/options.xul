@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+ 
+ <!DOCTYPE dialog SYSTEM "chrome://mproxy/locale/locale.dtd">
+ 
+<prefwindow id="proxyselector-prefs"
+     title="&prefs.title;"
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	onload="prxSel.initProxy();" 
+	onunload="prxGlob.managerClose();"
+	 >
+ 
+<prefpane id="proxyselector-general" label="&common.preferences.label;" image="chrome://mproxy/skin/options32.png">
+  <preferences>
+	
+	 <preference id="clear.cookies" name="extensions.proxyselector.clear.cookies" type="bool"/>
+	 <preference id="reload.tab" name="extensions.proxyselector.reload.tab" type="bool"/>
+	 <preference id="display.context" name="extensions.proxyselector.display.context" type="bool"/>
+	 <preference id="display.tools" name="extensions.proxyselector.display.tools" type="bool"/>
+	 <preference id="button.icontext" name="extensions.proxyselector.display.button.icontext" type="string"/>
+	
+  </preferences>
+   
+  	<groupbox style="width:300px;">
+		<caption label="&prefs.general;"/>
+		<checkbox preference="display.context"		label="&prefs.general.context;" />
+		<checkbox preference="display.tools"	label="&prefs.general.tools;" />
+	</groupbox>
+	
+	<groupbox style="width: 300px;">
+		<caption label="&prefs.switch;"/>
+		<checkbox preference="clear.cookies"
+                label="&prefs.switch.cookies;" />
+		<checkbox preference="reload.tab"
+                label="&prefs.switch.refresh;" />
+	</groupbox>
+    
+	
+	<groupbox style="width: 300px;">
+			<caption label="&prefs.button;"/>
+			<hbox align="center">
+				<label value="&prefs.button.show;" />
+				<menulist id="buttontype" preference="button.icontext">
+					<menupopup>
+						<menuitem label="&prefs.button.both;"	value="both" />
+						<menuitem label="&prefs.button.text;"	value="text" />
+						<menuitem label="&prefs.button.icon;"	value="icon" />
+					</menupopup>
+				</menulist>
+			</hbox>
+	</groupbox>
+	
+ 
+  
+</prefpane>
+ 
+ <prefpane id="proxyselector-manager" label="&common.manage.label;" image="chrome://mproxy/skin/network32.png" >
+	
+			
+	<hbox align="top" flex="1" style="height:100%">
+		<listbox id="manage-proxy-list" rows="10" flex="1" style="height:100%"></listbox>
+		<vbox>
+			<button id="new-button" label=" &common.add.label;" oncommand="prxSel.editProxyDialog(true)" />
+			<button id="edit-button" label=" &common.edit.label;" oncommand="prxSel.editProxyDialog(false)" />
+			<button id="remove-button" label=" &common.remove.label;" oncommand="prxSel.removeProxy(false)" />
+		</vbox>
+	</hbox>
+ 
+</prefpane>
+ 
+ 	<script type="application/x-javascript" src="chrome://mproxy/content/globals.js"></script>
+	<script type="application/x-javascript" src="chrome://mproxy/content/datasource.js"></script>
+	<script type="application/x-javascript" src="chrome://mproxy/content/proxy.js"></script>
+ 
+</prefwindow>

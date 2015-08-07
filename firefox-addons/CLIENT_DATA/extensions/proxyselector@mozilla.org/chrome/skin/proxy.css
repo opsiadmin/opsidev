@@ -1,0 +1,48 @@
+toolbar[mode="icons"] #mproxy-element-button .toolbarbutton-text
+{
+	display: -moz-box !important;
+}
+
+
+
+.proxy-menu-default
+	{font-style:italic !important;} 
+
+
+	
+	
+#mproxy-element-button
+{
+	list-style-image: url("chrome://mproxy/skin/24mproxy.png");
+}
+
+
+toolbar[iconsize="small"] #mproxy-element-button 
+{
+	list-style-image: url("chrome://mproxy/skin/16mproxy.png");
+}
+
+#mproxy-context-menu ,
+#mproxy-tools-menu
+{
+	list-style-image: url("chrome://mproxy/skin/16mproxy.png");
+}
+
+#mproxy-context-proxylist
+{
+	list-style-image: url("chrome://mproxy/skin/proxy.png");
+}
+#element_isp ,
+#tools_isp ,
+#context_isp, 
+#pop_isp
+{
+	list-style-image: url("chrome://mproxy/skin/isp.png");
+}
+#element_options,
+#tools_options ,
+#context_options, 
+#pop_options
+{
+	list-style-image: url("chrome://mproxy/skin/options.png");
+}

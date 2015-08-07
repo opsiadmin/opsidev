@@ -1,0 +1,53 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: itunes
+name: iTunes
+description: Media player and media library application
+advice: 
+version: 11.1.4
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+itunes (11.1.4-1) testing; urgency=low
+
+  * Updated to 11.1.4
+
+ -- Simon Stamm <apc@rrzn.uni-hannover.de>  Thu, 30 Jan 2014 08:11:17 +0000
+
+itunes (11.0.2-1) testing; urgency=low
+
+  * Initial package
+
+ -- Simon Stamm <apc@rrzn.uni-hannover.de>  Thu, 21 Mar 2013 07:56:18 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

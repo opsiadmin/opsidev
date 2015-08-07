@@ -1,0 +1,51 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: fusion-inventory
+name: fusion-inventory
+description: inventarisierung
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+fusion-inventory (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Mike Thomas <apc@rrzn.uni-hannover.de>  Thu, 13 Mar 2014 10:48:43 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

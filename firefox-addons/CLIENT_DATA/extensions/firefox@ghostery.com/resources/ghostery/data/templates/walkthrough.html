@@ -1,0 +1,123 @@
+<%= _header({
+	show_tabs: false,
+	show_walkthrough_link: false,
+	show_walkthrough_progress: true,
+	show_walkthrough_skip: true,
+	MOBILE_MODE: MOBILE_MODE
+}) %>
+
+<a href="#" id="arrow-prev" class="arrow" tabindex="1" role="navigation" aria-label="previous section" style="display:none"></a>
+<a href="#" id="arrow-next" class="arrow" tabindex="1" role="navigation" aria-label="next section"></a>
+
+<div id="slider" class="swipe">
+	<div class="swipe-wrap">
+
+		<div class="options-div">
+			<p style="font-weight: bold;">
+				<%= t('welcome_to_ghostery', 'Firefox', '<span id="version-text"></span>') %>
+			</p>
+			<p>
+				<%- t('walkthrough_intro1') %>
+			</p>
+			<p>
+				<%= t('walkthrough_intro2') %>
+			</p>
+		</div>
+
+		<div class="options-div">
+			<%= _ghostrank() %>
+			<p>
+				<label>
+					<input type="checkbox" id="ghostrank"<% if (conf.ghostrank) print(' checked') %>>
+					<%- t('walkthrough_ghostrank_checkbox') %>
+				</label>
+			</p>
+		</div>
+
+		<% if (!MOBILE_MODE) { %>
+		<div class="options-div">
+			<p>
+				<img src="images/help/alert_bubble.png" class="example">
+				<%- t('walkthrough_notification1') %>
+			</p>
+
+			<p>
+				<%- t('walkthrough_notification2') %>
+			</p>
+
+			<p>
+				<label>
+					<input type="checkbox" id="show-alert"<% if (conf.show_alert) print(' checked') %>>
+					<%- t('walkthrough_notification_checkbox') %>
+				</label>
+			</p>
+
+			<div style="clear:both"></div>
+		</div>
+		<% } %>
+
+		<div class="options-div">
+			<p>
+				<%- t('walkthrough_blocking1') %>
+			</p>
+			<p>
+				<%- t('walkthrough_blocking2') %>
+			</p>
+			<p>
+				<%= t('walkthrough_blocking3') %>
+			</p>
+			<p style="margin-bottom: 20px;">
+				<%- t('walkthrough_blocking4') %>
+			</p>
+
+			<div id="tabs-apps-container">
+				<ul class="tabs app-browser-tabs" id="tabs-apps" role="navigation">
+					<li class="active" id="apps-tab" href="#apps" data-tab-contents-selector="#trackers-app-browser" aria-label="Tracker browser tab">
+						<a href="#"><%- t("options_trackers_tab") %></a>
+					</li>
+					<li id="apps-tab2" href="#apps" data-tab-contents-selector="#lsos-app-browser" aria-label="Cookie browser tab">
+						<a href="#"><%- t("options_lsos_tab") %></a>
+					</li>
+				</ul>
+			</div>
+			<div style="clear: both;"></div>
+			
+			<div id="app-browser">
+				<%= _app_browser({ _select: _select, type: 'trackers' }) %>
+				<%= _app_browser({ _select: _select, type: 'lsos' }) %>
+			</div>
+
+			<input type="checkbox" id="block-by-default" style="display:none"<% if (conf.block_by_default) print(' checked') %>>
+
+		</div>
+
+		<div class="options-div">
+			<p>
+				<%= t('walkthrough_finished2') %>
+			</p>
+			<p>
+				<%= t('walkthrough_finished3') %>
+			</p>
+
+			<% if (!MOBILE_MODE) { %>
+			<p>
+				<%= t('walkthrough_finished4_firefox') %>		
+			</p>
+			<p>
+				<button id="add-button" class="blue-button" style="float:none;"><span><%- t('restore_toolbar_button_button_firefox') %></span></button>
+			</p>
+			<% } %>
+
+			<p>
+				<%- t('thanks_for_using_ghostery') %>
+			</p>
+		</div>
+
+	</div>
+</div>
+
+<div class="options-div">
+	<%= _footer() %>
+</div>
+
+<%= _block_by_default_helper() %>

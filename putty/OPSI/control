@@ -1,0 +1,36 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: putty
+name: PuTTY
+description: Telnet and SSH client
+advice: 
+version: 0.64
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+These features are new in beta 0.64 (released 2015-02-28):
+
+Security fix: PuTTY no longer retains the private half of users' keys in memory by mistake after authenticating with them. See private-key-not-wiped-2. (Sorry! We thought we'd fixed that in 0.63, but missed one.)
+Support for SSH connection sharing, so that multiple instances of PuTTY to the same host can share a single SSH connection instead of all having to log in independently.
+Command-line and configuration option to specify the expected host key(s).
+Defaults change: PuTTY now defaults to SSH-2 only, instead of its previous default of SSH-2 preferred.
+Local socket errors in port-forwarded connections are now recorded in the PuTTY Event Log.
+Bug fix: repeat key exchanges in the middle of an SSH session now never cause an annoying interactive host key prompt.
+Bug fix: reset the bolded-text default setting back to what it used to be. (0.63 set it to something wrong, as a side effect of refactoring.)
+Bug fix: IPv6 literals are handled sensibly throughout the suite, if you enclose them in square brackets to prevent the colons being mistaken for a :port suffix.
+Bug fix: IPv6 dynamic port forwardings should work again.
+

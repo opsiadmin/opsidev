@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+ * Ghostery for Firefox
+ * http://www.ghostery.com/
+ *
+ * Copyright 2014 Ghostery, Inc. All rights reserved.
+ * See https://www.ghostery.com/eula for license.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>Add a Tracker</title>
+	<style type="text/css">
+	.aligned {
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+		vertical-align: top;
+	}
+	</style>
+</head>
+<body>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+// advisory field validation
+function av(x, f) {
+  (x.style ? x.style : x).backgroundColor =
+    f(x.value) ? 'transparent' : '#ff9999';
+  return true;
+}
+// pattern
+function vp(v) {
+	try {
+		RegExp(v);
+	} catch (e) {
+		return false;
+	}
+
+	return true;
+}
+// name
+function vn(v) {
+	return !/^\s|\s$|\s\s/.test(v);
+}
+// id
+function vi(v) {
+	return /^[1-9]\d{0,4}$/.test(v);
+}
+// check if url matches pattern
+function run() {
+	var r = document.getElementById('result');
+	var p = document.getElementById('p').value;
+	var u = document.getElementById('url').value;
+	r.textContent = "";
+
+	var resultImage = document.createElement('img');
+	resultImage.className = 'aligned';
+
+	if (u.length > 0 && p.length > 0) {
+		try {
+			resultImage.src = RegExp(p).test(u.toLowerCase()) ? 'resource://firefox-at-ghostery-dot-com/ghostery/data/images/panel/tracker/indicator_check_green_hover.png' : 'resource://firefox-at-ghostery-dot-com/ghostery/data/images/panel/tracker/indicator_cross_red_hover.png';
+		} catch (e) {
+			resultImage.src = 'resource://firefox-at-ghostery-dot-com/ghostery/data/images/panel/tracker/indicator_cross_red_hover.png';
+		}
+
+		r.appendChild(resultImage);
+	}
+
+	return true;
+}
+//--><!]]></script>
+<div id="content">
+	<table class="sample">
+		<tr><th colspan="3" style="font-size:large;">Add a Tracker</th></tr>
+		<tr><th colspan="3" style="font-size:xx-small;">note, this is an internal function designed only for pattern testing.</th></tr>
+		<tr>
+			<td colspan="2">type</td>
+			<td>
+				<select id='t'>
+					<option>ad</option>
+					<option>analytics</option>
+					<option selected="selected">tracker</option>
+					<option>privacy</option>
+					<option>widget</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">pattern</td>
+			<td>
+				<input type="text" value="" id="p" onchange="av(this, vp)" onkeypress="setTimeout(run, 10);" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><em>test url</em></td>
+			<td>
+				<input type="text" value="" id="url" onkeypress="setTimeout(run, 10);" />
+				<span id="result"></span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">name</td>
+			<td>
+				<input type="text" value="" id="n" onchange="av(this, vn)" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">priority</td>
+			<td>
+				<select id='pr'>
+					<option>regular</option>
+					<option>high</option>
+					<option>low</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>id</td>
+			<td style="text-align:right;"><button id="pid" disabled="disabled">&#9668;</button></td>
+			<td>
+				<input type="text" value="10000" id="id" onchange="av(this, vi)" /> <button id="nid" disabled="disabled">&#9658;</button>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">aid</td>
+			<td>
+				<input type="text" value="10000" id="aid" onchange="av(this, vi)" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">cid</td>
+			<td>
+				<input type="text" value="10000" id="cid" onchange="av(this, vi)" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">db</td>
+			<td>
+				<input type="radio" name="db" value="user" id="dbUser" checked="checked" />user |
+				<input type="radio" name="db" value="main" id="dbMain" />main
+			</td>
+		</tr>
+	</table>
+	<button id='a'>add</button>
+</div>
+</body>
+</html>

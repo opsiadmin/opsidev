@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<title></title>
+<style>
+	#content img {
+		vertical-align: middle;
+	}
+
+	p {
+		margin: 2px;
+		font-family: 'Open Sans Bold';
+		font-size: 12px;
+	}
+	
+	.ellipsis {
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: 100%;
+	}
+	
+	#origin {
+		font-style: italic;
+	}
+	
+	#destination {
+		font-style: italic;
+	}
+</style>
+
+<script type="text/javascript">
+	<!--
+	function getWindowHeight() {
+		var windowHeight = 0;
+		if (typeof(window.innerHeight) == 'number') {
+			windowHeight = window.innerHeight;
+		}
+		else {
+			if (document.documentElement && document.documentElement.clientHeight) {
+				windowHeight = document.documentElement.clientHeight;
+			}
+			else {
+				if (document.body && document.body.clientHeight) {
+					windowHeight = document.body.clientHeight;
+				}
+			}
+		}
+		return windowHeight;
+	}
+	function setContent() {
+		if (document.getElementById) {
+			var windowHeight = getWindowHeight();
+			if (windowHeight > 0) {
+				var contentElement = document.getElementById('content');
+				var contentHeight = contentElement.offsetHeight;
+				if (windowHeight - contentHeight > 0) {
+					contentElement.style.position = 'relative';
+					contentElement.style.top = ((windowHeight / 2) - (contentHeight / 2)) + 'px';
+				}
+				else {
+					contentElement.style.position = 'static';
+				}
+			}
+		}
+	}
+	window.onload = function() {
+		setContent();
+	};
+	window.onresize = function() {
+		setContent();
+	};
+	//-->
+</script>
+
+</head>
+<body style="margin:0px;padding:0px;">
+
+<div style="text-align:center;" id="content">
+
+	<div id="redirect-prevent">
+	</div>
+
+	<br>
+
+	<div id="redirect-url" style="display: none;">
+	</div>
+	
+	<img src="images/click2play/ghosty_blocked.png">
+	<a href="#" onclick="return false;" id="action_through_once"><img src="images/click2play/allow_through.png" /></a>
+	<a href="#" onclick="return false;" id="action_always"><img src="images/click2play/allow_unblock.png" /></a>
+	
+	
+</div>
+
+</body>
+</html>

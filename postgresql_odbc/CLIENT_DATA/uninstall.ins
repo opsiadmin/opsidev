@@ -1,0 +1,61 @@
+; ----------------------------------------------------------------
+; - RRZN-20130321-Simon Stamm                                    -
+; - Deinstallation PostgreSQL ODBC Driver                        -
+; - http://www.postgresql.org/ftp/odbc/versions/msi/             -
+; ---------------------------------------------------------------- 
+
+[Initial]
+SetLogLevel=9
+; Log Errors in Logfile but don't abort
+ExitOnError=true
+; Show syntax errors in the script
+ScriptErrorMessages=on
+; Dont trace step by step through the script
+TraceMode=off
+; let started programs run in front of the winst window
+StayOnTop=true
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+
+DefVar $LogDir$
+DefVar $ProductId$
+DefVar $ProductName$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $Inst_Prg$
+DefVar $Uninst_Prg$
+DefVar $Uninst_Cmd$
+ 
+; ----------------------------------------------------------------
+; - Set path for the log                                         -	
+; ---------------------------------------------------------------- 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values for setup                   -
+; ----------------------------------------------------------------
+; - $ProductId$ should be the name of the product in opsi
+; ----------------------------------------------------------------
+Set $ProductId$       = "postgresql_odbc"
+Set $ProductName$     = "PostgreSQL ODBC Driver"
+; ----------------------------------------------------------------
+; - the path were we find the product after the installation     -
+; ----------------------------------------------------------------
+Set $InstallDir$      = "%ProgramFiles64Dir%\psqlODBC\"
+Set $Inst_Prg$        = "psqlodbc_x64.msi"
+Set $Uninst_Cmd$      = "/passive /norestart"
+; ----------------------------------------------------------------
+
+; ----------------------------------------------------------------
+; - Display Product Image                                        -
+; ----------------------------------------------------------------
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductName$
+
+; --------------------------------------------------------------
+; - Start Deinstallation                                       -
+; --------------------------------------------------------------
+Message "Deinstalliere " + $ProductName$ + ". Bitte etwas Geduld..."
+comment "Start uninstall sub section"
+Sub "%ScriptPath%\delsub.ins"

@@ -1,0 +1,92 @@
+; ----------------------------------------------------------------
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+;
+; RRZN/budde 
+; Installation Pidgin 2.10.9
+; //http://pidgin.im/download/windows/
+; ---------------------------------------------------------------- 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $LogDir$
+DefVar $ProductID$
+DefVar $ProductVersion$
+DefVar $ProductIDOTR$
+DefVar $ProductVersionOTR$
+DefVar $SetupExe$  
+DefVar $SetupExeOTR$  
+DefVar $Switch$
+DefVar $SwitchOTR$
+DefVar $UnInstallSwitch$
+DefVar $UnInstallSwitchOTR$
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $InstallDirOTR$
+DefVar $UnInstallExe$
+DefVar $UnInstallExeOTR$
+DefVar $UninstallProgram$
+DefVar $UninstallProgramOTR$
+DefVar $RunExe$
+DefVar $RunExeOTR$
+DefVar $ExitCode$
+DefVar $OSVersion$
+DefVar $INST_MsVersion$
+DefVar $INST_SystemType$
+DefVar $INST_architecture$
+
+; ----------------------------------------------------------------
+; - set path for the log                                         -	
+; ---------------------------------------------------------------- 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values for setup                   -
+; ----------------------------------------------------------------
+; - $ProductId$ should be the name of the product in opsi
+; - therefore please: only lower letters, no umlauts, 
+; - no white space use '-' as a seperator
+; - http://keepass.info/download.html
+; ----------------------------------------------------------------
+Set $ProductID$          = "pidgin"
+Set $ProductVersion$     = "2.10.11"
+Set $SetupExe$           = "pidgin-2.10.11-offline.exe"
+Set $ProductIDOTR$       = "pidgin-otr-plugin"
+Set $ProductVersionOTR$  = "4.0.1"
+Set $SetupExeOTR$        = "pidgin-otr-4.0.1.exe"
+Set $Switch$             = "/S /DS=0 /SMS=1 /L=1031 /D=$InstallDir$"
+Set $SwitchOTR$          = "/S"
+Set $MinimumSpace$     = "100 MB"
+; ----------------------------------------------------------------
+; - the path were we find the product after the installation     -
+; ----------------------------------------------------------------
+Set $InstallDir$      = "%ProgramFiles32Dir%\Pidgin"
+Set $InstallDirOTR$   = "%ProgramFiles32Dir%\pidgin-otr"
+Set $RunExe$	      = "pidgin.exe"
+Set $RunExeOTR$	      = "otr_modify.exe"
+Set $UnInstallExe$    = "pidgin-uninst.exe"
+Set $UnInstallExeOTR$ = "pidgin-otr-uninst.exe"
+Set $UnInstallSwitch$ = "/S"
+Set $UnInstallSwitchOTR$ = "/S"
+; ----------------------------------------------------------------
+; - get OS Version: 5.0 = W2K; 5.1 = XP; 5.2 = XP64,W2k3,W2k3R2; - 
+; - 6.0 = Vista,W2k8; 6.1 = W7,W2k8R2				 -
+; ----------------------------------------------------------------
+Set $OSVersion$		= "6.1"
+Set $INST_MsVersion$ 	= GetMSVersionInfo
+Set $INST_SystemType$ 	= GetSystemType
+; ----------------------------------------------------------------
+ 
+ 
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductID$ + ".png" $ProductID$ + "." + $ProductVersion$
+ 
+Message "Uninstalling " + $ProductID$ + "mit PLugin " $ProductIDOTR$ 
+ 
+if FileExists("%ScriptPath%\delsub.ins")
+	comment "Start uninstall sub section"
+	Sub "%ScriptPath%\delsub.ins"
+endif

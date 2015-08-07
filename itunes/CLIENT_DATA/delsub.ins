@@ -1,0 +1,17 @@
+Message "Uninstalling " + $ProductName$
+Winbatch_uninstall
+comment "Removing "+$InstallDir$
+Files_uninstall
+ 
+[Winbatch_uninstall]
+msiexec /x %ScriptPath%\iTunes64.msi $Uninst_Cmd$
+Sub "%ScriptPath%\exitcodesub.ins"
+msiexec /x %ScriptPath%\Bonjour64.msi $Uninst_Cmd$
+Sub "%ScriptPath%\exitcodesub.ins"
+msiexec /x %ScriptPath%\AppleMobileDeviceSupport64.msi $Uninst_Cmd$
+Sub "%ScriptPath%\exitcodesub.ins"
+msiexec /x %ScriptPath%\AppleApplicationSupport.msi $Uninst_Cmd$
+Sub "%ScriptPath%\exitcodesub.ins"
+ 
+[Files_uninstall]
+delete -sf "$InstallDir$\"

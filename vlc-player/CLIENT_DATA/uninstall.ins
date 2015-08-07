@@ -1,0 +1,39 @@
+Initial]
+SetLogLevel=9
+;  Log Errors in Logfile but don't abort:
+ExitOnError=true
+; Show syntax errors in the script:
+ScriptErrorMessages=on
+; Dont trace step by step through the script:
+TraceMode=off
+; let started programs run in front of the winst window
+StayOnTop=true
+ 
+[Actions]
+;requiredWinstVersion >= "4.10.8.6"
+DefVar $LogDir$
+DefVar $ProductId$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $Uninst_Prg$
+DefVar $Uninst_Cmd$
+ 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+Set $ProductId$       = "vlc"
+; the path were we find the product after the installation
+Set $InstallDir$      = "%ProgramFiles32Dir%\VideoLAN\VLC\"
+Set $Uninst_Prg$      = "uninstall.exe"
+Set $Uninst_Cmd$      = ' /S'
+; ----------------------------------------------------------------
+ 
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+Message "Deinstalliere " + $ProductId$ + ". Bitte etwas Geduld..."
+comment "Start uninstall sub section"
+Sub "%ScriptPath%\delsub.ins"

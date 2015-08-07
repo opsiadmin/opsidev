@@ -1,0 +1,43 @@
+[Package]
+version: 12
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: vlc-player
+name: vlc-player
+description: video player
+advice: 
+version: 2.2.1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+vlc-player (2.0.7-6) testing; urgency=low
+
+  * Initial package
+
+ -- Mike Thomas <apc@rrzn.uni-hannover.de>  Fri, 19 Oct 2012 17:35:51 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+

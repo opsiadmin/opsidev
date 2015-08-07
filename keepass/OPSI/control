@@ -1,0 +1,46 @@
+[Package]
+version: 3
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: keepass
+name: KeePass
+description: KeePass Passwort Safe
+advice: 
+version: 1.29
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+keepass (1.27-1) testing; urgency=low
+
+  * Initial package
+
+ -- budde <apc@rrzn.uni-hannover.de>  Mon 07 Apr 2014 16:10:28 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

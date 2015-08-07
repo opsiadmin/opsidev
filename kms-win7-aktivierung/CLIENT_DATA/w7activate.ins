@@ -1,0 +1,178 @@
+; ----------------------------------------------------------------------------------------------------------------------------------;
+; RRZN-20140102 - Budde                                                                                                                  ; 
+;                                                                                                                                   ;
+; Opsi-Paket fuer KMS Aktivierung                                                                                                   ;
+;                                                                                                                                   ;
+; Bild-URL: http://upload.wikimedia.org/wikipedia/de/thumb/c/c2/Microsoft_Windows_7_logo.svg/672px-Microsoft_Windows_7_logo.svg.png ;
+;                                                                                                                                   ;
+; ----------------------------------------------------------------------------------------------------------------------------------;
+
+[Initial]
+requiredWinstVersion >= "4.8.6"
+SetLogLevel=2
+;  Log Errors in Logfile but don't abort:
+ExitOnError=false
+; Show syntax errors in the script:
+ScriptErrorMessages=on
+; Dont trace step by step through the script:
+TraceMode=off
+; let started programs run in front of the winst window
+StayOnTop=false
+ 
+[Aktionen]
+DefVar $TEMP$ 
+DefVar $ProductId$
+DefVar $ExitCode$
+DefVar $OSVersion$
+
+; This should be edited
+set $ProductId$ = "w7activate"
+
+Set $TEMP$ = EnvVar("TEMP")
+
+;Message at install time:
+Message "Installing "+$ProductId$+" ..."
+
+comment "show product picture"
+ShowBitmap /3 "%scriptpath%\"+$ProductId$+".bmp" $ProductId$
+
+
+;Message at install time:
+Message "Installing "+$ProductId$+" ..."
+
+comment "start setup program"  
+
+; ----------------------------------------------------------------
+; Set OSVersion for Productkey
+; ----------------------------------------------------------------
+set $OSVersion$ = GetProductProperty("OSVersion","win7")
+
+; ----------------------------------------------------------------
+; Set Productkey
+; ----------------------------------------------------------------
+
+comment "delete_key" 
+DosInAnIcon_delete_key winst /sysnative
+
+comment "install_kms_key" 
+
+; Windows 7 Professional
+if ($OSVersion$ = "win7prof")
+	DosInAnIcon_install_key_win7prof winst /sysnative
+endif
+
+; Windows 7 Enterprise
+if ($OSVersion$ = "win7ent")
+	DosInAnIcon_install_key_win7ent winst /sysnative
+endif
+
+; Windows 8 Professional
+if ($OSVersion$ = "win8prof")
+	DosInAnIcon_install_key_win8prof winst /sysnative
+endif
+
+; Windows 8 Enterprise
+if ($OSVersion$ = "win8ent")
+	DosInAnIcon_install_key_win8ent winst /sysnative
+endif
+
+; Windows 8.1 Professional
+if ($OSVersion$ = "win8.1prof")
+	DosInAnIcon_install_key_win8.1prof winst /sysnative
+endif
+
+; Windows 8.1 Enterprise
+if ($OSVersion$ = "win8.1ent")
+	DosInAnIcon_install_key_win8.1ent winst /sysnative
+endif
+
+; Windows Server 2008 R2 Enterprise
+if ($OSVersion$ = "win2008r2")
+	DosInAnIcon_install_key_win2008r2 winst /sysnative
+endif
+
+; Windows Server 2012 Server Standard
+if ($OSVersion$ = "win2012")
+	DosInAnIcon_install_key_win2012 winst /sysnative
+endif
+
+; Windows Server 2012 R2 Server Standard
+if ($OSVersion$ = "win2012r2")
+	DosInAnIcon_install_key_win2012r2 winst /sysnative
+endif
+
+comment "install_kms_server" 
+DosInAnIcon_install_kms winst /sysnative
+
+comment "activate_kms" 
+DosInAnIcon_activate_kms winst /sysnative
+
+sub_check_exitcode
+		
+
+[DosInAnIcon_delete_key]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /cpky
+
+[DosInAnIcon_install_key_win7prof]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /ipk FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4
+
+[DosInAnIcon_install_key_win7ent]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /ipk 33PXH-7Y6KF-2VJC9-XBBR8-HVTHH
+
+[DosInAnIcon_install_key_win8prof]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /ipk NG4HW-VH26C-733KW-K6F98-J8CK4
+
+[DosInAnIcon_install_key_win8ent]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /ipk 32JNW-9KQ84-P47T8-D8GGY-CWCK7
+
+[DosInAnIcon_install_key_win8.1prof]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /ipk GCRJD-8NW9H-F2CDX-CCM8D-9D6T9
+
+[DosInAnIcon_install_key_win8.1ent]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /ipk MHF9N-XY6XB-WVXMC-BTDCT-MKKG7
+
+[DosInAnIcon_install_key_win2008r2]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /ipk 489J6-VHDMP-X63PK-3K798-CPX3Y
+
+[DosInAnIcon_install_key_win2012]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /ipk XC9B7-NBPP2-83J2H-RHMBY-92BT4
+
+[DosInAnIcon_install_key_win2012r2]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /ipk D2N9P-3P6X9-2R39C-7RTCD-MDVJX
+
+[DosInAnIcon_install_kms]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /skms kms.rrzn.uni-hannover.de:1688
+
+[DosInAnIcon_activate_kms]
+Cscript.exe //B //Nologo c:\windows\system32\slmgr.vbs /ato
+
+
+[sub_check_exitcode]
+comment "test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: "+$ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: "+$ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif
+

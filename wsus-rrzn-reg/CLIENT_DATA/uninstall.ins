@@ -1,0 +1,15 @@
+; RRZN-20120120-HH
+; Opsi-Paket fuer WSUS, uninstall.ins
+; Registry-Eintraege fuer WSUS einrichten
+
+[Actions]
+Registry_uninstall
+
+[Registry_uninstall]
+; alle AU-Einstellungen lassen, aber WSUS-Server raus
+; d.h. dann Microsoft-Server nutzen
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+deletevar "WUServer"
+deletevar "WUStatusServer"
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+set "UseWUServer" = REG_DWORD:00000000

@@ -1,0 +1,39 @@
+[Package]
+version: 7
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: winscp
+name: winscp
+description: sftp/ftp/scp client for windows
+advice: 
+version: 5.7.4
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+winscp (5.5.2-1) testing; urgency=low
+
+  * Initial package
+
+ -- Mike Thomas <thomas@rrzn.uni-hannover.de>  Mon, 31 Mar 2014 15:09:30 +0000
+
+
+
+
+
+
+
+
+
+

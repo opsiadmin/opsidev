@@ -1,0 +1,52 @@
+[Package]
+version: 3
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: kms-win7-aktivierung
+name: kms-win7-aktivierung
+description: kms-win7-aktivierung
+advice: RRZN KMS Achtung !!! OSVersion angeben: (win7prof/ent; win8prof/ent; win8.1prof/ent; win2008r2; win2012; win2012r2) !!!
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: w7activate.ins
+uninstallScript: delw7activate.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: osversion
+multivalue: True
+editable: True
+description: OSversion für den Productkey
+values: ["win2008r2", "win2012", "win2012r2", "win7ent", "win7prof", "win8.1ent", "win8.1prof", "win8ent", "win8prof"]
+default: ["win7prof"]
+
+[Changelog]
+kms-win7-aktivierung (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Budde <apc@rrzn.uni-hannover.de>  Thu, 28 Jan 2014 10:51:13 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+

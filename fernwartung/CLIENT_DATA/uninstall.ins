@@ -1,0 +1,23 @@
+;RRZN-20150709-WM
+;Uninstall per msiexec:
+;msiexec /x {Identifying-Number} /qn
+;IDNumber (mittels 'wmic product list' -> {5D328A41-BFF8-4B78-B45E-5BEE1D133EF5})
+
+[Initial]
+SetLogLevel=1
+ExitOnError=true
+ 
+[Actions]
+DefVar $LogDir$
+Set $LogDir$ = "%SystemDrive%\tmp"
+ShowBitmap "%ScriptPath%\vboxlogo.png"
+Winbatch_uninstall
+Files_uninstall
+ 
+[Winbatch_uninstall]
+;uninstall VirtualBox 4.3.0
+msiexec /x {477C04A2-F792-4977-9C29-EC7210C04BE8} /qn
+
+[Files_uninstall]
+delete -sf "C:\ECRA"
+delete -sf "C:\Users\Public\Desktop\Fernwartungs-Center.lnk"

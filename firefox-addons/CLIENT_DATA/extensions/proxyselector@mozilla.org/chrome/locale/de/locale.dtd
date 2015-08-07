@@ -1,0 +1,68 @@
+<!ENTITY % connection SYSTEM "chrome://browser/locale/preferences/connection.dtd">
+%connection;
+
+<!-- ADD/EDIT PROXY -->
+<!ENTITY add.proxyLabel "Proxy-Bezeichnung:">
+<!-- COMMON -->
+<!ENTITY common.buttonlist.name "Proxy Selector">
+<!ENTITY common.manage.key "v">
+<!ENTITY common.manage.label "Proxies verwalten">
+<!ENTITY common.preferences.key "E">
+<!ENTITY common.preferences.label "Einstellungen">
+<!ENTITY common.product.name "Proxy Selector">
+<!ENTITY common.edit.label "Bearbeiten">
+<!ENTITY common.remove.label "Entfernen">
+<!ENTITY common.add.label "Hinzufügen">
+<!-- CONTEXT MENU -->
+<!ENTITY context.label "Proxy Selector">
+<!ENTITY context.proxies.key "P">
+<!ENTITY context.proxies.label "Proxies">
+<!-- PREFERENCES -->
+<!ENTITY prefs.button "Aussehen der Schaltfläche in der Symbolleiste">
+<!ENTITY prefs.button.both "Symbol und Text">
+<!ENTITY prefs.button.icon "Nur Symbol">
+<!ENTITY prefs.button.show "Anzeigen:">
+<!ENTITY prefs.button.text "Nur Text">
+<!ENTITY prefs.general "Allgemein">
+<!ENTITY prefs.general.context "„Proxy Selector“ im Kontextmenü anzeigen">
+<!ENTITY prefs.general.tools "„Proxy Selector“ im  Menü „Extras“ anzeigen">
+<!ENTITY prefs.switch "Beim Wechseln der Proxies">
+<!ENTITY prefs.switch.cookies "Alle Cookies löschen">
+<!ENTITY prefs.switch.refresh "Aktuelle Seite neu laden">
+<!ENTITY prefs.title "Proxy Selector - Einstellungen">
+
+<!-- ADD/EDIT PROXY AUTOMATIC TRANSLATION -->
+<!ENTITY add.title "&connectionsDialog.title;">
+<!ENTITY add.proxytitle "&proxyTitle.label;">
+<!ENTITY add.option.noproxy "&noProxyTypeRadio.label;">
+<!ENTITY add.option.noproxy.key "&noProxyTypeRadio.accesskey;">
+<!ENTITY add.option.system "&systemTypeRadio.label;">
+<!ENTITY add.option.system.key "&systemTypeRadio.accesskey;">
+<!ENTITY add.option.auto "&WPADTypeRadio.label;">
+<!ENTITY add.option.auto.key "&WPADTypeRadio.accesskey;">
+<!ENTITY add.option.manual "&manualTypeRadio.label;">
+<!ENTITY add.option.manual.key "&manualTypeRadio.accesskey;">
+<!ENTITY add.option.detect "&autoTypeRadio.label;">
+<!ENTITY add.option.detect.key "&autoTypeRadio.accesskey;">
+<!ENTITY add.ftp.proxy.label "&ftp.label;">
+<!ENTITY add.ftp.proxy.key "&ftp.accesskey;">
+<!ENTITY add.http.proxy.label "&http.label;">
+<!ENTITY add.http.proxy.key "&http.accesskey;">
+<!ENTITY add.ssl.proxy.label "&ssl.label;">
+<!ENTITY add.ssl.proxy.key "&ssl.accesskey;">
+<!ENTITY add.socks.proxy.label "&socks.label;">
+<!ENTITY add.socks.proxy.key "&socks.accesskey;">
+<!ENTITY add.socks.option.v4 "&socks4.label;">
+<!ENTITY add.socks.option.v4.key "&socks4.accesskey;">
+<!ENTITY add.socks.option.v5 "&socks5.label;">
+<!ENTITY add.socks.option.v5.key "&socks5.accesskey;">
+<!ENTITY add.port.label "&port.label;">
+<!ENTITY add.http.port.key "&HTTPport.accesskey;">
+<!ENTITY add.ssl.port.key "&SSLport.accesskey;">
+<!ENTITY add.ftp.port.key "&FTPport.accesskey;">
+<!ENTITY add.socks.port.key "&SOCKSport.accesskey;">
+<!ENTITY add.none.label "&noproxy.label;">
+<!ENTITY add.none.key "&noproxy.accesskey;">
+<!ENTITY add.none.example "&noproxyExplain.label;">
+<!ENTITY add.sharing.proxy.label "&shareproxy.label;">
+<!ENTITY add.sharing.proxy.key "&shareproxy.accesskey;">

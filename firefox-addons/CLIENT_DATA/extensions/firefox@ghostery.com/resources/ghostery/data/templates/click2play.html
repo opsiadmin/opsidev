@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            display: table;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            margin: 2px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px;
+        }
+        #content {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div style="text-align:center" id="content">
+    <p id="text" style="display:none"></p>
+    <img id="ghosty_block" src="<%= ghosty_blocked %>">
+    <a id="action_once" href="#" onclick="return false"><img src="<%= allow_once %>" title="<%- t('click2play_allow_once_tooltip') %>"></a>
+    <a id="action_always" href="#" onclick="return false"><img src="<%= allow_unblock %>" title="<%- t('click2play_allow_always_tooltip') %>"></a>
+</div>
+</body>
+</html>

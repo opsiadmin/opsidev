@@ -1,0 +1,41 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+
+DefVar $MsiId$
+Set $MsiId$ = '{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}'
+
+Message "Uninstalling GNU Image Manipulation Program ..."
+
+if FileExists($InstallDir$ + "\uninst\unins000.exe")
+	comment "Uninstall program found, starting uninstall"
+	Winbatch_uninstall
+	sub_check_exitcode
+endif
+
+[Winbatch_uninstall]
+"$InstallDir$\uninst\unins000.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to GIMP exit codes see help
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	logError "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1")
+		logError "Setup failed to initialize."
+	else
+		if ( ($ExitCode$ = "2") or ($ExitCode$ = "5") )
+			logError "The user aborted installation."
+		else
+			if ( ($ExitCode$ = "3") or ($ExitCode$ = "4") )
+				logError "A fatal error occurred."
+			endif
+		endif
+	endif
+	isFatalError
+endif
+

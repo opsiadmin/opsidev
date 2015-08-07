@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+ <Description about="urn:mozilla:install-manifest">
+
+   <em:id>proxyselector@mozilla.org</em:id>
+   <em:name>Proxy Selector</em:name>
+   <em:type>2</em:type>
+   <em:unpack>false</em:unpack>
+   <em:version>1.31</em:version>
+	 <em:description>Proxy Selector lets you switch local proxies in Firefox.</em:description>
+		<em:creator>Michele Pezza</em:creator>
+		<em:contributor>Jeremy Gillick (http://www.mozmonkey.com)</em:contributor>
+        <em:contributor>McFred (http://multiproxyswitch.blogspot.com/)</em:contributor>
+		<em:homepageURL>http://addons.mozilla.org</em:homepageURL>
+		<em:optionsURL>chrome://mproxy/content/options.xul</em:optionsURL>
+		<em:iconURL>chrome://mproxy/skin/bigmproxy.png</em:iconURL>
+		
+   <!-- Firefox -->
+   <em:targetApplication>
+     <Description>
+       <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+       <em:minVersion>14.0</em:minVersion>
+       <em:maxVersion>30.0a1</em:maxVersion>
+     </Description>
+   </em:targetApplication>
+  		
+   
+ </Description>
+</RDF>

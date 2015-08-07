@@ -1,0 +1,68 @@
+<%= _header({
+	ratelink_url: 'https://addons.mozilla.org/en-US/firefox/addon/ghostery/',
+	show_tabs: false,
+	show_walkthrough_link: false,
+	show_walkthrough_progress: false,
+	show_walkthrough_skip: false,
+	survey_link: true,
+	MOBILE_MODE: MOBILE_MODE
+}) %>
+
+<div class="options-div" id="general-options">
+	<div class="options-row">
+		<div class="options-header">
+			<%- t('backup_export_header') %>
+		</div>
+
+		<div class="options-content" style="<% if (!MOBILE_MODE) print('overflow:auto;') %>">
+			<p>
+				<%- t('backup_export') %>
+			</p>
+			<br />
+			<button id="backup-button" class="blue-button" disabled>
+				<span><%- t('backup_export_button') %></span>
+			</button>
+		</div>
+	</div>
+
+	<div class="options-row">
+		<div class="options-header">
+			<%- t('backup_import_header') %>
+		</div>
+
+		<div class="options-content" style="<% if (!MOBILE_MODE) print('overflow:auto;') %>">
+			<p>
+				<%- t('backup_import') %>
+			</p>
+			<p>
+				<%- t('backup_import_warning') %>
+			</p>
+			<br />
+
+			<input type="file" id="restore-file"></input>
+			<br />
+			<button id="restore-button" class="blue-button" disabled>
+				<span><%- t('backup_import_button') %></span>
+			</button>
+
+			<div id="restore-error" style="display: none">
+				<%= t('backup_import_error') %>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="options-row">
+		<div class="options-header"> </div>
+
+		<div class="options-content">
+			<a href="options.html"><%- t('backup_options_link') %></a>
+		</div>
+	</div>
+
+</div>
+
+<div id="saving-options-notice-overlay"></div>
+<div id="saving-options-notice">
+	<div><%- t("options_saving_exit_message") %></div>
+</div>

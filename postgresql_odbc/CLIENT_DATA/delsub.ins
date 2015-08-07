@@ -1,0 +1,17 @@
+; ----------------------------------------------------------------
+; - RRZN-20130321-Simon Stamm                                    -
+; - Deinstallation PostgreSQL ODBC Driver                        -
+; - http://www.postgresql.org/ftp/odbc/versions/msi/             -
+; ---------------------------------------------------------------- 
+
+Message "Uninstalling " + $ProductName$
+Winbatch_uninstall
+Sub "%ScriptPath%\check_msi_exitcode.ins"
+comment "Removing "+$InstallDir$
+Files_uninstall
+
+[Winbatch_uninstall]
+msiexec /x %ScriptPath%\$Inst_Prg$ $Uninst_Cmd$
+ 
+[Files_uninstall]
+delete -sf "$InstallDir$\"

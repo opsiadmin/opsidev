@@ -1,0 +1,83 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: firefox-addons
+name: firefox-addons
+description: firefox-addons
+advice: adblockplus & noscript
+version: 2.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: firefox
+requiredAction: setup
+requirementType: before
+
+[ProductProperty]
+type: unicode
+name: adblockplus
+multivalue: False
+editable: True
+description: installiert adblock plus
+values: ["off", "on"]
+default: ["off"]
+
+[ProductProperty]
+type: unicode
+name: noscript
+multivalue: False
+editable: True
+description: installiert noscript
+values: ["off", "on"]
+default: ["off"]
+
+[ProductProperty]
+type: unicode
+name: proxyselector
+multivalue: False
+editable: True
+description: installiert proxyselector
+values: ["off", "on"]
+default: ["off"]
+
+[ProductProperty]
+type: unicode
+name: ghostery
+multivalue: False
+editable: True
+description: installiert ghostery
+values: ["off", "on"]
+default: ["off"]
+
+[Changelog]
+firefox-addons (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Mike Thomas <apc@rrzn.uni-hannover.de>  Sun, 11 Mar 2012 03:13:50 +0000
+
+
+
+
+
+
+
+
+
+
+
+

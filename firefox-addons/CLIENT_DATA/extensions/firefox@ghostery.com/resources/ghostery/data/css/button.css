@@ -1,0 +1,30 @@
+/*
+	Panel CSS styling file location		chrome://global/skin/toolbarbutton.css
+	Panel bindings file location		chrome://global/content/bindings/button.xml#button-base
+										chrome://global/content/bindings/toolbarbutton.xml
+*/
+
+#ghostery-button-badge {
+	visibility: hidden;
+	padding: 0 2px;
+	font-size: 0.9em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	border-radius: 3px;
+	background-color: rgba(51, 0, 51, 230);
+	border: 1px solid #330033;
+}
+
+/* Slightly different positions of the badge for individual toolbars */
+/* TODO FF */
+#nav-bar #ghostery-button-badge {
+}
+
+#addon-bar #ghostery-button-badge {
+}
+
+#TabsToolbar #ghostery-button-badge {
+}
+
+#toolbar-menubar #ghostery-button-badge {
+}

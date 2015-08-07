@@ -1,0 +1,39 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: wsus-rrzn-reg
+name: RRZN-WSUS-Server ueber Registry-Keys
+description: Windows-Update-Server des RRZN ueber Registry-Keys einbinden
+advice: nur fuer Standgeraete mit LUH-Netzwerkanschluss verwenden
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+wsus-rrzn-reg (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Hergen Harnisch <apc@rrzn.uni-hannover.de>  Fri, 20 Jan 2012 12:27:02 +0000
+
+
+
+
+
+
+
+
+
+

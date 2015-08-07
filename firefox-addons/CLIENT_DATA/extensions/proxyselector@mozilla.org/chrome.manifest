@@ -1,0 +1,23 @@
+## Chrome
+content	mproxy	chrome/content/
+
+## Firefox browser windows
+overlay	chrome://browser/content/browser.xul chrome://mproxy/content/proxy.xul
+
+# Language-specific content
+locale mproxy en-US chrome/locale/en-US/
+locale mproxy de chrome/locale/de/
+locale mproxy it chrome/locale/it/
+locale mproxy es-ES chrome/locale/es-ES/
+locale mproxy zh-CN chrome/locale/zh-CN/
+locale mproxy fr chrome/locale/fr/
+locale mproxy zh-TW chrome/locale/zh-TW/
+
+# Appearance
+skin mproxy classic/1.0 chrome/skin/
+
+## Toolbar button
+style chrome://browser/content/browser.xul chrome://mproxy/skin/proxy.css
+style chrome://global/content/customizeToolbar.xul chrome://mproxy/skin/proxy.css
+style chrome://mproxy/content/dialog/manager.xul chrome://mproxy/skin/manager.css
+

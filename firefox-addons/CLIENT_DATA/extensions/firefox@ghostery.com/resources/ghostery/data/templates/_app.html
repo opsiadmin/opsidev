@@ -1,0 +1,17 @@
+<div class="app-arrow">&nbsp;</div>
+<div class="app-checkbox">
+	<input type="checkbox" <% if (selected) print(' checked') %> <% if (disabled) print('disabled="disabled"') %>>
+</div>
+<div class="app-name">
+	<% if (!userCreated) { %>
+		<a href="https://www.ghostery.com/apps/<%- encodeURIComponent(name.replace(/\s+/g, '_').toLowerCase()) %>"><%- name%></a>
+	<% } else { %>
+		<%- t('locally_added_tracker', name) %>
+	<% } %>
+</div>
+<div class="app-tags">
+	<% tags.each(function (tag) { %>
+		<% if (tag === undefined) return %>
+		<a href="#" data-id="<%- tag.get('id')%>"><%- tag.get('name') %></a><span class="separator"> | </span>
+	<% }) %>
+</div>

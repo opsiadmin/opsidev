@@ -1,0 +1,46 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: postgresql_odbc
+name: PostgreSQL ODBC Driver
+description: psqlODBC is the official PostgreSQL ODBC Driver
+advice: 
+version: 09.02.0100
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+postgresql_odbc (09.02.0100-1) testing; urgency=low
+
+  * Updated version
+
+ -- Simon Stamm <apc@rrzn.uni-hannover.de>  Fri, 6 Dez 2013 08:19:00 +0000
+
+postgresql_odbc (09.01.0200-1) testing; urgency=low
+
+  * Initial package
+
+ -- Simon Stamm <apc@rrzn.uni-hannover.de>  Thu, 21 Mar 2013 15:14:00 +0000
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+
+#new-button {
+  list-style-image: url("chrome://mproxy/skin/new.png");
+}
+
+#edit-button {
+  list-style-image: url("chrome://mproxy/skin/pencil.png");
+}
+
+#remove-button {
+  list-style-image: url("chrome://mproxy/skin/cross.png");
+}

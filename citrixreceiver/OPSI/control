@@ -1,0 +1,45 @@
+[Package]
+version: 3
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: citrixreceiver
+name: CitrixReceiver
+description: Citrix Receiver for Windows 4.1
+advice: 
+version: 4.2
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+citrixreceiver (4.1-1) testing; urgency=low
+
+  * Initial package
+
+ -- budde <apc@rrzn.uni-hannover.de>  Thu 07 Nov 2013 09:29:56 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

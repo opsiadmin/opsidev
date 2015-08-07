@@ -1,0 +1,202 @@
+[Package]
+version: 4
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: gimp
+name: GNU Image Manipulation Program
+description: GNU Image Manipulation Program
+advice: 
+version: 2.8.14
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: gimp.ins
+uninstallScript: delgimp.ins
+updateScript: update.ins
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: bool
+name: bmp
+description: Windows and OS/2 Bitmaps: .bmp
+default: True
+
+[ProductProperty]
+type: bool
+name: cel
+description: KISS CEL: .cel
+default: True
+
+[ProductProperty]
+type: bool
+name: dcm_dicom
+description: Digital Imaging and Communications in Medicine: .dcm;.dicom
+default: True
+
+[ProductProperty]
+type: bool
+name: fit_fits
+description: Flexible Image Transport System: .fit, .fits
+default: True
+
+[ProductProperty]
+type: bool
+name: g3
+description: Fax G3 Image file: .g3
+default: True
+
+[ProductProperty]
+type: bool
+name: gif
+description: Compuserve GIF: .gif
+default: True
+
+[ProductProperty]
+type: bool
+name: ico
+description: Windows Icon: .ico
+default: True
+
+[ProductProperty]
+type: bool
+name: jpg_jpeg
+description: JPEG image: .jpg, .jpeg
+default: True
+
+[ProductProperty]
+type: bool
+name: aplpha_als_mask_matte_pix
+description: Alias|Wavefront PowerAnimator: .alpha, .als, .mask, .matte, .pix
+default: True
+
+[ProductProperty]
+type: bool
+name: pcx
+description: ZSoft Paintbrush image: .pcx
+default: True
+
+[ProductProperty]
+type: bool
+name: png
+description: Portable Network Graphics: .png
+default: True
+
+[ProductProperty]
+type: bool
+name: pbm_pgm_pnm_ppm
+description: Netpbm format: .pbm, .pgm, .pnm,. ppm
+default: True
+
+[ProductProperty]
+type: bool
+name: ps_eps
+description: PostScript, Encapsulated PostScript: .ps, .eps
+default: True
+
+[ProductProperty]
+type: bool
+name: psd
+description: Adobe Photoshop(tm) image: .psd
+default: True
+
+[ProductProperty]
+type: bool
+name: psp_pspimage_tub
+description: Corel PaintShopPro image: .psp, .pspimage, .tub
+default: True
+
+[ProductProperty]
+type: bool
+name: im1_im24_im32_im8_ras_rs
+description: SUN Raster Image: im1, .im24, .im32, .im8 .ras, .rs
+default: True
+
+[ProductProperty]
+type: bool
+name: bw_rgb_sgi
+description: SGI image format: .bw, .rgb, .sgi
+default: True
+
+[ProductProperty]
+type: bool
+name: svg
+description: Scalable Vector Graphics
+default: True
+
+[ProductProperty]
+type: bool
+name: tga
+description: TrueVision Targa: .tga
+default: True
+
+[ProductProperty]
+type: bool
+name: tif_tiff
+description: Tagged Image File: .tif, .tiff
+default: True
+
+[ProductProperty]
+type: bool
+name: wmf
+description: Windows Metafile: .wmf
+default: True
+
+[ProductProperty]
+type: bool
+name: bitmap_icon_xbm
+description: X10 and X11 Bitmap: .bitmap, icon, .xbm
+default: True
+
+[ProductProperty]
+type: bool
+name: xpm
+description: X Pixmap: .xpm
+default: True
+
+[ProductProperty]
+type: bool
+name: xrd_xwd
+description: X Window Dump: .xwd, .xrd
+default: True
+
+[Changelog]
+gimp (2.8.0-2) stable; urgency=low
+  * requiredWinstVersion >= 4.11.2
+  * setloglevel = 6
+ -- d.oertel <info@uib.de>  Wed, 18 Jul 2012 18:42:32 +0000
+
+gimp (2.8.0-1) stable; urgency=low
+
+  * update to 2.8.0
+  * code cleanup
+  * a lot of file association properties used by the update script
+
+ -- d.oertel <info@uib.de>  Mon, 16 Jul 2012 18:42:32 +0000
+
+gimp (2.6.11-1) stable; urgency=low
+
+  * update to 2.6.11
+  * code cleanup
+
+ -- d.oertel <info@uib.de>  Wed, 02 Jan 2011 18:42:32 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

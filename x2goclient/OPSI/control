@@ -1,0 +1,40 @@
+[Package]
+version: 5
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: x2goclient
+name: x2goclient
+description: Terminalserver Client
+advice: 
+version: 4.0.4.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+x2goclient (4.0.0.3-1) testing; urgency=low
+
+  * Initial package
+
+ -- Budde <apc@rrzn.uni-hannover.de>  Tue, 10 Sep 2013 17:25:04 +0000
+
+
+
+
+
+
+
+
+
+
+

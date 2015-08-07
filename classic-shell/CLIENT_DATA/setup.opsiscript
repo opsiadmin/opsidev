@@ -1,0 +1,132 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/en/credits/
+
+[Actions]
+requiredWinstVersion >= "4.11.3.6"
+ScriptErrorMessages=off
+
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$  
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $SetupExe$
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+
+Set $ProductId$       = "classic-shell"
+Set $MinimumSpace$    = "1 MB"
+Set $InstallDir$      = "%ProgramFilesSysnativeDir%\Classic Shell"
+set $SetupExe$ = "ClassicShellSetup_4_2_1.exe"
+; ----------------------------------------------------------------
+
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError "No Space"
+	; Stop process and set installation status to failed
+endif
+
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+
+;if "6.2" > GetMsVersionInfo
+if CompareDotSeparatedNumbers(GetMsVersionInfo,"6.2") < "0"
+	LogError "Only for >= Windows 8.x"
+	isFatalError "Wrong OS"
+endif
+
+if FileExists("%ScriptPath%\delsub.opsiscript")
+	comment "Start uninstall sub section"
+	Sub "%ScriptPath%\delsub.opsiscript"
+endif
+
+Message "Installing " + $ProductId$ + " ..."
+
+comment "Start setup program"
+ChangeDirectory "%SCRIPTPATH%"
+Winbatch_install
+Sub_check_exitcode
+
+comment "Patch the local Profiles ..."
+ProfileActions
+
+ExitWindows /Reboot
+
+[ProfileActions]
+DefVar $doprofile$
+
+comment "The profile part ..."
+set $doprofile$ = "true"
+
+if GetScriptMode = "Login"
+	comment "we are at login ..."
+	if getValue("installationstate", getProductMap) = "installed"
+		comment "Product is installed"
+		comment "Did we run this script before ? - and set version stamp in profile"
+		if scriptWasExecutedBefore
+			comment "loginscript did run before - nothing to do"
+			set $doprofile$ = "false"
+		endif
+	else
+		comment "Product is not installed - so we do not patch the profile"
+		set $doprofile$ = "false"
+	endif
+	if $doprofile$ = "true"
+		Message=Windows config ......
+		ShowBitMap "%ScriptPath%\winconfig.png" "Win Config"
+	endif
+endif
+
+if $doprofile$ = "true"
+	comment "do patches"
+	
+	comment "Patch Registry"
+	Registry_hkcu_install /Sysnative
+
+endif ; $doprofile$ = "true"
+
+[Winbatch_install]
+; /qb! does not work unattended while classicshell is running
+"%ScriptPath%\$SetupExe$" /qn ALLUSERS=1 REBOOT=ReallySuppress 
+
+[Registry_hkcu_install]
+openkey [HKCU\Software\IvoSoft\ClassicShell\Settings]
+set "Update" = REG_DWORD:0
+openkey [HKCU\Software\IvoSoft\ClassicStartMenu]
+set "DefaultMenuStyle" = "Vista"
+set "ShowedStyle" = REG_DWORD:1
+set "ShowedStyle2" = REG_DWORD:1
+
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif
+

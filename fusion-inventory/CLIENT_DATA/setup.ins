@@ -1,0 +1,140 @@
+; ----------------------------------------------------------------
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+;
+; RRZN/thomas - 13.3.2014
+; Installation Fusion-Inventory-Agent 2.3.5
+; ---------------------------------------------------------------- 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $LogDir$
+DefVar $ProductId$
+DefVar $ProductVersion$
+DefVar $SetupExe$ 
+DefVar $Switch$
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $UnInstallExe$
+DefVar $UninstallProgram$
+DefVar $RunExe$
+DefVar $ExitCode$
+DefVar $OSVersion$
+DefVar $INST_MsVersion$
+DefVar $INST_SystemType$
+DefVar $INST_architecture$
+DefVar $TAG$
+ 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+Set $ProductId$        = "fusion-inventory"
+Set $ProductVersion$   = "2.3.5"
+Set $SetupExe$         = "fusioninventory-agent_windows-x86_2.3.5.exe"
+Set $UnInstallExe$     = "uninstall.exe"
+; Set $Switch$           = "/delaytime=0 /ca-cert-file='C:\Fusion-Inventory\ca-cert-chain.pem' /debug=2 /logger=File /logfile='C:\Fusion-Inventory\fusion.log' /runnow /acceptlicense /installtasks=Inventory /execmode=Manual /installtype=from-scratch /installdir='C:\Fusion-Inventory' /server='https://inventory.rrzn.uni-hannover.de/ocsinventory' /no-httpd /TAG=Pferderohr"
+Set $Switch$ = "/delaytime=0 /ca-cert-file='C:\Fusion-Inventory\ca-cert-chain.pem' /debug=2 /logger=File /logfile='C:\Fusion-Inventory\fusion.log' /runnow /acceptlicense /installtasks=Inventory /execmode=Manual /installtype=from-scratch /installdir='C:\Fusion-Inventory' /server='https://inventory.rrzn.uni-hannover.de/ocsinventory' /no-httpd /tag=Bla /S"
+
+Set $MinimumSpace$     = "100 MB"
+ Set $InstallDir$      = "C:\Fusion-Inventory"
+Set $RunExe$	      = "fusioninventory-agent_windows-x86_2.3.5.exe"
+Set $OSVersion$		= "6.1"
+Set $INST_MsVersion$ 	= GetMSVersionInfo
+Set $INST_SystemType$ 	= GetSystemType
+	
+; ----------------------------------------------------------------
+ 
+if $INST_MsVersion$ < $OSVersion$
+	LogError "The OS Version is not required for $ProductID$" 
+	isFatalError
+ 
+else
+  if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	   LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	   isFatalError
+ 
+  else
+	   comment "Show product picture"
+	   ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$ + "." + $ProductVersion$
+ 
+	   if FileExists($InstallDir$ + "\" + $RunExe$)
+		    comment "Start uninstall call sub section"
+		    Sub "%ScriptPath%\delsub.ins"
+	   else
+		  comment "No older Version is found for" + $ProductID$ 
+	   endif
+   
+	   Message "Installing " + $ProductId$ + " Version " + $ProductVersion$
+ 
+	   comment "Start setup program"
+	   if FileExists("%ScriptPath%\" + $SetupExe$)
+	          comment "Install program found, starting install"
+	          Winbatch_install
+ 
+           else
+		  LogError "The " + $SetupExe$ + " is not found for " + $ProductID$ 
+		  isFatalError
+	   endif
+ 
+  endif
+ 
+endif
+
+
+comment "Start Copy Dateien"
+Files_Copy
+sub_check_exitcode
+
+comment "task anlegen  onstart" 
+DosInAnIcon_task_onstart winst /sysnative
+ 
+comment "task anlegen daily" 
+DosInAnIcon_task_daily winst /sysnative
+
+[Winbatch_install]
+"%ScriptPath%\$SetupExe$" $Switch$
+ 
+[Files_Copy]
+copy "%ScriptPath%\ca-cert-chain.pem" "C:\Fusion-Inventory\"
+copy "%ScriptPath%\fusion.bat" "C:\Fusion-Inventory\"
+ 
+[DosInAnIcon_task_onstart]
+schtasks.exe /create /f /tn FusionInventory-Agent-Start /ru SYSTEM /tr "C:\Fusion-Inventory\fusioninventory-agent.bat --force" /sc ONSTART /delay 0005:00
+
+[DosInAnIcon_task_daily]
+schtasks.exe /create /f /tn FusionInventory-Agent-Intervall /ru SYSTEM /tr "C:\Fusion-Inventory\fusioninventory-agent.bat --force" /sc DAILY
+
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; ----------------------------------------------------------------
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+; ----------------------------------------------------------------
+ 
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif
+

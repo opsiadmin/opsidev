@@ -1,0 +1,60 @@
+[Package]
+version: 8
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: filezilla
+name: FileZilla
+description: FileZilla FTP-Client
+advice: 
+version: 3.12.0.2
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+filezilla (3.8.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- budde <apc@rrzn.uni-hannover.de>  Fri, 04 Apr 2014 13:30:57 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

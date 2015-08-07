@@ -1,0 +1,26 @@
+body {
+	height: auto !important;
+	width: auto !important;
+	position: absolute !important;
+	top: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important;
+}
+
+#close-panel {
+	background: url('../images/panel/close_panel_mobile.png') left top no-repeat transparent;
+	background-size: 50% auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	z-index: 2147483647;
+	display: block !important;
+}
+
+#help-button {
+	float: right !important;
+	margin: 5px !important;
+}

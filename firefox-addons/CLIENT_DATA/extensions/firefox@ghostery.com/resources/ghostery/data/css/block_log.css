@@ -1,0 +1,113 @@
+a {
+	color: #0060bf;
+	text-decoration: none;
+}
+
+body {
+	background: url('resource://firefox-at-ghostery-dot-com/ghostery/data/images/gradBD.gif') repeat-x;
+	font-family: sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+em {
+	color: red;
+	font-style: normal;
+}
+
+fieldset {
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid #009bda;
+	border-radius: 8px;
+	margin-top: 10px;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin: 0px;
+	width: 100%;
+}
+
+label {
+	font-weight: bold;
+}
+
+legend {
+	color: #0d6aac;
+	font-weight: bold;
+}
+
+#bug-list-table {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+
+#bug-list-table thead {
+	border-bottom: 1px solid #ccc;
+	display: block;
+}
+
+#bug-list-table tfoot td {
+	border-top: 1px solid #ccc;
+	text-align: left;
+}
+
+#bug-list-table th {
+	font-weight: normal;
+}
+
+#bug-list-table tbody {
+	display: block;
+	height: 200px;
+	overflow: auto;
+}
+
+#bug-list-table tbody tr:nth-child(even) {
+	background-color: #e7f4fc;
+}
+
+#bug-list-table th, #bug-list-table td {
+	padding: 4px;
+	width: 370px;
+}
+
+#bug-list-filter-name {
+	border: 1px solid #ccc;
+	padding: 3px;
+	width: 90px;
+}
+
+#bug-list-check-all {
+	float: left;
+}
+
+input.bug-checkbox {
+	margin-right: 10px;
+}
+
+#whitelist-add-input {
+	margin-right: 5px;
+	width: 295px;
+}
+
+#whitelist {
+	max-height: 400px;
+	width: 300px;
+}
+
+.suboption {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.suboption p {
+	margin-left: 15px;
+}
+
+.vr {
+	margin: 0px 10px 0px 10px;
+	border-right: 1px solid #ccc;
+}

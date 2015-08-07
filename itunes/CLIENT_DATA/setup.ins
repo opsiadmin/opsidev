@@ -1,0 +1,88 @@
+; ----------------------------------------------------------------
+; RRZN-20130321-Simon Stamm 
+; Installation iTunes
+; http://www.apple.com/de/itunes/download/
+; http://support.apple.com/kb/DL1614
+; ---------------------------------------------------------------- 
+ 
+[Initial]
+SetLogLevel=9
+;  Log Errors in Logfile but don't abort:
+ExitOnError=true
+; Show syntax errors in the script:
+ScriptErrorMessages=on
+; Dont trace step by step through the script:
+TraceMode=off
+; let started programs run in front of the winst window
+StayOnTop=true
+ 
+[Actions]
+;requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $LogDir$
+DefVar $ProductId$
+DefVar $ProductName$
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $Version$
+DefVar $Inst_Cmd$
+DefVar $ProgExe$
+DefVar $Uninst_Cmd$
+ 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+Set $ProductId$       = "itunes"
+Set $ProductName$     = "iTunes"
+Set $Version$         = "11.1.4"
+Set $MinimumSpace$    = "400 MB"
+; the path were we find the product after the installation
+Set $InstallDir$      = "%ProgramFiles32Dir%\iTunes\"
+Set $Inst_Cmd$        = '/passive /norestart'
+Set $ProgExe$         = "iTunes.exe"
+Set $Uninst_Cmd$      = '/passive /norestart'
+; ----------------------------------------------------------------
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductName$
+ 
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+        LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductName$
+        isFatalError
+        ; Stop process and set installation status to failed
+else   
+        if FileExists($InstallDir$ + $ProgExe$)
+                comment "Start uninstall sub section"
+                Sub "%ScriptPath%\delsub.ins"
+        endif
+ 
+        comment "Installiere " + $ProductName$ + "..."
+ 
+        Message "Installiere " + $ProductName$
+        comment "Start setup program"
+		
+		Winbatch_install
+		Registry_patch
+endif
+
+[Winbatch_install]
+%ScriptPath%\AppleApplicationSupport.msi $Inst_Cmd$
+Sub "%ScriptPath%\exitcodesub.ins"
+%ScriptPath%\AppleMobileDeviceSupport64.msi TRANSFORMS=%ScriptPath%\applemobiledevice_transform.mst $Inst_Cmd$
+Sub "%ScriptPath%\exitcodesub.ins"
+%ScriptPath%\Bonjour64.msi $Inst_Cmd$
+Sub "%ScriptPath%\exitcodesub.ins"
+%ScriptPath%\iTunes64.msi TRANSFORMS=%ScriptPath%\itunes_transform.mst DESKTOP_SHORTCUTS=0 MEDIA_DEFAULTS=0 SCHEDULE_ASUW=0 REENABLEAUTORUN=0 $Inst_Cmd$
+Sub "%ScriptPath%\exitcodesub.ins"
+
+[Registry_patch]
+; Disable update feature in iTunes via parental controls
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Apple Computer, Inc.\iTunes\Parental Controls\Default]
+set "AdminFlags" = REG_DWORD:0x101
+
+; Don't automatically load ITunes-Calendar-Addin for Outlook
+openkey [HKEY_CURRENT_USER\Software\Microsoft\Office\Outlook\Addins\iTunesAddIn.CalendarHelper]
+set "LoadBehavior" = REG_DWORD:0x0

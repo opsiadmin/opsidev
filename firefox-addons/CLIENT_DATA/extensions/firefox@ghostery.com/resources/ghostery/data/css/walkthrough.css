@@ -1,0 +1,159 @@
+/* Header */
+#walkthrough-progress .active {
+	background-color: #0d6aac;
+}
+
+#walkthrough-progress {
+	margin: 45px 0 10px -35px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+}
+
+.circle {
+	background-color: #dae8f5;
+	border-radius: 4px;
+	display: block;
+	float: left;
+	font-size: 1px;
+	height: 8px;
+	margin: 3px;
+	width: 8px;
+	cursor: pointer;
+}
+
+#skip-button {
+	float: right;
+	font-size: 1em;
+	width: auto;
+}
+
+#header-bottom {
+	padding: 0 13%;
+}
+
+#header-top {
+	padding: 0 13%;
+}
+
+/* Footer */
+#footer th {
+	width: 0px;
+}
+
+#footer td {
+	padding-left: 0px !important;
+}
+
+/* General */
+.arrow {
+	cursor: pointer;
+	height: 100%;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	width: 13%;
+	outline: none;
+	z-index: 2147483647;
+}
+
+#arrow-prev {
+	background: url(../images/big_arrow.png) no-repeat center;
+	left: 0px;
+	-moz-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+	-webkit-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+	-o-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+	-ms-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+	transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+}
+
+#arrow-next {
+	background: url(../images/big_arrow.png) no-repeat center;
+	right: 0px;
+}
+
+#arrow-next:hover, #arrow-prev:hover {
+	background: url(../images/big_arrow_hover.png) no-repeat center;
+}
+
+img.example {
+	border: 1px solid #0d6aac;
+	float: left;
+	margin: 2px 20px 10px 5px;
+}
+
+.options-div {
+	border-top: none;
+}
+
+.options-div > * {
+	padding-left: 13%;
+	padding-right: 13%;
+}
+
+#add-button {
+	width: auto;
+}
+
+#slider {
+	overflow: hidden;
+	visibility: hidden;
+	position: relative;
+	width: auto;
+}
+.swipe-wrap {
+	overflow: hidden;
+	position: relative;
+	width: auto;
+}
+.swipe-wrap > div {
+	float:left;
+	width:100%;
+	position: relative;
+}
+
+@media screen and (max-width: 640px) {
+	.options-div > * {
+		padding: 0 5% !important;
+	}
+
+	#walkthrough-progress {
+		margin: 45px 0 0px 0px;
+		position: fixed;
+		top: auto;
+		bottom: 0;
+		left: auto;
+		background-color: #fff;
+		text-align: center;
+		width: 100%;
+		z-index: 2147483647;
+	}
+
+	.circle {
+		display: inline-block;
+		float: none;
+		margin: 10px;
+	}
+
+	#skip-button {
+		margin-right: 0;
+	}
+
+	.arrow {
+		display: none !important;
+	}
+
+	.tabs.app-browser-tabs li {
+		width: 49%;
+		padding: 0;
+		margin: 0;
+	}
+
+	#header-bottom {
+		padding: 0 5%;
+	}
+
+	#header-top {
+		padding: 0 5%;
+	}
+}

@@ -1,0 +1,76 @@
+/*
+  Cross-OS Firefox panel styling customization
+
+	Panel CSS styling file location    chrome://global/skin/popup.css
+	Panel bindings file location       chrome://global/content/bindings/popup.xml#arrowpanel
+*/
+#ghostery-panel {
+  margin-right: -17px;
+}
+
+#ghostery-panel menupopup, panel {
+  -moz-appearance: none;
+  -moz-transition: none;
+  background-color: none;
+}
+
+#ghostery-panel .popup-internal-box {
+  padding: 0;
+}
+
+#ghostery-panel panel[titlebar] {
+  -moz-appearance: none;
+}
+
+#ghostery-panel panel[type="arrow"] {
+  -moz-appearance: none;
+  background: transparent;
+  -moz-transition: none;
+  padding: 0;
+  margin: 0;
+}
+
+#ghostery-panel panel[type="arrow"][side="top"],
+#ghostery-panel panel[type="arrow"][side="bottom"] {
+}
+
+#ghostery-panel .panel-arrowcontent {
+  -moz-appearance: none;
+  color: white;
+  background: none;
+  background-color: #ffffff;
+  background-image: none;
+  margin: 0;
+  border-radius: 2px;
+  box-shadow: none;
+  padding: 0;
+  text-shadow: none;
+  border: 1px solid #000000;
+}
+
+#ghostery-panel .panel-inner-arrowcontent {
+	background-color: transparent;
+	background-clip: none;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	-moz-border-top-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-right-colors: none;
+	padding: 0;
+}
+
+#ghostery-panel .panel-arrow {
+  opacity: 1;
+  margin: -1px 7px -1px 7px;
+}
+
+#ghostery-panel .panel-arrow[side="top"] {
+  list-style-image: url("../images/panel/panelarrow-up.png");
+}
+
+#ghostery-panel .panel-arrow[side="bottom"] {
+	-moz-transform: none;
+  list-style-image: url("../images/panel/panelarrow-down.png");
+}

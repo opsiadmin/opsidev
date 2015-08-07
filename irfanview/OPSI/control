@@ -1,0 +1,38 @@
+[Package]
+version: 4
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: irfanview
+name: irfanview
+description: 
+advice: 
+version: 4.3.8
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+irfanview (4.3.2-1) testing; urgency=low
+
+  * Initial package
+
+ -- thomas <apc@rrzn.uni-hannover.de>  Fri, 03 Feb 2012 07:48:40 +0000
+
+
+
+
+
+
+
+
+
