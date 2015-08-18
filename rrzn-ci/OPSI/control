@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 3
 depends: 
 incremental: False
 
@@ -9,7 +9,7 @@ id: rrzn-ci
 name: rrzm_ci
 description: rrzn_ci
 advice: 
-version: 1.0
+version: 2.0
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -27,6 +27,8 @@ rrzn-ci (1.0-1) testing; urgency=low
   * Initial package
 
  -- Mike Thomas <apc@rrzn.uni-hannover.de>  Mon, 29 Oct 2012 11:29:40 +0000
+
+
 
 
 
