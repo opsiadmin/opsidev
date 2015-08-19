@@ -1,5 +1,5 @@
 [Package]
-version: 4
+version: 5
 depends: 
 incremental: False
 
@@ -9,8 +9,8 @@ id: irfanview
 name: irfanview
 description: 
 advice: 
-version: 4.3.8
-priority: 0
+version: 4.4.0
+priority: 100
 licenseRequired: False
 productClasses: 
 setupScript: setup.ins
@@ -27,6 +27,7 @@ irfanview (4.3.2-1) testing; urgency=low
   * Initial package
 
  -- thomas <apc@rrzn.uni-hannover.de>  Fri, 03 Feb 2012 07:48:40 +0000
+
 
 
 

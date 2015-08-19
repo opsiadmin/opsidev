@@ -1,13 +1,9 @@
-; ----------------------------------------------------------------------------------------------------;
-; RRZN-20120403-MT                                                                                    ;
-;                                                                                                     ;
-; Opsi-Paket fuer Irfan View & PlugIns, setup.ins                                                     ;
-;                                                                                                     ;
-; Bild-URL: http://lejinternetplaza.com/wp-content/uploads/2012/03/logo-irfanview.png                 ;
-;                                                                                                     ;
-; Setup Dateien URL: http://www.irfanview.com                                                         ;
-;                                                                                                     ;
-; ----------------------------------------------------------------------------------------------------;
+; ----------------------------------------------------------------
+; Irfanview & PlugIns OpsiInstallScript 
+; RRZN / Mike Thomas 
+; thomas@rrzn.uni-hannover.de
+; http://www.irfanview.de
+; ----------------------------------------------------------------
 
 [Initial]
 LogLevel=9
@@ -52,7 +48,7 @@ Set $LogDir$ = "%SystemDrive%\tmp"
 ; no white space use '-' as a seperator
 Set $ProductId$       = "irfanview"
 ;Kein Punkt in der Versionsnummer! 4.30 ist 430, 4.40 ist 440 oder 4.51 ist 451!
-Set $Version$         = "438"
+Set $Version$         = "440"
 Set $MinimumSpace$    = "3 MB"
 ; the path were we find the product after the installation
 Set $InstallDir64$      = "%ProgramFiles64Dir%\IrfanView"
@@ -60,7 +56,6 @@ Set $Inst_Prg$ = ""+"iview"+$Version$+"_setup.exe"+""
 Set $Inst_Cmd64$ = ' /silent /folder="'+$InstallDir64$+'" /desktop=1 /allusers=1 /group=1 /assoc=1'
 Set $Inst_Prg_Plg$ = "irfanview_plugins_"+$Version$+"_setup.exe"
 Set $Inst_Cmd_Plg$ = ' /silent'
- 
 ; ----------------------------------------------------------------
  
 if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
