@@ -1,5 +1,5 @@
 [Package]
-version: 7
+version: 8
 depends: 
 incremental: False
 
@@ -9,7 +9,7 @@ id: npp
 name: npp
 description: Notepad ++ Free Source Code Editor
 advice: 
-version: 6.8
+version: 6.8.2
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -27,6 +27,7 @@ npp (6.5.5-1) testing; urgency=low
   * Initial package
 
  -- budde <apc@rrzn.uni-hannover.de>  Fri, 04 Apr 2014 10:11:57 +0000
+
 
 
 
