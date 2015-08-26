@@ -1,5 +1,5 @@
 [Package]
-version: 9
+version: 10
 depends: 
 incremental: False
 
@@ -9,7 +9,7 @@ id: filezilla
 name: FileZilla
 description: FileZilla FTP-Client
 advice: 
-version: 3.13.0
+version: 3.13.1
 priority: 100
 licenseRequired: False
 productClasses: 
@@ -27,6 +27,7 @@ filezilla (3.8.0-1) testing; urgency=low
   * Initial package
 
  -- budde <apc@rrzn.uni-hannover.de>  Fri, 04 Apr 2014 13:30:57 +0000
+
 
 
 
