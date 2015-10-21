@@ -1,0 +1,25 @@
+;RRZN-20151015-WM
+;Uninstall per msiexec:
+;msiexec /x {Identifying-Number} /qn
+;IDNumber (mittels 'wmic product list' -> {5D328A41-BFF8-4B78-B45E-5BEE1D133EF5})
+
+[Initial]
+SetLogLevel=1
+ExitOnError=true
+ 
+[Actions]
+DefVar $LogDir$
+Set $LogDir$ = "%SystemDrive%\tmp"
+ShowBitmap "%ScriptPath%\vboxlogo.png"
+Winbatch_uninstall
+Files_uninstall
+ 
+[Winbatch_uninstall]
+
+%SystemDrive%\Program Files\Oracle\VirtualBox\VBoxManage -q extpack uninstall "Oracle VM VirtualBox Extension Pack"
+
+;uninstall VirtualBox 5.0.6
+msiexec /x {D09FC154-2747-4BC8-838E-B2EC414C4F6A}  /qn
+
+[Files_uninstall]
+delete -sf "C:\Program Files\Oracle"

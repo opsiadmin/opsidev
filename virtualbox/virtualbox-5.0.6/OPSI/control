@@ -1,0 +1,44 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: virtualbox
+name: VirtualBox
+description: Virtualisierungssoftware
+advice: 
+version: 5.0.6
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+https://www.virtualbox.org/wiki/Changelog
+
+ -- Waldemar Münz <apc@rrzn.uni-hannover.de>  15.10.2015
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
