@@ -1,5 +1,5 @@
 [Package]
-version: 3
+version: 4
 depends: 
 incremental: False
 
@@ -22,11 +22,19 @@ customScript:
 userLoginScript: 
 
 [Changelog]
-texmaker (1.0-1) testing; urgency=low
+texmaker (1.0-4)
+
+  * etwas aufgeraeumt
+  * sub_check_exitcode
+
+ -- Mike Thomas <thomas@luis.uni-hannover.de> 21.10.2015
+
+texmaker (1.0-1);
 
   * Initial package
 
  -- Mike Thomas <thomas@rrzn.uni-hannover.de>  Tue, 14 Jul 2015 08:40:44 +0000
+
 
 
 
