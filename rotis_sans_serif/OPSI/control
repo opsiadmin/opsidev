@@ -1,0 +1,23 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: rotis_sans_serif
+name: Rotis Sans Serif
+description: Hausschrift Rotis an der Leibniz Universität Hannover
+advice: 
+version: 1.0.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+

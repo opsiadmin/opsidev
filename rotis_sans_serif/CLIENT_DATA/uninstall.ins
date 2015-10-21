@@ -1,0 +1,16 @@
+;RRZN-20151007-WM
+
+[Initial]
+SetLogLevel=1
+ExitOnError=true
+ 
+[Actions]
+DefVar $LogDir$
+Set $LogDir$ = "%SystemDrive%\tmp"
+ShowBitmap "%ScriptPath%\rotis.png"
+Winbatch_uninstall
+ 
+[Winbatch_uninstall]
+
+;uninstall Rotis Sans Serif
+msiexec.exe /x {9CF31B71-3C84-41E8-B3E1-D084FC2CD840} /qn
