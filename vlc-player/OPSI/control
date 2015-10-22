@@ -1,5 +1,5 @@
 [Package]
-version: 12
+version: 13
 depends: 
 incremental: False
 
@@ -10,7 +10,7 @@ name: vlc-player
 description: video player
 advice: 
 version: 2.2.1
-priority: 0
+priority: 100
 licenseRequired: False
 productClasses: 
 setupScript: setup.ins
@@ -27,6 +27,8 @@ vlc-player (2.0.7-6) testing; urgency=low
   * Initial package
 
  -- Mike Thomas <apc@rrzn.uni-hannover.de>  Fri, 19 Oct 2012 17:35:51 +0000
+
+
 
 
 
