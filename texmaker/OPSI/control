@@ -1,5 +1,5 @@
 [Package]
-version: 4
+version: 5
 depends: 
 incremental: False
 
@@ -9,7 +9,7 @@ id: texmaker
 name: texmaker
 description: Latex Editor
 advice: 
-version: 4.4.1
+version: 4.5
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -22,6 +22,9 @@ customScript:
 userLoginScript: 
 
 [Changelog]
+texmaker (1.0-5)
+  * Update auf 4.5
+
 texmaker (1.0-4)
 
   * etwas aufgeraeumt
@@ -34,6 +37,7 @@ texmaker (1.0-1);
   * Initial package
 
  -- Mike Thomas <thomas@rrzn.uni-hannover.de>  Tue, 14 Jul 2015 08:40:44 +0000
+
 
 
 
