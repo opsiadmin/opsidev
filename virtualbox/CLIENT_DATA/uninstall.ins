@@ -1,4 +1,4 @@
-;RRZN-20150602-WM
+;RRZN-20151112-WM
 ;Uninstall per msiexec:
 ;msiexec /x {Identifying-Number} /qn
 ;IDNumber (mittels 'wmic product list' -> {5D328A41-BFF8-4B78-B45E-5BEE1D133EF5})
@@ -18,50 +18,11 @@ Files_uninstall
 
 %SystemDrive%\Program Files\Oracle\VirtualBox\VBoxManage -q extpack uninstall "Oracle VM VirtualBox Extension Pack"
 
-;uninstall VirtualBox 4.3.0
-msiexec /x {7CBBEE56-EEF2-462D-B1CE-EACDBBF6457E} /qn
+;uninstall VirtualBox 5.0.6
+msiexec /x {D09FC154-2747-4BC8-838E-B2EC414C4F6A}  /qn
 
-;uninstall VirtualBox 4.3.2
-msiexec /x {49C9FDFF-6056-4E8C-B9AF-B7B4D78023E2} /qn
-
-;uninstall VirtualBox 4.3.4
-msiexec /x {5FB568DF-207C-4B21-AC57-FC0CC2A0B113} /qn
-
-;uninstall VirtualBox 4.3.6
-msiexec /x {DC65DFD8-E175-4A85-948A-42965853B2E8} /qn
-
-;uninstall VirtualBox 4.3.8
-msiexec /x {5D328A41-BFF8-4B78-B45E-5BEE1D133EF5} /qn
-
-;uninstall VirtualBox 4.3.10
-msiexec /x {3EC092F5-9457-4C31-8E8A-BBE4BB2A59FF} /qn
-
-;uninstall VirtualBox 4.3.10-2
-msiexec /x {5632714F-6A48-4BF2-89E0-F8B6CE9FE6D1} /qn
-
-;uninstall VirtualBox 4.3.12
-msiexec /x {B5121457-0126-4E62-BCBF-6DC7C73D9E4A} /qn
-
-;uninstall VirtualBox 4.3.16
-msiexec /x {D7FAEA32-7CE3-4D9F-9139-F7B87BCC50AF} /qn
-
-;uninstall VirtualBox 4.3.18
-msiexec /x {74B7E6F9-DCAC-4ADB-B2D0-EEFDD1B5AC25} /qn
-
-;uninstall VirtualBox 4.3.20
-msiexec /x {DD8F7A7A-852F-4648-8A73-B8FC1DF5F082} /qn
-
-;uninstall VirtualBox 4.3.22
-msiexec /x {F053F74A-A631-4CFA-A271-6D0747599BC9} /qn
-
-;uninstall VirtualBox 4.3.24
-msiexec /x {15E093DF-951E-46CB-B3EC-E1287E7A2319}  /qn
-
-;uninstall VirtualBox 4.3.26
-msiexec /x {5771F59A-BFC9-4FAF-A883-7642EF4BA3C3}  /qn
-
-;uninstall VirtualBox 4.3.28
-msiexec /x {E8BB81BC-E67C-4750-84EE-128DA5A7ADA5}  /qn
+;uninstall VirtualBox 5.0.10
+msiexec /x {F6E922CF-068D-4AFC-8DBF-4636B84AF0A5}  /qn
 
 [Files_uninstall]
 delete -sf "C:\Program Files\Oracle"

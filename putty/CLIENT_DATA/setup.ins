@@ -1,12 +1,12 @@
-;RRZN-20150302-WM
+;RRZN-20151112-WM
 ;OPSI-Paket zur Installation von PuTTY
 ;
 ;Inhalte:
-;  putty-0.64-installer.exe 
+;  putty-0.66-installer.exe 
 ;  PuTTY.png
 ;
 ;Quellen:
-;  wget http://the.earth.li/~sgtatham/putty/latest/x86/putty-0.64-installer.exe
+;  wget http://the.earth.li/~sgtatham/putty/latest/x86/putty-0.66-installer.exe
 
 [Initial]
 SetLogLevel=7
@@ -21,7 +21,7 @@ DefVar $InstallProgram$
 Set $LogDir$ 			= "%SystemDrive%\tmp"
 Set $ProductId$     	= "PuTTY"
 Set $InstallDir$    	= "%ProgramFiles32Dir%\PuTTY"
-Set $InstallProgram$	= "%ScriptPath%\putty-0.64-installer.exe"
+Set $InstallProgram$	= "%ScriptPath%\putty-0.66-installer.exe"
 
 comment "Show product picture"
 ShowBitmap "%ScriptPath%\PuTTY.png"

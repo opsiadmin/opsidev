@@ -1,10 +1,10 @@
-;RRZN-20150602-WM
+;RRZN-20151112-WM
 ;OPSI-Paket zur Installation der VirtualBox + Extension-Pack
 ;
 ;Quellen:
 ;  Um Rueckfragen waehrend der Installtion zu vermeiden, brauchen wir das Oracle-Zertifikat. Mittels Zertifikatsmanager bei einer installierten Virtualbox exportieren.
-;  wget http://download.virtualbox.org/virtualbox/4.3.28/VirtualBox-4.3.28-100309-Win.exe
-;  wget http://download.virtualbox.org/virtualbox/4.3.28/Oracle_VM_VirtualBox_Extension_Pack-4.3.28-100309.vbox-extpack
+;  wget http://download.virtualbox.org/virtualbox/5.0.10/VirtualBox-5.0.10-104061-Win.exe
+;  wget http://download.virtualbox.org/virtualbox/5.0.10/Oracle_VM_VirtualBox_Extension_Pack-5.0.10-104061.vbox-extpack
 ;  wget https://www.virtualbox.org/export/42172/vbox/trunk/doc/manual/en_US/images/vboxlogo.png
 
 [Initial]
@@ -23,8 +23,8 @@ Sub_check_exitcode
  
 [Winbatch_install]
 certutil.exe -f -addstore "TrustedPublisher" "%ScriPtpath%\VBoxUSB.p7b"
-%ScriptPath%\VirtualBox-4.3.28-100309-Win.exe -s
-%SystemDrive%\Program Files\Oracle\VirtualBox\VBoxManage -q extpack install --replace %ScriptPath%\Oracle_VM_VirtualBox_Extension_Pack-4.3.28-100309.vbox-extpack
+%ScriptPath%\VirtualBox-5.0.10-104061-Win.exe -s
+%SystemDrive%\Program Files\Oracle\VirtualBox\VBoxManage -q extpack install --replace %ScriptPath%\Oracle_VM_VirtualBox_Extension_Pack-5.0.10-104061.vbox-extpack
 
 [Sub_check_exitcode]
 comment "Test for installation success via exit code"

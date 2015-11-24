@@ -9,7 +9,7 @@ id: virtualbox
 name: VirtualBox
 description: Virtualisierungssoftware
 advice: 
-version: 4.3.28
+version: 5.0.10
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -20,25 +20,4 @@ alwaysScript:
 onceScript: 
 customScript: 
 userLoginScript: 
-
-[Changelog]
-https://www.virtualbox.org/wiki/Changelog
-
- -- Waldemar Münz <apc@rrzn.uni-hannover.de>  02.06.2014
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
