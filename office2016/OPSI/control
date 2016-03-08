@@ -1,0 +1,78 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: office2016
+name: Office 2016
+description: Office 2016
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: True
+productClasses: 
+setupScript: setup.opsiscript
+uninstallScript: uninstall.opsiscript
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: architecture
+multivalue: False
+editable: False
+description: Architektur der Office Installation
+values: ["x64", "x86"]
+default: ["x64"]
+
+[ProductProperty]
+type: unicode
+name: username
+multivalue: False
+editable: True
+description: Benutzername
+values: [""]
+default: [""]
+
+[ProductProperty]
+type: unicode
+name: companyname
+multivalue: False
+editable: True
+description: Firmenname
+values: [""]
+default: [""]
+
+[ProductProperty]
+type: unicode
+name: licensekey
+multivalue: False
+editable: True
+description: Lizenzkey fuer die Installation
+values: [""]
+default: [""]
+
+[ProductProperty]
+type: unicode
+name: products
+multivalue: True
+editable: False
+description: Installationsoptionen, was wird installiert
+values: ["Access", "Excel", "OneDrive", "OneNote", "Outlook", "PowerPoint", "Publisher", "Skype", "VisioViewer", "Word"]
+default: ["Access", "Excel", "OneNote", "PowerPoint", "Publisher", "VisioViewer", "Word"]
+
+[Changelog]
+office-2016 (1.0-1) stable; urgency=low
+
+  * Initial package
+
+ -- Dominik Daehn <...>  Tue, 5 Jan 2016
+
+
+
+

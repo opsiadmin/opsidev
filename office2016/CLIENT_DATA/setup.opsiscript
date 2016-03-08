@@ -1,0 +1,264 @@
+; ----------------------------------------------------------------
+; MS Office 2016 OpsiInstallScript 
+; Author Dominik Daehn, based on Office 2013 Code by Jens Eppler, 
+; based on Office 2010 Code by Soren Birk
+; RRZN / Mike Thomas 
+; thomas@luis.uni-hannover.de
+; ----------------------------------------------------------------
+ 
+[Actions]
+requiredWinstVersion >= "4.11.3.5"
+ 
+DefVar $LogDir$
+DefVar $ProductId$ 
+DefVar $ProductName$
+DefVar $OfficeId$
+DefVar $OfficeVersion$
+ 
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $InstallPfad$
+DefVar $SystemType$
+DefVar $OfficeArchitecture$
+DefVar $LicenseKey$
+DefVar $LicenseRequired$
+DefVar $LicensePool$
+DefVar $UninstallProgram$
+DefVar $UninstCmd$
+DefVar $ExitCode$
+DefVar $exitcodeActivation$
+DefVar $Config_Product$
+DefVar $Config_Eula$
+DefVar $Config_Log$
+DefVar $Config_Reboot$
+DefVar $UserName$
+DefVar $CompanyName$
+DefVar $ACCESSFiles$
+DefVar $EXCELFiles$
+DefVar $GrooveFiles2$
+DefVar $OUTLOOKFiles$
+DefVar $PPTFiles$
+DefVar $PubPrimary$
+DefVar $QueryFiles$
+DefVar $WORDFiles$
+DefVar $XDOCSFiles$
+DefVar $LYNCFiles$
+DefVar $ONENOTEFiles$
+DefVar $VISIOVIEWERFiles$
+DefStringList $Products$
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $LogDir$          		= "%SystemDrive%\tmp"
+Set $ProductId$       		= "office2016"
+Set $ProductName$     		= "Office 2016 Professional Plus"
+Set $OfficeId$ 			= "ProPlus"
+Set $OfficeVersion$ 		= "Office16"
+ 
+Set $MinimumSpace$    		= "3 GB"
+Set $InstallDir$ 		= "Microsoft Office"
+Set $SystemType$ 		= GetSystemType
+Set $OfficeArchitecture$	= GetProductProperty("architecture","")
+Set $LicenseKey$      		= GetProductProperty("LicenseKey","")
+;Variablen zum patchen der config.xml
+Set $Config_Product$		= '<Configuration Product="' + $OfficeId$ + '">'
+Set $Config_Eula$		= '<Display Level="basic" CompletionNotice="no" SuppressModal="yes" AcceptEula="yes" />'
+Set $Config_Log$ 		= '<Logging Type="standard" Path="' + $LogDir$ + '" Template="' + $ProductName$ + '_Setup(*).txt" />'
+Set $Config_Reboot$		= '<Setting Id="SETUP_REBOOT" Value="Never" />'
+Set $UserName$        		= '<USERNAME Value="' + GetProductProperty("username", "Valued Customer") + '" />'
+Set $CompanyName$     		= '<COMPANYNAME Value="' + GetProductProperty("companyname", "") + '" />'
+Set $Products$        		= GetProductPropertyList("products","True")
+Set $ACCESSFiles$     		= takeFirstStringContaining($Products$, "Access")
+Set $EXCELFiles$      		= takeFirstStringContaining($Products$, "Excel")
+Set $GrooveFiles2$    		= takeFirstStringContaining($Products$, "OneDrive")
+Set $OUTLOOKFiles$    		= takeFirstStringContaining($Products$, "Outlook")
+Set $PPTFiles$        		= takeFirstStringContaining($Products$, "PowerPoint")
+Set $PubPrimary$      		= takeFirstStringContaining($Products$, "Publisher")
+Set $WORDFiles$       		= takeFirstStringContaining($Products$, "Word")
+Set $LYNCFiles$       		= takeFirstStringContaining($Products$, "Skype")
+Set $ONENOTEFiles$    		= takeFirstStringContaining($Products$, "OneNote")
+Set $VISIOVIEWERFiles$  	= takeFirstStringContaining($Products$, "VisioViewer")
+ 
+; ----------------------------------------------------------------
+ 
+if GetMsVersionInfo < "6" 
+	LogError "This is for NT 6 (Vista) and above"
+	isFatalError
+else
+	;Die oben ausgelesenen Variablen als PropertyListOption werden zu Strings, die in die config.xml ein- und dem Installer übergeben werden 
+	;Access installieren oder nicht
+	if not ($ACCESSFiles$ = "")
+		Set $ACCESSFiles$  = '<OptionState Id="ACCESSFiles" State="local" Children="force" />'
+	else
+		Set $ACCESSFiles$  = '<OptionState Id="ACCESSFiles" State="absent" Children="force" />'	
+	endif
+	;Excel installieren oder nicht (inkl. Datenbankanbindung)
+	if not ($EXCELFiles$ = "")
+		Set $QueryFiles$  = '<OptionState Id="QueryFiles" State="local" Children="force" />'
+		Set $EXCELFiles$  = '<OptionState Id="EXCELFiles" State="local" Children="force" />'
+	else
+		Set $QueryFiles$  = '<OptionState Id="QueryFiles" State="absent" Children="force" />'	
+		Set $EXCELFiles$  = '<OptionState Id="EXCELFiles" State="absent" Children="force" />'
+	endif
+	;OneDrive installieren oder nicht
+	if not ($GrooveFiles2$ = "")
+		Set $GrooveFiles2$  = '<OptionState Id="GrooveFiles2" State="local" Children="force" />'
+	else
+		Set $GrooveFiles2$  = '<OptionState Id="GrooveFiles2" State="absent" Children="force" />'	
+	endif
+	;Outlook installieren oder nicht
+	if not ($OUTLOOKFiles$ = "")
+		Set $OUTLOOKFiles$  = '<OptionState Id="OUTLOOKFiles" State="local" Children="force" />'
+	else
+		Set $OUTLOOKFiles$  = '<OptionState Id="OUTLOOKFiles" State="absent" Children="force" />'	
+	endif
+	;Powerpoint installieren oder nicht
+	if not ($PPTFiles$ = "")
+		Set $PPTFiles$  = '<OptionState Id="PPTFiles" State="local" Children="force" />'
+	else
+		Set $PPTFiles$  = '<OptionState Id="PPTFiles" State="absent" Children="force" />'	
+	endif
+	;Publisher installieren oder nicht
+	if not ($PubPrimary$ = "")
+		Set $PubPrimary$  = '<OptionState Id="PubPrimary" State="local" Children="force" />'
+	else
+		Set $PubPrimary$  = '<OptionState Id="PubPrimary" State="absent" Children="force" />'	
+	endif
+	;Word installieren oder nicht
+	if not ($WORDFiles$ = "")
+		Set $WORDFiles$  = '<OptionState Id="WORDFiles" State="local" Children="force" />'
+	else
+		Set $WORDFiles$  = '<OptionState Id="WORDFiles" State="absent" Children="force" />'	
+	endif
+	;Skype installieren oder nicht
+	if not ($LYNCFiles$ = "")
+		Set $LYNCFiles$  = '<OptionState Id="LyncCoreFiles" State="local" Children="force" />'
+	else
+		Set $LYNCFiles$  = '<OptionState Id="LyncCoreFiles" State="absent" Children="force" />'	
+	endif
+	;OneNote installieren oder nicht
+	if not ($ONENOTEFiles$ = "")
+		Set $ONENOTEFiles$  = '<OptionState Id="OneNoteFiles" State="local" Children="force" />'
+	else
+		Set $ONENOTEFiles$  = '<OptionState Id="OneNoteFiles" State="absent" Children="force" />'	
+	endif
+	;VisioViewer installieren oder nicht
+	if not ($VISIOVIEWERFiles$ = "")
+		Set $VISIOVIEWERFiles$  = '<OptionState Id="VisioPreviewerFiles" State="local" Children="force" />'
+	else
+		Set $VISIOVIEWERFiles$  = '<OptionState Id="VisioPreviewerFiles" State="absent" Children="force" />'	
+	endif
+ 
+	if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+		LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on dirve %SystemDrive% is needed for " + $ProductId$
+		isFatalError "Not enough space"
+	else
+		if ($OfficeArchitecture$ = "x64") AND ($SystemType$ = "x86 System")
+			set $OfficeArchitecture$ = "x86"
+			comment "change Office architecture to Office x86"
+		endif	
+		comment "Display product logo"
+		ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductName$
+ 
+		comment "Copying empty config.xml to $LogDir$"
+		Files_copy_patchtextfile
+ 
+		comment "Patching config.xml"
+		PatchTextFile_config_xml $LogDir$ + "\config.xml"
+ 
+		if FileExists("%ScriptPath%\delsub32.opsiscript")
+			comment "Start uninstall sub section delsub32"
+			Sub "%ScriptPath%\delsub32.opsiscript"
+		endif
+ 
+		if FileExists("%ScriptPath%\delsub64.opsiscript")
+			comment "Start uninstall sub section delsub64"
+			Sub "%ScriptPath%\delsub64.opsiscript"
+		endif
+ 
+		Message "Installing " + $ProductId$ + " ..." 
+ 
+		if ($OfficeArchitecture$ = "x86") AND ($SystemType$ = "64 Bit System")
+			set $InstallPfad$ = "%ProgramFiles32Dir%"
+		else
+			set $InstallPfad$ = "%ProgramFiles64Dir%"
+		endif
+ 
+		comment "Start setup program"
+		ChangeDirectory "%SCRIPTPATH%"
+		Winbatch_install
+		Sub_check_exitcode
+ 
+		if not ($LicenseKey$ = "")
+			comment "Set License Key"
+			DosInAnIcon_set_key
+			set $exitcodeActivation$ = getLastExitCode
+				if not ($exitcodeActivation$ = "0")
+					LogError "Exitcode unequal zero: "+$exitcodeActivation$+" Activation seems to be failed !"
+					isFatalError "activation failed"
+				else
+					comment "Activation seems to be successful: exit code = 0"
+				endif
+		endif
+	endif
+endif
+ 
+[Files_copy_patchtextfile]
+copy "%ScriptPath%\config.xml" $LogDir$
+ 
+[PatchTextFile_config_xml]
+FindLine "</Configuration>"
+InsertLine '$LYNCFiles$'
+InsertLine '$ONENOTEFiles$'
+InsertLine '$VISIOVIEWERFiles$'
+InsertLine '$WORDFiles$'
+InsertLine '$QueryFiles$'
+InsertLine '$PubPrimary$'
+InsertLine '$PPTFiles$'
+InsertLine '$OUTLOOKFiles$'
+InsertLine '$GrooveFiles2$'
+InsertLine '$EXCELFiles$'
+InsertLine '$ACCESSFiles$'
+InsertLine '$CompanyName$'
+InsertLine '$UserName$'
+InsertLine '$Config_Reboot$'
+InsertLine '$Config_Log$'
+InsertLine '$Config_Eula$'
+InsertLine '$Config_Product$'
+ 
+[Winbatch_install]
+"%ScriptPath%\$OfficeArchitecture$\setup.exe" /config "$LogDir$\config.xml"
+ 
+[DosInAnIcon_set_key]	
+cscript //b "$InstallPfad$\$InstallDir$\$OfficeVersion$\ospp.vbs" /inpkey:$LicenseKey$
+exit %ERRORLEVEL%
+ 
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif

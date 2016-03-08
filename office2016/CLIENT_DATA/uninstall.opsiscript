@@ -1,0 +1,70 @@
+; Author Dominik Daehn, based on Office 2013 Code by Jens Eppler, based on Office 2010 Code by Soren Birk
+ 
+[Actions]
+requiredWinstVersion >= "4.11.2.6"
+ 
+DefVar $LogDir$
+DefVar $ProductId$
+DefVar $ProductName$
+DefVar $OfficeId$
+DefVar $OfficeVersion$
+ 
+DefVar $InstallDir$
+DefVar $SystemType$
+DefVar $LicenseRequired$
+DefVar $LicensePool$
+DefVar $UninstallProgram$
+DefVar $UninstCmd$
+DefVar $ExitCode$
+DefVar $Config_Product$
+DefVar $Config_Eula$
+DefVar $Config_Log$
+DefVar $Config_Reboot$
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $LogDir$ 			= "%SystemDrive%\tmp"
+Set $ProductId$       		= "office2016"
+Set $ProductName$     		= "Office 2016 Professional Plus"
+Set $OfficeId$ 			= "ProPlus"
+Set $OfficeVersion$ 		= "Office16"
+ 
+Set $InstallDir$ 		= "Microsoft Office"
+Set $SystemType$ 		= GetSystemType
+Set $Config_Product$		= '<Configuration Product="' + $OfficeId$ + '">'
+Set $Config_Eula$		= '<Display Level="basic" CompletionNotice="no" SuppressModal="yes" AcceptEula="yes" />'
+Set $Config_Log$ 		= '<Logging Type="standard" Path="' + $LogDir$ + '" Template="' + $ProductName$ + '_Uninstall(*).txt" />'
+Set $Config_Reboot$		= '<Setting Id="SETUP_REBOOT" Value="Never" />'
+; ----------------------------------------------------------------
+ 
+comment "Display product logo"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductName$
+ 
+Message "Uninstalling " + $ProductId$ + " ..."
+ 
+comment "Copying empty config.xml to $LogDir$"
+Files_copy_patchtextfile
+ 
+comment "Patching config.xml"
+PatchTextFile_config_xml $LogDir$ + "\config.xml"
+ 
+if FileExists("%ScriptPath%\delsub32.opsiscript")
+	comment "Start uninstall sub section delsub32"
+	Sub "%ScriptPath%\delsub32.opsiscript"
+endif
+ 
+if FileExists("%ScriptPath%\delsub64.opsiscript")
+	comment "Start uninstall sub section delsub64"
+	Sub "%ScriptPath%\delsub64.opsiscript"
+endif
+ 
+[Files_copy_patchtextfile]
+copy "%ScriptPath%\config.xml" $LogDir$
+ 
+[PatchTextFile_config_xml]
+FindLine "</Configuration>"
+InsertLine '$Config_Reboot$'
+InsertLine '$Config_Log$'
+InsertLine '$Config_Eula$'
+InsertLine '$Config_Product$'
