@@ -23,7 +23,7 @@ Set $LogDir$ = "%SystemDrive%\tmp"
 Set $ProductId$       = "classic-shell"
 Set $MinimumSpace$    = "1 MB"
 Set $InstallDir$      = "%ProgramFilesSysnativeDir%\Classic Shell"
-set $SetupExe$ = "ClassicShellSetup_4_2_4.exe"
+set $SetupExe$ = "ClassicShellSetup_4_2_5.exe"
 ; ----------------------------------------------------------------
 
 if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))

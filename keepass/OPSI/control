@@ -1,5 +1,5 @@
 [Package]
-version: 3
+version: 4
 depends: 
 incremental: False
 
@@ -9,7 +9,7 @@ id: keepass
 name: KeePass
 description: KeePass Passwort Safe
 advice: 
-version: 1.29
+version: 1.31
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -27,6 +27,7 @@ keepass (1.27-1) testing; urgency=low
   * Initial package
 
  -- budde <apc@rrzn.uni-hannover.de>  Mon 07 Apr 2014 16:10:28 +0000
+
 
 
 

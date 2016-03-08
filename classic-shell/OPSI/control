@@ -1,5 +1,5 @@
 [Package]
-version: 3
+version: 4
 depends: 
 incremental: False
 
@@ -9,7 +9,7 @@ id: classic-shell
 name: classic shell
 description: Startbutton for Windows 8.x
 advice: 
-version: 4.2.4
+version: 4.2.5
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -24,9 +24,10 @@ userLoginScript:
 [Changelog]
 classic-shell (4.2.1-1) stable; urgency=low
 
-	* update to 4.2.4
+	* update to 4.2.5
 	* win10 enabled
 	* check for update disabled
+
 
 
 
