@@ -1,0 +1,42 @@
+[Package]
+version: 8
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: sap-gui
+name: SAP-GUI und NWSSO mit Patches
+description: SAP-GUI und NWSSO mit Patches
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+sap-gui (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Mike Thomas <thomas@luis.uni-hannover.de>  Thu, 10 Mar 2016 14:31:20 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
