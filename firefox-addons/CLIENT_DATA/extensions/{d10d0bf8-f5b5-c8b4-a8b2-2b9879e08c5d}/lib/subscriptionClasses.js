@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -19,8 +19,6 @@
  * @fileOverview Definition of Subscription class and its subclasses.
  */
 
-Cu.import("resource://gre/modules/Services.jsm");
-
 let {ActiveFilter, BlockingFilter, WhitelistFilter, ElemHideBase} = require("filterClasses");
 let {FilterNotifier} = require("filterNotifier");
 
@@ -37,11 +35,6 @@ function Subscription(url, title)
   this.filters = [];
   if (title)
     this._title = title;
-  else
-  {
-    let {Utils} = require("utils");
-    this._title = Utils.getString("newGroup_title");
-  }
   Subscription.knownSubscriptions[url] = this;
 }
 exports.Subscription = Subscription;
@@ -56,7 +49,7 @@ Subscription.prototype =
 
   /**
    * Filters contained in the filter subscription
-   * @type Array of Filter
+   * @type Filter[]
    */
   filters: null,
 
@@ -122,14 +115,15 @@ Subscription.prototype =
   },
 
   /**
-   * Serializes the filter to an array of strings for writing out on the disk.
-   * @param {Array of String} buffer  buffer to push the serialization results into
+   * Serializes the subscription to an array of strings for writing out on the disk.
+   * @param {string[]} buffer  buffer to push the serialization results into
    */
   serialize: function(buffer)
   {
     buffer.push("[Subscription]");
     buffer.push("url=" + this.url);
-    buffer.push("title=" + this._title);
+    if (this._title)
+      buffer.push("title=" + this._title);
     if (this._fixedTitle)
       buffer.push("fixedTitle=true");
     if (this._disabled)
@@ -166,17 +160,11 @@ Subscription.fromURL = function(url)
   if (url in Subscription.knownSubscriptions)
     return Subscription.knownSubscriptions[url];
 
-  try
-  {
-    // Test URL for validity
-    url = Services.io.newURI(url, null, null).spec;
+  if (url[0] != "~")
     return new DownloadableSubscription(url, null);
-  }
-  catch (e)
-  {
+  else
     return new SpecialSubscription(url);
-  }
-}
+};
 
 /**
  * Deserializes a subscription
@@ -187,57 +175,35 @@ Subscription.fromURL = function(url)
 Subscription.fromObject = function(obj)
 {
   let result;
-  try
+  if (obj.url[0] != "~")
   {
-    obj.url = Services.io.newURI(obj.url, null, null).spec;
-
     // URL is valid - this is a downloadable subscription
     result = new DownloadableSubscription(obj.url, obj.title);
     if ("downloadStatus" in obj)
       result._downloadStatus = obj.downloadStatus;
     if ("lastSuccess" in obj)
-      result.lastSuccess = parseInt(obj.lastSuccess) || 0;
+      result.lastSuccess = parseInt(obj.lastSuccess, 10) || 0;
     if ("lastCheck" in obj)
-      result._lastCheck = parseInt(obj.lastCheck) || 0;
+      result._lastCheck = parseInt(obj.lastCheck, 10) || 0;
     if ("expires" in obj)
-      result.expires = parseInt(obj.expires) || 0;
+      result.expires = parseInt(obj.expires, 10) || 0;
     if ("softExpiration" in obj)
-      result.softExpiration = parseInt(obj.softExpiration) || 0;
+      result.softExpiration = parseInt(obj.softExpiration, 10) || 0;
     if ("errors" in obj)
-      result._errors = parseInt(obj.errors) || 0;
+      result._errors = parseInt(obj.errors, 10) || 0;
     if ("version" in obj)
-      result.version = parseInt(obj.version) || 0;
+      result.version = parseInt(obj.version, 10) || 0;
     if ("requiredVersion" in obj)
-    {
-      let {addonVersion} = require("info");
       result.requiredVersion = obj.requiredVersion;
-      if (Services.vc.compare(result.requiredVersion, addonVersion) > 0)
-        result.upgradeRequired = true;
-    }
     if ("homepage" in obj)
       result._homepage = obj.homepage;
     if ("lastDownload" in obj)
-      result._lastDownload = parseInt(obj.lastDownload) || 0;
+      result._lastDownload = parseInt(obj.lastDownload, 10) || 0;
+    if ("downloadCount" in obj)
+      result.downloadCount = parseInt(obj.downloadCount, 10) || 0;
   }
-  catch (e)
+  else
   {
-    // Invalid URL - custom filter group
-    if (!("title" in obj))
-    {
-      // Backwards compatibility - titles and filter types were originally
-      // determined by group identifier.
-      if (obj.url == "~wl~")
-        obj.defaults = "whitelist";
-      else if (obj.url == "~fl~")
-        obj.defaults = "blocking";
-      else if (obj.url == "~eh~")
-        obj.defaults = "elemhide";
-      if ("defaults" in obj)
-      {
-        let {Utils} = require("utils");
-        obj.title = Utils.getString(obj.defaults + "Group_title");
-      }
-    }
     result = new SpecialSubscription(obj.url, obj.title);
     if ("defaults" in obj)
       result.defaults = obj.defaults.split(" ");
@@ -248,7 +214,7 @@ Subscription.fromObject = function(obj)
     result._disabled = (obj.disabled == "true");
 
   return result;
-}
+};
 
 /**
  * Class for special filter subscriptions (user's filters)
@@ -270,7 +236,7 @@ SpecialSubscription.prototype =
   /**
    * Filter types that should be added to this subscription by default
    * (entries should correspond to keys in SpecialSubscription.defaultsMap).
-   * @type Array of String
+   * @type string[]
    */
   defaults: null,
 
@@ -327,7 +293,7 @@ SpecialSubscription.create = function(title)
   {
     url = "~user~" + Math.round(Math.random()*1000000);
   } while (url in Subscription.knownSubscriptions);
-  return new SpecialSubscription(url, title)
+  return new SpecialSubscription(url, title);
 };
 
 /**
@@ -345,9 +311,6 @@ SpecialSubscription.createForFilter = function(/**Filter*/ filter) /**SpecialSub
   }
   if (!subscription.defaults)
     subscription.defaults = ["blocking"];
-
-  let {Utils} = require("utils");
-  subscription.title = Utils.getString(subscription.defaults[0] + "Group_title");
   return subscription;
 };
 
@@ -423,7 +386,7 @@ RegularSubscription.prototype =
 };
 
 /**
- * Class for filter subscriptions updated by externally (by other extension)
+ * Class for filter subscriptions updated externally (by other extension)
  * @param {String} url    see Subscription()
  * @param {String} [title]  see Subscription()
  * @constructor
@@ -449,7 +412,7 @@ ExternalSubscription.prototype =
 };
 
 /**
- * Class for filter subscriptions updated by externally (by other extension)
+ * Class for filter subscriptions updated externally (by other extension)
  * @param {String} url  see Subscription()
  * @param {String} [title]  see Subscription()
  * @constructor
@@ -556,10 +519,10 @@ DownloadableSubscription.prototype =
   requiredVersion: null,
 
   /**
-   * Should be true if requiredVersion is higher than current Adblock Plus version
-   * @type Boolean
+   * Number indicating how often the object was downloaded.
+   * @type Number
    */
-  upgradeRequired: false,
+  downloadCount: 0,
 
   /**
    * See Subscription.serialize()
@@ -583,5 +546,7 @@ DownloadableSubscription.prototype =
       buffer.push("version=" + this.version);
     if (this.requiredVersion)
       buffer.push("requiredVersion=" + this.requiredVersion);
+    if (this.downloadCount)
+      buffer.push("downloadCount=" + this.downloadCount);
   }
 };

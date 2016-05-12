@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -21,23 +21,23 @@
 
 Cu.import("resource://gre/modules/Services.jsm");
 
+var {Prefs} = require("prefs");
+var {Downloader, Downloadable, MILLIS_IN_MINUTE, MILLIS_IN_HOUR, MILLIS_IN_DAY} = require("downloader");
+var {Utils} = require("utils");
+var {Matcher, defaultMatcher} = require("matcher");
+var {Filter, RegExpFilter, WhitelistFilter} = require("filterClasses");
 
-let {Prefs} = require("prefs");
-let {Downloader, Downloadable, MILLIS_IN_MINUTE, MILLIS_IN_HOUR, MILLIS_IN_DAY} = require("downloader");
-let {Utils} = require("utils");
-let {Matcher} = require("matcher");
-let {Filter} = require("filterClasses");
-
-let INITIAL_DELAY = 12 * MILLIS_IN_MINUTE;
-let CHECK_INTERVAL = 1 * MILLIS_IN_HOUR;
-let EXPIRATION_INTERVAL = 1 * MILLIS_IN_DAY;
-let TYPE = {
+var INITIAL_DELAY = 1 * MILLIS_IN_MINUTE;
+var CHECK_INTERVAL = 1 * MILLIS_IN_HOUR;
+var EXPIRATION_INTERVAL = 1 * MILLIS_IN_DAY;
+var TYPE = {
   information: 0,
   question: 1,
   critical: 2
 };
 
-let listeners = {};
+var showListeners = [];
+var questionListeners = {};
 
 function getNumericalSeverity(notification)
 {
@@ -67,39 +67,31 @@ function localize(translations, locale)
  * The object providing actual downloading functionality.
  * @type Downloader
  */
-let downloader = null;
-let localData = [];
+var downloader = null;
+var localData = [];
 
 /**
  * Regularly fetches notifications and decides which to show.
  * @class
  */
-let Notification = exports.Notification =
+var Notification = exports.Notification =
 {
   /**
    * Called on module startup.
    */
   init: function()
   {
-
-
     downloader = new Downloader(this._getDownloadables.bind(this), INITIAL_DELAY, CHECK_INTERVAL);
-    onShutdown.add(function()
-    {
-      downloader.cancel();
-    });
-
     downloader.onExpirationChange = this._onExpirationChange.bind(this);
     downloader.onDownloadSuccess = this._onDownloadSuccess.bind(this);
     downloader.onDownloadError = this._onDownloadError.bind(this);
-
-
+    onShutdown.add(() => downloader.cancel());
   },
 
   /**
    * Yields a Downloadable instances for the notifications download.
    */
-  _getDownloadables: function()
+  _getDownloadables: function*()
   {
     let downloadable = new Downloadable(Prefs.notificationurl);
     if (typeof Prefs.notificationdata.lastError === "number")
@@ -112,6 +104,8 @@ let Notification = exports.Notification =
       downloadable.softExpiration = Prefs.notificationdata.softExpiration;
     if (typeof Prefs.notificationdata.hardExpiration === "number")
       downloadable.hardExpiration = Prefs.notificationdata.hardExpiration;
+    if (typeof Prefs.notificationdata.downloadCount === "number")
+      downloadable.downloadCount = Prefs.notificationdata.downloadCount;
     yield downloadable;
   },
 
@@ -149,7 +143,10 @@ let Notification = exports.Notification =
     Prefs.notificationdata.lastError = 0;
     Prefs.notificationdata.downloadStatus = "synchronize_ok";
     [Prefs.notificationdata.softExpiration, Prefs.notificationdata.hardExpiration] = downloader.processExpirationInterval(EXPIRATION_INTERVAL);
+    Prefs.notificationdata.downloadCount = downloadable.downloadCount;
     saveNotificationData();
+
+    Notification.showNext();
   },
 
   _onDownloadError: function(downloadable, downloadURL, error, channelStatus, responseStatus, redirectCallback)
@@ -160,11 +157,33 @@ let Notification = exports.Notification =
   },
 
   /**
+   * Adds a listener for notifications to be shown.
+   * @param {Function} listener Listener to be invoked when a notification is
+   *                   to be shown
+   */
+  addShowListener: function(listener)
+  {
+    if (showListeners.indexOf(listener) == -1)
+      showListeners.push(listener);
+  },
+
+  /**
+   * Removes the supplied listener.
+   * @param {Function} listener Listener that was added via addShowListener()
+   */
+  removeShowListener: function(listener)
+  {
+    let index = showListeners.indexOf(listener);
+    if (index != -1)
+      showListeners.splice(index, 1);
+  },
+
+  /**
    * Determines which notification is to be shown next.
    * @param {String} url URL to match notifications to (optional)
    * @return {Object} notification to be shown, or null if there is none
    */
-  getNextToShow: function(url)
+  _getNextToShow: function(url)
   {
     function checkTarget(target, parameter, name, version)
     {
@@ -179,12 +198,6 @@ let Notification = exports.Notification =
     if (typeof Prefs.notificationdata.data == "object" && Prefs.notificationdata.data.notifications instanceof Array)
       remoteData = Prefs.notificationdata.data.notifications;
 
-    if (!(Prefs.notificationdata.shown instanceof Array))
-    {
-      Prefs.notificationdata.shown = [];
-      saveNotificationData();
-    }
-
     let notifications = localData.concat(remoteData);
     if (notifications.length === 0)
       return null;
@@ -193,18 +206,37 @@ let Notification = exports.Notification =
     let notificationToShow = null;
     for (let notification of notifications)
     {
-      if ((typeof notification.type === "undefined" || notification.type !== "critical")
-          && Prefs.notificationdata.shown.indexOf(notification.id) !== -1)
-        continue;
+      if (typeof notification.type === "undefined" || notification.type !== "critical")
+      {
+        let shown = Prefs.notificationdata.shown;
+        if (shown instanceof Array && shown.indexOf(notification.id) != -1)
+          continue;
+        if (Prefs.notifications_ignoredcategories.indexOf("*") != -1)
+          continue;
+      }
 
       if (typeof url === "string" || notification.urlFilters instanceof Array)
       {
-        if (typeof url === "string" && notification.urlFilters instanceof Array)
+        if (Prefs.enabled && typeof url === "string" && notification.urlFilters instanceof Array)
         {
+          let host;
+          try
+          {
+            host = new URL(url).hostname;
+          }
+          catch (e)
+          {
+            host = "";
+          }
+
+          let exception = defaultMatcher.matchesAny(url, RegExpFilter.typeMap.DOCUMENT, host, false, null);
+          if (exception instanceof WhitelistFilter)
+            continue;
+
           let matcher = new Matcher();
           for (let urlFilter of notification.urlFilters)
             matcher.add(Filter.fromText(urlFilter));
-          if (!matcher.matchesAny(url, "DOCUMENT", url))
+          if (!matcher.matchesAny(url, RegExpFilter.typeMap.DOCUMENT, host, false, null))
             continue;
         }
         else
@@ -233,21 +265,36 @@ let Notification = exports.Notification =
         notificationToShow = notification;
     }
 
-    if (notificationToShow && "id" in notificationToShow)
-    {
-      if (notificationToShow.type !== "question")
-        this.markAsShown(notificationToShow.id);
-    }
-
     return notificationToShow;
   },
 
+  /**
+   * Invokes the listeners added via addShowListener() with the next
+   * notification to be shown.
+   * @param {String} url URL to match notifications to (optional)
+   */
+  showNext: function(url)
+  {
+    let notification = Notification._getNextToShow(url);
+    if (notification)
+      for (let showListener of showListeners)
+        showListener(notification);
+  },
+
+  /**
+   * Marks a notification as shown.
+   * @param {String} id ID of the notification to be marked as shown
+   */
   markAsShown: function(id)
   {
-    if (Prefs.notificationdata.shown.indexOf(id) > -1)
+    var data = Prefs.notificationdata;
+
+    if (!(data.shown instanceof Array))
+      data.shown = [];
+    if (data.shown.indexOf(id) != -1)
       return;
 
-    Prefs.notificationdata.shown.push(id);
+    data.shown.push(id);
     saveNotificationData();
   },
 
@@ -302,10 +349,10 @@ let Notification = exports.Notification =
    */
   addQuestionListener: function(/**string*/ id, /**function(approved)*/ listener)
   {
-    if (!(id in listeners))
-      listeners[id] = [];
-    if (listeners[id].indexOf(listener) === -1)
-      listeners[id].push(listener);
+    if (!(id in questionListeners))
+      questionListeners[id] = [];
+    if (questionListeners[id].indexOf(listener) === -1)
+      questionListeners[id].push(listener);
   },
 
   /**
@@ -313,27 +360,48 @@ let Notification = exports.Notification =
    */
   removeQuestionListener: function(/**string*/ id, /**function(approved)*/ listener)
   {
-    if (!(id in listeners))
+    if (!(id in questionListeners))
       return;
-    let index = listeners[id].indexOf(listener);
+    let index = questionListeners[id].indexOf(listener);
     if (index > -1)
-      listeners[id].splice(index, 1);
-    if (listeners[id].length === 0)
-      delete listeners[id];
+      questionListeners[id].splice(index, 1);
+    if (questionListeners[id].length === 0)
+      delete questionListeners[id];
   },
 
   /**
-   * Notifies listeners about interactions with a notification
+   * Notifies question listeners about interactions with a notification
    * @param {String} id notification ID
    * @param {Boolean} approved indicator whether notification has been approved or not
    */
   triggerQuestionListeners: function(id, approved)
   {
-    if (!(id in listeners))
+    if (!(id in questionListeners))
       return;
-    let questionListeners = listeners[id];
-    for (let listener of questionListeners)
+    let listeners = questionListeners[id];
+    for (let listener of listeners)
       listener(approved);
+  },
+
+  /**
+   * Toggles whether notifications of a specific category should be ignored
+   * @param {String} category notification category identifier
+   * @param {Boolean} [forceValue] force specified value
+   */
+  toggleIgnoreCategory: function(category, forceValue)
+  {
+    let categories = Prefs.notifications_ignoredcategories;
+    let index = categories.indexOf(category);
+    if (index == -1 && forceValue !== false)
+    {
+      categories.push(category);
+      Prefs.notifications_showui = true;
+    }
+    else if (index != -1 && forceValue !== true)
+      categories.splice(index, 1);
+
+    // HACK: JSON values aren't saved unless they are assigned a different object.
+    Prefs.notifications_ignoredcategories = JSON.parse(JSON.stringify(categories));
   }
 };
 Notification.init();

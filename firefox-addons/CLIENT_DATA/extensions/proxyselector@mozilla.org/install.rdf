@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='utf-8'?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
  <Description about="urn:mozilla:install-manifest">
@@ -7,7 +7,7 @@
    <em:name>Proxy Selector</em:name>
    <em:type>2</em:type>
    <em:unpack>false</em:unpack>
-   <em:version>1.31</em:version>
+   <em:version>1.31.1-signed.1-signed</em:version>
 	 <em:description>Proxy Selector lets you switch local proxies in Firefox.</em:description>
 		<em:creator>Michele Pezza</em:creator>
 		<em:contributor>Jeremy Gillick (http://www.mozmonkey.com)</em:contributor>

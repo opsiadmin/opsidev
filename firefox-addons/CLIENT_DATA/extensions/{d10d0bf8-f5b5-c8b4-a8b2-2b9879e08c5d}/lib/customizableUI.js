@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -26,7 +26,7 @@ let {Utils} = require("utils");
 // UI module has to be referenced lazily to avoid circular references
 XPCOMUtils.defineLazyGetter(this, "UI", () => require("ui").UI);
 
-let widgets = Map();
+let widgets = new Map();
 
 function getToolbox(/**Window*/ window, /**Widget*/ widget) /**Element*/
 {

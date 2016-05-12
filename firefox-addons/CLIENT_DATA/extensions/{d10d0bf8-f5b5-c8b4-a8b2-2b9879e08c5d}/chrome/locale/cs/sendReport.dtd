@@ -26,14 +26,14 @@
 <!ENTITY recentReports.label "Vaše nedávná hlášení">
 <!ENTITY typeWarning.description "Vybrali jste, že chcete nahlásit problém přímo v Adblocku Plus, nikoli chybu ve filtrech. Nejlepší způsob hlášení takovýchto chyb je na [link]fóru Adblocku Plus[/link]. Měli byste používat nástroj na hlášení chyb pouze jako doplněk existující diskuse na fóru, protože nikdo se nebude zabývat vaším hlášením, dokud neposkytnete odkaz na něj. Automaticky vygenerovaný odkaz bude zobrazet po odeslání hlášení.">
 <!ENTITY issues.disabled.description "Adblock Plus je zakázaný, v současném stavu nebude blokovat nic.">
-<!ENTITY attachExtensions.label "&amp;Připojit seznam aktivních rozšíření k hlášení pro případ, že problém byl způsoben konfliktem mezi doplňky">
+<!ENTITY attachExtensions.label "&amp;Připojte k hlášení seznam aktivních doplňků pro případ, že byl problém způsoben konfliktem doplňků">
 <!ENTITY issues.nosubscriptions.add.label "Přidat sadu cizích filtrů">
 <!ENTITY issues.disabledfilters.enable.label "Povolit filtr">
 <!ENTITY issues.override.label "Nastavení je v &amp;pořádku, pokračovat v hlášení problém">
 <!ENTITY issues.nosubscriptions.description "Zdá se, že nejste přihlášeni k odběru žádných cizích sad filtrů, které automaticky odstraňují nežádoucí obsah z webových stránek.">
 <!ENTITY typeSelector.falsePositive.description "Vyberte tuto možnost, pokud na stránce chybí důležitý obsah, není zobrazena správně nebo nefunguje. Zda je Adblock Plus příčinou problému můžete zjistit jeho dočasným vypnutím.">
 <!ENTITY typeSelector.other.label "Jiný &amp;problém">
-<!ENTITY emailComment.label "Nabádáme vás,aby jste zadali platnou emailovou adresu,aby jsme vás mohli kontaktovat pokud budou nějaké nesrovnalosti s vašim nahlášením.Také nám to umožní rozeznat vaše příspěvky a přikládat jim vyšší prioritu.">
+<!ENTITY emailComment.label "Doporučujeme zadat platnou e-mailovou adresu, abychom vás v případě dotazů k vašemu hlášení mohli kontaktovat. Také nám to umožní rozeznat vaše příspěvky a přikládat jim vyšší prioritu.">
 <!ENTITY issues.whitelist.remove.label "Znovu povolit Adblock Plus na této stránce">
 <!ENTITY outdatedSubscriptions.description "Následující odběr filtrů nebyl aktualizován minimálně dva týdny.Prosím aktualizujte tyto odběry než reportujete chybu,problém už mohl být vyřešen.">
 <!ENTITY dataCollector.description "Počkejte prosím zatímco Adblock Plus sbírá potřebná data.">

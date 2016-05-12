@@ -1,0 +1,1461 @@
+{
+   "account_creation_privacy_statement" : {
+      "message" : "Jag samtycker till Ghosterys datapraxis som återfinns i företagets $LINK_PS_START$Integritetspolicy$LINK_PS_END$, samt villkoren i $LINK_UA_START$Licensavtalet$LINK_UA_END$.",
+      "placeholders": {
+         "link_ps_end" : {
+            "content" : "</a>"
+         },
+         "link_ps_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-privacy-statement/\">"
+         },
+         "link_ua_end": {
+            "content" : "</a>"
+         },
+         "link_ua_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-end-user-license-agreem/\">"
+         }
+      }
+   },
+   "account_signin_privacy_statement": {
+      "message": "Ditt konto ger dig tillgång till avancerade funktioner och associeras inte med spårad data som du eventuellt har samtyckt till att dela med oss. Se våra $LINK_FAQ_START$Vanliga frågor$LINK_FAQ_END$ för mer information om hur vi använder kontodata.",
+      "placeholders": {
+         "link_faq_end" : {
+            "content" : "</a>"
+         },
+         "link_faq_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/support/faq/ghostery-add-on/\">"
+         }
+      }
+   },
+   "addon_compatibility_warning_firefox": {
+      "description" : "Pop up warning that appears when one or more incompatible extensions are installed alongside Ghostery.",
+      "message": "Det verkar som att du dessutom använder <strong>$ADDONS$</strong>. Tyvärr har Ghosterys system för cookie-blockering ibland visat sig vara inkompatibelt med detta eller dessa tillägg och har nu <strong>inaktiverats</strong>. För att återaktivera systemet för cookie-blockering, inaktivera eller ta bort <strong>$ADDONS$</strong> med hjälp av tilläggshanteraren och starta om webbläsaren om så krävs.",
+      "placeholders": {
+         "addons" : {
+            "content" : "$1",
+            "example": "Yahoo! Toolbar Addon"
+         }
+      }
+   },
+   "alert_bubble": {
+      "description" : "Ghostery's alert bubble is the purple, semi-translucent notification panel that pops up as you browse to show detected tags on the page.",
+      "message": "notisfönster"
+   },
+   "alert_bubble_gear_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble's gear.",
+      "message": "Klicka för att konfigurera notisfönstret"
+   },
+   "alert_bubble_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble.",
+      "message": "Klicka för att dölja notisfönstret"
+   },
+   "all": {
+      "description" : "Default setting in the 'filter by type' dropdown for the tag browser. Doesn't filter anything out. Should read as 'Show all'.",
+      "message": "alla"
+   },
+   "backup_export": {
+      "description" : "Instructions for exporting Ghostery settings.",
+      "message": "Klicka på den här knappen för att spara en kopia av dina Ghostery-inställningar för backup eller överföring till en annan dator."
+   },
+   "backup_export_button": {
+      "description" : "Button for exporting Ghostery settings.",
+      "message": "Spara backup-fil"
+   },
+   "backup_export_header": {
+      "description" : "Section header for Export section of the Import/Export page.",
+      "message": "Exportera"
+   },
+   "backup_import": {
+      "description" : "Instructions for importing Ghostery settings.",
+      "message": "Välj en tidigare skapad backup-fil som du vill använda och klicka på \"Importera\"."
+   },
+   "backup_import_button": {
+      "description" : "Button for importing Ghostery settings.",
+      "message": "Importera"
+   },
+   "backup_import_error": {
+      "description" : "Error message shown when importing a bad file.",
+      "message": "$SPAN_START$Ogiltig backup-fil.$SPAN_END$ Vänligen kontakta $A_START$supporten$A_END$.",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"https://getsatisfaction.com/ghostery\">"
+         },
+         "span_end": {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"red\">"
+         }
+      }
+   },
+   "backup_import_header": {
+      "description" : "Section header for Import section of the Import/Export page.",
+      "message": "Importera"
+   },
+   "backup_import_warning": {
+      "description" : "Warning before importing Ghostery settings.",
+      "message": "VARNING Detta kommer att skriva över dina nuvarande Ghostery-inställningar."
+   },
+   "backup_options_link": {
+      "description" : "Link back to the main options page.",
+      "message": "Tillbaka till Inställningar"
+   },
+   "backup_page_title": {
+      "description" : "Title of Ghostery's Import/Export settings page.",
+      "message": "Importera\/exportera Ghostery-inställningar"
+   },
+   "banner_check_your_email_title": {
+      "message" : "En länk för lösenordsåterställning kommer snart att dyka upp i din e-postinkorg."
+   },
+   "banner_no_such_account_message": {
+      "message" : "Typiskt! Det verkar som att jag inte känner igen användarnamn- och lösenordskombinationen. Försök igen."
+   },
+   "banner_no_such_account_title": {
+      "message" : "Felaktig e-postadress eller felaktigt lösenord"
+   },
+   "banner_wrong_email_message": {
+      "message" : "Ghostery kunde inte hitta e-postadressen. Försök igen."
+   },
+   "banner_wrong_email_title": {
+      "message" : "Det här var ju läskigt."
+   },
+   "blacklist_error_duplicate_url": {
+      "message" : "Den här webbplatsen har redan markerats som ”ej betrodd”."
+   },
+   "blacklist_error_whitelist_url": {
+      "message" : "Den här webbplatsen har tagits bort från listan över Betrodda platser och lagts till i listan över Ej betrodda platser."
+   },
+   "blocked": {
+      "description" : "Select this to show only blocked (checked) tags in the tag browser. Should read as 'Show blocked'.",
+      "message": "blockerad"
+   },
+   "blocked_redirect_action_always_title": {
+      "description" : "Title for the 'Allow always and reload' button on the blocked redirect page.",
+      "message": "Tillåt alltid och ladda om. "
+   },
+   "blocked_redirect_action_through_once_title": {
+      "description" : "Title for the 'Allow once' button on the blocked redirect page.",
+      "message": "Tillåt taggar en gång tills slutdestinationen har nåtts."
+   },
+   "blocked_redirect_page_title": {
+      "description" : "Page title for blocked_redirect.html which appears when a redirect is blocked.",
+      "message": "Ghostery hindrade en omdirigering."
+   },
+   "blocked_redirect_prevent": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked. Should appear inside \"redirect-prevent\" div.",
+      "message": "Ghostery hindrade en omdirigering från $BREAK$ $SP_O_START$$ORIGIN$$SP_END$ till $SP_D_START$$DESTINATION$$SP_END$, $BREAK$ som är en del av $A_START$$APP$$A_END$. $BREAK$",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a id=\"name\" href=\"$4\" target=\"_blank\">"
+         },
+         "app": {
+            "content" : "$3",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "destination": {
+            "content" : "$2"
+         },
+         "origin": {
+            "content" : "$1"
+         },
+         "sp_d_start": {
+            "content" : "<span id=\"destination\">"
+         },
+         "sp_end": {
+            "content" : "</span>"
+         },
+         "sp_o_start": {
+            "content" : "<span id=\"origin\">"
+         }
+      }
+   },
+   "blocked_redirect_url_content": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked and a final 'destination' URL is successfully found.",
+      "message": "Den här taggen verkar omdirigera till $BREAK$ $A_START$$REDIRECT_URL$$A_END$ Om länken inte ser korrekt ut och du vill fortsätta klickar du på ikonen nedan för att tillåta $APP$ och ladda om.",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"$1\" class=\"ellipsis\" title=\"$1\">"
+         },
+         "app": {
+            "content" : "$2",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "redirect_url": {
+            "content" : "$1"
+         }
+      }
+   },
+   "blocking_filter_name": {
+      "description" : "Description of current search filter",
+      "message": "Visar $NUMBER$ taggar som matchar ”$NAME$”",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         }
+      }
+   },
+   "blocking_filter_name_tags": {
+      "description" : "Description of current search filter",
+      "message": "Visar $NUMBER$ taggar som matchar ”$NAME$” med taggarna: $TAGS$",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$3</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_filter_tags": {
+      "description" : "Description of current search filter",
+      "message": "Visar $NUMBER$ taggar med taggarna: $TAGS$",
+      "placeholders": {
+         "number" : {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$2</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_summary_all_small_firefox": {
+      "description" : "All tags / cookies are selected.",
+      "message": "blockerar $B_START$alla$B_END$",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_none_small_firefox": {
+      "description" : "No tags / cookies are selected.",
+      "message": "blockerar $B_START$inga$B_END$",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_small_firefox": {
+      "description" : "Some of the tags / cookies are selected (X out of Y total).",
+      "message": "blockerar $NUMBER_SELECTED$ av $NUMBER_TOTAL$",
+      "placeholders": {
+         "number_selected" : {
+            "content" : "<strong>$1",
+            "example": 130
+         },
+         "number_total": {
+            "content" : "$2</strong>",
+            "example": 132
+         }
+      }
+   },
+   "box_dismiss_0s": {
+      "message" : "Dölj $SPAN_START$aldrig$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_15s": {
+      "message" : "Dölj $SPAN_START$efter 15 sekunder$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_30s": {
+      "message" : "Dölj $SPAN_START$efter 30 sekunder$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_5s": {
+      "message" : "Dölj $SPAN_START$efter 5 sekunder$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_bl": {
+      "message" : "Visa $SPAN_START$i det nedre vänstra hörnet$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_br": {
+      "message" : "Visa $SPAN_START$i det nedre högra hörnet$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tl": {
+      "message" : "Visa $SPAN_START$i det övre vänstra hörnet$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tr": {
+      "message" : "Visa $SPAN_START$i det övre högra hörnet$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_hide": {
+      "message" : "Dölj ruta"
+   },
+   "box_hide_expanded": {
+      "message" : "Dölj lila ruta"
+   },
+   "box_looking": {
+      "message" : "Letar"
+   },
+   "box_options_expanded": {
+      "message" : "Alternativ"
+   },
+   "box_settings": {
+      "message" : "Inställningar"
+   },
+   "box_settings_expanded": {
+      "message" : "Mina Ghostery-inställningar"
+   },
+   "box_tracker": {
+      "message" : "Spårare"
+   },
+   "box_trackers": {
+      "message" : "Spårare"
+   },
+   "browser_button_label_firefox": {
+      "description" : "Ghostery's browser button label, displayed on Firefox's addon customization panel.",
+      "message": "Ghostery"
+   },
+   "browser_button_tooltip": {
+      "description" : "Ghostery's browser button tooltip.",
+      "message": "Vissa Ghosterys resultat"
+   },
+   "button_cancel": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "Avbryt"
+   },
+   "button_ok": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "Ok"
+   },
+   "category_ad": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Reklam"
+   },
+   "category_ad_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "Spårare som visar reklam."
+   },
+   "category_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Analys"
+   },
+   "category_analytics_desc": {
+      "description" : "User-facing description for the Analytics tag category.",
+      "message": "Spårare som ger research eller analyser till webbplatsutgivare."
+   },
+   "category_privacy": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Integritet"
+   },
+   "category_privacy_desc": {
+      "description" : "User-facing description for the Privacy tag category.",
+      "message": "Integritetsmeddelanden och andra integritetsrelaterade element."
+   },
+   "category_tracker": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Beacons"
+   },
+   "category_tracker_desc": {
+      "description" : "User-facing description for the Beacons tag category.",
+      "message": "Spårare som inte gör någon annan nytta än att spåra (beacon, conversion pixels, etc.) hamnar i Beacons-kategorin."
+   },
+   "category_widget": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Widgetar"
+   },
+   "category_widget_desc": {
+      "description" : "User-facing description for the Widgets tag category.",
+      "message": "Spårare som möjliggör sidfunktioner (knappar för sociala nätverk, kommentarsformulär etc.)."
+   },
+   "category_advertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Reklam"
+   },
+   "category_advertising_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "Tillhandahåller reklam eller reklamrelaterade tjänster som datainsamling, beteendeanalys eller omdirigering."
+   },
+   "category_comments": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Kommentarer"
+   },
+   "category_comments_desc": {
+      "description" : "User-facing description for the Comments tag category.",
+      "message": "Möjliggör kommentarssektioner för artiklar och produktrecensioner."
+   },
+   "category_customer_interaction": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Kundinteraktioner"
+   },
+   "category_customer_interaction_desc": {
+      "description" : "User-facing description for the Customer Interaction tag category.",
+      "message": "Inkluderar chatt, e-postmeddelanden, kundsupport och andra interaktionsverktyg."
+   },
+   "category_essential": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Nödvändiga"
+   },
+   "category_essential_desc": {
+      "description" : "User-facing description for the Essential tag category.",
+      "message": "Inkluderar tagghanterare, integritetsmeddelanden och tekniker som är nödvändiga för att en webbplats ska fungera på rätt sätt."
+   },
+   "category_pornvertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Reklam för vuxna"
+   },
+   "category_pornvertising_desc": {
+      "description" : "User-facing description for the Adult Advertising tag category.",
+      "message": "Tillhandahåller annonsteknik som utformats specifikt för webbplatser med pornografiskt innehåll."
+   },
+   "category_site_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Webbanalyser"
+   },
+   "category_site_analytics_desc": {
+      "description" : "User-facing description for the Site Analytics tag category.",
+      "message": "Samlar in och analyserar data som relaterar till webbplatsens användning och prestanda."
+   },
+   "category_social_media": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Sociala medier"
+   },
+   "category_social_media_desc": {
+      "description" : "User-facing description for the Social Media tag category.",
+      "message": "Integrerar funktioner som relaterar till sociala medier."
+   },
+   "category_audio_video_player": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Ljud- och videospelare"
+   },
+   "category_audio_video_player_desc": {
+      "description" : "User-facing description for the Audio/Video Player tag category.",
+      "message": "Ger webbplatser möjlighet att publicera, distribuera och optimera video- och ljudinnehåll."
+   },
+   "change_password_message": {
+      "message" : "Ett nytt lösenord måste bestå av minst 8 tecken, en siffra och en symbol."
+   },
+   "click2play_allow_always_tooltip": {
+      "description" : "Tooltip that appears over the 'allow always' click2play button.",
+      "message": "Tillåt och ladda om."
+   },
+   "click2play_allow_once_button_tooltip": {
+      "description" : "Tooltip that appears over the click2play replacement for 'social' buttons.",
+      "message": "Ghostery har blockerat $APP_NAME$. Klicka här för att låta den ladda bara den här gången. ",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Twitter Button"
+         }
+      }
+   },
+   "click2play_allow_once_tooltip": {
+      "description" : "Tooltip that appears over the 'allow once' click2play button.",
+      "message": "Tillåt en gång och ladda om."
+   },
+   "click2play_blocked": {
+      "message" : "Ghostery har blockerat $APP_NAME$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "SoundCloud"
+         }
+      }
+   },
+   "click2play_comment_form": {
+     "message": "Ghostery har blockerat kommentarer via $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_review_form": {
+     "message": "Ghostery har blockerat recensioner via $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_video_form": {
+     "message": "Ghostery har blockerat $NAME$s videospelare.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_survey_form": {
+     "message": "Ghostery har blockerat enkät via $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "company_about": {
+      "description" : "Header for company profiles.",
+      "message": "Om $COMPANY$:",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_affiliations": {
+      "message" : "Branschtillhörighet:"
+   },
+   "company_description": {
+      "message" : "Företagsbeskrivning"
+   },
+   "company_in_their_own_words": {
+      "description" : "Label for a description of the company that is provided by the company itself",
+      "message": "Med sina egna ord"
+   },
+   "company_operates": {
+      "description" : "Followed by a list of products this company offers.",
+      "message": "$COMPANY$ använder:",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_profile_error": {
+      "message" : "Kunde inte ladda information från ghostery.com"
+   },
+   "company_profile_link": {
+      "message" : "Fortsätt till fullständig profil"
+   },
+   "company_tags": {
+      "description" : "Tags here refers to categories we use to group companies based on their business (ie Video Player, Popups, Polls)",
+      "message": "Taggar:"
+   },
+   "company_website": {
+      "message" : "Webbplats:"
+   },
+   "confirm_new_password_field_label": {
+      "message" : "Bekräfta nytt lösenord"
+   },
+   "copyright": {
+      "description" : "Copyright message, shown in page footers.",
+      "message": "$C$ $YEAR$ $GHOSTERY$, en del av $COMPANY_ADDRESS$",
+      "placeholders": {
+         "c" : {
+            "content" : "&copy;"
+         },
+         "company_address": {
+            "content" : "$1",
+            "example": "GHOSTERY, Inc., Such-and-such Street, Such-and-such Floor, New York, NY, Zip Code"
+         },
+         "ghostery": {
+            "content" : "<a href='https://www.ghostery.com' target='_blank'>Ghostery</a>"
+         },
+         "year": {
+            "content" : "2015"
+         }
+      }
+   },
+   "dismiss": {
+      "description" : "Text for a button or link to close a notification.",
+      "message": "Dölj"
+   },
+   "email_preferences_1": {
+      "message" : "Ja tack! Jag vill gärna få meddelanden om produkter eller tjänster som rör min webbläsarupplevelse."
+   },
+   "email_preferences_2": {
+      "message" : "Informera mig om nya produktversioner."
+   },
+   "email_preferences_header": {
+      "message" : "E-postinställningar"
+   },
+   "email_confirm_field_label": {
+      "message" : "Bekräfta e-post"
+   },
+   "email_field_label": {
+      "message" : "E-post"
+   },
+   "error_email_forgot": {
+      "message" : "Den har vi inte. Prova en annan e-postadress."
+   },
+   "firefox_tools_menu_database_update": {
+      "description" : "Ghostery's update database menu label dipslayed under the ghostery menu.",
+      "message": "Uppdatera bugglistor"
+   },
+   "first_name_field_label": {
+      "message" : "Förnamn (frivilligt)"
+   },
+   "forgot_password_message": {
+      "message" : "Ingen fara! Det kan hända även den bästa. Vi skickar instruktioner via e-post om hur du återställer ditt lösenord"
+   },
+   "ghostery_logo": {
+      "description" : "Alt. text for the Ghostery logo graphic in the header on options and walkthrough pages.",
+      "message": "Ghosterys logo"
+   },
+   "invalid_email": {
+      "message" : "Aj då! Den e-postadressen finns inte i vårt system."
+   },
+   "invalid_email_confirmation": {
+      "message" : "Dina e-postadresser matchar inte"
+   },
+   "invalid_email_forgot": {
+    "message": "Hörru, du måste ange en riktig e-postadress."
+   },
+   "error_email_forgot": {
+    "message": "Hmmm, jag kan inte hitta den e-postadressen. Du kanske kan prova en annan?"
+   },
+   "invalid_email_create": {
+      "message" : "Ange en giltig e-postadress"
+   },
+   "invalid_email_login": {
+    "message": "Hörru, du måste ange en riktig e-postadress."
+   },
+   "invalid_email_used": {
+      "message" : "E-postadressen används redan."
+   },
+   "last_name_field_label": {
+      "message" : "Efternamn (frivilligt)"
+   },
+   "library_never_updated": {
+      "description" : "Text shown in the case when no tag library updates have yet happened.",
+      "message": "Automatiska uppdateringar rekommenderas starkt."
+   },
+   "library_update_already_updated": {
+      "description" : "Text shown in the case when the tag library did not need to be updated from remote servers since it's already the latest copy.",
+      "message": "Biblioteket är redan uppdaterat."
+   },
+   "library_update_failed": {
+      "description" : "Tag library update action failed.",
+      "message": "Uppdateringen misslyckades tyvärr. Försök igen senare."
+   },
+   "library_update_in_progress": {
+      "description" : "Indicates an update is in progress (might have a spinner graphic next to it).",
+      "message": "Uppdaterar ..."
+   },
+   "library_update_now_link": {
+      "message" : "Uppdatera nu."
+   },
+   "library_update_successful": {
+      "description" : "Tag library update action completed successfully.",
+      "message": "Lyckades!"
+   },
+   "library_updated_on": {
+      "description" : "Text shown when a tag library update has happened at least once.",
+      "message": "Biblioteket med spårare synkades senast $DATE$",
+      "placeholders": {
+         "date" : {
+            "content" : "$1",
+            "example": "Wed Oct 12 2011"
+         }
+      }
+   },
+   "locally_added_tracker": {
+      "description" : "Tag that was manually added by the user. This text will be displayed on the app browser next to the tag name.",
+      "message": "$APP_NAME$ (tillagd lokalt)",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1"
+         }
+      }
+   },
+   "lso_browser_name_filter": {
+      "description" : "Text input filter for the cookie browser. Lets you filter by/search for cookie names. Part of 'Search for cookie name'.",
+      "message": "Sök efter $SEARCH_FIELD$",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "cookie name"
+         }
+      }
+   },
+   "lso_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the cookie browser search input. Should read as 'Search for cookie name'.",
+      "message": "cookie-namn"
+   },
+   "lso_browser_type_filter": {
+      "description" : "Dropdown filter for the cookie browser. Lets you show only blocked (checked), or only unblocked (unchecked) cookies.",
+      "message": "Visa $TYPE$",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "new_password_field_label": {
+      "message" : "Nytt lösenord"
+   },
+   "new_since_last_update": {
+      "description" : "Select this to filter the tag browser to show only the tags added to the library since last update. Should read as 'Show new since last update'.",
+      "message": "ny sedan senaste uppdateringen"
+   },
+   "no_results": {
+      "description" : "This is shown when the user performed a search or applied some other filter so that all items got filtered out.",
+      "message": "Inga resultat."
+   },
+   "none": {
+      "description" : "Used to say that this item does not belong to any of the groups, as in \"Groups: None\" (as opposed to \"Groups: Group A, Group B, Group C\").",
+      "message": "Inga"
+   },
+   "note": {
+      "description" : "Similar in function to a \"WARNING:\" prefix. Used for stuff like \"NOTE: Blocking tags can break pages.",
+      "message": "Observera:"
+   },
+   "notification_reminder1": {
+      "description" : "First line of the walkthrough reminder/notification. Sentence continued on next line.",
+      "message": "Kolla in genomgången av hur du konfigurerar Ghostery för att bekanta dig med några av Ghosterys viktigaste funktioner."
+   },
+   "notification_reminder2": {
+      "description" : "Second line of the walkthrough reminder/notification. Continues the sentence from previous line.",
+      "message": "för en närmare titt på några av Ghosterys nyckelfunktioner."
+   },
+   "notification_reminder_link": {
+      "description" : "Link to the walkthrough/configuration wizard, part of the walkthrough reminder/notification.",
+      "message": "Konfigurera Ghostery"
+   },
+   "notification_update": {
+      "message" : "Ghosterys taggbibliotek har uppdaterats."
+   },
+   "notification_update_link": {
+      "description" : "Link to show recently added tags.",
+      "message": "Klicka här för att se vad som är nytt"
+   },
+   "notification_upgrade": {
+      "description" : "Upgrade message. Shown after Ghostery has gotten upgraded.",
+      "message": "Hallå där! Vårt hängivna och otroligt attraktiva team har jobbat hårt för att släppa en ny version av Ghostery."
+   },
+   "notification_upgrade_link": {
+      "description" : "Upgrade link text.",
+      "message": "Kolla in de nya schyssta funktionerna och de åtgärdade buggarna i den nya versionen."
+   },
+   "off": {
+      "message" : "Blockerade"
+   },
+   "old_password_field_label": {
+      "message" : "Gammalt lösenord"
+   },
+   "on": {
+      "message" : "Tillåtna"
+   },
+   "options_about_tab": {
+      "description" : "One of three page tabs on the options page; click to show about page.",
+      "message": "Om"
+   },
+   "options_advanced_tab": {
+      "description" : "One of three page tabs on the options page; click to show advanced settings.",
+      "message": "Avancerat"
+   },
+   "options_blocking3": {
+      "message" : "När du blockerar en tagg kan den taggen inte längre kommunicera med sin tredjepartsleverantör."
+   },
+   "options_general_tab": {
+      "description" : "One of three page tabs on the options page; click to show general/basic settings. Selected/active by default.",
+      "message": "Allmänt"
+   },
+   "options_header": {
+      "description" : "Header that appears at the top of the options page",
+      "message": "Alternativ"
+   },
+   "options_lso_blocking3": {
+      "message" : "När du blockerar en cookie kan vissa tredjepartsleverantörer inte skriva cookies till din webbläsare.$BREAK$$BREAK$$EM_START$$B_START$Varning!$B_END$$EM_END$ När denna funktion kombineras med andra tillägg för cookie-hantering som <strong>Beef Taco</strong>, <strong>Cookie Monster</strong> och <strong>Google Opt-Out</strong> kan det orsaka <b>opåverkbara skript</b>. Om du får detta fel så prova att inaktivera denna funktion eller det tillägg som krockar.",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "em_end": {
+            "content" : "</em>"
+         },
+         "em_start": {
+            "content" : "<em>"
+         }
+      }
+   },
+   "options_page_title": {
+      "description" : "Title of Ghostery's options page.",
+      "message": "Ghostery-alternativ"
+   },
+   "options_saving_exit_message": {
+      "description" : "Message that appears for an instant when saving settings on the options page.",
+      "message": "Sparar alternativ"
+   },
+   "panel_advanced_options": {
+      "message" : "Avancerade inställningar"
+   },
+   "panel_allow_all": {
+      "message" : "Betrodd plats"
+   },
+   "panel_allow_all_tool_tip": {
+      "message" : "Tillåt alla spårare på denna webbplats."
+   },
+   "panel_allow_all_tool_tip_needs_reload": {
+      "message" : "Klicka för att ta bort från Betrodda platser."
+   },
+   "panel_block_all": {
+      "message" : "Begränsa plats"
+   },
+   "panel_block_all_tool_tip": {
+      "message" : "Blockera alla spårare på denna webbplats."
+   },
+   "panel_block_all_tool_tip_needs_reload": {
+      "message" : "Klicka för att ta bort från Ej betrodda platser."
+   },
+   "panel_blocking_block_or_allow": {
+      "message" : "BLOCKERA eller TILLÅT"
+   },
+   "panel_blocking_trackers_by_category": {
+      "message" : "SPÅRARE EFTER KATEGORI"
+   },
+   "panel_blocking_verify_account_message": {
+     "message" : "Verifiera ditt konto för att synka dina inställningar."
+   },
+   "panel_blocking_verify_account_title": {
+      "message" : "Overifierat konto"
+   },
+   "panel_blocking_verify_account_message": {
+      "message" : "Kolla din e-post och verifiera ditt konto för att synka dina inställningar och få tillgång till schyssta Ghostery-funktioner."
+   },
+   "panel_blocking_success_message": {
+      "message": "Underbart! Dina inställningar är synkade."
+   },
+   "panel_blocking_failure_message": {
+      "message": "Oj då! Dina inställningar synkades inte. Försök igen senare."
+   },
+   "panel_button_pause_blocking": {
+      "description" : "Button located at the bottom of the findings panel that pauses blocking.",
+      "message": "Pausa blockering"
+   },
+   "panel_button_resume_blocking": {
+      "description" : "Button located at the bottom of the findings panel that resumes blocking.",
+      "message": "Återuppta blockering"
+   },
+   "panel_button_whitelist_site": {
+      "description" : "Button located at the bottom of the findings panel that whitelists a site.",
+      "message": "Vitlista webbplats"
+   },
+   "panel_chart_tracker": {
+      "message" : "Spårare"
+   },
+   "panel_chart_trackers": {
+      "message" : "Spårare"
+   },
+   "panel_chart_view_all": {
+      "message" : "Visa alla spårare"
+   },
+   "panel_create_account": {
+      "message" : "Skapa konto"
+   },
+   "panel_email_verification_failed_title": {
+      "message" : "Hoppsan!"
+   },
+   "panel_email_verification_failed": {
+      "message" : "Ett fel uppstod när ditt verifieringsmeddelande skulle skickas. Försök igen senare."
+   },
+   "panel_email_verification_sent": {
+      "message" : "$BOLD_HTML_STARTS$ Klar! $BOLD_HTML_END$ Ett e-postmeddelande för kontoverifiering har skickats till $EMAIL$",
+      "placeholders": {
+         "email" : {
+            "content": "$1",
+            "example": "info@ghostery.com"
+         },
+         "bold_html_end": {
+            "content" : "</strong>"
+         },
+         "bold_html_starts": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "panel_forgot_password": {
+      "message" : "Glömt lösenordet?"
+   },
+   "panel_g_allowed": {
+      "message" : "Tillåtna"
+   },
+   "panel_g_blocked": {
+      "message" : "Blockerade"
+   },
+   "panel_help_contact_header": {
+      "message" : "Så här kontaktar du oss"
+   },
+   "panel_help_faq": {
+      "message" : "Vanliga frågor"
+   },
+   "panel_help_feedback": {
+      "message" : "Svara på vår enkät"
+   },
+   "panel_help_license": {
+      "message" : "Licensavtal"
+   },
+   "panel_help_privacy_statement": {
+      "message" : "Integritetspolicy"
+   },
+   "panel_help_questions_header": {
+      "message" : "Frågor och kommentarer"
+   },
+   "panel_help_support": {
+      "message" : "Support"
+   },
+   "panel_help_title": {
+      "message" : "Hjälp"
+   },
+   "panel_help_version_header": {
+      "message" : "Ghostery för $BROWSER$ version ",
+      "placeholders": {
+       "browser": {
+         "content": "$1",
+         "example": "Firefox"
+       }
+     }
+   },
+   "panel_menu_blocking": {
+      "message" : "Inställningar för spårare"
+   },
+   "panel_menu_dashboard": {
+      "message" : "Sammanfattning av spårare"
+   },
+   "panel_menu_help": {
+      "message" : "Hjälp"
+   },
+   "panel_menu_myghostery": {
+      "message" : "Mitt Ghostery"
+   },
+   "panel_menu_report_broken_site": {
+      "message" : "Rapportera trasig sida"
+   },
+   "panel_menu_submit_tracker": {
+      "message" : "Skicka in ny spårare"
+   },
+   "panel_menu_signin": {
+      "message" : "Logga in"
+   },
+   "panel_menu_signout": {
+      "message" : "Logga ut"
+   },
+   "panel_needs_reload": {
+      "description" : "Message that appears at the bottom of the findings panel when a settings has been changed and the page needs to be reloaded to reflect these changes.",
+      "message": "$SPAN_START$Klicka för att uppdatera sidan$SPAN_END$ och se ändringarna.",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"button\">"
+         }
+      }
+   },
+   "panel_no_trackers_found": {
+      "description" : "Text displayed in the findings panel's apps-div when no tags were found.",
+      "message": "Inga spårare hittades på denna sida"
+   },
+   "panel_not_scanned1": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Denna sida skannades inte."
+   },
+   "panel_not_scanned2": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Ghostery skannar bara ”http”- och ”https”-sidor. Navigera till en annan sida, så lovar jag att leverera."
+   },
+   "panel_settings_about": {
+      "description" : "About button from the findings panel settings bar.",
+      "message": "Feedback"
+   },
+   "panel_settings_options": {
+      "description" : "Options button from the findings panel settings bar.",
+      "message": "Alternativ"
+   },
+   "panel_settings_share": {
+      "description" : "Share button from the findings panel settings bar.",
+      "message": "Dela"
+   },
+   "panel_settings_support": {
+      "description" : "Support button from the findings panel settings bar.",
+      "message": "Support"
+   },
+   "panel_pause": {
+      "message" : "Pausa"
+   },
+   "panel_unpause": {
+      "message" : "Fortsätt"
+   },
+   "paused_override_status": {
+      "message": "Blockeringen pausad"
+   },
+   "panel_pause_ghostery_tooltip": {
+      "message" : "Klicka för att pausa Ghostery"
+   },
+   "panel_unpause_ghostery_tooltip": {
+      "message" : "Ghostery är pausat. Klicka för att aktivera blockering"
+   },
+   "panel_signin_success_header": {
+      "message" : "Lyckades!"
+   },
+   "panel_signin_success": {
+      "message" : "Du är inloggad som"
+   },
+   "panel_signin_success_title": {
+      "message" : "Segerdans! Ditt Ghostery-konto är klart att använda!"
+   },
+   "panel_ss_allowed": {
+      "message" : "Tillåten endast på denna sida"
+   },
+   "panel_ss_blocked": {
+      "message" : "Blockerad endast på denna sida"
+   },
+   "panel_blocking_no_trackers": {
+      "message": "Inga spårare hittades på denna sida"
+   },
+   "panel_blocking_not_scanned_1": {
+      "message": "Denna sida skannades inte."
+   },
+   "panel_blocking_not_scanned_2": {
+      "message": "Ghostery skannar bara ”http”- och ”https”-sidor. Navigera till en annan sida, så lovar jag att leverera."
+   },
+   "panel_sync_complete": {
+      "message" : "Dina inställningar har synkats."
+   },
+   "panel_sync_settings": {
+      "message" : "Synka inställningar"
+   },
+   "panel_table_allowed": {
+      "message" : "TILLÅTEN"
+   },
+   "panel_table_blocked": {
+      "message" : "BLOCKERAD"
+   },
+   "panel_table_title_category": {
+      "message" : "KATEGORIER"
+   },
+   "panel_title_blocking": {
+      "message" : "Inställningar för spårare"
+   },
+   "panel_title_change_password": {
+      "message" : "Ändra lösenord"
+   },
+   "panel_title_create_account": {
+      "message" : "Skapa konto"
+   },
+   "panel_title_close": {
+      "message" : "Tillbaka"
+   },
+   "panel_title_dashboard": {
+      "message" : "Sammanfattning av spårare"
+   },
+   "panel_title_finish": {
+      "message" : "Slutför"
+   },
+   "panel_title_forgot_password": {
+      "message" : "Glömt lösenordet?"
+   },
+   "panel_title_not_scanned": {
+      "description" : "Text at the top of the findings panel that is displayed when a page has not been scanned by Ghostery.",
+      "message": "Sidan skannades inte"
+   },
+   "panel_title_paused": {
+      "description" : "Text at the top of the findings panel that is displayed when 'pause blocking' is enabled.",
+      "message": "Blockering är $SPAN_START$pausad$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_title_plural": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if zero or more than one tags were found).",
+      "message": "Ghostery hittade $NUMBER$ spårare",
+      "placeholders": {
+         "number" : {
+            "content" : "$1",
+            "example": 7
+         }
+      }
+   },
+   "panel_title_singular": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if only one tag was found).",
+      "message": "Ghostery hittade 1 spårare"
+   },
+   "panel_title_whitelisted": {
+      "description" : "Text at the top of the findings panel that is displayed when 'whitelist site' is enabled.",
+      "message": "Webbplatsen är $SPAN_START$vitlistad$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_tracker_compatibility_warning": {
+      "description" : "Message that appears when a tag is known to break a specific website if blocked.",
+      "message": "Om du blockerar denna spårare kan delar av $SITE$ sluta fungera",
+      "placeholders": {
+         "site" : {
+            "content" : "$1",
+            "example": "store.apple.com"
+         }
+      }
+   },
+   "panel_tracker_details_no_info": {
+      "description" : "Message that appears when no tag info is available.",
+      "message": "Det finns tyvärr ingen information om denna spårare just nu."
+   },
+   "panel_tracker_found_sources_title": {
+      "description" : "Title that appears when expanding a findings panel tag, above the list of found sources.",
+      "message": "Upptäckte spårarnas URL-källor:"
+   },
+   "panel_tracker_global_block_tooltip": {
+      "description" : "Tooltip that appears over the findings panel's tag global blocking control.",
+      "message": "Klicka här för att växla blockering för $APP_NAME$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_learn_more": {
+      "message" : "Läs mer"
+   },
+   "panel_tracker_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "Klicka här för mer information om $APP_NAME$",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_message": {
+      "description" : "Message that appears after setting the site specific unblock to 'on' for a tag in the findings panel.",
+      "message": "Tillåts alltid på $BREAK$$HOST$",
+      "placeholders": {
+         "break" : {
+            "content" : "<br>"
+         },
+         "host": {
+            "content" : "$1",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_off": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "Klicka här för att alltid tillåta $APP_NAME$ på $HOST$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_on": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "Klicka här för att sluta tillåta $APP_NAME$ på $HOST$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_what_is_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "Vad är $APP_NAME$?",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_verify_account": {
+      "message" : "Verifiera konto"
+   },
+   "panel_visualize": {
+      "message" : "Kartlägg dessa spårare"
+   },
+   "panel_visualize_tool_tip": {
+      "message" : "Visa spårarna på denna webbplats"
+   },
+   "password_field_label": {
+      "message" : "Lösenord"
+   },
+   "password_requirements": {
+      "message" : "Lösenordet måste bestå av minst 8 tecken"
+   },
+   "rate_ghostery_link1": {
+      "description" : "Part one of \"Like Ghostery? Rate It!\"",
+      "message": "Gillar du Ghostery?"
+   },
+   "rate_ghostery_link2": {
+      "description" : "Part two of \"Like Ghostery? Rate It!\"",
+      "message": "Betygsätt det!"
+   },
+   "save_button_label": {
+      "message" : "Spara"
+   },
+   "send_button_label": {
+      "message" : "Skicka"
+   },
+   "server_error_message": {
+      "message" : "Vi verkar ha tekniska problem. Prova igen senare."
+   },
+   "server_error_title": {
+      "message" : "Krux"
+   },
+   "setup_page_category_all_blocked": {
+      "message" : "Alla spårare i denna kategori är blockerade"
+   },
+   "setup_page_num_blocked": {
+      "message" : "Blockerade"
+   },
+   "survey_link": {
+      "message" : "$LINK_START$Svara på vår enkät!$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "survey_link_also": {
+      "message" : "$LINK_START$Svara gärna på vår enkät!$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "tag": {
+      "message" : "Tagg"
+   },
+   "tag_description_getting": {
+      "message" : "Hämtar taggbeskrivning …"
+   },
+   "tag_description_none_found": {
+      "message" : "Ingen taggbeskrivning hittades."
+   },
+   "tag_description_read_more": {
+      "message" : "Läs mer"
+   },
+   "tags": {
+      "message" : "Taggar"
+   },
+   "trackers": {
+      "message" : "Spårare"
+   },
+   "tags_less": {
+      "description" : "Clicking this makes the tag list smaller",
+      "message": "Visa färre taggar..."
+   },
+   "tags_more": {
+      "description" : "Clicking this expands the list to show all tags",
+      "message": "Visa fler taggar..."
+   },
+   "toggle_collapse_all": {
+      "description" : "Click this to collapse all items, hiding collapsible per-item content.",
+      "message": "Dölj alla"
+   },
+   "toggle_expand_all": {
+      "description" : "Click this to expand all items, revealing all content.",
+      "message": "Visa alla"
+   },
+   "toggle_select_all": {
+      "description" : "Click this to select all items.",
+      "message": "Välj alla"
+   },
+   "toggle_select_none": {
+      "description" : "Click this to deselect all items.",
+      "message": "Välj ingen"
+   },
+   "tracker_browser_filters_reset": {
+      "description" : "Link to reset the tag browser's display filters.",
+      "message": "Återställ sökning"
+   },
+   "tracker_browser_name_filter": {
+      "description" : "Text input filter for the tag browser. Lets you filter by/search for tag names. Part of 'Search for tag name'.",
+      "message": "Sök efter $SEARCH_FIELD$",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "tag name"
+         }
+      }
+   },
+   "tracker_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the tag browser search input. Should read as 'Search for tag name'.",
+      "message": "taggnamn"
+   },
+   "tracker_browser_type_filter": {
+      "description" : "Dropdown filter for the tag browser. Lets you show only blocked (checked), or only unblocked (unchecked) tags.",
+      "message": "Visa $TYPE$",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "unblocked": {
+      "description" : "Select this to show only unblocked (unchecked) tags in the tag browser. Should read as 'Show unblocked'.",
+      "message": "avblockerad"
+   },
+   "walkthrough_link": {
+      "description" : "Link to walkthrough/configuration wizard, shown on top of the options page.",
+      "message": "För en genomgång av Ghosterys viktigaste funktioner, gå till $LINK_START$Ghosterys konfigureringsguide$LINK_END$.",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a href=\"walkthrough.html\" id=\"walkthrough-link\">"
+         }
+      }
+   },
+   "walkthrough_skip_button": {
+      "message" : "Hoppa över guiden"
+   },
+   "white_black_list_error_invalid_url": {
+      "message" : "Ange en giltig URL."
+   },
+   "whitelist_error_blacklist_url": {
+      "message" : "Denna webbplats har tagits bort från listan över Ej betrodda platser och lagts till i listan över Betrodda platser."
+   },
+   "whitelist_error_duplicate_url": {
+      "description" : "Options page site whitelisting error message shown when whitelisting a URL that is already in the whitelist.",
+      "message": "Denna webbplats är redan vitlistad."
+   },
+   "xul_panel_block_firefox": {
+      "description" : "In the XUL panel, this is a toggle to block a particular app.",
+      "message": "Blockera $NAME$?",
+      "placeholders": {
+         "name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "xul_panel_site_specific_unblock_firefox": {
+      "description" : "In the XUL panel, this is a toggle to un-block a particular app for the web-page the user is on.",
+      "message": "Avblockera endast för denna webbplats"
+   },
+   "xul_panel_view_source_firefox": {
+      "description" : "In the XUL panel, this is the menu option that opens the site that shows source code of the tag.",
+      "message": "Vista script-källa"
+   },
+   "short_description": {
+      "description": "A short description of this extension (Ghostery).",
+      "message": "Skydda din integritet. Se vem som spårar ditt surfande med Ghostery. "
+  }
+}

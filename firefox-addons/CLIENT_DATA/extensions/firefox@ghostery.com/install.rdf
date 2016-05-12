@@ -1,30 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><!-- This Source Code Form is subject to the terms of the Mozilla Public
-   - License, v. 2.0. If a copy of the MPL was not distributed with this
-   - file, You can obtain one at http://mozilla.org/MPL/2.0/. --><RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-  <Description about="urn:mozilla:install-manifest">
-    <em:id>firefox@ghostery.com</em:id>
-    <em:version>5.3.2</em:version>
-    <em:type>2</em:type>
+<?xml version="1.0" encoding="utf-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+    <Description about="urn:mozilla:install-manifest">
+          <em:id>firefox@ghostery.com</em:id>
+          <em:type>2</em:type>
 <em:optionsType>3</em:optionsType>
-<em:optionsURL>resource://firefox-at-ghostery-dot-com/ghostery/data/options.html</em:optionsURL>
-    <em:bootstrap>true</em:bootstrap>
-    <em:unpack>false</em:unpack>
+<em:optionsURL>https://extension.ghostery.com/settings</em:optionsURL>
+          <em:bootstrap>true</em:bootstrap>
+<em:targetApplication>
+  <!-- SeaMonkey -->
+  <Description>
+    <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+    <em:minVersion>2.32</em:minVersion>
+    <em:maxVersion>2.36</em:maxVersion>
+  </Description>
+</em:targetApplication>
+          <em:unpack>false</em:unpack>
+          <em:version>6.2.0</em:version>
+          <em:name>Ghostery</em:name>
+          <em:description>Enjoy a faster, safer and cleaner browsing experience.</em:description>
+          <em:creator>Ghostery, Inc.</em:creator>
+          <em:iconURL>resource://firefox-at-ghostery-dot-com/data/images/ghosty-32px.png</em:iconURL>
+          <em:icon64URL>resource://firefox-at-ghostery-dot-com/data/images/ghosty-64px.png</em:icon64URL>
+          <em:homepageURL>http://www.ghostery.com</em:homepageURL>
 
-    <!-- Firefox -->
-    <em:targetApplication>
-      <Description>
-        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-        <em:minVersion>21.0</em:minVersion>
-        <em:maxVersion>29.0a1</em:maxVersion>
-      </Description>
-    </em:targetApplication>
+          <em:targetApplication>
+            <Description>
+              <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+              <em:minVersion>38.0a1</em:minVersion>
+              <em:maxVersion>43.0</em:maxVersion>
+</Description>
+</em:targetApplication>
 
-    <!-- Front End MetaData -->
-    <em:name>Ghostery</em:name>
-    <em:description></em:description>
-    <em:creator>Ghostery, Inc.</em:creator>
-    <em:homepageURL>http://www.ghostery.com</em:homepageURL>
-    
-    
-  <em:targetApplication><Description><em:id>{aa3c5121-dab2-40e2-81ca-7ea25febc110}</em:id><em:minVersion>19.0</em:minVersion><em:maxVersion>22.0a1</em:maxVersion></Description></em:targetApplication></Description>
+          <em:targetApplication>
+            <Description>
+              <em:id>{aa3c5121-dab2-40e2-81ca-7ea25febc110}</em:id>
+              <em:minVersion>38.0a1</em:minVersion>
+              <em:maxVersion>43.0</em:maxVersion>
+</Description>
+</em:targetApplication>
+
+
+    </Description>
+
 </RDF>
+

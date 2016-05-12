@@ -1,0 +1,1461 @@
+{
+   "account_creation_privacy_statement" : {
+      "message" : "我同意 Ghostery 在其 $LINK_PS_START$隐私声明$LINK_PS_END$ 中描述的数据处理方法及其在 $LINK_UA_START$许可协议$LINK_UA_END$ 中规定的条款。",
+      "placeholders": {
+         "link_ps_end" : {
+            "content" : "</a>"
+         },
+         "link_ps_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-privacy-statement/\">"
+         },
+         "link_ua_end": {
+            "content" : "</a>"
+         },
+         "link_ua_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-end-user-license-agreem/\">"
+         }
+      }
+   },
+   "account_signin_privacy_statement": {
+      "message": "您的账户赋予您高级功能的访问权，且不与您选择分享给我们的任何跟踪数据关联。 要了解我们怎样使用账户数据的具体信息，请参见$LINK_FAQ_START$FAQ$LINK_FAQ_END$。",
+      "placeholders": {
+         "link_faq_end" : {
+            "content" : "</a>"
+         },
+         "link_faq_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/support/faq/ghostery-add-on/\">"
+         }
+      }
+   },
+   "addon_compatibility_warning_firefox": {
+      "description" : "Pop up warning that appears when one or more incompatible extensions are installed alongside Ghostery.",
+      "message": "您似乎正在使用 <strong>$ADDONS$</strong>。 非常抱歉地告诉您，Ghostery 的 cookie 拦截系统与该扩展程序相冲突，目前已被 <strong>禁用</strong>。 如欲重新启用 cookie 拦截系统，请使用附加组件管理器禁用或删除 <strong>$ADDONS$</strong> 并重启浏览器（如有需要）。",
+      "placeholders": {
+         "addons" : {
+            "content" : "$1",
+            "example": "Yahoo! Toolbar Addon"
+         }
+      }
+   },
+   "alert_bubble": {
+      "description" : "Ghostery's alert bubble is the purple, semi-translucent notification panel that pops up as you browse to show detected tags on the page.",
+      "message": "提醒气泡"
+   },
+   "alert_bubble_gear_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble's gear.",
+      "message": "点击配置提醒气泡"
+   },
+   "alert_bubble_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble.",
+      "message": "点击关闭提醒气泡"
+   },
+   "all": {
+      "description" : "Default setting in the 'filter by type' dropdown for the tag browser. Doesn't filter anything out. Should read as 'Show all'.",
+      "message": "所有"
+   },
+   "backup_export": {
+      "description" : "Instructions for exporting Ghostery settings.",
+      "message": "单击此按钮以保存 Ghostery 偏好设置副本，作备份之用或传输至其他计算机。"
+   },
+   "backup_export_button": {
+      "description" : "Button for exporting Ghostery settings.",
+      "message": "保存备份文件"
+   },
+   "backup_export_header": {
+      "description" : "Section header for Export section of the Import/Export page.",
+      "message": "导出"
+   },
+   "backup_import": {
+      "description" : "Instructions for importing Ghostery settings.",
+      "message": "选择要使用的以前创建的备份文件，并单击“导入”按钮。"
+   },
+   "backup_import_button": {
+      "description" : "Button for importing Ghostery settings.",
+      "message": "导入"
+   },
+   "backup_import_error": {
+      "description" : "Error message shown when importing a bad file.",
+      "message": "$SPAN_START$无效备份文件。$SPAN_END$ 请联系 $A_START$技术支持$A_END$。",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"https://getsatisfaction.com/ghostery\">"
+         },
+         "span_end": {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"red\">"
+         }
+      }
+   },
+   "backup_import_header": {
+      "description" : "Section header for Import section of the Import/Export page.",
+      "message": "导入"
+   },
+   "backup_import_warning": {
+      "description" : "Warning before importing Ghostery settings.",
+      "message": "警告：此操作会重写您当前的 Ghostery 设置。"
+   },
+   "backup_options_link": {
+      "description" : "Link back to the main options page.",
+      "message": "返回“选项”页面"
+   },
+   "backup_page_title": {
+      "description" : "Title of Ghostery's Import/Export settings page.",
+      "message": "导入\/导出 Ghostery 设置"
+   },
+   "banner_check_your_email_title": {
+      "message" : "请立即查看电子邮件，通过邮件中的链接重置密码。"
+   },
+   "banner_no_such_account_message": {
+      "message" : "糟糕！您的用户名与密码组合似乎无法识别。 请重试。"
+   },
+   "banner_no_such_account_title": {
+      "message" : "电子邮件或密码不正确"
+   },
+   "banner_wrong_email_message": {
+      "message" : "Ghostery 无法找到该电子邮件地址。 请重试。"
+   },
+   "banner_wrong_email_title": {
+      "message" : "真奇怪，"
+   },
+   "blacklist_error_duplicate_url": {
+      "message" : "该站点已受限。"
+   },
+   "blacklist_error_whitelist_url": {
+      "message" : "该站点已从您的信任站点列表中删除，并添加至您的受限站点列表。"
+   },
+   "blocked": {
+      "description" : "Select this to show only blocked (checked) tags in the tag browser. Should read as 'Show blocked'.",
+      "message": "已阻止"
+   },
+   "blocked_redirect_action_always_title": {
+      "description" : "Title for the 'Allow always and reload' button on the blocked redirect page.",
+      "message": "始终允许并重新加载。"
+   },
+   "blocked_redirect_action_through_once_title": {
+      "description" : "Title for the 'Allow once' button on the blocked redirect page.",
+      "message": "允许使用标签一次，直至到达最终目的地。"
+   },
+   "blocked_redirect_page_title": {
+      "description" : "Page title for blocked_redirect.html which appears when a redirect is blocked.",
+      "message": "Ghostery 阻止了一个重定向。"
+   },
+   "blocked_redirect_prevent": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked. Should appear inside \"redirect-prevent\" div.",
+      "message": "Ghostery 阻止了一个从 $BREAK$ $SP_O_START$$起始地$$SP_END$ 到 $SP_D_START$$目的地$$SP_END$ 的重定向， $BREAK$ 是 $A_START$$应用程序$$A_END$ 的一部分。 $BREAK$",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a id=\"name\" href=\"$4\" target=\"_blank\">"
+         },
+         "app": {
+            "content" : "$3",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "destination": {
+            "content" : "$2"
+         },
+         "origin": {
+            "content" : "$1"
+         },
+         "sp_d_start": {
+            "content" : "<span id=\"destination\">"
+         },
+         "sp_end": {
+            "content" : "</span>"
+         },
+         "sp_o_start": {
+            "content" : "<span id=\"origin\">"
+         }
+      }
+   },
+   "blocked_redirect_url_content": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked and a final 'destination' URL is successfully found.",
+      "message": "该标签似乎重定向到 $BREAK$ $A_START$$REDIRECT_URL$$A_END$，如果您觉得该链接不正确，但仍想继续，请单击下方图标以允许 $APP$ 并重新加载。",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"$1\" class=\"ellipsis\" title=\"$1\">"
+         },
+         "app": {
+            "content" : "$2",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "redirect_url": {
+            "content" : "$1"
+         }
+      }
+   },
+   "blocking_filter_name": {
+      "description" : "Description of current search filter",
+      "message": "显示 $NUMBER$ 标签与 '$NAME$' 相匹配",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         }
+      }
+   },
+   "blocking_filter_name_tags": {
+      "description" : "Description of current search filter",
+      "message": "使用 $TAGS$ 标签显示 $NUMBER$ 标签与 '$NAME$' 相匹配",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$3</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_filter_tags": {
+      "description" : "Description of current search filter",
+      "message": "使用 $TAGS$ 标签显示 $NUMBER$ 标签",
+      "placeholders": {
+         "number" : {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$2</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_summary_all_small_firefox": {
+      "description" : "All tags / cookies are selected.",
+      "message": "阻止 $B_START$所有$B_END$",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_none_small_firefox": {
+      "description" : "No tags / cookies are selected.",
+      "message": "接受 $B_START$所有$B_END$",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_small_firefox": {
+      "description" : "Some of the tags / cookies are selected (X out of Y total).",
+      "message": "阻止 $NUMBER_TOTAL$ 中的 $NUMBER_SELECTED$",
+      "placeholders": {
+         "number_selected" : {
+            "content" : "<strong>$1",
+            "example": 130
+         },
+         "number_total": {
+            "content" : "$2</strong>",
+            "example": 132
+         }
+      }
+   },
+   "box_dismiss_0s": {
+      "message" : "$SPAN_START$永不$SPAN_END$ 关闭",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_15s": {
+      "message" : "$SPAN_START$15 秒后$SPAN_END$ 关闭",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_30s": {
+      "message" : "$SPAN_START$30 秒后$SPAN_END$ 关闭",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_5s": {
+      "message" : "$SPAN_START$5 秒后$SPAN_END$ 关闭",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_bl": {
+      "message" : "显示在 $SPAN_START$左下角$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_br": {
+      "message" : "显示在 $SPAN_START$右下角$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tl": {
+      "message" : "显示在 $SPAN_START$左上角$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tr": {
+      "message" : "显示在 $SPAN_START$右上角$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_hide": {
+      "message" : "隐藏框"
+   },
+   "box_hide_expanded": {
+      "message" : "隐藏紫色框"
+   },
+   "box_looking": {
+      "message" : "查找"
+   },
+   "box_options_expanded": {
+      "message" : "选项"
+   },
+   "box_settings": {
+      "message" : "设置"
+   },
+   "box_settings_expanded": {
+      "message" : "我的 Ghostery 设置"
+   },
+   "box_tracker": {
+      "message" : "跟踪器"
+   },
+   "box_trackers": {
+      "message" : "跟踪器"
+   },
+   "browser_button_label_firefox": {
+      "description" : "Ghostery's browser button label, displayed on Firefox's addon customization panel.",
+      "message": "Ghostery"
+   },
+   "browser_button_tooltip": {
+      "description" : "Ghostery's browser button tooltip.",
+      "message": "查看 Ghostery 的查找结果"
+   },
+   "button_cancel": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "取消"
+   },
+   "button_ok": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "确定"
+   },
+   "category_ad": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "广告"
+   },
+   "category_ad_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "可投放广告的跟踪器"
+   },
+   "category_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "分析"
+   },
+   "category_analytics_desc": {
+      "description" : "User-facing description for the Analytics tag category.",
+      "message": "可为网站发布者提供研究或分析资料的追踪器。"
+   },
+   "category_privacy": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "隐私"
+   },
+   "category_privacy_desc": {
+      "description" : "User-facing description for the Privacy tag category.",
+      "message": "隐私声明以及其他隐私相关要素。"
+   },
+   "category_tracker": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "信标"
+   },
+   "category_tracker_desc": {
+      "description" : "User-facing description for the Beacons tag category.",
+      "message": "仅具有跟踪作用（信标、像素转换、受众细分像素等）的跟踪器属于信标类。"
+   },
+   "category_widget": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "小工具"
+   },
+   "category_widget_desc": {
+      "description" : "User-facing description for the Widgets tag category.",
+      "message": "可提供页面功能（社交网络按钮、评论表单等）的跟踪器。"
+   },
+   "category_advertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "广告"
+   },
+   "category_advertising_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "提供广告和广告相关的服务，例如数据收集、行为分析或重定目标。"
+   },
+   "category_comments": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "意见"
+   },
+   "category_comments_desc": {
+      "description" : "User-facing description for the Comments tag category.",
+      "message": "启用意见区，用于文章和产品评论。"
+   },
+   "category_customer_interaction": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "客户互动"
+   },
+   "category_customer_interaction_desc": {
+      "description" : "User-facing description for the Customer Interaction tag category.",
+      "message": "包括聊天、电子邮件、客户服务和其他互动工具。"
+   },
+   "category_essential": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "必要项目"
+   },
+   "category_essential_desc": {
+      "description" : "User-facing description for the Essential tag category.",
+      "message": "包括标签管理器、隐私声明，以及与网站功能息息相关的技术。"
+   },
+   "category_pornvertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "成人广告"
+   },
+   "category_pornvertising_desc": {
+      "description" : "User-facing description for the Adult Advertising tag category.",
+      "message": "传递专门为成人内容网站设计的广告技术。"
+   },
+   "category_site_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "网站分析"
+   },
+   "category_site_analytics_desc": {
+      "description" : "User-facing description for the Site Analytics tag category.",
+      "message": "收集和分析与网站使用和性能相关的数据。"
+   },
+   "category_social_media": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "社交媒体"
+   },
+   "category_social_media_desc": {
+      "description" : "User-facing description for the Social Media tag category.",
+      "message": "整合与社交媒体网站相关的功能。"
+   },
+   "category_audio_video_player": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "音频\/视频播放器"
+   },
+   "category_audio_video_player_desc": {
+      "description" : "User-facing description for the Audio/Video Player tag category.",
+      "message": "允许网站发布、传播和优化视频和音频内容。"
+   },
+   "change_password_message": {
+      "message" : "新密码需要至少 8 个字符、1 个数字和 1 个符号。"
+   },
+   "click2play_allow_always_tooltip": {
+      "description" : "Tooltip that appears over the 'allow always' click2play button.",
+      "message": "允许并重新加载。"
+   },
+   "click2play_allow_once_button_tooltip": {
+      "description" : "Tooltip that appears over the click2play replacement for 'social' buttons.",
+      "message": "Ghostery 阻止了 $APP_NAME$。 单击此处允许仅加载一次。",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Twitter Button"
+         }
+      }
+   },
+   "click2play_allow_once_tooltip": {
+      "description" : "Tooltip that appears over the 'allow once' click2play button.",
+      "message": "只允许一次，并重新加载。"
+   },
+   "click2play_blocked": {
+      "message" : "Ghostery 阻止了 $APP_NAME$。",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "SoundCloud"
+         }
+      }
+   },
+   "click2play_comment_form": {
+     "message": "Ghostery 阻止了由 $NAME$ 提供支持的评论。",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_review_form": {
+     "message": "Ghostery 阻止了由 $NAME$ 提供支持的审查。",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_video_form": {
+     "message": "Ghostery 阻止了 $NAME$ 视频播放器。",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_survey_form": {
+     "message": "Ghostery 阻止了由 $NAME$ 提供支持的调查。",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "company_about": {
+      "description" : "Header for company profiles.",
+      "message": "关于 $COMPANY$：",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_affiliations": {
+      "message" : "行业联盟："
+   },
+   "company_description": {
+      "message" : "公司描述"
+   },
+   "company_in_their_own_words": {
+      "description" : "Label for a description of the company that is provided by the company itself",
+      "message": "自述"
+   },
+   "company_operates": {
+      "description" : "Followed by a list of products this company offers.",
+      "message": "$COMPANY$ 运行：",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_profile_error": {
+      "message" : "无法从 ghostery.com 加载数据"
+   },
+   "company_profile_link": {
+      "message" : "继续完善资料"
+   },
+   "company_tags": {
+      "description" : "Tags here refers to categories we use to group companies based on their business (ie Video Player, Popups, Polls)",
+      "message": "标签："
+   },
+   "company_website": {
+      "message" : "网站："
+   },
+   "confirm_new_password_field_label": {
+      "message" : "确认新密码"
+   },
+   "copyright": {
+      "description" : "Copyright message, shown in page footers.",
+      "message": "$C$ $YEAR$ $GHOSTERY$ 是 $COMPANY_ADDRESS$ 的一部分",
+      "placeholders": {
+         "c" : {
+            "content" : "&copy;"
+         },
+         "company_address": {
+            "content" : "$1",
+            "example": "GHOSTERY, Inc., Such-and-such Street, Such-and-such Floor, New York, NY, Zip Code"
+         },
+         "ghostery": {
+            "content" : "<a href='https://www.ghostery.com' target='_blank'>Ghostery</a>"
+         },
+         "year": {
+            "content" : "2015"
+         }
+      }
+   },
+   "dismiss": {
+      "description" : "Text for a button or link to close a notification.",
+      "message": "关闭"
+   },
+   "email_preferences_1": {
+      "message" : "是的！我很乐意收到所浏览产品和服务的相关信息。"
+   },
+   "email_preferences_2": {
+      "message" : "请通知我关于新产品发布的消息。"
+   },
+   "email_preferences_header": {
+      "message" : "首选电子邮件"
+   },
+   "email_confirm_field_label": {
+      "message" : "确认电子邮件"
+   },
+   "email_field_label": {
+      "message" : "电子邮件"
+   },
+   "error_email_forgot": {
+      "message" : "请尝试其他电子邮件，该电子邮件不存在于我们的系统中。"
+   },
+   "firefox_tools_menu_database_update": {
+      "description" : "Ghostery's update database menu label dipslayed under the ghostery menu.",
+      "message": "更新错误列表"
+   },
+   "first_name_field_label": {
+      "message" : "名（可选）"
+   },
+   "forgot_password_message": {
+      "message" : "别着急，这种情况很常见。 我们会向您发送电子邮件，指导您重置密码"
+   },
+   "ghostery_logo": {
+      "description" : "Alt. text for the Ghostery logo graphic in the header on options and walkthrough pages.",
+      "message": "Ghostery 标志"
+   },
+   "invalid_email": {
+      "message" : "奇怪！该电子邮件不在我们系统中。"
+   },
+   "invalid_email_confirmation": {
+      "message" : "您的电子邮件不匹配"
+   },
+   "invalid_email_forgot": {
+    "message": "唷，您必须输入真实的电子邮件地址。"
+   },
+   "error_email_forgot": {
+    "message": "嗯...我无法找到该电子邮件。 可否尝试其他电子邮件？"
+   },
+   "invalid_email_create": {
+      "message" : "请输入一个有效的电子邮件。"
+   },
+   "invalid_email_login": {
+    "message": "唷，您必须输入真实的电子邮件地址。"
+   },
+   "invalid_email_used": {
+      "message" : "该电子邮件已被使用。"
+   },
+   "last_name_field_label": {
+      "message" : "姓（可选）"
+   },
+   "library_never_updated": {
+      "description" : "Text shown in the case when no tag library updates have yet happened.",
+      "message": "强烈建议您启用自动更新。"
+   },
+   "library_update_already_updated": {
+      "description" : "Text shown in the case when the tag library did not need to be updated from remote servers since it's already the latest copy.",
+      "message": "库已经是最新的。"
+   },
+   "library_update_failed": {
+      "description" : "Tag library update action failed.",
+      "message": "很抱歉，更新失败。 请稍后重试。"
+   },
+   "library_update_in_progress": {
+      "description" : "Indicates an update is in progress (might have a spinner graphic next to it).",
+      "message": "正在更新..."
+   },
+   "library_update_now_link": {
+      "message" : "立即更新。"
+   },
+   "library_update_successful": {
+      "description" : "Tag library update action completed successfully.",
+      "message": "成功！"
+   },
+   "library_updated_on": {
+      "description" : "Text shown when a tag library update has happened at least once.",
+      "message": "跟踪器库上次同步日期：$DATE$",
+      "placeholders": {
+         "date" : {
+            "content" : "$1",
+            "example": "Wed Oct 12 2011"
+         }
+      }
+   },
+   "locally_added_tracker": {
+      "description" : "Tag that was manually added by the user. This text will be displayed on the app browser next to the tag name.",
+      "message": "$APP_NAME$（本地添加）",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1"
+         }
+      }
+   },
+   "lso_browser_name_filter": {
+      "description" : "Text input filter for the cookie browser. Lets you filter by/search for cookie names. Part of 'Search for cookie name'.",
+      "message": "搜索 $SEARCH_FIELD$",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "cookie name"
+         }
+      }
+   },
+   "lso_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the cookie browser search input. Should read as 'Search for cookie name'.",
+      "message": "cookie 名称"
+   },
+   "lso_browser_type_filter": {
+      "description" : "Dropdown filter for the cookie browser. Lets you show only blocked (checked), or only unblocked (unchecked) cookies.",
+      "message": "显示 $TYPE$",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "new_password_field_label": {
+      "message" : "新密码"
+   },
+   "new_since_last_update": {
+      "description" : "Select this to filter the tag browser to show only the tags added to the library since last update. Should read as 'Show new since last update'.",
+      "message": "显示自上次更新后的新跟踪器"
+   },
+   "no_results": {
+      "description" : "This is shown when the user performed a search or applied some other filter so that all items got filtered out.",
+      "message": "无结果。"
+   },
+   "none": {
+      "description" : "Used to say that this item does not belong to any of the groups, as in \"Groups: None\" (as opposed to \"Groups: Group A, Group B, Group C\").",
+      "message": "无"
+   },
+   "note": {
+      "description" : "Similar in function to a \"WARNING:\" prefix. Used for stuff like \"NOTE: Blocking tags can break pages.",
+      "message": "注意："
+   },
+   "notification_reminder1": {
+      "description" : "First line of the walkthrough reminder/notification. Sentence continued on next line.",
+      "message": "走查 Ghostery 配置以便详细了解 Ghostery 的一些重要功能。"
+   },
+   "notification_reminder2": {
+      "description" : "Second line of the walkthrough reminder/notification. Continues the sentence from previous line.",
+      "message": "以便详细了解 Ghostery 的重要功能。"
+   },
+   "notification_reminder_link": {
+      "description" : "Link to the walkthrough/configuration wizard, part of the walkthrough reminder/notification.",
+      "message": "设置 Ghostery"
+   },
+   "notification_update": {
+      "message" : "Ghostery 的标签库已更新。"
+   },
+   "notification_update_link": {
+      "description" : "Link to show recently added tags.",
+      "message": "单击此处了解新动态"
+   },
+   "notification_upgrade": {
+      "description" : "Upgrade message. Shown after Ghostery has gotten upgraded.",
+      "message": "请注意！在我们极富魅力的专业团队不懈努力下，我们终于推出新版 Ghostery。"
+   },
+   "notification_upgrade_link": {
+      "description" : "Upgrade link text.",
+      "message": "该版本中新增了一些贴心功能，且修复了错误。"
+   },
+   "off": {
+      "message" : "已阻止"
+   },
+   "old_password_field_label": {
+      "message" : "旧密码"
+   },
+   "on": {
+      "message" : "已允许"
+   },
+   "options_about_tab": {
+      "description" : "One of three page tabs on the options page; click to show about page.",
+      "message": "关于"
+   },
+   "options_advanced_tab": {
+      "description" : "One of three page tabs on the options page; click to show advanced settings.",
+      "message": "高级"
+   },
+   "options_blocking3": {
+      "message" : "当您阻止标签后，该标签便无法与其第三方提供商通信。"
+   },
+   "options_general_tab": {
+      "description" : "One of three page tabs on the options page; click to show general/basic settings. Selected/active by default.",
+      "message": "常规"
+   },
+   "options_header": {
+      "description" : "Header that appears at the top of the options page",
+      "message": "选项"
+   },
+   "options_lso_blocking3": {
+      "message" : "当您阻止 cookie 后，选定的第三方提供商无法将 cookie 写入您的浏览器中。$BREAK$$BREAK$$EM_START$$B_START$警告！$B_END$$EM_END$ 当结合对 <strong>Beef Taco</strong>、 <strong>Cookie Monster</strong> 以及  <strong>Google Opt-Out</strong> 等附加组件实施监控的其他 cookie 时，该功能会导致<b>无响应脚本</b>错误。 如果出现此错误，请尝试禁用该功能或相冲突的附加组件。",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "em_end": {
+            "content" : "</em>"
+         },
+         "em_start": {
+            "content" : "<em>"
+         }
+      }
+   },
+   "options_page_title": {
+      "description" : "Title of Ghostery's options page.",
+      "message": "Ghostery 选项"
+   },
+   "options_saving_exit_message": {
+      "description" : "Message that appears for an instant when saving settings on the options page.",
+      "message": "保存选项"
+   },
+   "panel_advanced_options": {
+      "message" : "高级设置"
+   },
+   "panel_allow_all": {
+      "message" : "信任站点"
+   },
+   "panel_allow_all_tool_tip": {
+      "message" : "允许该站点的所有跟踪器。"
+   },
+   "panel_allow_all_tool_tip_needs_reload": {
+      "message" : "单击以从信任站点中删除。"
+   },
+   "panel_block_all": {
+      "message" : "受限站点"
+   },
+   "panel_block_all_tool_tip": {
+      "message" : "阻止该站点的所有跟踪器。"
+   },
+   "panel_block_all_tool_tip_needs_reload": {
+      "message" : "单击以从受限站点中删除。"
+   },
+   "panel_blocking_block_or_allow": {
+      "message" : "阻止或允许"
+   },
+   "panel_blocking_trackers_by_category": {
+      "message" : "按类别排列跟踪器"
+   },
+   "panel_blocking_verify_account_message": {
+     "message" : "如欲同步您的设置，请验证您的帐户。"
+   },
+   "panel_blocking_verify_account_title": {
+      "message" : "未验证的帐户"
+   },
+   "panel_blocking_verify_account_message": {
+      "message" : "如欲同步您的设置并访问绝妙的 Ghostery 功能，请查收帐户验证邮件。"
+   },
+   "panel_blocking_success_message": {
+      "message": "太棒了，您的设置已同步。"
+   },
+   "panel_blocking_failure_message": {
+      "message": "糟糕，您的设置没有同步。 请稍后重试。"
+   },
+   "panel_button_pause_blocking": {
+      "description" : "Button located at the bottom of the findings panel that pauses blocking.",
+      "message": "暂停阻止"
+   },
+   "panel_button_resume_blocking": {
+      "description" : "Button located at the bottom of the findings panel that resumes blocking.",
+      "message": "恢复阻止"
+   },
+   "panel_button_whitelist_site": {
+      "description" : "Button located at the bottom of the findings panel that whitelists a site.",
+      "message": "白名单网站"
+   },
+   "panel_chart_tracker": {
+      "message" : "跟踪器"
+   },
+   "panel_chart_trackers": {
+      "message" : "跟踪器"
+   },
+   "panel_chart_view_all": {
+      "message" : "查看所有跟踪器"
+   },
+   "panel_create_account": {
+      "message" : "创建帐户"
+   },
+   "panel_email_verification_failed_title": {
+      "message" : "哎呀！"
+   },
+   "panel_email_verification_failed": {
+      "message" : "向您发送验证邮件时发生错误。 请稍后重试。"
+   },
+   "panel_email_verification_sent": {
+      "message" : "$BOLD_HTML_STARTS$ 成功！ $BOLD_HTML_END$ 一封账户确认电子邮件已发送至 $EMAIL$",
+      "placeholders": {
+         "email" : {
+            "content": "$1",
+            "example": "info@ghostery.com"
+         },
+         "bold_html_end": {
+            "content" : "</strong>"
+         },
+         "bold_html_starts": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "panel_forgot_password": {
+      "message" : "忘记密码？"
+   },
+   "panel_g_allowed": {
+      "message" : "已允许"
+   },
+   "panel_g_blocked": {
+      "message" : "已阻止"
+   },
+   "panel_help_contact_header": {
+      "message" : "联系我们"
+   },
+   "panel_help_faq": {
+      "message" : "常见问题"
+   },
+   "panel_help_feedback": {
+      "message" : "参与我们的调查"
+   },
+   "panel_help_license": {
+      "message" : "许可协议"
+   },
+   "panel_help_privacy_statement": {
+      "message" : "隐私声明"
+   },
+   "panel_help_questions_header": {
+      "message" : "问题和意见"
+   },
+   "panel_help_support": {
+      "message" : "技术支持"
+   },
+   "panel_help_title": {
+      "message" : "帮助"
+   },
+   "panel_help_version_header": {
+      "message" : "适合$BROWSER$浏览器版本的Ghostery ",
+      "placeholders": {
+       "browser": {
+         "content": "$1",
+         "example": "Firefox"
+       }
+     }
+   },
+   "panel_menu_blocking": {
+      "message" : "跟踪器设置"
+   },
+   "panel_menu_dashboard": {
+      "message" : "跟踪器汇总"
+   },
+   "panel_menu_help": {
+      "message" : "帮助"
+   },
+   "panel_menu_myghostery": {
+      "message" : "我的 Ghostery"
+   },
+   "panel_menu_report_broken_site": {
+      "message" : "报告崩溃页面"
+   },
+   "panel_menu_submit_tracker": {
+      "message" : "提交新跟踪器"
+   },
+   "panel_menu_signin": {
+      "message" : "登录"
+   },
+   "panel_menu_signout": {
+      "message" : "注销"
+   },
+   "panel_needs_reload": {
+      "description" : "Message that appears at the bottom of the findings panel when a settings has been changed and the page needs to be reloaded to reflect these changes.",
+      "message": "$SPAN_START$点击以重新加载页面$SPAN_END$ 来查看更改。",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"button\">"
+         }
+      }
+   },
+   "panel_no_trackers_found": {
+      "description" : "Text displayed in the findings panel's apps-div when no tags were found.",
+      "message": "未在本页面发现跟踪器。"
+   },
+   "panel_not_scanned1": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "本页面未予以扫描。"
+   },
+   "panel_not_scanned2": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Ghostery 仅扫描“http”和“https”页面。 导航至其他页面，谨在此向您承诺我会提供这些内容。"
+   },
+   "panel_settings_about": {
+      "description" : "About button from the findings panel settings bar.",
+      "message": "反馈"
+   },
+   "panel_settings_options": {
+      "description" : "Options button from the findings panel settings bar.",
+      "message": "选项"
+   },
+   "panel_settings_share": {
+      "description" : "Share button from the findings panel settings bar.",
+      "message": "共享"
+   },
+   "panel_settings_support": {
+      "description" : "Support button from the findings panel settings bar.",
+      "message": "技术支持"
+   },
+   "panel_pause": {
+      "message" : "暂停"
+   },
+   "panel_unpause": {
+      "message" : "恢复"
+   },
+   "paused_override_status": {
+      "message": "阻止已暂停"
+   },
+   "panel_pause_ghostery_tooltip": {
+      "message" : "点击暂停 Ghostery"
+   },
+   "panel_unpause_ghostery_tooltip": {
+      "message" : "Ghostery 已暂停。 点击启用阻止"
+   },
+   "panel_signin_success_header": {
+      "message" : "成功！"
+   },
+   "panel_signin_success": {
+      "message" : "您以"
+   },
+   "panel_signin_success_title": {
+      "message" : "太棒了！您的 Ghostery 账户已可用！"
+   },
+   "panel_ss_allowed": {
+      "message" : "仅允许该站点"
+   },
+   "panel_ss_blocked": {
+      "message" : "仅阻止该站点"
+   },
+   "panel_blocking_no_trackers": {
+      "message": "未在本页面发现跟踪器。"
+   },
+   "panel_blocking_not_scanned_1": {
+      "message": "本页面未予以扫描。"
+   },
+   "panel_blocking_not_scanned_2": {
+      "message": "Ghostery 仅扫描“http”和“https”页面。 导航至其他页面，谨在此向您承诺我会提供这些内容。"
+   },
+   "panel_sync_complete": {
+      "message" : "您的设置已同步。"
+   },
+   "panel_sync_settings": {
+      "message" : "同步设置"
+   },
+   "panel_table_allowed": {
+      "message" : "已允许"
+   },
+   "panel_table_blocked": {
+      "message" : "已阻止"
+   },
+   "panel_table_title_category": {
+      "message" : "类别"
+   },
+   "panel_title_blocking": {
+      "message" : "跟踪器设置"
+   },
+   "panel_title_change_password": {
+      "message" : "更改密码"
+   },
+   "panel_title_create_account": {
+      "message" : "创建帐户"
+   },
+   "panel_title_close": {
+      "message" : "返回"
+   },
+   "panel_title_dashboard": {
+      "message" : "跟踪器汇总"
+   },
+   "panel_title_finish": {
+      "message" : "结束"
+   },
+   "panel_title_forgot_password": {
+      "message" : "忘记密码？"
+   },
+   "panel_title_not_scanned": {
+      "description" : "Text at the top of the findings panel that is displayed when a page has not been scanned by Ghostery.",
+      "message": "页面未予以扫描"
+   },
+   "panel_title_paused": {
+      "description" : "Text at the top of the findings panel that is displayed when 'pause blocking' is enabled.",
+      "message": "$SPAN_START$暂停$SPAN_END$ 阻止",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_title_plural": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if zero or more than one tags were found).",
+      "message": "Ghostery 发现 $NUMBER$ 跟踪器",
+      "placeholders": {
+         "number" : {
+            "content" : "$1",
+            "example": 7
+         }
+      }
+   },
+   "panel_title_singular": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if only one tag was found).",
+      "message": "Ghostery 发现 1 个跟踪器"
+   },
+   "panel_title_whitelisted": {
+      "description" : "Text at the top of the findings panel that is displayed when 'whitelist site' is enabled.",
+      "message": "该站点被列入 $SPAN_START$白名单$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_tracker_compatibility_warning": {
+      "description" : "Message that appears when a tag is known to break a specific website if blocked.",
+      "message": "阻止该跟踪器可能会损坏部分 $SITE$ ",
+      "placeholders": {
+         "site" : {
+            "content" : "$1",
+            "example": "store.apple.com"
+         }
+      }
+   },
+   "panel_tracker_details_no_info": {
+      "description" : "Message that appears when no tag info is available.",
+      "message": "很抱歉，目前没有关于该跟踪器的信息。"
+   },
+   "panel_tracker_found_sources_title": {
+      "description" : "Title that appears when expanding a findings panel tag, above the list of found sources.",
+      "message": "检测到的跟踪源 URL："
+   },
+   "panel_tracker_global_block_tooltip": {
+      "description" : "Tooltip that appears over the findings panel's tag global blocking control.",
+      "message": "单击此处以切换阻止 $APP_NAME$。",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_learn_more": {
+      "message" : "了解更多"
+   },
+   "panel_tracker_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "单击此处以获取有关 $APP_NAME$ 的更多信息",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_message": {
+      "description" : "Message that appears after setting the site specific unblock to 'on' for a tag in the findings panel.",
+      "message": "$BREAK$$HOST$ 中始终允许",
+      "placeholders": {
+         "break" : {
+            "content" : "<br>"
+         },
+         "host": {
+            "content" : "$1",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_off": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "单击此处以始终允许 $HOST$ 中的 $APP_NAME$。",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_on": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "单击此处以停止允许 $HOST$ 中的 $APP_NAME$。",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_what_is_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "$APP_NAME$ 是什么？",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_verify_account": {
+      "message" : "验证帐户"
+   },
+   "panel_visualize": {
+      "message" : "映射这些跟踪器"
+   },
+   "panel_visualize_tool_tip": {
+      "message" : "使这些跟踪器在该站点可视化"
+   },
+   "password_field_label": {
+      "message" : "密码"
+   },
+   "password_requirements": {
+      "message" : "密码需要至少 8 个字符"
+   },
+   "rate_ghostery_link1": {
+      "description" : "Part one of \"Like Ghostery? Rate It!\"",
+      "message": "喜欢 Ghostery？"
+   },
+   "rate_ghostery_link2": {
+      "description" : "Part two of \"Like Ghostery? Rate It!\"",
+      "message": "给 Ghostery 打分吧！"
+   },
+   "save_button_label": {
+      "message" : "保存"
+   },
+   "send_button_label": {
+      "message" : "发送"
+   },
+   "server_error_message": {
+      "message" : "我们似乎遇到技术问题。 请稍后重试。"
+   },
+   "server_error_title": {
+      "message" : "噢"
+   },
+   "setup_page_category_all_blocked": {
+      "message" : "阻止该类所有跟踪器"
+   },
+   "setup_page_num_blocked": {
+      "message" : "已阻止"
+   },
+   "survey_link": {
+      "message" : "$LINK_START$参与我们的调查！$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "survey_link_also": {
+      "message" : "或者，$LINK_START$接受我们的调查！$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "tag": {
+      "message" : "标签"
+   },
+   "tag_description_getting": {
+      "message" : "正在获取标签描述..."
+   },
+   "tag_description_none_found": {
+      "message" : "未找到标签描述。"
+   },
+   "tag_description_read_more": {
+      "message" : "阅读更多内容"
+   },
+   "tags": {
+      "message" : "标签"
+   },
+   "trackers": {
+      "message" : "跟踪器"
+   },
+   "tags_less": {
+      "description" : "Clicking this makes the tag list smaller",
+      "message": "显示更少标签..."
+   },
+   "tags_more": {
+      "description" : "Clicking this expands the list to show all tags",
+      "message": "显示更多标签..."
+   },
+   "toggle_collapse_all": {
+      "description" : "Click this to collapse all items, hiding collapsible per-item content.",
+      "message": "全部折叠"
+   },
+   "toggle_expand_all": {
+      "description" : "Click this to expand all items, revealing all content.",
+      "message": "全部展开"
+   },
+   "toggle_select_all": {
+      "description" : "Click this to select all items.",
+      "message": "全选"
+   },
+   "toggle_select_none": {
+      "description" : "Click this to deselect all items.",
+      "message": "选择“无”"
+   },
+   "tracker_browser_filters_reset": {
+      "description" : "Link to reset the tag browser's display filters.",
+      "message": "重置搜索"
+   },
+   "tracker_browser_name_filter": {
+      "description" : "Text input filter for the tag browser. Lets you filter by/search for tag names. Part of 'Search for tag name'.",
+      "message": "搜索 $SEARCH_FIELD$",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "tag name"
+         }
+      }
+   },
+   "tracker_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the tag browser search input. Should read as 'Search for tag name'.",
+      "message": "标签名称"
+   },
+   "tracker_browser_type_filter": {
+      "description" : "Dropdown filter for the tag browser. Lets you show only blocked (checked), or only unblocked (unchecked) tags.",
+      "message": "显示 $TYPE$",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "unblocked": {
+      "description" : "Select this to show only unblocked (unchecked) tags in the tag browser. Should read as 'Show unblocked'.",
+      "message": "未阻止"
+   },
+   "walkthrough_link": {
+      "description" : "Link to walkthrough/configuration wizard, shown on top of the options page.",
+      "message": "如欲走查 Ghostery 的重要选项，尝试 $LINK_START$Ghostery 配置向导$LINK_END$。",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a href=\"walkthrough.html\" id=\"walkthrough-link\">"
+         }
+      }
+   },
+   "walkthrough_skip_button": {
+      "message" : "跳过向导"
+   },
+   "white_black_list_error_invalid_url": {
+      "message" : "请输入一个有效的 URL。"
+   },
+   "whitelist_error_blacklist_url": {
+      "message" : "该站点已从您的受限站点列表中删除，并添加至您的信任站点列表。"
+   },
+   "whitelist_error_duplicate_url": {
+      "description" : "Options page site whitelisting error message shown when whitelisting a URL that is already in the whitelist.",
+      "message": "该站点已列入白名单。"
+   },
+   "xul_panel_block_firefox": {
+      "description" : "In the XUL panel, this is a toggle to block a particular app.",
+      "message": "阻止 $NAME$？",
+      "placeholders": {
+         "name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "xul_panel_site_specific_unblock_firefox": {
+      "description" : "In the XUL panel, this is a toggle to un-block a particular app for the web-page the user is on.",
+      "message": "仅解除拦截该站点"
+   },
+   "xul_panel_view_source_firefox": {
+      "description" : "In the XUL panel, this is the menu option that opens the site that shows source code of the tag.",
+      "message": "查看脚本源码"
+   },
+   "short_description": {
+      "description": "A short description of this extension (Ghostery).",
+      "message": "保护您的隐私。 用Ghostery查看谁在跟踪您的网站浏览。"
+  }
+}

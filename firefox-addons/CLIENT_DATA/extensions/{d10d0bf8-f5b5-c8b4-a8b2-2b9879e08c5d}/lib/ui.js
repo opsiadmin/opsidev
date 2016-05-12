@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -19,6 +19,7 @@ Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
 
 let {Utils} = require("utils");
+let {port} = require("messaging");
 let {Prefs} = require("prefs");
 let {Policy} = require("contentPolicy");
 let {FilterStorage} = require("filterStorage");
@@ -125,6 +126,14 @@ let optionsObserver =
         this.value = Prefs.savestats;
       });
 
+      hideElement("adblockplus-shownotifications", !Prefs.notifications_showui);
+      setChecked("adblockplus-shownotifications", Prefs.notifications_ignoredcategories.indexOf("*") == -1);
+      addCommandHandler("adblockplus-shownotifications", function()
+      {
+        Notification.toggleIgnoreCategory("*");
+        this.value = (Prefs.notifications_ignoredcategories.indexOf("*") == -1);
+      });
+
       let hasAcceptableAds = FilterStorage.subscriptions.some((subscription) => subscription instanceof DownloadableSubscription &&
         subscription.url == Prefs.subscriptions_exceptionsurl);
       setChecked("adblockplus-acceptableAds", hasAcceptableAds);
@@ -159,7 +168,8 @@ let optionsObserver =
             return;
 
           let currentSubscription = FilterStorage.subscriptions.filter((subscription) => subscription instanceof DownloadableSubscription &&
-            subscription.url != Prefs.subscriptions_exceptionsurl);
+            subscription.url != Prefs.subscriptions_exceptionsurl &&
+            subscription.url != Prefs.subscriptions_antiadblockurl);
           currentSubscription = (currentSubscription.length ? currentSubscription[0] : null);
 
           let subscriptions =request.responseXML.getElementsByTagName("subscription");
@@ -276,6 +286,7 @@ let UI = exports.UI =
     let request = new XMLHttpRequest();
     request.mozBackgroundRequest = true;
     request.open("GET", "chrome://adblockplus/content/ui/overlay.xul");
+    request.channel.owner = Utils.systemPrincipal;
     request.addEventListener("load", function(event)
     {
       if (onShutdown.done)
@@ -408,7 +419,7 @@ let UI = exports.UI =
         this.updateState();
       else if (name == "showinstatusbar")
       {
-        for (let window in this.applicationWindows)
+        for (let window of this.applicationWindows)
           this.updateStatusbarIcon(window);
       }
     }.bind(this));
@@ -418,28 +429,25 @@ let UI = exports.UI =
         this.updateState();
     }.bind(this));
 
-    notificationTimer = Cc["@mozilla.org/timer;1"].createInstance(Ci.nsITimer);
-    notificationTimer.initWithCallback(this.showNextNotification.bind(this),
-                                       3 * 60 * 1000, Ci.nsITimer.TYPE_ONE_SHOT);
-    onShutdown.add(() => notificationTimer.cancel());
+    Notification.addShowListener(notification =>
+    {
+      let window = this.currentWindow;
+      if (!window)
+        return;
+
+      let button = window.document.getElementById("abp-toolbarbutton")
+          || window.document.getElementById("abp-status");
+      if (!button)
+        return;
+
+      this._showNotification(window, button, notification);
+    });
 
     // Add "anti-adblock messages" notification
     initAntiAdblockNotification();
 
-    let documentCreationObserver = {
-      observe: function(subject, topic, data)
-      {
-        if (!(subject instanceof Ci.nsIDOMWindow))
-          return;
-
-        this.showNextNotification(subject.location.href);
-      }.bind(UI)
-    };
-    Services.obs.addObserver(documentCreationObserver, "content-document-global-created", false);
-    onShutdown.add(function()
-    {
-      Services.obs.removeObserver(documentCreationObserver, "content-document-global-created", false);
-    });
+    // Initialize subscribe link handling
+    port.on("subscribeLinkClick", data => this.subscribeLinkClicked(data));
 
     // Execute first-run actions if a window is open already, otherwise it
     // will happen in applyToWindow() when a window is opened.
@@ -456,12 +464,12 @@ let UI = exports.UI =
     {
       try
       {
-        ({CustomizableUI}) = Cu.import("resource:///modules/CustomizableUI.jsm", null);
+        ({CustomizableUI} = Cu.import("resource:///modules/CustomizableUI.jsm", null));
       }
       catch (e)
       {
         // No built-in CustomizableUI API, use our own implementation.
-        ({CustomizableUI}) = require("customizableUI");
+        ({CustomizableUI} = require("customizableUI"));
       }
 
       CustomizableUI.createWidget({
@@ -504,6 +512,11 @@ let UI = exports.UI =
     {
       Prefs.currentVersion = addonVersion;
       this.addSubscription(window, prevVersion);
+
+      // The "Hide placeholders" option has been removed from the UI in 2.6.6.3881
+      // So we reset the option for users updating from older versions.
+      if (prevVersion && Services.vc.compare(prevVersion, "2.6.6.3881") < 0)
+        Prefs.fastcollapse = false;
     }
   },
 
@@ -519,7 +532,7 @@ let UI = exports.UI =
    */
   applyToWindow: function(/**Window*/ window, /**Boolean*/ noDelay)
   {
-    let {delayInitialization, isKnownWindow, getBrowser, addBrowserLocationListener, addBrowserClickListener} = require("appSupport");
+    let {delayInitialization, isKnownWindow, getBrowser, addBrowserLocationListener} = require("appSupport");
     if (window.document.documentElement.id == "CustomizeToolbarWindow" || isKnownWindow(window))
     {
       // Add style processing instruction
@@ -569,12 +582,25 @@ let UI = exports.UI =
     {
       this.updateIconState(window, window.document.getElementById("abp-status"));
       this.updateIconState(window, window.document.getElementById("abp-toolbarbutton"));
-    }.bind(this));
-    addBrowserClickListener(window, this.onBrowserClick.bind(this, window));
 
-    window.document.getElementById("abp-notification-close").addEventListener("command", function(event)
+      Notification.showNext(this.getCurrentLocation(window).spec);
+    }.bind(this));
+
+    let notificationPanel = window.document.getElementById("abp-notification");
+    notificationPanel.addEventListener("command", function(event)
     {
-      window.document.getElementById("abp-notification").hidePopup();
+      switch (event.target.id)
+      {
+        case "abp-notification-close":
+          notificationPanel.classList.add("abp-closing");
+          break;
+        case "abp-notification-optout":
+          Notification.toggleIgnoreCategory("*", true);
+          /* FALL THROUGH */
+        case "abp-notification-hide":
+          notificationPanel.hidePopup();
+          break;
+      }
     }, false);
 
     // First-run actions?
@@ -593,7 +619,7 @@ let UI = exports.UI =
    */
   removeFromWindow: function(/**Window*/ window)
   {
-    let {isKnownWindow, removeBrowserLocationListeners, removeBrowserClickListeners} = require("appSupport");
+    let {isKnownWindow, removeBrowserLocationListeners} = require("appSupport");
     if (window.document.documentElement.id == "CustomizeToolbarWindow" || isKnownWindow(window))
     {
       // Remove style processing instruction
@@ -628,7 +654,6 @@ let UI = exports.UI =
     window.removeEventListener("popupshowing", this.onPopupShowing, false);
     window.removeEventListener("keypress", this.onKeyPress, false);
     removeBrowserLocationListeners(window);
-    removeBrowserClickListeners(window);
   },
 
   /**
@@ -651,12 +676,18 @@ let UI = exports.UI =
       // On Linux the list returned will be empty, see bug 156333. Fall back to random order.
       enumerator = Services.wm.getEnumerator(null);
     }
-    while (enumerator.hasMoreElements())
+
+    let generate = function*()
     {
-      let window = enumerator.getNext().QueryInterface(Ci.nsIDOMWindow);
-      if (isKnownWindow(window))
-        yield window;
-    }
+      while (enumerator.hasMoreElements())
+      {
+        let window = enumerator.getNext().QueryInterface(Ci.nsIDOMWindow);
+        if (isKnownWindow(window))
+          yield window;
+      }
+    };
+
+    return generate();
   },
 
   /**
@@ -704,14 +735,17 @@ let UI = exports.UI =
 
 
   /**
-   * Brings up the filter composer dialog to block an item.
+   * Brings up the filter composer dialog to block an item. The optional nodesID
+   * parameter must be a unique ID returned by
+   * RequestNotifier.storeNodesForEntry() or similar.
    */
-  blockItem: function(/**Window*/ window, /**Node*/ node, /**RequestEntry*/ item)
+  blockItem: function(/**Window*/ window, /**string*/ nodesID, /**RequestEntry*/ item)
   {
     if (!item)
       return;
 
-    window.openDialog("chrome://adblockplus/content/ui/composer.xul", "_blank", "chrome,centerscreen,resizable,dialog=no,dependent", [node], item);
+    window.openDialog("chrome://adblockplus/content/ui/composer.xul", "_blank",
+        "chrome,centerscreen,resizable,dialog=no,dependent", nodesID, item);
   },
 
   /**
@@ -750,7 +784,10 @@ let UI = exports.UI =
       if (uri)
       {
         let {getBrowser} = require("appSupport");
-        window.openDialog("chrome://adblockplus/content/ui/sendReport.xul", "_blank", "chrome,centerscreen,resizable=no", getBrowser(window).contentWindow, uri);
+        let browser = getBrowser(window);
+        if ("selectedBrowser" in browser)
+          browser = browser.selectedBrowser;
+        window.openDialog("chrome://adblockplus/content/ui/sendReport.xul", "_blank", "chrome,centerscreen,resizable=no", browser.outerWindowID, uri, browser);
       }
     }
   },
@@ -829,6 +866,9 @@ let UI = exports.UI =
 
     function notifyUser()
     {
+      if (Prefs.suppress_first_run_page)
+        return;
+
       let {addTab} = require("appSupport");
       if (addTab)
       {
@@ -879,64 +919,12 @@ let UI = exports.UI =
   },
 
   /**
-   * Handles clicks inside the browser's content area, will intercept clicks on
-   * abp: links. This can be called either with an event object or with the link
-   * target (if it is the former then link target will be retrieved from event
-   * target).
+   * Called whenever child/subscribeLinks module intercepts clicks on abp: links
+   * as well as links to subscribe.adblockplus.org.
    */
-  onBrowserClick: function (/**Window*/ window, /**Event*/ event, /**String*/ linkTarget)
+  subscribeLinkClicked: function({title, url,
+      mainSubscriptionTitle, mainSubscriptionURL})
   {
-    if (event)
-    {
-      // Ignore right-clicks
-      if (event.button == 2)
-        return;
-
-      // Search the link associated with the click
-      let link = event.target;
-      while (link && !(link instanceof Ci.nsIDOMHTMLAnchorElement))
-        link = link.parentNode;
-
-      if (!link || link.protocol != "abp:")
-        return;
-
-      // This is our link - make sure the browser doesn't handle it
-      event.preventDefault();
-      event.stopPropagation();
-
-      linkTarget = link.href;
-    }
-
-    let match = /^abp:\/*subscribe\/*\?(.*)/i.exec(linkTarget);
-    if (!match)
-      return;
-
-    // Decode URL parameters
-    let title = null;
-    let url = null;
-    let mainSubscriptionTitle = null;
-    let mainSubscriptionURL = null;
-    for (let param of match[1].split('&'))
-    {
-      let parts = param.split("=", 2);
-      if (parts.length != 2 || !/\S/.test(parts[1]))
-        continue;
-      switch (parts[0])
-      {
-        case "title":
-          title = decodeURIComponent(parts[1]);
-          break;
-        case "location":
-          url = decodeURIComponent(parts[1]);
-          break;
-        case "requiresTitle":
-          mainSubscriptionTitle = decodeURIComponent(parts[1]);
-          break;
-        case "requiresLocation":
-          mainSubscriptionURL = decodeURIComponent(parts[1]);
-          break;
-      }
-    }
     if (!url)
       return;
 
@@ -951,12 +939,12 @@ let UI = exports.UI =
       mainSubscriptionURL = null;
 
     // Trim spaces in title and URL
-    title = title.replace(/^\s+/, "").replace(/\s+$/, "");
-    url = url.replace(/^\s+/, "").replace(/\s+$/, "");
+    title = title.trim();
+    url = url.trim();
     if (mainSubscriptionURL)
     {
-      mainSubscriptionTitle = mainSubscriptionTitle.replace(/^\s+/, "").replace(/\s+$/, "");
-      mainSubscriptionURL = mainSubscriptionURL.replace(/^\s+/, "").replace(/\s+$/, "");
+      mainSubscriptionTitle = mainSubscriptionTitle.trim();
+      mainSubscriptionURL = mainSubscriptionURL.trim();
     }
 
     // Verify that the URL is valid
@@ -974,7 +962,7 @@ let UI = exports.UI =
         mainSubscriptionURL = mainSubscriptionURL.spec;
     }
 
-    this.openSubscriptionDialog(window, url, title, mainSubscriptionURL, mainSubscriptionTitle);
+    this.openSubscriptionDialog(this.currentWindow, url, title, mainSubscriptionURL, mainSubscriptionTitle);
   },
 
   /**
@@ -1070,7 +1058,7 @@ let UI = exports.UI =
    */
   updateState: function()
   {
-    for (let window in this.applicationWindows)
+    for (let window of this.applicationWindows)
     {
       this.updateIconState(window, window.document.getElementById("abp-status"));
       this.updateIconState(window, window.document.getElementById("abp-toolbarbutton"));
@@ -1174,7 +1162,10 @@ let UI = exports.UI =
         FilterStorage.removeFilter(filter);
     }
     else
+    {
+      filter.disabled = false;
       FilterStorage.addFilter(filter);
+    }
   },
 
 
@@ -1396,54 +1387,66 @@ let UI = exports.UI =
     }
     statusDescr.setAttribute("value", statusStr);
 
-    let activeFilters = [];
-    E("abp-tooltip-blocked-label").hidden = (state != "active");
-    E("abp-tooltip-blocked").hidden = (state != "active");
+    E("abp-tooltip-blocked-label").hidden = true;
+    E("abp-tooltip-blocked").hidden = true;
+    E("abp-tooltip-filters-label").hidden = true;
+    E("abp-tooltip-filters").hidden = true;
+    E("abp-tooltip-more-filters").hidden = true;
+
     if (state == "active")
     {
       let {getBrowser} = require("appSupport");
-      let stats = RequestNotifier.getWindowStatistics(getBrowser(window).contentWindow);
-
-      let blockedStr = Utils.getString("blocked_count_tooltip");
-      blockedStr = blockedStr.replace(/\?1\?/, stats ? stats.blocked : 0).replace(/\?2\?/, stats ? stats.items : 0);
-
-      if (stats && stats.whitelisted + stats.hidden)
+      let browser = getBrowser(window);
+      if ("selectedBrowser" in browser)
+        browser = browser.selectedBrowser;
+      let outerWindowID = browser.outerWindowID;
+      RequestNotifier.getWindowStatistics(outerWindowID, (stats) =>
       {
-        blockedStr += " " + Utils.getString("blocked_count_addendum");
-        blockedStr = blockedStr.replace(/\?1\?/, stats.whitelisted).replace(/\?2\?/, stats.hidden);
-      }
+        E("abp-tooltip-blocked-label").hidden = false;
+        E("abp-tooltip-blocked").hidden = false;
 
-      E("abp-tooltip-blocked").setAttribute("value", blockedStr);
+        let blockedStr = Utils.getString("blocked_count_tooltip");
+        blockedStr = blockedStr.replace(/\?1\?/, stats ? stats.blocked : 0).replace(/\?2\?/, stats ? stats.items : 0);
 
-      if (stats)
-      {
-        let filterSort = function(a, b)
+        if (stats && stats.whitelisted + stats.hidden)
         {
-          return stats.filters[b] - stats.filters[a];
-        };
-        for (let filter in stats.filters)
-          activeFilters.push(filter);
-        activeFilters = activeFilters.sort(filterSort);
-      }
-
-      if (activeFilters.length > 0)
-      {
-        let filtersContainer = E("abp-tooltip-filters");
-        while (filtersContainer.firstChild)
-          filtersContainer.removeChild(filtersContainer.firstChild);
-
-        for (let i = 0; i < activeFilters.length && i < 3; i++)
-        {
-          let descr = filtersContainer.ownerDocument.createElement("description");
-          descr.setAttribute("value", activeFilters[i] + " (" + stats.filters[activeFilters[i]] + ")");
-          filtersContainer.appendChild(descr);
+          blockedStr += " " + Utils.getString("blocked_count_addendum");
+          blockedStr = blockedStr.replace(/\?1\?/, stats.whitelisted).replace(/\?2\?/, stats.hidden);
         }
-      }
-    }
 
-    E("abp-tooltip-filters-label").hidden = (activeFilters.length == 0);
-    E("abp-tooltip-filters").hidden = (activeFilters.length == 0);
-    E("abp-tooltip-more-filters").hidden = (activeFilters.length <= 3);
+        E("abp-tooltip-blocked").setAttribute("value", blockedStr);
+
+        let activeFilters = [];
+        if (stats)
+        {
+          let filterSort = function(a, b)
+          {
+            return stats.filters[b] - stats.filters[a];
+          };
+          for (let filter in stats.filters)
+            activeFilters.push(filter);
+          activeFilters = activeFilters.sort(filterSort);
+        }
+
+        if (activeFilters.length > 0)
+        {
+          let filtersContainer = E("abp-tooltip-filters");
+          while (filtersContainer.firstChild)
+            filtersContainer.removeChild(filtersContainer.firstChild);
+
+          for (let i = 0; i < activeFilters.length && i < 3; i++)
+          {
+            let descr = filtersContainer.ownerDocument.createElement("description");
+            descr.setAttribute("value", activeFilters[i] + " (" + stats.filters[activeFilters[i]] + ")");
+            filtersContainer.appendChild(descr);
+          }
+        }
+
+        E("abp-tooltip-filters-label").hidden = (activeFilters.length == 0);
+        E("abp-tooltip-filters").hidden = (activeFilters.length == 0);
+        E("abp-tooltip-more-filters").hidden = (activeFilters.length <= 3);
+      });
+    }
   },
 
   /**
@@ -1532,7 +1535,6 @@ let UI = exports.UI =
 
     setChecked(prefix + "disabled", !Prefs.enabled);
     setChecked(prefix + "frameobjects", Prefs.frameobjects);
-    setChecked(prefix + "slowcollapse", !Prefs.fastcollapse);
     setChecked(prefix + "savestats", Prefs.savestats);
 
     let {defaultToolbarPosition, statusbarPosition} = require("appSupport");
@@ -1540,10 +1542,12 @@ let UI = exports.UI =
     let hasStatusBar = statusbarPosition;
     hideElement(prefix + "showintoolbar", !hasToolbar || prefix == "abp-toolbar-");
     hideElement(prefix + "showinstatusbar", !hasStatusBar);
+    hideElement(prefix + "shownotifications", !Prefs.notifications_showui);
     hideElement(prefix + "iconSettingsSeparator", (prefix == "abp-toolbar-" || !hasToolbar) && !hasStatusBar);
 
     setChecked(prefix + "showintoolbar", this.isToolbarIconVisible());
     setChecked(prefix + "showinstatusbar", Prefs.showinstatusbar);
+    setChecked(prefix + "shownotifications", Prefs.notifications_ignoredcategories.indexOf("*") == -1);
 
     let {Sync} = require("sync");
     let syncEngine = Sync.getEngine();
@@ -1589,29 +1593,36 @@ let UI = exports.UI =
    */
   fillContentContextMenu: function(/**Element*/ popup)
   {
-    let target = popup.triggerNode;
-    if (target instanceof Ci.nsIDOMHTMLMapElement || target instanceof Ci.nsIDOMHTMLAreaElement)
+    let window = popup.ownerDocument.defaultView;
+    let data = window.gContextMenuContentData;
+    if (!data)
     {
-      // HTML image maps will usually receive events when the mouse pointer is
-      // over a different element, get the real event target.
-      let rect = target.getClientRects()[0];
-      target = target.ownerDocument.elementFromPoint(Math.max(rect.left, 0), Math.max(rect.top, 0));
+      // This is SeaMonkey Mail or Thunderbird, they won't get context menu data
+      // for us. Send the notification ourselves.
+      data = {
+        event: {target: popup.triggerNode},
+        addonInfo: {},
+        get wrappedJSObject() {return this;}
+      };
+      Services.obs.notifyObservers(data, "AdblockPlus:content-contextmenu", null);
     }
 
-    if (!target)
+    if (typeof data.addonInfo != "object" || typeof data.addonInfo.adblockplus != "object")
       return;
 
-    let window = popup.ownerDocument.defaultView;
+    let items = data.addonInfo.adblockplus;
+    let clicked = null;
     let menuItems = [];
-    let addMenuItem = function([node, nodeData])
-    {
-      let type = nodeData.typeDescr.toLowerCase();
-      if (type == "background")
-      {
-        type = "image";
-        node = null;
-      }
 
+    function menuItemTriggered(id, nodeData)
+    {
+      clicked = id;
+      this.blockItem(window, id, nodeData);
+    }
+
+    for (let [id, nodeData] of items)
+    {
+      let type = nodeData.type.toLowerCase();
       let label = this.overlay.attributes[type + "contextlabel"];
       if (!label)
         return;
@@ -1619,66 +1630,10 @@ let UI = exports.UI =
       let item = popup.ownerDocument.createElement("menuitem");
       item.setAttribute("label", label);
       item.setAttribute("class", "abp-contextmenuitem");
-      item.addEventListener("command", this.blockItem.bind(this, window, node, nodeData), false);
+      item.addEventListener("command", menuItemTriggered.bind(this, id, nodeData), false);
       popup.appendChild(item);
 
       menuItems.push(item);
-    }.bind(this);
-
-    // Look up data that we have for the node
-    let data = RequestNotifier.getDataForNode(target);
-    let hadImage = false;
-    if (data && !data[1].filter)
-    {
-      addMenuItem(data);
-      hadImage = (data[1].typeDescr == "IMAGE");
-    }
-
-    // Look for frame data
-    let wnd = Utils.getWindow(target);
-    if (wnd.frameElement)
-    {
-      let data = RequestNotifier.getDataForNode(wnd.frameElement, true);
-      if (data && !data[1].filter)
-        addMenuItem(data);
-    }
-
-    // Look for a background image
-    if (!hadImage)
-    {
-      let extractImageURL = function(computedStyle, property)
-      {
-        let value = computedStyle.getPropertyCSSValue(property);
-        // CSSValueList
-        if ("length" in value && value.length >= 1)
-          value = value[0];
-        // CSSValuePrimitiveType
-        if ("primitiveType" in value && value.primitiveType == value.CSS_URI)
-          return Utils.unwrapURL(value.getStringValue()).spec;
-
-        return null;
-      };
-
-      let node = target;
-      while (node)
-      {
-        if (node.nodeType == Ci.nsIDOMNode.ELEMENT_NODE)
-        {
-          let style = wnd.getComputedStyle(node, "");
-          let bgImage = extractImageURL(style, "background-image") || extractImageURL(style, "list-style-image");
-          if (bgImage)
-          {
-            let data = RequestNotifier.getDataForNode(wnd.document, true, Policy.type.IMAGE, bgImage);
-            if (data && !data[1].filter)
-            {
-              addMenuItem(data);
-              break;
-            }
-          }
-        }
-
-        node = node.parentNode;
-      }
     }
 
     // Add "Remove exception" menu item if necessary
@@ -1700,20 +1655,21 @@ let UI = exports.UI =
     }
 
     // Make sure to clean up everything once the context menu is closed
-    if (menuItems.length)
+    let cleanUp = function(event)
     {
-      let cleanUp = function(event)
-      {
-        if (event.eventPhase != event.AT_TARGET)
-          return;
+      if (event.eventPhase != event.AT_TARGET)
+        return;
 
-        popup.removeEventListener("popuphidden", cleanUp, false);
-        for (let i = 0; i < menuItems.length; i++)
-          if (menuItems[i].parentNode)
-            menuItems[i].parentNode.removeChild(menuItems[i]);
-      }.bind(this);
-      popup.addEventListener("popuphidden", cleanUp, false);
-    }
+      popup.removeEventListener("popuphidden", cleanUp, false);
+      for (let menuItem of menuItems)
+        if (menuItem.parentNode)
+          menuItem.parentNode.removeChild(menuItem);
+
+      for (let [id, nodeData] of items)
+        if (id && id != clicked)
+          Policy.deleteNodes(id);
+    }.bind(this);
+    popup.addEventListener("popuphidden", cleanUp, false);
   },
 
   /**
@@ -1793,8 +1749,10 @@ let UI = exports.UI =
         removeBottomBar(window);
 
         let browser = (getBrowser ? getBrowser(window) : null);
+        if (browser && "selectedBrowser" in browser)
+          browser = browser.selectedBrowser;
         if (browser)
-          browser.contentWindow.focus();
+          browser.focus();
       }
       else if (!detach)
       {
@@ -1833,24 +1791,6 @@ let UI = exports.UI =
       if (button)
         button.hidden = true;
     }
-  },
-
-  showNextNotification: function(url)
-  {
-    let window = this.currentWindow;
-    if (!window)
-      return;
-
-    let button = window.document.getElementById("abp-toolbarbutton")
-      || window.document.getElementById("abp-status");
-    if (!button)
-      return;
-
-    let notification = Notification.getNextToShow(url);
-    if (!notification)
-      return;
-
-    this._showNotification(window, button, notification);
   },
 
   _showNotification: function(window, button, notification)
@@ -1918,9 +1858,11 @@ let UI = exports.UI =
       window.document.getElementById("abp-notification-yes").onclick = buttonHandler.bind(null, true);
       window.document.getElementById("abp-notification-no").onclick = buttonHandler.bind(null, false);
     }
+    else
+      Notification.markAsShown(notification.id);
 
     panel.setAttribute("class", "abp-" + notification.type);
-    panel.setAttribute("noautohide", notification.type === "question");
+    panel.setAttribute("noautohide", true);
     panel.openPopup(button, "bottomcenter topcenter", 0, 0, false, false, null);
   }
 };
@@ -1941,19 +1883,19 @@ let eventHandlers = [
   ["abp-command-togglesitewhitelist", "command", function() { UI.toggleFilter(siteWhitelist); }],
   ["abp-command-togglepagewhitelist", "command", function() { UI.toggleFilter(pageWhitelist); }],
   ["abp-command-toggleobjtabs", "command", UI.togglePref.bind(UI, "frameobjects")],
-  ["abp-command-togglecollapse", "command", UI.togglePref.bind(UI, "fastcollapse")],
   ["abp-command-togglesavestats", "command", UI.toggleSaveStats.bind(UI)],
   ["abp-command-togglesync", "command", UI.toggleSync.bind(UI)],
   ["abp-command-toggleshowintoolbar", "command", UI.toggleToolbarIcon.bind(UI)],
   ["abp-command-toggleshowinstatusbar", "command", UI.togglePref.bind(UI, "showinstatusbar")],
   ["abp-command-enable", "command", UI.togglePref.bind(UI, "enabled")],
   ["abp-command-contribute", "command", UI.openContributePage.bind(UI)],
-  ["abp-command-contribute-hide", "command", UI.hideContributeButton.bind(UI)]
+  ["abp-command-contribute-hide", "command", UI.hideContributeButton.bind(UI)],
+  ["abp-command-toggleshownotifications", "command", Notification.toggleIgnoreCategory.bind(Notification, "*", null)]
 ];
 
 onShutdown.add(function()
 {
-  for (let window in UI.applicationWindows)
+  for (let window of UI.applicationWindows)
     if (UI.isBottombarOpen(window))
       UI.toggleBottombar(window);
 });

@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -22,24 +22,33 @@
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
 
-
-
-
+bootstrapChildProcesses();
 registerPublicAPI();
-
 require("filterListener");
-
 require("contentPolicy");
-
 require("synchronizer");
-
 require("notification");
-
 require("sync");
-
+require("messageResponder");
 require("ui");
+require("objectTabs");
 
+function bootstrapChildProcesses()
+{
+  let info = require("info");
 
+  let processScript = info.addonRoot + "lib/child/bootstrap.js?" +
+      Math.random() + "&info=" + encodeURIComponent(JSON.stringify(info));
+  let messageManager = Cc["@mozilla.org/parentprocessmessagemanager;1"]
+                         .getService(Ci.nsIProcessScriptLoader)
+                         .QueryInterface(Ci.nsIMessageBroadcaster);
+  messageManager.loadProcessScript(processScript, true);
+
+  onShutdown.add(() => {
+    messageManager.broadcastAsyncMessage("AdblockPlus:Shutdown", processScript);
+    messageManager.removeDelayedProcessScript(processScript);
+  });
+}
 
 function registerPublicAPI()
 {

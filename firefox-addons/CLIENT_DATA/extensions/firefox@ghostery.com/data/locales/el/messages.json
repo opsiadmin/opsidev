@@ -1,0 +1,1461 @@
+{
+   "account_creation_privacy_statement" : {
+      "message" : "Συμφωνώ με τις πρακτικές διαχείρισης δεδομένων του Ghostery που περιέχονται στη $LINK_PS_START$Δήλωση απορρήτου$LINK_PS_END$ και στους όρους του $LINK_UA_START$Συμφωνητικού άδειας χρήστη$LINK_UA_END$.",
+      "placeholders": {
+         "link_ps_end" : {
+            "content" : "</a>"
+         },
+         "link_ps_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-privacy-statement/\">"
+         },
+         "link_ua_end": {
+            "content" : "</a>"
+         },
+         "link_ua_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-end-user-license-agreem/\">"
+         }
+      }
+   },
+   "account_signin_privacy_statement": {
+      "message": "Ο λογαριασμός σας σας δίνει πρόσβαση σε προηγμένες δυνατότητες και δεν σχετίζεται με τα δεδομένα ανιχνευτή που έχετε επιλέξει να μοιράζεστε μαζί μας. Για συγκεκριμένες πληροφορίες σχετικά με τον τρόπο χρήσης των δεδομένων του λογαριασμού σας, δείτε τις $LINK_FAQ_START$Συχνές ερωτήσεις$LINK_FAQ_END$.",
+      "placeholders": {
+         "link_faq_end" : {
+            "content" : "</a>"
+         },
+         "link_faq_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/support/faq/ghostery-add-on/\">"
+         }
+      }
+   },
+   "addon_compatibility_warning_firefox": {
+      "description" : "Pop up warning that appears when one or more incompatible extensions are installed alongside Ghostery.",
+      "message": "Φαίνεται ότι χρησιμοποιείτε και <strong>$ADDONS$</strong>. Δυστυχώς, το σύστημα αποκλεισμού cookie του Ghostery είναι γνωστό ότι παρουσιάζει προβλήματα με αυτή την επέκταση και γι'αυτό έχει <strong>απενεργοποιηθεί</strong>. Για να ενεργοποιήσετε εκ νέου το σύστημα αποκλεισμού cookie, απενεργοποιήστε ή καταργήστε το <strong>$ADDONS$</strong>, χρησιμοποιώντας τη διαχείριση προσθηκών και επανεκκινήστε το πρόγραμμα περιήγησης αν σας ζητηθεί.",
+      "placeholders": {
+         "addons" : {
+            "content" : "$1",
+            "example": "Yahoo! Toolbar Addon"
+         }
+      }
+   },
+   "alert_bubble": {
+      "description" : "Ghostery's alert bubble is the purple, semi-translucent notification panel that pops up as you browse to show detected tags on the page.",
+      "message": "φυσαλίδα ειδοποιήσεων"
+   },
+   "alert_bubble_gear_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble's gear.",
+      "message": "Κάντε κλικ για διαμόρφωση της φυσαλίδας ειδοποιήσεων"
+   },
+   "alert_bubble_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble.",
+      "message": "Κάντε κλικ για απόρριψη της φυσαλίδας ειδοποιήσεων"
+   },
+   "all": {
+      "description" : "Default setting in the 'filter by type' dropdown for the tag browser. Doesn't filter anything out. Should read as 'Show all'.",
+      "message": "όλοι"
+   },
+   "backup_export": {
+      "description" : "Instructions for exporting Ghostery settings.",
+      "message": "Κάντε κλικ σε αυτό το κουμπί για να αποθηκεύσετε ένα αντίγραφο των προτιμήσεων του Ghostery ως αντίγραφο ασφαλείας ή για μεταφορά σε άλλον υπολογιστή."
+   },
+   "backup_export_button": {
+      "description" : "Button for exporting Ghostery settings.",
+      "message": "Αποθήκευση αρχείου αντιγράφου ασφαλείας"
+   },
+   "backup_export_header": {
+      "description" : "Section header for Export section of the Import/Export page.",
+      "message": "Εξαγωγή"
+   },
+   "backup_import": {
+      "description" : "Instructions for importing Ghostery settings.",
+      "message": "Επιλέξτε ένα αρχείο αντιγράφου ασφαλείας που δημιουργήθηκε στο παρελθόν και το οποίο θέλετε να χρησιμοποιήσετε, και έπειτα κάντε κλικ στο κουμπί «Εισαγωγή»."
+   },
+   "backup_import_button": {
+      "description" : "Button for importing Ghostery settings.",
+      "message": "Εισαγωγή"
+   },
+   "backup_import_error": {
+      "description" : "Error message shown when importing a bad file.",
+      "message": "$SPAN_START$Άκυρο αρχείο αντίγραφου ασφαλείας.$SPAN_END$ Επικοινωνήστε με την $A_START$υποστήριξη$A_END$.",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"https://getsatisfaction.com/ghostery\">"
+         },
+         "span_end": {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"red\">"
+         }
+      }
+   },
+   "backup_import_header": {
+      "description" : "Section header for Import section of the Import/Export page.",
+      "message": "Εισαγωγή"
+   },
+   "backup_import_warning": {
+      "description" : "Warning before importing Ghostery settings.",
+      "message": "ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Αυτή η ενέργεια θα αντικαταστήσει τις τρέχουσες ρυθμίσεις του Ghostery."
+   },
+   "backup_options_link": {
+      "description" : "Link back to the main options page.",
+      "message": "Επιστροφή στη σελίδα επιλογών"
+   },
+   "backup_page_title": {
+      "description" : "Title of Ghostery's Import/Export settings page.",
+      "message": "Εισαγωγή\/Εξαγωγή ρυθμίσεων Ghostery"
+   },
+   "banner_check_your_email_title": {
+      "message" : "Ελέγξτε το email σας σύντομα μήπως λάβατε έναν σύνδεσμο για επαναφορά του κωδικού πρόσβασης."
+   },
+   "banner_no_such_account_message": {
+      "message" : "Πώς είπατε; Μάλλον δεν αναγνωρίζουμε αυτό το συνδυασμό όνομα χρήστη και κωδικου πρόσβασης . Δοκιμάστε ξανά."
+   },
+   "banner_no_such_account_title": {
+      "message" : "Λάθος email ή κωδικός πρόσβασης"
+   },
+   "banner_wrong_email_message": {
+      "message" : "Το Ghostery δεν βρήκε αυτή τη διεύθυνση email. Δοκιμάστε ξανά."
+   },
+   "banner_wrong_email_title": {
+      "message" : "Αυτό είναι περίεργο."
+   },
+   "blacklist_error_duplicate_url": {
+      "message" : "Αυτός ο ιστότοπος είναι ήδη αποκλεισμένος."
+   },
+   "blacklist_error_whitelist_url": {
+      "message" : "Αυτός ο ιστότοπος έχει καταργηθεί από τη λίστα Έμπιστων ιστότοπων και προστέθηκε στη λίστα Αποκλεισμένων ιστότοπων."
+   },
+   "blocked": {
+      "description" : "Select this to show only blocked (checked) tags in the tag browser. Should read as 'Show blocked'.",
+      "message": "αποκλεισμένοι"
+   },
+   "blocked_redirect_action_always_title": {
+      "description" : "Title for the 'Allow always and reload' button on the blocked redirect page.",
+      "message": "Να επιτρέπεται πάντα και επαναφόρτωση."
+   },
+   "blocked_redirect_action_through_once_title": {
+      "description" : "Title for the 'Allow once' button on the blocked redirect page.",
+      "message": "Να επιτρέπονται οι ετικέτες μία φορά μέχρι τον τελικό προορισμό."
+   },
+   "blocked_redirect_page_title": {
+      "description" : "Page title for blocked_redirect.html which appears when a redirect is blocked.",
+      "message": "Το Ghostery απέτρεψε μια ανακατεύθυνση."
+   },
+   "blocked_redirect_prevent": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked. Should appear inside \"redirect-prevent\" div.",
+      "message": "Το Ghostery απέτρεψε μια ανακατεύθυνση από το $BREAK$ $SP_O_START$$ORIGIN$$SP_END$ προς το $SP_D_START$$DESTINATION$$SP_END$, $BREAK$το οποίο είναι μέρος του $A_START$$APP$$A_END$. $BREAK$",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a id=\"name\" href=\"$4\" target=\"_blank\">"
+         },
+         "app": {
+            "content" : "$3",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "destination": {
+            "content" : "$2"
+         },
+         "origin": {
+            "content" : "$1"
+         },
+         "sp_d_start": {
+            "content" : "<span id=\"destination\">"
+         },
+         "sp_end": {
+            "content" : "</span>"
+         },
+         "sp_o_start": {
+            "content" : "<span id=\"origin\">"
+         }
+      }
+   },
+   "blocked_redirect_url_content": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked and a final 'destination' URL is successfully found.",
+      "message": "Αυτή η ετικέτα φαίνεται ότι ανακατευθύνει προς το $BREAK$ $A_START$$REDIRECT_URL$$A_END$ Εάν αυτός ο σύνδεσμος δεν φαίνεται αξιόπιστος και θέλετε να συνεχίσετε, κάντε κλικ στο εικονίδιο παρακάτω για να επιτρέψετε την εφαρμογή $APP$ και φορτώστε εκ νέου.",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"$1\" class=\"ellipsis\" title=\"$1\">"
+         },
+         "app": {
+            "content" : "$2",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "redirect_url": {
+            "content" : "$1"
+         }
+      }
+   },
+   "blocking_filter_name": {
+      "description" : "Description of current search filter",
+      "message": "Εμφανίζονται $NUMBER$ ετικέτες που αντιστοιχούν σε '$NAME$'",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         }
+      }
+   },
+   "blocking_filter_name_tags": {
+      "description" : "Description of current search filter",
+      "message": "Εμφανίζονται $NUMBER$ ετικέτες που αντιστοιχούν σε '$NAME$' με ετικέτες: $TAGS$",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$3</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_filter_tags": {
+      "description" : "Description of current search filter",
+      "message": "Εμφανίζονται $NUMBER$ ετικέτες με ετικέτες: $TAGS$",
+      "placeholders": {
+         "number" : {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$2</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_summary_all_small_firefox": {
+      "description" : "All tags / cookies are selected.",
+      "message": "αποκλεισμός $B_START$όλων$B_END$",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_none_small_firefox": {
+      "description" : "No tags / cookies are selected.",
+      "message": "αποκλεισμός $B_START$κανενός$B_END$",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_small_firefox": {
+      "description" : "Some of the tags / cookies are selected (X out of Y total).",
+      "message": "αποκλεισμός $NUMBER_SELECTED$ από $NUMBER_TOTAL$",
+      "placeholders": {
+         "number_selected" : {
+            "content" : "<strong>$1",
+            "example": 130
+         },
+         "number_total": {
+            "content" : "$2</strong>",
+            "example": 132
+         }
+      }
+   },
+   "box_dismiss_0s": {
+      "message" : "Απόρριψη $SPAN_START$ποτέ$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_15s": {
+      "message" : "Απόρριψη $SPAN_START$μετά από 15 δευτερόλεπτα$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_30s": {
+      "message" : "Απόρριψη $SPAN_START$μετά από 30 δευτερόλεπτα$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_5s": {
+      "message" : "Απόρριψη $SPAN_START$μετά από 5 δευτερόλεπτα$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_bl": {
+      "message" : "Εμφάνιση $SPAN_START$κάτω αριστερά$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_br": {
+      "message" : "Εμφάνιση $SPAN_START$κάτω δεξιάt$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tl": {
+      "message" : "Εμφάνιση $SPAN_START$πάνω αριστερά$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tr": {
+      "message" : "Εμφάνιση $SPAN_START$πάνω δεξιά$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_hide": {
+      "message" : "Απόκρυψη πλαισίου"
+   },
+   "box_hide_expanded": {
+      "message" : "Απόκρυψη μωβ πλαισίου"
+   },
+   "box_looking": {
+      "message" : "Γίνεται αναζήτηση"
+   },
+   "box_options_expanded": {
+      "message" : "Επιλογές"
+   },
+   "box_settings": {
+      "message" : "Ρυθμίσεις"
+   },
+   "box_settings_expanded": {
+      "message" : "Ρυθμίσεις Ghostery"
+   },
+   "box_tracker": {
+      "message" : "Ανιχνευτής"
+   },
+   "box_trackers": {
+      "message" : "Ανιχνευτές"
+   },
+   "browser_button_label_firefox": {
+      "description" : "Ghostery's browser button label, displayed on Firefox's addon customization panel.",
+      "message": "Ghostery"
+   },
+   "browser_button_tooltip": {
+      "description" : "Ghostery's browser button tooltip.",
+      "message": "Προβολή ευρημάτων Ghostery"
+   },
+   "button_cancel": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "Άκυρο"
+   },
+   "button_ok": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "ΟΚ"
+   },
+   "category_ad": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Διαφημίσεις"
+   },
+   "category_ad_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "Ανιχνευτές που εμφανίζουν διαφημίσεις."
+   },
+   "category_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Ανάλυση"
+   },
+   "category_analytics_desc": {
+      "description" : "User-facing description for the Analytics tag category.",
+      "message": "Ανιχνευτές που εμφανίζουν στατιστικά ή αναλυτικά στοιχεία για εκδότες ιστότοπων."
+   },
+   "category_privacy": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Απόρρητο"
+   },
+   "category_privacy_desc": {
+      "description" : "User-facing description for the Privacy tag category.",
+      "message": "Ειδοποιήσεις απορρήτου καθώς και μερικά άλλα στοιχεία σχετικά με το απόρρητο."
+   },
+   "category_tracker": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Φάροι"
+   },
+   "category_tracker_desc": {
+      "description" : "User-facing description for the Beacons tag category.",
+      "message": "Οι ανιχνευτές που σχετίζονται αποκλειστικά με την παρακολούθηση (φάροι, pixel μετατροπής, pixel τμηματοποίησης κοινού κ.λπ.), ανήκουν στην κατηγορία «Φάροι»."
+   },
+   "category_widget": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Widget"
+   },
+   "category_widget_desc": {
+      "description" : "User-facing description for the Widgets tag category.",
+      "message": "Ανιχνευτές που παρέχουν λειτουργικότητα σελίδας (κουμπιά κοινωνικών δικτύων, φόρμες σχολίων κ.λπ.)"
+   },
+   "category_advertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Διαφημίσεις"
+   },
+   "category_advertising_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "Παρέχει διαφημιστικές ή σχετικές -με τη διαφήμιση- υπηρεσίες, όπως συλλογή δεδομένων, ανάλυση συμπεριφοράς ή επαναστόχευση."
+   },
+   "category_comments": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Σχόλια"
+   },
+   "category_comments_desc": {
+      "description" : "User-facing description for the Comments tag category.",
+      "message": "Επιτρέπει τις ενότητες σχολιασμού για άρθρα και κριτικές προϊόντων."
+   },
+   "category_customer_interaction": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Αλληλεπίδραση καταναλωτή"
+   },
+   "category_customer_interaction_desc": {
+      "description" : "User-facing description for the Customer Interaction tag category.",
+      "message": "Περιλαμβάνει συζητήσεις, email, υποστήριξη πελατών και άλλα εργαλεία αλληλεπίδρασης."
+   },
+   "category_essential": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Απαραίτητο"
+   },
+   "category_essential_desc": {
+      "description" : "User-facing description for the Essential tag category.",
+      "message": "Περιλαμβάνει διαχείριση ετικετών, ειδοποιήσεις απορρήτου και τεχνολογίες που είναι σημαντικές για τη λειτουργικότητα ενός ιστότοπου."
+   },
+   "category_pornvertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Διαφήμιση για ενήλικες"
+   },
+   "category_pornvertising_desc": {
+      "description" : "User-facing description for the Adult Advertising tag category.",
+      "message": "Παρέχει διαφημιστική τεχνολογία που έχει σχεδιαστεί ειδικά για ιστότοπους με περιεχόμενο για ενήλικες."
+   },
+   "category_site_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Αναλυτικά στοιχεία ιστότοπων"
+   },
+   "category_site_analytics_desc": {
+      "description" : "User-facing description for the Site Analytics tag category.",
+      "message": "Συλλέγει και αναλύει δεδομένα που σχετίζονται με τη χρήση και την απόδοση του ιστότοπου."
+   },
+   "category_social_media": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Μέσα κοινωνικής δικτύωσης"
+   },
+   "category_social_media_desc": {
+      "description" : "User-facing description for the Social Media tag category.",
+      "message": "Ενσωματώνει δυνατότητες που σχετίζονται με ιστότοπους κοινωνικών δικτύων."
+   },
+   "category_audio_video_player": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Πρόγραμμα αναπαραγωγής ήχου\/βίντεο"
+   },
+   "category_audio_video_player_desc": {
+      "description" : "User-facing description for the Audio/Video Player tag category.",
+      "message": "Δίνει τη δυνατότητα στους ιστότοπους να δημοσιεύουν, να διανέμουν και να βελτιστοποιούν οπτικοακουστικό περιεχόμενο."
+   },
+   "change_password_message": {
+      "message" : "Ο νέος κωδικός πρόσβασης πρέπει να είναι τουλάχιστον 8 χαρακτήρες, ένας αριθμός και ένα σύμβολο."
+   },
+   "click2play_allow_always_tooltip": {
+      "description" : "Tooltip that appears over the 'allow always' click2play button.",
+      "message": "Να επιτρέπεται και επαναφόρτωση."
+   },
+   "click2play_allow_once_button_tooltip": {
+      "description" : "Tooltip that appears over the click2play replacement for 'social' buttons.",
+      "message": "Το Ghostery απέκλεισε το $APP_NAME$. Κάντε κλικ εδώ για να επιτραπεί η φόρτωση μόνο αυτήν τη φορά.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Twitter Button"
+         }
+      }
+   },
+   "click2play_allow_once_tooltip": {
+      "description" : "Tooltip that appears over the 'allow once' click2play button.",
+      "message": "Να επιτραπεί μία φορά και επαναφόρτωση."
+   },
+   "click2play_blocked": {
+      "message" : "Το Ghostery απέκλεισε το $APP_NAME$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "SoundCloud"
+         }
+      }
+   },
+   "click2play_comment_form": {
+     "message": "Το Ghostery απέκλεισε σχόλια με την υποστήριξη του $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_review_form": {
+     "message": "Το Ghostery απέκλεισε κριτικές με την υποστήριξη του $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_video_form": {
+     "message": "Το Ghostery απέκλεισε το πρόγραμμα αναπαραγωγής βίντεο $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_survey_form": {
+     "message": "Το Ghostery απέκλεισε μια έρευνα με την υποστήριξη του $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "company_about": {
+      "description" : "Header for company profiles.",
+      "message": "Σχετικά με την $COMPANY$:",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_affiliations": {
+      "message" : "Συνεργασίες στον κλάδο:"
+   },
+   "company_description": {
+      "message" : "Περιγραφή εταιρείας"
+   },
+   "company_in_their_own_words": {
+      "description" : "Label for a description of the company that is provided by the company itself",
+      "message": "Με δικά τους λόγια"
+   },
+   "company_operates": {
+      "description" : "Followed by a list of products this company offers.",
+      "message": "Η $COMPANY$ λειτουργεί:",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_profile_error": {
+      "message" : "Δεν είναι δυνατή η φόρτωση δεδομένων από το ghostery.com"
+   },
+   "company_profile_link": {
+      "message" : "Συνέχεια στο πλήρες προφίλ"
+   },
+   "company_tags": {
+      "description" : "Tags here refers to categories we use to group companies based on their business (ie Video Player, Popups, Polls)",
+      "message": "Ετικέτες:"
+   },
+   "company_website": {
+      "message" : "Ιστότοπος:"
+   },
+   "confirm_new_password_field_label": {
+      "message" : "Επιβεβαίωση νέου κωδικού πρόσβασης"
+   },
+   "copyright": {
+      "description" : "Copyright message, shown in page footers.",
+      "message": "$C$ $YEAR$ $GHOSTERY$, τμήμα της $COMPANY_ADDRESS$",
+      "placeholders": {
+         "c" : {
+            "content" : "&copy;"
+         },
+         "company_address": {
+            "content" : "$1",
+            "example": "GHOSTERY, Inc., Such-and-such Street, Such-and-such Floor, New York, NY, Zip Code"
+         },
+         "ghostery": {
+            "content" : "<a href='https://www.ghostery.com' target='_blank'>Ghostery</a>"
+         },
+         "year": {
+            "content" : "2015"
+         }
+      }
+   },
+   "dismiss": {
+      "description" : "Text for a button or link to close a notification.",
+      "message": "Απόρριψη"
+   },
+   "email_preferences_1": {
+      "message" : "Ναι! Ενδιαφέρομαι να λαμβάνω πληροφορίες για προϊόντα ή υπηρεσίες σχετικά με την εμπειρία μου περιήγησης."
+   },
+   "email_preferences_2": {
+      "message" : "Να ενημερώνομαι για νέες κυκλοφορίες προϊόντων."
+   },
+   "email_preferences_header": {
+      "message" : "Προτιμήσεις email"
+   },
+   "email_confirm_field_label": {
+      "message" : "Επιβεβαίωση email"
+   },
+   "email_field_label": {
+      "message" : "Email"
+   },
+   "error_email_forgot": {
+      "message" : "Δοκιμάστε ένα άλλο email. Το συγκεκριμένο δεν το έχουμε."
+   },
+   "firefox_tools_menu_database_update": {
+      "description" : "Ghostery's update database menu label dipslayed under the ghostery menu.",
+      "message": "Ενημέρωση λιστών σφαλμάτων"
+   },
+   "first_name_field_label": {
+      "message" : "Όνομα (προαιρετικό)"
+   },
+   "forgot_password_message": {
+      "message" : "Μην ανησυχείτε. Συμβαίνει σε όλους μας. Θα σας στείλουμε email με οδηγίες για να επαναφέρετε τον κωδικό πρόσβασης."
+   },
+   "ghostery_logo": {
+      "description" : "Alt. text for the Ghostery logo graphic in the header on options and walkthrough pages.",
+      "message": "Λογότυπο Ghostery"
+   },
+   "invalid_email": {
+      "message" : "Ωχ! Αυτό το email δεν είναι στο σύστημά μας."
+   },
+   "invalid_email_confirmation": {
+      "message" : "Οι διευθύνσεις email δεν ταιριάζουν."
+   },
+   "invalid_email_forgot": {
+    "message": "Βασικά, πρέπει να πληκτρολογήσετε μια πραγματική διεύθυνση email."
+   },
+   "error_email_forgot": {
+    "message": "Περίεργο... Δεν βρήκαμε αυτό το email. Για δοκιμάστε ένα άλλο..."
+   },
+   "invalid_email_create": {
+      "message" : "Πληκτρολογήστε ένα έγκυρο email"
+   },
+   "invalid_email_login": {
+    "message": "Βασικά, πρέπει να πληκτρολογήσετε μια πραγματική διεύθυνση email."
+   },
+   "invalid_email_used": {
+      "message" : "Αυτό το email χρησιμοποιείται ήδη."
+   },
+   "last_name_field_label": {
+      "message" : "Επίθετο (προαιρετικό)"
+   },
+   "library_never_updated": {
+      "description" : "Text shown in the case when no tag library updates have yet happened.",
+      "message": "Προτείνονται ανεπιφύλακτα οι αυτόματες ενημερώσεις."
+   },
+   "library_update_already_updated": {
+      "description" : "Text shown in the case when the tag library did not need to be updated from remote servers since it's already the latest copy.",
+      "message": "Η βιβλιοθήκη είναι ήδη ενημερωμένη."
+   },
+   "library_update_failed": {
+      "description" : "Tag library update action failed.",
+      "message": "Δυστυχώς, η ενημέρωση απέτυχε. Προσπαθήστε ξανά αργότερα."
+   },
+   "library_update_in_progress": {
+      "description" : "Indicates an update is in progress (might have a spinner graphic next to it).",
+      "message": "Ενημέρωση..."
+   },
+   "library_update_now_link": {
+      "message" : "Ενημέρωση τώρα."
+   },
+   "library_update_successful": {
+      "description" : "Tag library update action completed successfully.",
+      "message": "Επιτυχία!"
+   },
+   "library_updated_on": {
+      "description" : "Text shown when a tag library update has happened at least once.",
+      "message": "Η βιβλιοθήκη ανίχνευσης συγχρονίστηκε τελευταία φορά την $DATE$",
+      "placeholders": {
+         "date" : {
+            "content" : "$1",
+            "example": "Wed Oct 12 2011"
+         }
+      }
+   },
+   "locally_added_tracker": {
+      "description" : "Tag that was manually added by the user. This text will be displayed on the app browser next to the tag name.",
+      "message": "$APP_NAME$ (Προστέθηκε τοπικά)",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1"
+         }
+      }
+   },
+   "lso_browser_name_filter": {
+      "description" : "Text input filter for the cookie browser. Lets you filter by/search for cookie names. Part of 'Search for cookie name'.",
+      "message": "Αναζήτηση για $SEARCH_FIELD$",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "cookie name"
+         }
+      }
+   },
+   "lso_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the cookie browser search input. Should read as 'Search for cookie name'.",
+      "message": "όνομα cookie"
+   },
+   "lso_browser_type_filter": {
+      "description" : "Dropdown filter for the cookie browser. Lets you show only blocked (checked), or only unblocked (unchecked) cookies.",
+      "message": "Εμφάνιση $TYPE$",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "new_password_field_label": {
+      "message" : "Νέος κωδικός πρόσβασης"
+   },
+   "new_since_last_update": {
+      "description" : "Select this to filter the tag browser to show only the tags added to the library since last update. Should read as 'Show new since last update'.",
+      "message": "νέα από την τελευταία ενημέρωση"
+   },
+   "no_results": {
+      "description" : "This is shown when the user performed a search or applied some other filter so that all items got filtered out.",
+      "message": "Κανένα αποτέλεσμα."
+   },
+   "none": {
+      "description" : "Used to say that this item does not belong to any of the groups, as in \"Groups: None\" (as opposed to \"Groups: Group A, Group B, Group C\").",
+      "message": "Καμία"
+   },
+   "note": {
+      "description" : "Similar in function to a \"WARNING:\" prefix. Used for stuff like \"NOTE: Blocking tags can break pages.",
+      "message": "Σημείωση:"
+   },
+   "notification_reminder1": {
+      "description" : "First line of the walkthrough reminder/notification. Sentence continued on next line.",
+      "message": "Ελέγξτε την εισαγωγή στη ρύθμιση παραμέτρων του Ghostery για να δείτε μερικές από τις σημαντικές συνατότητες του Ghostery."
+   },
+   "notification_reminder2": {
+      "description" : "Second line of the walkthrough reminder/notification. Continues the sentence from previous line.",
+      "message": "για λεπτομερέστερη ανάλυση μερικών βασικών δυνατοτήτων του Ghostery."
+   },
+   "notification_reminder_link": {
+      "description" : "Link to the walkthrough/configuration wizard, part of the walkthrough reminder/notification.",
+      "message": "Διαμόρφωση του Ghostery"
+   },
+   "notification_update": {
+      "message" : "Η βιβλιοθήκη ετικετών του Ghostery ενημερώθηκε."
+   },
+   "notification_update_link": {
+      "description" : "Link to show recently added tags.",
+      "message": "Κάντε κλικ εδώ για να δείτε τι νέο υπάρχει"
+   },
+   "notification_upgrade": {
+      "description" : "Upgrade message. Shown after Ghostery has gotten upgraded.",
+      "message": "Γεια και χαρά σας! Η αφοσιωμένη και ιδιαίτερα ελκυστική ομάδα μας εργάστηκε σκληρά για να δημιουργήσει μια καινούργια έκδοση του Ghostery."
+   },
+   "notification_upgrade_link": {
+      "description" : "Upgrade link text.",
+      "message": "Δείτε τις φανταστικές νέες δυνατότητες και τις επιδιορθώσεις σφαλμάτων σε αυτή την νέα έκδοση."
+   },
+   "off": {
+      "message" : "Αποκλεισμένα"
+   },
+   "old_password_field_label": {
+      "message" : "Παλιός κωδικός πρόσβασης"
+   },
+   "on": {
+      "message" : "Επιτρεπόμενοι"
+   },
+   "options_about_tab": {
+      "description" : "One of three page tabs on the options page; click to show about page.",
+      "message": "Σχετικά"
+   },
+   "options_advanced_tab": {
+      "description" : "One of three page tabs on the options page; click to show advanced settings.",
+      "message": "Προηγμένα"
+   },
+   "options_blocking3": {
+      "message" : "Όταν αποκλείετε μια ετικέτα, τότε αυτή εμποδίζεται από το να επικοινωνήσε με τον πάροχο τρίτου κατασκευαστή του."
+   },
+   "options_general_tab": {
+      "description" : "One of three page tabs on the options page; click to show general/basic settings. Selected/active by default.",
+      "message": "Γενικά"
+   },
+   "options_header": {
+      "description" : "Header that appears at the top of the options page",
+      "message": "Επιλογές"
+   },
+   "options_lso_blocking3": {
+      "message" : "Όταν αποκλείετε ένα cookie, επιλεγμένοι πάροχοι τρίτου κατασκευαστή δεν μπορούν να εγγράψουν cookie στο πρόγραμμα περιήγησης.$BREAK$$BREAK$$EM_START$$B_START$Προειδοποίηση!$B_END$$EM_END$ Όταν συνδυάζεται με άλλη επέκταση παρακολούθησης cookie όπως το <strong>Beef Taco</strong>, το <strong>Cookie Monster</strong> και το <strong>Google Opt-Out</strong>, αυτή η δυνατότητα μπορεί να προκαλέσει σφάλματα <b>μη ανταποκρινόμενης δέσμης ενεργειών</b>. Εάν αντιμετωπίζετε αυτό το σφάλμα, προσπαθήστε να απενεργοποιήσετε αυτήν τη δυνατότητα ή τα πρόσθετα που προκαλούν διένεξη.",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "em_end": {
+            "content" : "</em>"
+         },
+         "em_start": {
+            "content" : "<em>"
+         }
+      }
+   },
+   "options_page_title": {
+      "description" : "Title of Ghostery's options page.",
+      "message": "Επιλογές Ghostery"
+   },
+   "options_saving_exit_message": {
+      "description" : "Message that appears for an instant when saving settings on the options page.",
+      "message": "Επιλογές αποθήκευσης"
+   },
+   "panel_advanced_options": {
+      "message" : "Προηγμένες ρυθμίσεις"
+   },
+   "panel_allow_all": {
+      "message" : "Αξιόπιστος ιστότοπος"
+   },
+   "panel_allow_all_tool_tip": {
+      "message" : "Να επιτρέπονται όλοι οι ανιχνευτές σε αυτόν τον ιστότοπο."
+   },
+   "panel_allow_all_tool_tip_needs_reload": {
+      "message" : "Κάντε κλικ για να τον καταργήσετε από τους Αξιόπιστους ιστότοπους"
+   },
+   "panel_block_all": {
+      "message" : "Περιορισμός ιστότοπο"
+   },
+   "panel_block_all_tool_tip": {
+      "message" : "Να αποκλείονται όλοι οι ανιχνευτές σε αυτόν τον ιστότοπο."
+   },
+   "panel_block_all_tool_tip_needs_reload": {
+      "message" : "Κάντε κλικ για να τον καταργήσετε από τους Περιορισμένους ιστότοπους"
+   },
+   "panel_blocking_block_or_allow": {
+      "message" : "ΝΑ ΑΠΟΚΛΕΙΕΤΑΙ ή ΝΑ ΕΠΙΤΡΕΠΕΤΑΙ"
+   },
+   "panel_blocking_trackers_by_category": {
+      "message" : "ΑΝΙΧΝΕΥΤΕΣ ΚΑΤΑ ΚΑΤΗΓΟΡΙΑ"
+   },
+   "panel_blocking_verify_account_message": {
+     "message" : "Για να συγχρονίσετε τις ρυθμίσεις, επιβεβαιώστε τον λογαριασμό σας."
+   },
+   "panel_blocking_verify_account_title": {
+      "message" : "Μη επιβεβαιωμένος λογαριασμός"
+   },
+   "panel_blocking_verify_account_message": {
+      "message" : "Για να συγχρονίσετε τις ρυθμίσεις και να έχετε πρόσβαση στις απίστευτες δυνατότητες του Ghostery, ελέγξτε το email σας για να επιβεβαιώσετε τον λογαριασμό σας."
+   },
+   "panel_blocking_success_message": {
+      "message": "Αυτό είναι! Οι ρυθμίσεις συγχρονίστηκαν."
+   },
+   "panel_blocking_failure_message": {
+      "message": "Ωχ! Οι ρυθμίσεις δεν συγχρονίστηκαν. Προσπαθήστε ξανά αργότερα."
+   },
+   "panel_button_pause_blocking": {
+      "description" : "Button located at the bottom of the findings panel that pauses blocking.",
+      "message": "Παύση αποκλεισμού"
+   },
+   "panel_button_resume_blocking": {
+      "description" : "Button located at the bottom of the findings panel that resumes blocking.",
+      "message": "Συνέχιση αποκλεισμού"
+   },
+   "panel_button_whitelist_site": {
+      "description" : "Button located at the bottom of the findings panel that whitelists a site.",
+      "message": "Επιτρεπόμενος ιστότοπος"
+   },
+   "panel_chart_tracker": {
+      "message" : "Ανιχνευτής"
+   },
+   "panel_chart_trackers": {
+      "message" : "Ανιχνευτές"
+   },
+   "panel_chart_view_all": {
+      "message" : "Προβολή όλων των ανιχνευτών"
+   },
+   "panel_create_account": {
+      "message" : "Δημιουργία λογαριασμού"
+   },
+   "panel_email_verification_failed_title": {
+      "message" : "Ωχ!"
+   },
+   "panel_email_verification_failed": {
+      "message" : "Παρουσιάστηκε σφάλμα κατά την αποστολή του email επιβεβαίωσης. Προσπαθήστε ξανά αργότερα."
+   },
+   "panel_email_verification_sent": {
+      "message" : "$BOLD_HTML_STARTS$ Μπράβο! $BOLD_HTML_END$ Εστάλη ένα email επιβεβαίωσης λογαριασμού στο $EMAIL$",
+      "placeholders": {
+         "email" : {
+            "content": "$1",
+            "example": "info@ghostery.com"
+         },
+         "bold_html_end": {
+            "content" : "</strong>"
+         },
+         "bold_html_starts": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "panel_forgot_password": {
+      "message" : "Ξεχάσατε τον κωδικό πρόσβασης;"
+   },
+   "panel_g_allowed": {
+      "message" : "Επιτρεπόμενα"
+   },
+   "panel_g_blocked": {
+      "message" : "Αποκλεισμένα"
+   },
+   "panel_help_contact_header": {
+      "message" : "Τρόπος επικοινωνίας"
+   },
+   "panel_help_faq": {
+      "message" : "Συχνές ερωτήσεις"
+   },
+   "panel_help_feedback": {
+      "message" : "Συμμετάσχετε στην έρευνά μας"
+   },
+   "panel_help_license": {
+      "message" : "Συμφωνητικό άδειας χρήσης"
+   },
+   "panel_help_privacy_statement": {
+      "message" : "Δήλωση απορρήτου"
+   },
+   "panel_help_questions_header": {
+      "message" : "Ερωτήσεις και σχόλια"
+   },
+   "panel_help_support": {
+      "message" : "Υποστήριξη"
+   },
+   "panel_help_title": {
+      "message" : "Βοήθεια"
+   },
+   "panel_help_version_header": {
+      "message" : "Έκδοση Ghostery για $BROWSER$ ",
+      "placeholders": {
+       "browser": {
+         "content": "$1",
+         "example": "Firefox"
+       }
+     }
+   },
+   "panel_menu_blocking": {
+      "message" : "Ρυθμίσεις ανιχνευτών"
+   },
+   "panel_menu_dashboard": {
+      "message" : "Περίληψη ανιχνευτών"
+   },
+   "panel_menu_help": {
+      "message" : "Βοήθεια"
+   },
+   "panel_menu_myghostery": {
+      "message" : "Το Ghostery μου"
+   },
+   "panel_menu_report_broken_site": {
+      "message" : "Αναφορά σελίδας"
+   },
+   "panel_menu_submit_tracker": {
+      "message" : "Υποβολή ανιχνευτή"
+   },
+   "panel_menu_signin": {
+      "message" : "Σύνδεση"
+   },
+   "panel_menu_signout": {
+      "message" : "Αποσύνδεση"
+   },
+   "panel_needs_reload": {
+      "description" : "Message that appears at the bottom of the findings panel when a settings has been changed and the page needs to be reloaded to reflect these changes.",
+      "message": "$SPAN_START$Κάντε κλικ επαναφόρτωση σελίδας$SPAN_END$ για να δείτε τις αλλαγές.",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"button\">"
+         }
+      }
+   },
+   "panel_no_trackers_found": {
+      "description" : "Text displayed in the findings panel's apps-div when no tags were found.",
+      "message": "Δεν βρέθηκαν ανιχνευτές σε αυτή τη σελίδα."
+   },
+   "panel_not_scanned1": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Αυτή η σελίδα δεν σαρώθηκε."
+   },
+   "panel_not_scanned2": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Το Ghostery σαρώνει μόνο σελίδες «http» και «https». Πλοηγηθείτε σε μια άλλη σελίδα και σας υποσχόμαστε ότι θα κάνουμε αυτό που πρέπει."
+   },
+   "panel_settings_about": {
+      "description" : "About button from the findings panel settings bar.",
+      "message": "Σχόλια"
+   },
+   "panel_settings_options": {
+      "description" : "Options button from the findings panel settings bar.",
+      "message": "Επιλογές"
+   },
+   "panel_settings_share": {
+      "description" : "Share button from the findings panel settings bar.",
+      "message": "Κοινή χρήση"
+   },
+   "panel_settings_support": {
+      "description" : "Support button from the findings panel settings bar.",
+      "message": "Υποστήριξη"
+   },
+   "panel_pause": {
+      "message" : "Παύση"
+   },
+   "panel_unpause": {
+      "message" : "Επαναφορά"
+   },
+   "paused_override_status": {
+      "message": "Αποκλεισμός παύσης"
+   },
+   "panel_pause_ghostery_tooltip": {
+      "message" : "Κάντε κλικ για παύση του Ghostery"
+   },
+   "panel_unpause_ghostery_tooltip": {
+      "message" : "Το Ghostery διακόπηκε. Κάντε κλικ για να ενεργοποιήσετε τον αποκλεισμό"
+   },
+   "panel_signin_success_header": {
+      "message" : "Επιτυχία!"
+   },
+   "panel_signin_success": {
+      "message" : "Έχετε συνδεθεί ως"
+   },
+   "panel_signin_success_title": {
+      "message" : "Συγχαρητήρια! Ο λογαριασμός σας στο Ghostery είναι έτοιμος!"
+   },
+   "panel_ss_allowed": {
+      "message" : "Επιτρέπεται μόνο σε αυτόν τον ιστότοπο"
+   },
+   "panel_ss_blocked": {
+      "message" : "Απέκλεισε μόνο αυτόν τον ιστότοπο"
+   },
+   "panel_blocking_no_trackers": {
+      "message": "Δεν βρέθηκαν ανιχνευτές σε αυτή τη σελίδα."
+   },
+   "panel_blocking_not_scanned_1": {
+      "message": "Αυτή η σελίδα δεν σαρώθηκε."
+   },
+   "panel_blocking_not_scanned_2": {
+      "message": "Το Ghostery σαρώνει μόνο σελίδες «http» και «https». Πλοηγηθείτε σε μια άλλη σελίδα και σας υποσχόμαστε ότι θα κάνουμε αυτό που πρέπει."
+   },
+   "panel_sync_complete": {
+      "message" : "Οι ρυθμίσεις σας είναι συγχρονισμένες."
+   },
+   "panel_sync_settings": {
+      "message" : "Ρυθμίσεις συγχρονισμού"
+   },
+   "panel_table_allowed": {
+      "message" : "ΕΠΙΤΡΕΠΟΜΕΝΟΙ"
+   },
+   "panel_table_blocked": {
+      "message" : "ΑΠΟΚΛΕΙΣΜΕΝΟ"
+   },
+   "panel_table_title_category": {
+      "message" : "ΚΑΤΗΓΟΡΙΕΣ"
+   },
+   "panel_title_blocking": {
+      "message" : "Ρυθμίσεις ανιχνευτών"
+   },
+   "panel_title_change_password": {
+      "message" : "Αλλαγή κωδικού πρόσβασης"
+   },
+   "panel_title_create_account": {
+      "message" : "Δημιουργία λογαριασμού"
+   },
+   "panel_title_close": {
+      "message" : "Πίσω"
+   },
+   "panel_title_dashboard": {
+      "message" : "Περίληψη ανιχνευτών"
+   },
+   "panel_title_finish": {
+      "message" : "Τέλος"
+   },
+   "panel_title_forgot_password": {
+      "message" : "Ξεχάσατε τον κωδικό πρόσβασης;"
+   },
+   "panel_title_not_scanned": {
+      "description" : "Text at the top of the findings panel that is displayed when a page has not been scanned by Ghostery.",
+      "message": "Η σελίδα δεν σαρώθηκε"
+   },
+   "panel_title_paused": {
+      "description" : "Text at the top of the findings panel that is displayed when 'pause blocking' is enabled.",
+      "message": "Ο αποκλεισμός βρίσκεται σε $SPAN_START$παύση$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_title_plural": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if zero or more than one tags were found).",
+      "message": "Το Ghostery βρήκε $NUMBER$ ανιχνευτές",
+      "placeholders": {
+         "number" : {
+            "content" : "$1",
+            "example": 7
+         }
+      }
+   },
+   "panel_title_singular": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if only one tag was found).",
+      "message": "Το Ghostery εντόπισε 1 ανιχνευτή"
+   },
+   "panel_title_whitelisted": {
+      "description" : "Text at the top of the findings panel that is displayed when 'whitelist site' is enabled.",
+      "message": "Ο ιστότοπος είναι $SPAN_START$επιτρεπόμενος$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_tracker_compatibility_warning": {
+      "description" : "Message that appears when a tag is known to break a specific website if blocked.",
+      "message": "Ο αποκλεισμός αυτού του ανιχνευτή πιθανόν να προκαλέσει σφάλμα σε μέρη του $SITE$",
+      "placeholders": {
+         "site" : {
+            "content" : "$1",
+            "example": "store.apple.com"
+         }
+      }
+   },
+   "panel_tracker_details_no_info": {
+      "description" : "Message that appears when no tag info is available.",
+      "message": "Δυστυχώς, δεν υπάρχουν διαθέσιμες πληροφορίες για αυτόν τον ανιχνευτή."
+   },
+   "panel_tracker_found_sources_title": {
+      "description" : "Title that appears when expanding a findings panel tag, above the list of found sources.",
+      "message": "Εντοπισμένες διευθύνσεις URL προέλευσης ανιχνευτών:"
+   },
+   "panel_tracker_global_block_tooltip": {
+      "description" : "Tooltip that appears over the findings panel's tag global blocking control.",
+      "message": "Κάντε κλικ εδώ για εναλλαγή αποκλεισμού του $APP_NAME$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_learn_more": {
+      "message" : "Μάθετε περισσότερα"
+   },
+   "panel_tracker_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "Κάντε κλικ εδώ για περισσότερες πληροφορίες σχετικά με το $APP_NAME$",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_message": {
+      "description" : "Message that appears after setting the site specific unblock to 'on' for a tag in the findings panel.",
+      "message": "Πάντα επιτρέπεται στο $BREAK$$HOST$",
+      "placeholders": {
+         "break" : {
+            "content" : "<br>"
+         },
+         "host": {
+            "content" : "$1",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_off": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "Κάντε κλικ εδώ για να επιτρέπεται πάντα το $APP_NAME$ στο $HOST$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_on": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "Κάντε κλικ εδώ για να μην επιτρέπεται πλεόν το $APP_NAME$ στο $HOST$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_what_is_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "Τι είναι το $APP_NAME$;",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_verify_account": {
+      "message" : "Επιβεβαίωση λογαριασμού"
+   },
+   "panel_visualize": {
+      "message" : "Χαρτογράφηση αυτών των ανιχνευτών"
+   },
+   "panel_visualize_tool_tip": {
+      "message" : "Απεικόνιση των ανιχνευτών σε αυτόν τον ιστότοπο"
+   },
+   "password_field_label": {
+      "message" : "Κωδικός πρόσβασης"
+   },
+   "password_requirements": {
+      "message" : "Ο κωδικός πρόσβασης πρέπει να είναι τουλάχιστον 8 χαρακτήρες"
+   },
+   "rate_ghostery_link1": {
+      "description" : "Part one of \"Like Ghostery? Rate It!\"",
+      "message": "Σας αρέσει το Ghostery;"
+   },
+   "rate_ghostery_link2": {
+      "description" : "Part two of \"Like Ghostery? Rate It!\"",
+      "message": "Βαθμολογήστε το!"
+   },
+   "save_button_label": {
+      "message" : "Αποθήκευση"
+   },
+   "send_button_label": {
+      "message" : "Αποστολή"
+   },
+   "server_error_message": {
+      "message" : "Μάλλον αντιμετωπίζουμε ένα τεχνικό πρόβλημα. Δοκιμάστε ξανά αργότερα."
+   },
+   "server_error_title": {
+      "message" : "Προβληματάκι"
+   },
+   "setup_page_category_all_blocked": {
+      "message" : "Όλοι οι ανιχνευτές σε αυτή την κατηγορία είναι αποκλεισμένοι"
+   },
+   "setup_page_num_blocked": {
+      "message" : "Αποκλεισμένα"
+   },
+   "survey_link": {
+      "message" : "$LINK_START$Συμμετάσχετε στην έρευνά μας!$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "survey_link_also": {
+      "message" : "Επίσης, $LINK_START$Συμμετάσχετε στην έρευνά μας!$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "tag": {
+      "message" : "Ετικέτα"
+   },
+   "tag_description_getting": {
+      "message" : "Λήψη περιγραφής ετικέτας..."
+   },
+   "tag_description_none_found": {
+      "message" : "Δεν βρέθηκε περιγραφή της ετικέτας."
+   },
+   "tag_description_read_more": {
+      "message" : "Διαβάστε περισσότερα"
+   },
+   "tags": {
+      "message" : "Ετικέτες"
+   },
+   "trackers": {
+      "message" : "Ανιχνευτές"
+   },
+   "tags_less": {
+      "description" : "Clicking this makes the tag list smaller",
+      "message": "Εμφάνιση λιγότερων ετικετών..."
+   },
+   "tags_more": {
+      "description" : "Clicking this expands the list to show all tags",
+      "message": "Εμφάνιση περισσότερων ετικετών..."
+   },
+   "toggle_collapse_all": {
+      "description" : "Click this to collapse all items, hiding collapsible per-item content.",
+      "message": "Σύμπτυξη όλων"
+   },
+   "toggle_expand_all": {
+      "description" : "Click this to expand all items, revealing all content.",
+      "message": "Επέκταση όλων"
+   },
+   "toggle_select_all": {
+      "description" : "Click this to select all items.",
+      "message": "Επιλογή όλων"
+   },
+   "toggle_select_none": {
+      "description" : "Click this to deselect all items.",
+      "message": "Καμία επιλογή"
+   },
+   "tracker_browser_filters_reset": {
+      "description" : "Link to reset the tag browser's display filters.",
+      "message": "Επαναφορά αναζήτησης"
+   },
+   "tracker_browser_name_filter": {
+      "description" : "Text input filter for the tag browser. Lets you filter by/search for tag names. Part of 'Search for tag name'.",
+      "message": "Αναζήτηση για $SEARCH_FIELD$",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "tag name"
+         }
+      }
+   },
+   "tracker_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the tag browser search input. Should read as 'Search for tag name'.",
+      "message": "όνομα ετικέτας"
+   },
+   "tracker_browser_type_filter": {
+      "description" : "Dropdown filter for the tag browser. Lets you show only blocked (checked), or only unblocked (unchecked) tags.",
+      "message": "Εμφάνιση $TYPE$",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "unblocked": {
+      "description" : "Select this to show only unblocked (unchecked) tags in the tag browser. Should read as 'Show unblocked'.",
+      "message": "μη αποκλεισμένοι"
+   },
+   "walkthrough_link": {
+      "description" : "Link to walkthrough/configuration wizard, shown on top of the options page.",
+      "message": "Για μια εισαγώγή στις κύριες επιλογές του Ghostery, δοκιμάστε τον $LINK_START$Βοηθό ρύθμισης παραμέτρων Ghostery$LINK_END$.",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a href=\"walkthrough.html\" id=\"walkthrough-link\">"
+         }
+      }
+   },
+   "walkthrough_skip_button": {
+      "message" : "Παράλειψη του Βοηθού διαμόρφωσης"
+   },
+   "white_black_list_error_invalid_url": {
+      "message" : "Εισαγάγετε μια έγκυρη διεύθυνση URL."
+   },
+   "whitelist_error_blacklist_url": {
+      "message" : "Αυτός ο ιστότοπος καταργήθηκε από τη λίστα Περιορισμένων ιστότοπων και προστέθηκε στη λίστα Αξιόπιστων ιστότοπων."
+   },
+   "whitelist_error_duplicate_url": {
+      "description" : "Options page site whitelisting error message shown when whitelisting a URL that is already in the whitelist.",
+      "message": "Αυτός ο ιστότοπος είναι ήδη επιτρεπόμενος."
+   },
+   "xul_panel_block_firefox": {
+      "description" : "In the XUL panel, this is a toggle to block a particular app.",
+      "message": "Να αποκλειστεί το $NAME$;",
+      "placeholders": {
+         "name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "xul_panel_site_specific_unblock_firefox": {
+      "description" : "In the XUL panel, this is a toggle to un-block a particular app for the web-page the user is on.",
+      "message": "Αναίρεση αποκλεισμού μόνο για αυτόν τον ιστότοπο"
+   },
+   "xul_panel_view_source_firefox": {
+      "description" : "In the XUL panel, this is the menu option that opens the site that shows source code of the tag.",
+      "message": "Προβολή προέλευσης δέσμης ενεργειών"
+   },
+   "short_description": {
+      "description": "A short description of this extension (Ghostery).",
+      "message": "Προστατέψτε το απόρρητό σας. Δείτε ποιοι παρακολουθούν την περιήγησή σας στον Ιστό με το Ghostery."
+  }
+}

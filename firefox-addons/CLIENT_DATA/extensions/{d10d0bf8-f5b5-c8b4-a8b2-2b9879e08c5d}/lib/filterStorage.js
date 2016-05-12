@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -29,7 +29,6 @@ let {Filter, ActiveFilter} = require("filterClasses");
 let {Subscription, SpecialSubscription, ExternalSubscription} = require("subscriptionClasses");
 let {FilterNotifier} = require("filterNotifier");
 let {Utils} = require("utils");
-
 
 /**
  * Version number of the filter storage file format.
@@ -104,7 +103,7 @@ let FilterStorage = exports.FilterStorage =
 
   /**
    * List of filter subscriptions containing all filters
-   * @type Array of Subscription
+   * @type Subscription[]
    */
   subscriptions: [],
 
@@ -206,7 +205,7 @@ let FilterStorage = exports.FilterStorage =
   /**
    * Replaces the list of filters in a subscription by a new list
    * @param {Subscription} subscription filter subscription to be updated
-   * @param {Array of Filter} filters new filter lsit
+   * @param {Filter[]} filters new filter list
    */
   updateSubscriptionFilters: function(subscription, filters)
   {
@@ -324,16 +323,11 @@ let FilterStorage = exports.FilterStorage =
   /**
    * Increases the hit count for a filter by one
    * @param {Filter} filter
-   * @param {Window} window  Window that the match originated in (required
-   *                         to recognize private browsing mode)
    */
-  increaseHitCount: function(filter, wnd)
+  increaseHitCount: function(filter)
   {
-    if (!Prefs.savestats || PrivateBrowsing.enabledForWindow(wnd) ||
-        PrivateBrowsing.enabled || !(filter instanceof ActiveFilter))
-    {
+    if (!Prefs.savestats || !(filter instanceof ActiveFilter))
       return;
-    }
 
     filter.hitCount++;
     filter.lastHit = Date.now();
@@ -341,7 +335,7 @@ let FilterStorage = exports.FilterStorage =
 
   /**
    * Resets hit count for some filters
-   * @param {Array of Filter} filters  filters to be reset, if null all filters will be reset
+   * @param {Filter[]} filters  filters to be reset, if null all filters will be reset
    */
   resetHitCounts: function(filters)
   {
@@ -369,17 +363,13 @@ let FilterStorage = exports.FilterStorage =
     if (this._loading)
       return;
 
-
     this._loading = true;
 
     let readFile = function(sourceFile, backupIndex)
     {
-
-
       let parser = new INIParser();
       IO.readFromFile(sourceFile, parser, function(e)
       {
-
         if (!e && parser.subscriptions.length == 0)
         {
           // No filter subscriptions in the file, this isn't right.
@@ -407,14 +397,11 @@ let FilterStorage = exports.FilterStorage =
               else
                 doneReading(parser);
             });
-
             return;
           }
         }
         doneReading(parser);
-      }.bind(this), "FilterStorageRead");
-
-
+      }.bind(this));
     }.bind(this);
 
     var doneReading = function(parser)
@@ -446,13 +433,11 @@ let FilterStorage = exports.FilterStorage =
         }
       }
 
-
       this._loading = false;
       FilterNotifier.triggerListeners("load");
 
       if (sourceFile != this.sourceFile)
         this.saveToDisk();
-
 
     }.bind(this);
 
@@ -474,8 +459,6 @@ let FilterStorage = exports.FilterStorage =
           this.firstRun = true;
           this._loading = false;
           FilterNotifier.triggerListeners("load");
-
-
         }
         else
           readFile(sourceFile, 0);
@@ -486,11 +469,9 @@ let FilterStorage = exports.FilterStorage =
       else
         callback(true);
     }
-
-
   },
 
-  _generateFilterData: function(subscriptions)
+  _generateFilterData: function*(subscriptions)
   {
     yield "# Adblock Plus preferences";
     yield "version=" + formatVersion;
@@ -569,8 +550,6 @@ let FilterStorage = exports.FilterStorage =
       return;
     }
 
-
-
     // Make sure the file's parent directory exists
     try {
       targetFile.parent.create(Ci.nsIFile.DIRECTORY_TYPE, FileUtils.PERMS_DIRECTORY);
@@ -578,10 +557,8 @@ let FilterStorage = exports.FilterStorage =
 
     let writeFilters = function()
     {
-
       IO.writeToFile(targetFile, this._generateFilterData(subscriptions), function(e)
       {
-
         if (!explicitFile)
           this._saving = false;
 
@@ -595,9 +572,7 @@ let FilterStorage = exports.FilterStorage =
         }
         else
           FilterNotifier.triggerListeners("save");
-
-      }.bind(this), "FilterStorageWrite");
-
+      }.bind(this));
     }.bind(this);
 
     let checkBackupRequired = function(callbackNotRequired, callbackRequired)
@@ -629,16 +604,13 @@ let FilterStorage = exports.FilterStorage =
 
     let removeLastBackup = function(part1, part2)
     {
-
       let file = targetFile.clone();
       file.leafName = part1 + "-backup" + Prefs.patternsbackups + part2;
       IO.removeFile(file, (e) => renameBackup(part1, part2, Prefs.patternsbackups - 1));
-
     }.bind(this);
 
     let renameBackup = function(part1, part2, index)
     {
-
       if (index > 0)
       {
         let fromFile = targetFile.clone();
@@ -655,7 +627,6 @@ let FilterStorage = exports.FilterStorage =
 
         IO.copyFile(targetFile, toFile, writeFilters);
       }
-
     }.bind(this);
 
     // Do not persist external subscriptions
@@ -664,8 +635,6 @@ let FilterStorage = exports.FilterStorage =
       this._saving = true;
 
     checkBackupRequired(writeFilters, removeLastBackup);
-
-
   },
 
   /**
@@ -719,73 +688,6 @@ function removeSubscriptionFilters(subscription)
       filter.subscriptions.splice(i, 1);
   }
 }
-
-/**
- * Observer listening to private browsing mode changes.
- * @class
- */
-let PrivateBrowsing = exports.PrivateBrowsing =
-{
-  /**
-   * Will be set to true when the private browsing mode is switched on globally.
-   * @type Boolean
-   */
-  enabled: false,
-
-  /**
-   * Checks whether private browsing is enabled for a particular window.
-   */
-  enabledForWindow: function(/**Window*/ wnd) /**Boolean*/
-  {
-    try
-    {
-      return wnd.QueryInterface(Ci.nsIInterfaceRequestor)
-                .getInterface(Ci.nsILoadContext)
-                .usePrivateBrowsing;
-    }
-    catch (e)
-    {
-      // Gecko 19 and below will throw NS_NOINTERFACE, this is expected
-      if (e.result != Cr.NS_NOINTERFACE)
-        Cu.reportError(e);
-      return false;
-    }
-  },
-
-  init: function()
-  {
-    if ("@mozilla.org/privatebrowsing;1" in Cc)
-    {
-      try
-      {
-        this.enabled = Cc["@mozilla.org/privatebrowsing;1"].getService(Ci.nsIPrivateBrowsingService).privateBrowsingEnabled;
-        Services.obs.addObserver(this, "private-browsing", true);
-        onShutdown.add(function()
-        {
-          Services.obs.removeObserver(this, "private-browsing");
-        }.bind(this));
-      }
-      catch(e)
-      {
-        Cu.reportError(e);
-      }
-    }
-  },
-
-  observe: function(subject, topic, data)
-  {
-    if (topic == "private-browsing")
-    {
-      if (data == "enter")
-        this.enabled = true;
-      else if (data == "exit")
-        this.enabled = false;
-    }
-  },
-
-  QueryInterface: XPCOMUtils.generateQI([Ci.nsISupportsWeakReference, Ci.nsIObserver])
-};
-PrivateBrowsing.init();
 
 /**
  * IO.readFromFile() listener to parse filter data.

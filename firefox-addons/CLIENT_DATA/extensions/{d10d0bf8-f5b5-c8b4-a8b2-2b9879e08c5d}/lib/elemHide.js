@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -21,49 +21,47 @@
 
 Cu.import("resource://gre/modules/Services.jsm");
 
-let {Utils} = require("utils");
-let {IO} = require("io");
-let {Prefs} = require("prefs");
-let {ElemHideException} = require("filterClasses");
-let {FilterNotifier} = require("filterNotifier");
-let {AboutHandler} = require("elemHideHitRegistration");
-
+var {Utils} = require("utils");
+var {IO} = require("io");
+var {Prefs} = require("prefs");
+var {ElemHideException} = require("filterClasses");
+var {FilterNotifier} = require("filterNotifier");
 
 /**
  * Lookup table, filters by their associated key
  * @type Object
  */
-let filterByKey = Object.create(null);
+var filterByKey = Object.create(null);
 
 /**
  * Lookup table, keys of the filters by filter text
  * @type Object
  */
-let keyByFilter = Object.create(null);
+var keyByFilter = Object.create(null);
 
 /**
  * Lookup table, keys are known element hiding exceptions
  * @type Object
  */
-let knownExceptions = Object.create(null);
+var knownExceptions = Object.create(null);
 
 /**
  * Lookup table, lists of element hiding exceptions by selector
  * @type Object
  */
-let exceptions = Object.create(null);
+var exceptions = Object.create(null);
 
 /**
  * Currently applied stylesheet URL
  * @type nsIURI
  */
-let styleURL = null;
+var styleURL = null;
 
 /**
  * Element hiding component
  * @class
  */
-let ElemHide = exports.ElemHide =
+var ElemHide = exports.ElemHide =
 {
   /**
    * Indicates whether filters have been added or removed since the last apply() call.
@@ -82,25 +80,16 @@ let ElemHide = exports.ElemHide =
    */
   init: function()
   {
-
     Prefs.addListener(function(name)
     {
       if (name == "enabled")
         ElemHide.apply();
     });
-    onShutdown.add(function()
-    {
-      ElemHide.unapply();
-    });
-
-
+    onShutdown.add(() => ElemHide.unapply());
 
     let styleFile = IO.resolveFilePath(Prefs.data_directory);
     styleFile.append("elemhide.css");
     styleURL = Services.io.newFileURI(styleFile).QueryInterface(Ci.nsIFileURL);
-
-
-
   },
 
   /**
@@ -184,7 +173,6 @@ let ElemHide = exports.ElemHide =
    */
   getException: function(/**Filter*/ filter, /**String*/ docDomain) /**ElemHideException*/
   {
-    let selector = filter.selector;
     if (!(filter.selector in exceptions))
       return null;
 
@@ -220,8 +208,6 @@ let ElemHide = exports.ElemHide =
       return;
     }
 
-
-
     if (!ElemHide.isDirty || !Prefs.enabled)
     {
       // Nothing changed, looks like we merely got enabled/disabled
@@ -236,21 +222,17 @@ let ElemHide = exports.ElemHide =
         {
           Cu.reportError(e);
         }
-
       }
       else if (!Prefs.enabled && ElemHide.applied)
       {
         ElemHide.unapply();
-
       }
-
 
       return;
     }
 
     IO.writeToFile(styleURL.file, this._generateCSSContent(), function(e)
     {
-
       this._applying = false;
 
       // _generateCSSContent is throwing NS_ERROR_NOT_AVAILABLE to indicate that
@@ -276,7 +258,6 @@ let ElemHide = exports.ElemHide =
 
         ElemHide.unapply();
 
-
         if (!noFilters)
         {
           try
@@ -288,23 +269,18 @@ let ElemHide = exports.ElemHide =
           {
             Cu.reportError(e);
           }
-
         }
 
         FilterNotifier.triggerListeners("elemhideupdate");
       }
-
-    }.bind(this), "ElemHideWrite");
+    }.bind(this));
 
     this._applying = true;
-
-
   },
 
-  _generateCSSContent: function()
+  _generateCSSContent: function*()
   {
     // Grouping selectors by domains
-
     let domains = Object.create(null);
     let hasFilters = false;
     for (let key in filterByKey)
@@ -324,7 +300,6 @@ let ElemHide = exports.ElemHide =
       hasFilters = true;
     }
 
-
     if (!hasFilters)
       throw Cr.NS_ERROR_NOT_AVAILABLE;
 
@@ -334,7 +309,7 @@ let ElemHide = exports.ElemHide =
     }
 
     // Return CSS data
-    let cssTemplate = "-moz-binding: url(about:" + AboutHandler.aboutPrefix + "?%ID%#dummy) !important;";
+    let cssTemplate = "-moz-binding: url(about:abp-elemhidehit?%ID%#dummy) !important;";
     for (let domain in domains)
     {
       let rules = [];
@@ -399,16 +374,11 @@ let ElemHide = exports.ElemHide =
   getSelectorsForDomain: function(/**String*/ domain, /**Boolean*/ specificOnly)
   {
     let result = [];
-    for (let key in filterByKey)
+    let keys = Object.getOwnPropertyNames(filterByKey);
+    for (let key of keys)
     {
       let filter = filterByKey[key];
-
-      // it is important to always access filter.domains
-      // here, even if it isn't used, in order to
-      // workaround WebKit bug 132872, also see #419
-      let domains = filter.domains;
-
-      if (specificOnly && (!domains || domains[""]))
+      if (specificOnly && (!filter.domains || filter.domains[""]))
         continue;
 
       if (filter.isActiveOnDomain(domain) && !this.getException(filter, domain))

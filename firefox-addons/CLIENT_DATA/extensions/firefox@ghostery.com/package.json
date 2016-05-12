@@ -1,0 +1,56 @@
+{
+  "name": "ghostery",
+  "id": "firefox@ghostery.com",
+  "version": "6.2.0",
+  "title": "Ghostery",
+  "description": "Enjoy a faster, safer and cleaner browsing experience.",
+  "author": {
+    "name": "Ghostery, Inc.",
+    "email": "info@ghostery.com",
+    "url": "https://www.ghostery.com"
+  },
+  "homepage": "http://www.ghostery.com",
+  "main": "./lib/background",
+  "icon": {
+    "32": "resource://firefox-at-ghostery-dot-com/data/images/ghosty-32px.png",
+    "64": "resource://firefox-at-ghostery-dot-com/data/images/ghosty-64px.png"
+  },
+  "permissions": {
+    "private-browsing": true,
+    "multiprocess": false
+  },
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "debug": false,
+  "scripts": {
+    "start": "gulp all:watch",
+    "build": "node ./tools/build.js"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.4.7",
+    "backbone": "^1.2.3",
+    "brfs": "^1.4.1",
+    "browserify": "^12.0.1",
+    "d3": "^3.5.8",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.6",
+    "jquery": "^2.1.4",
+    "merge-stream": "^1.0.0",
+    "moment": "^2.10.6",
+    "ncp": "^2.0.0",
+    "optimist": "^0.6.1",
+    "tmp": "^0.0.28",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.3.1"
+  }
+}

@@ -1,0 +1,132 @@
+#ghostery-app.mobile .header .header-logo {
+  background-size: auto 25px;
+  position: fixed;
+  top: 0px;
+  left: -webkit-calc(50% - 41px);
+  left: -moz-calc(50% - 41px);
+  left: calc(50% - 41px);
+  height: 46px;
+  width: 82px; }
+
+@media (max-width: 500px) {
+  #ghostery-app.mobile .header .header-logo {
+    display: none; } }
+
+#ghostery-app.mobile .header .header-close {
+  display: block; }
+
+#ghostery-app.mobile #dashboard-view {
+  height: 100%; }
+  #ghostery-app.mobile #dashboard-view #main-chart {
+    display: block;
+    width: 100%;
+    float: none; }
+  #ghostery-app.mobile #dashboard-view #categories-table {
+    display: table;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    float: none; }
+  #ghostery-app.mobile #dashboard-view .middle-content {
+    height: -webkit-calc(100% - 146px);
+    height: -moz-calc(100% - 146px);
+    height: calc(100% - 146px);
+    overflow-y: scroll;
+    overflow-x: hidden; }
+
+#ghostery-app.mobile #blocking-view {
+  height: 100%; }
+  #ghostery-app.mobile #blocking-view #blocking-panel {
+    height: 100%; }
+  #ghostery-app.mobile #blocking-view .middle-content {
+    max-width: 500px;
+    margin: 0 auto;
+    height: -webkit-calc(100% - 146px);
+    height: -moz-calc(100% - 146px);
+    height: calc(100% - 146px);
+    overflow-y: scroll;
+    overflow-x: hidden; }
+  @media (min-width: 500px) {
+    #ghostery-app.mobile #blocking-view .blocking-category-name {
+      width: 290px; } }
+
+#ghostery-app.mobile #share-view {
+  background-color: #f1f1f1;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  #ghostery-app.mobile #share-view #share-panel-container {
+    background-color: white;
+    width: 400px;
+    margin: 30px auto;
+    border-radius: 3px; }
+  @media (max-width: 500px) {
+    #ghostery-app.mobile #share-view #share-panel-container {
+      width: 300px;
+      padding: 0 10px; }
+      #ghostery-app.mobile #share-view #share-panel-container #share-images-container {
+        width: 300px;
+        float: left; }
+        #ghostery-app.mobile #share-view #share-panel-container #share-images-container img + img {
+          margin-left: 12px; } }
+
+#ghostery-app.mobile #account-view {
+  background-color: #f1f1f1;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  #ghostery-app.mobile #account-view .account-signin-panel-container,
+  #ghostery-app.mobile #account-view .account-creation-panel-container,
+  #ghostery-app.mobile #account-view .account-panel-container,
+  #ghostery-app.mobile #account-view .account-panel-container,
+  #ghostery-app.mobile #account-view .account-panel-container {
+    background-color: white;
+    width: 400px;
+    margin: 30px auto;
+    border-radius: 3px; }
+  #ghostery-app.mobile #account-view .account-signin-panel-container {
+    padding: 30px 50px 30px 75px; }
+  #ghostery-app.mobile #account-view .account-creation-panel-container {
+    padding: 30px 20px 0 60px; }
+  #ghostery-app.mobile #account-view .account-panel-container {
+    padding: 30px 50px 0 60px; }
+  #ghostery-app.mobile #account-view .material-input-box#forgot-email {
+    width: 370px; }
+    #ghostery-app.mobile #account-view .material-input-box#forgot-email p {
+      width: 370px; }
+  @media (max-width: 500px) {
+    #ghostery-app.mobile #account-view .account-signin-panel-container,
+    #ghostery-app.mobile #account-view .account-creation-panel-container,
+    #ghostery-app.mobile #account-view .account-panel-container,
+    #ghostery-app.mobile #account-view .account-panel-container,
+    #ghostery-app.mobile #account-view .account-panel-container {
+      width: 300px;
+      padding: 6px 10px; }
+    #ghostery-app.mobile #account-view .material-input-box#login-email,
+    #ghostery-app.mobile #account-view .material-input-box#login-password,
+    #ghostery-app.mobile #account-view .buttons-container#login-buttons,
+    #ghostery-app.mobile #account-view .account-panel-action,
+    #ghostery-app.mobile #account-view .account-panel-footer,
+    #ghostery-app.mobile #account-view .material-input-box#forgot-email,
+    #ghostery-app.mobile #account-view .material-input-box#create-account-password,
+    #ghostery-app.mobile #account-view .buttons-container#account-creation-buttons {
+      width: 290px; }
+    #ghostery-app.mobile #account-view .accept-privacy-container label {
+      width: 245px; }
+    #ghostery-app.mobile #account-view .material-input-box#create-account-email,
+    #ghostery-app.mobile #account-view .material-input-box#create-account-email-confirm,
+    #ghostery-app.mobile #account-view .material-input-box#create-account-first-name,
+    #ghostery-app.mobile #account-view .material-input-box#create-account-last-name {
+      width: 130px; } }
+
+#ghostery-app.mobile .banner,
+#ghostery-app.mobile .banner-content {
+  width: 100%; }
+
+#ghostery-app.mobile .banner-content .banner-title,
+#ghostery-app.mobile .banner-content .banner-message {
+  padding: 0 25px 0 15px; }
+
+#ghostery-app.mobile .banner-close-button {
+  left: auto;
+  right: 0px; }

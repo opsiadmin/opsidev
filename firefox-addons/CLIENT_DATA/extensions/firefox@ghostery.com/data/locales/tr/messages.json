@@ -1,0 +1,1461 @@
+{
+   "account_creation_privacy_statement" : {
+      "message" : "Ghostery'nin $LINK_PS_START$Gizlilik Bildirimi$LINK_PS_END$'nde bulunan veri uygulamalarını ve $LINK_UA_START$Lisans Anlaşması$LINK_UA_END$'nda bulunan koşulları kabul ediyorum.",
+      "placeholders": {
+         "link_ps_end" : {
+            "content" : "</a>"
+         },
+         "link_ps_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-privacy-statement/\">"
+         },
+         "link_ua_end": {
+            "content" : "</a>"
+         },
+         "link_ua_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-end-user-license-agreem/\">"
+         }
+      }
+   },
+   "account_signin_privacy_statement": {
+      "message": "Hesabınız gelişmiş özelliklere erişim olanağı sağlar ve bizimle paylaşmayı tercih etmiş olabileceğiniz izleyici verileriyle bağlantılı değildir. Hesap bilgilerini nasıl kullandığımızla ilgili özel bilgiler için lütfen $LINK_FAQ_START$SSS$LINK_FAQ_END$ sayfamıza bakın.",
+      "placeholders": {
+         "link_faq_end" : {
+            "content" : "</a>"
+         },
+         "link_faq_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/support/faq/ghostery-add-on/\">"
+         }
+      }
+   },
+   "addon_compatibility_warning_firefox": {
+      "description" : "Pop up warning that appears when one or more incompatible extensions are installed alongside Ghostery.",
+      "message": "Görünüşe bakılırsa <strong>$ADDONS$</strong> da kullanıyorsunuz. Maalesef Ghostery'nin çerez engelleme sisteminin bu eklenti(ler) ile uyuşmadığı biliniyor ve sistem artık <strong>devre dışı</strong>. Çerez engelleme sistemini yeniden etkinleştirmek için lütfen eklenti yöneticisini kullanarak <strong>$ADDONS$</strong> öğesini devre dışı bırakın ya da kaldırın ve gerekirse tarayıcıyı yeniden başlatın.",
+      "placeholders": {
+         "addons" : {
+            "content" : "$1",
+            "example": "Yahoo! Toolbar Addon"
+         }
+      }
+   },
+   "alert_bubble": {
+      "description" : "Ghostery's alert bubble is the purple, semi-translucent notification panel that pops up as you browse to show detected tags on the page.",
+      "message": "uyarı baloncuğu"
+   },
+   "alert_bubble_gear_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble's gear.",
+      "message": "Uyarı baloncuğunu yapılandırmak için tıklayın"
+   },
+   "alert_bubble_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble.",
+      "message": "Uyarı baloncuğunu kapatmak için tıklayın"
+   },
+   "all": {
+      "description" : "Default setting in the 'filter by type' dropdown for the tag browser. Doesn't filter anything out. Should read as 'Show all'.",
+      "message": "tümü"
+   },
+   "backup_export": {
+      "description" : "Instructions for exporting Ghostery settings.",
+      "message": "Yedekleme veya başka bir bilgisayara aktarma amacıyla Ghostery tercihlerinin kopyasını kaydetmek için bu düğmeye tıklayın."
+   },
+   "backup_export_button": {
+      "description" : "Button for exporting Ghostery settings.",
+      "message": "Yedekleme Dosyasını Kaydet"
+   },
+   "backup_export_header": {
+      "description" : "Section header for Export section of the Import/Export page.",
+      "message": "Dışarı Aktar"
+   },
+   "backup_import": {
+      "description" : "Instructions for importing Ghostery settings.",
+      "message": "Önceden oluşturulmuş ve kullanmak istediğiniz bir yedekleme dosyasını seçin ve 'İçeri aktar' düğmesine tıklayın."
+   },
+   "backup_import_button": {
+      "description" : "Button for importing Ghostery settings.",
+      "message": "İçeri Aktar"
+   },
+   "backup_import_error": {
+      "description" : "Error message shown when importing a bad file.",
+      "message": "$SPAN_START$Geçersiz yedekleme dosyası.$SPAN_END$ Lütfen $A_START$destek birimi$A_END$ ile iletişime geçin.",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"https://getsatisfaction.com/ghostery\">"
+         },
+         "span_end": {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"red\">"
+         }
+      }
+   },
+   "backup_import_header": {
+      "description" : "Section header for Import section of the Import/Export page.",
+      "message": "İçeri Aktar"
+   },
+   "backup_import_warning": {
+      "description" : "Warning before importing Ghostery settings.",
+      "message": "UYARI Bu işlem, geçerli Ghostery ayarlarınızın üzerine yazacaktır."
+   },
+   "backup_options_link": {
+      "description" : "Link back to the main options page.",
+      "message": "Seçenekler Sayfasına Dön"
+   },
+   "backup_page_title": {
+      "description" : "Title of Ghostery's Import/Export settings page.",
+      "message": "Ghostery Seçeneklerini İçeri\/Dışarı Aktar"
+   },
+   "banner_check_your_email_title": {
+      "message" : "Parolanızı sıfırlamak için lütfen birazdan e-postanızı kontrol edin."
+   },
+   "banner_no_such_account_message": {
+      "message" : "Haydaa! Galiba bu kullanıcı adı ve parola kombinasyonunu bilmiyorum. Lütfen tekrar deneyin."
+   },
+   "banner_no_such_account_title": {
+      "message" : "Hatalı E-posta veya Parola"
+   },
+   "banner_wrong_email_message": {
+      "message" : "Ghostery bu e-posta adresini bulamadı. Tekrar deneyin."
+   },
+   "banner_wrong_email_title": {
+      "message" : "Bu kötü oldu."
+   },
+   "blacklist_error_duplicate_url": {
+      "message" : "Bu site zaten kısıtlanmış."
+   },
+   "blacklist_error_whitelist_url": {
+      "message" : "Bu site, Güvenilir Siteler listenizden kaldırılmış ve Kısıtlanmış Siteler listenize eklenmiş"
+   },
+   "blocked": {
+      "description" : "Select this to show only blocked (checked) tags in the tag browser. Should read as 'Show blocked'.",
+      "message": "engellendi"
+   },
+   "blocked_redirect_action_always_title": {
+      "description" : "Title for the 'Allow always and reload' button on the blocked redirect page.",
+      "message": "Her zaman izin ver ve yeniden yükle."
+   },
+   "blocked_redirect_action_through_once_title": {
+      "description" : "Title for the 'Allow once' button on the blocked redirect page.",
+      "message": "Gidilecek yere ulaşana kadar etiketlere izin ver."
+   },
+   "blocked_redirect_page_title": {
+      "description" : "Page title for blocked_redirect.html which appears when a redirect is blocked.",
+      "message": "Ghostery Bir Yeniden Yönlendirme Girişimini Engelledi."
+   },
+   "blocked_redirect_prevent": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked. Should appear inside \"redirect-prevent\" div.",
+      "message": "Ghostery, $A_START$$APP$$A_END$ öğesinin bir parçası olan $BREAK$ $SP_O_START$$ORIGIN$$SP_END$ adresinden $SP_D_START$$DESTINATION$$SP_END$ $BREAK$adresine yapılan bir yeniden yönlendirmeyi engelledi. $BREAK$",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a id=\"name\" href=\"$4\" target=\"_blank\">"
+         },
+         "app": {
+            "content" : "$3",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "destination": {
+            "content" : "$2"
+         },
+         "origin": {
+            "content" : "$1"
+         },
+         "sp_d_start": {
+            "content" : "<span id=\"destination\">"
+         },
+         "sp_end": {
+            "content" : "</span>"
+         },
+         "sp_o_start": {
+            "content" : "<span id=\"origin\">"
+         }
+      }
+   },
+   "blocked_redirect_url_content": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked and a final 'destination' URL is successfully found.",
+      "message": "Bu etiketin $BREAK$ $A_START$$REDIRECT_URL$$A_END$ bağlantısına yeniden yönlendirme yaptığı görülüyor. Bu bağlantı güvenli görünmüyorsa ve devam etmek istiyorsanız, $APP$ öğesine izin vermek ve yeniden yüklemek için aşağıdaki simgeye tıklayın.",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"$1\" class=\"ellipsis\" title=\"$1\">"
+         },
+         "app": {
+            "content" : "$2",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "redirect_url": {
+            "content" : "$1"
+         }
+      }
+   },
+   "blocking_filter_name": {
+      "description" : "Description of current search filter",
+      "message": "'$NAME$' ile eşleşen $NUMBER$ etiket gösteriliyor",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         }
+      }
+   },
+   "blocking_filter_name_tags": {
+      "description" : "Description of current search filter",
+      "message": "'$NAME$' ile etiketleri eşleşen $NUMBER$ etiket gösteriliyor: $TAGS$",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$3</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_filter_tags": {
+      "description" : "Description of current search filter",
+      "message": "Şu etiketlere sahip $NUMBER$ etiket gösteriliyor: $TAGS$",
+      "placeholders": {
+         "number" : {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$2</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_summary_all_small_firefox": {
+      "description" : "All tags / cookies are selected.",
+      "message": "$B_START$tümü$B_END$ engelleniyor",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_none_small_firefox": {
+      "description" : "No tags / cookies are selected.",
+      "message": "$B_START$hiçbiri$B_END$ engellenmiyor",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_small_firefox": {
+      "description" : "Some of the tags / cookies are selected (X out of Y total).",
+      "message": "$NUMBER_SELECTED$ \/ $NUMBER_TOTAL$ engelleniyor",
+      "placeholders": {
+         "number_selected" : {
+            "content" : "<strong>$1",
+            "example": 130
+         },
+         "number_total": {
+            "content" : "$2</strong>",
+            "example": 132
+         }
+      }
+   },
+   "box_dismiss_0s": {
+      "message" : "$SPAN_START$Hiçbir zaman$SPAN_END$ kapatma",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_15s": {
+      "message" : "$SPAN_START$15 saniye sonra$SPAN_END$ kapat",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_30s": {
+      "message" : "$SPAN_START$30 saniye sonra$SPAN_END$ kapat",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_5s": {
+      "message" : "$SPAN_START$5 saniye sonra$SPAN_END$ kapat",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_bl": {
+      "message" : "$SPAN_START$Sol Altta$SPAN_END$ Göster",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_br": {
+      "message" : "$SPAN_START$Sağ Altta$SPAN_END$ Göster",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tl": {
+      "message" : "$SPAN_START$Sol Üstte$SPAN_END$ Göster",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tr": {
+      "message" : "$SPAN_START$Sağ Üstte$SPAN_END$ Göster",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_hide": {
+      "message" : "Kutuyu Gizle"
+   },
+   "box_hide_expanded": {
+      "message" : "Mor Kutuyu Gizle"
+   },
+   "box_looking": {
+      "message" : "Arıyor"
+   },
+   "box_options_expanded": {
+      "message" : "Seçenekler"
+   },
+   "box_settings": {
+      "message" : "Ayarlar"
+   },
+   "box_settings_expanded": {
+      "message" : "Ghostery Ayarlarım"
+   },
+   "box_tracker": {
+      "message" : "İzleyici"
+   },
+   "box_trackers": {
+      "message" : "İzleyici"
+   },
+   "browser_button_label_firefox": {
+      "description" : "Ghostery's browser button label, displayed on Firefox's addon customization panel.",
+      "message": "Ghostery"
+   },
+   "browser_button_tooltip": {
+      "description" : "Ghostery's browser button tooltip.",
+      "message": "Ghostery'nin bulgularını görüntüle"
+   },
+   "button_cancel": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "İptal"
+   },
+   "button_ok": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "Tamam"
+   },
+   "category_ad": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Reklamlar"
+   },
+   "category_ad_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "Reklam ileten izleyiciler."
+   },
+   "category_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Analiz"
+   },
+   "category_analytics_desc": {
+      "description" : "User-facing description for the Analytics tag category.",
+      "message": "Web sitesi yayıncıları için araştırma ve analiz ileten izleyiciler."
+   },
+   "category_privacy": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Gizlilik"
+   },
+   "category_privacy_desc": {
+      "description" : "User-facing description for the Privacy tag category.",
+      "message": "Gizlilik bildirimleri ve gizlilikle ilgili diğer bazı öğeler."
+   },
+   "category_tracker": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "İşaretçiler"
+   },
+   "category_tracker_desc": {
+      "description" : "User-facing description for the Beacons tag category.",
+      "message": "İzleme dışında bir amaca hizmet etmeyen izleyiciler (işaretçiler, dönüştürme pikselleri, hedef kitle bölütleme pikselleri vb.), İşaretçiler kategorisine girer."
+   },
+   "category_widget": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Pencere Öğeleri"
+   },
+   "category_widget_desc": {
+      "description" : "User-facing description for the Widgets tag category.",
+      "message": "Sayfa işlevselliği sağlayan izleyiciler (sosyal ağ düğmeleri, yorum formları vb.)."
+   },
+   "category_advertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Reklamlar"
+   },
+   "category_advertising_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "Reklam hizmetleri ya da veri toplama, davranış analizleri veya yeniden hedefleme gibi reklamcılıkla ilgili hizmetler verirler."
+   },
+   "category_comments": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Yorumlar"
+   },
+   "category_comments_desc": {
+      "description" : "User-facing description for the Comments tag category.",
+      "message": "Makaleler ve ürün incelemeleriyle ilgili yorum bölümlerini etkinleştirirler."
+   },
+   "category_customer_interaction": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Müşteri Etkileşimi"
+   },
+   "category_customer_interaction_desc": {
+      "description" : "User-facing description for the Customer Interaction tag category.",
+      "message": "Sohbet, e-posta mesajları, müşteri desteği ve diğer etkileşim araçlarını içerirler."
+   },
+   "category_essential": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Gerekli Olanlar"
+   },
+   "category_essential_desc": {
+      "description" : "User-facing description for the Essential tag category.",
+      "message": "Etiket yöneticileri, gizlilik bildirimleri ve web sitesinin işlevselliği için önem taşıyan teknolojileri içerirler."
+   },
+   "category_pornvertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Yetişkinlere Yönelik Reklamlar"
+   },
+   "category_pornvertising_desc": {
+      "description" : "User-facing description for the Adult Advertising tag category.",
+      "message": "Yetişkinlere yönelik içerik sunan siteler için özel olarak tasarlanmış reklam teknolojileri sunarlar."
+   },
+   "category_site_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Site Analizi"
+   },
+   "category_site_analytics_desc": {
+      "description" : "User-facing description for the Site Analytics tag category.",
+      "message": "Kullanım ve performansla ilgili verileri toplar ve analiz ederler."
+   },
+   "category_social_media": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Sosyal Medya"
+   },
+   "category_social_media_desc": {
+      "description" : "User-facing description for the Social Media tag category.",
+      "message": "Sosyal medya siteleriyle ilgili özellikleri sitelere entegre ederler."
+   },
+   "category_audio_video_player": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Ses\/Video Yürütücü"
+   },
+   "category_audio_video_player_desc": {
+      "description" : "User-facing description for the Audio/Video Player tag category.",
+      "message": "Web sitelerinin video ve ses içeriklerini yayımlamasını, dağıtmasını ve optimize etmesini sağlarlar."
+   },
+   "change_password_message": {
+      "message" : "Yeni parola en az 8 karakter, bir rakam ve bir simge içermelidir."
+   },
+   "click2play_allow_always_tooltip": {
+      "description" : "Tooltip that appears over the 'allow always' click2play button.",
+      "message": "İzin ver ve yeniden yükle."
+   },
+   "click2play_allow_once_button_tooltip": {
+      "description" : "Tooltip that appears over the click2play replacement for 'social' buttons.",
+      "message": "Ghostery $APP_NAME$ öğesini engelledi. Bir kereliğine yüklenmesine izin vermek için buraya tıklayın.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Twitter Button"
+         }
+      }
+   },
+   "click2play_allow_once_tooltip": {
+      "description" : "Tooltip that appears over the 'allow once' click2play button.",
+      "message": "Bir kereliğine izin ver ve yeniden yükle."
+   },
+   "click2play_blocked": {
+      "message" : "Ghostery $APP_NAME$ öğesini engelledi.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "SoundCloud"
+         }
+      }
+   },
+   "click2play_comment_form": {
+     "message": "Ghostery, $NAME$ tarafından sunulan yorumları engelledi.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_review_form": {
+     "message": "Ghostery, $NAME$ tarafından sunulan incelemeleri engelledi.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_video_form": {
+     "message": "Ghostery, $NAME$ video oynatıcısını engelledi.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_survey_form": {
+     "message": "Ghostery, $NAME$ tarafından sunulan anketi engelledi.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "company_about": {
+      "description" : "Header for company profiles.",
+      "message": "$COMPANY$ hakkında:",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_affiliations": {
+      "message" : "Sektör bağlantıları:"
+   },
+   "company_description": {
+      "message" : "Şirket Tanımı"
+   },
+   "company_in_their_own_words": {
+      "description" : "Label for a description of the company that is provided by the company itself",
+      "message": "Kendi Anlatımlarıyla"
+   },
+   "company_operates": {
+      "description" : "Followed by a list of products this company offers.",
+      "message": "$COMPANY$ şunları yönetir:",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_profile_error": {
+      "message" : "Ghostery.com adresinden veri yüklenemedi"
+   },
+   "company_profile_link": {
+      "message" : "Tam profile devam et"
+   },
+   "company_tags": {
+      "description" : "Tags here refers to categories we use to group companies based on their business (ie Video Player, Popups, Polls)",
+      "message": "Etiketler:"
+   },
+   "company_website": {
+      "message" : "Web Sitesi:"
+   },
+   "confirm_new_password_field_label": {
+      "message" : "Yeni parolayı onayla"
+   },
+   "copyright": {
+      "description" : "Copyright message, shown in page footers.",
+      "message": "$C$ $YEAR$ $GHOSTERY$, $COMPANY_ADDRESS$ grubunun bir parçasıdır",
+      "placeholders": {
+         "c" : {
+            "content" : "&copy;"
+         },
+         "company_address": {
+            "content" : "$1",
+            "example": "GHOSTERY, Inc., Such-and-such Street, Such-and-such Floor, New York, NY, Zip Code"
+         },
+         "ghostery": {
+            "content" : "<a href='https://www.ghostery.com' target='_blank'>Ghostery</a>"
+         },
+         "year": {
+            "content" : "2015"
+         }
+      }
+   },
+   "dismiss": {
+      "description" : "Text for a button or link to close a notification.",
+      "message": "Kapat"
+   },
+   "email_preferences_1": {
+      "message" : "Evet! Gezinti deneyimimle ilgili ürün ve hizmetler hakkında mesaj almak isterim."
+   },
+   "email_preferences_2": {
+      "message" : "Yeni sunulan ürünler hakkında bana güncel bilgi verin."
+   },
+   "email_preferences_header": {
+      "message" : "E-posta Tercihleri"
+   },
+   "email_confirm_field_label": {
+      "message" : "E-postayı Onayla"
+   },
+   "email_field_label": {
+      "message" : "E-posta"
+   },
+   "error_email_forgot": {
+      "message" : "Başka bir e-posta deneyin, bu adres bizde kayıtlı değil."
+   },
+   "firefox_tools_menu_database_update": {
+      "description" : "Ghostery's update database menu label dipslayed under the ghostery menu.",
+      "message": "Hata listelerini güncelle"
+   },
+   "first_name_field_label": {
+      "message" : "Adı (isteğe bağlı)"
+   },
+   "forgot_password_message": {
+      "message" : "Boş verin, herkesin başına gelebilir. Parolanızı sıfırlamanız için gerekli talimatları size göndereceğiz"
+   },
+   "ghostery_logo": {
+      "description" : "Alt. text for the Ghostery logo graphic in the header on options and walkthrough pages.",
+      "message": "Ghostery logosu"
+   },
+   "invalid_email": {
+      "message" : "Tüh! Bu e-posta sistemimizde kayıtlı değil."
+   },
+   "invalid_email_confirmation": {
+      "message" : "E-postalarınız eşleşmiyor"
+   },
+   "invalid_email_forgot": {
+    "message": "Hey, gerçek bir e-posta adresi girmeniz gerekiyor."
+   },
+   "error_email_forgot": {
+    "message": "Hımm, bu e-postayı bulamıyorum. Başka bir tane deneyebilir misiniz?"
+   },
+   "invalid_email_create": {
+      "message" : "Lütfen geçerli bir e-posta adresi girin"
+   },
+   "invalid_email_login": {
+    "message": "Hey, gerçek bir e-posta adresi girmeniz gerekiyor."
+   },
+   "invalid_email_used": {
+      "message" : "Bu e-posta zaten kullanılıyor."
+   },
+   "last_name_field_label": {
+      "message" : "Soyadı (isteğe bağlı)"
+   },
+   "library_never_updated": {
+      "description" : "Text shown in the case when no tag library updates have yet happened.",
+      "message": "Otomatik güncellemeler şiddetle tavsiye edilir."
+   },
+   "library_update_already_updated": {
+      "description" : "Text shown in the case when the tag library did not need to be updated from remote servers since it's already the latest copy.",
+      "message": "Kitaplık zaten güncel durumda."
+   },
+   "library_update_failed": {
+      "description" : "Tag library update action failed.",
+      "message": "Üzgünüm, güncelleme başarısız oldu. Lütfen daha sonra tekrar deneyin."
+   },
+   "library_update_in_progress": {
+      "description" : "Indicates an update is in progress (might have a spinner graphic next to it).",
+      "message": "Güncelleniyor..."
+   },
+   "library_update_now_link": {
+      "message" : "Şimdi güncelle."
+   },
+   "library_update_successful": {
+      "description" : "Tag library update action completed successfully.",
+      "message": "Başarılı oldu!"
+   },
+   "library_updated_on": {
+      "description" : "Text shown when a tag library update has happened at least once.",
+      "message": "İzleyici kitaplığı en son $DATE$ tarihinde eşitlenmiş",
+      "placeholders": {
+         "date" : {
+            "content" : "$1",
+            "example": "Wed Oct 12 2011"
+         }
+      }
+   },
+   "locally_added_tracker": {
+      "description" : "Tag that was manually added by the user. This text will be displayed on the app browser next to the tag name.",
+      "message": "$APP_NAME$ (Yerel Düzeyde Eklenecektir)",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1"
+         }
+      }
+   },
+   "lso_browser_name_filter": {
+      "description" : "Text input filter for the cookie browser. Lets you filter by/search for cookie names. Part of 'Search for cookie name'.",
+      "message": "$SEARCH_FIELD$ ara",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "cookie name"
+         }
+      }
+   },
+   "lso_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the cookie browser search input. Should read as 'Search for cookie name'.",
+      "message": "çerez adı"
+   },
+   "lso_browser_type_filter": {
+      "description" : "Dropdown filter for the cookie browser. Lets you show only blocked (checked), or only unblocked (unchecked) cookies.",
+      "message": "$TYPE$ göster",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "new_password_field_label": {
+      "message" : "Yeni parola"
+   },
+   "new_since_last_update": {
+      "description" : "Select this to filter the tag browser to show only the tags added to the library since last update. Should read as 'Show new since last update'.",
+      "message": "en son güncellemeden bu yana"
+   },
+   "no_results": {
+      "description" : "This is shown when the user performed a search or applied some other filter so that all items got filtered out.",
+      "message": "Hiç sonuç yok."
+   },
+   "none": {
+      "description" : "Used to say that this item does not belong to any of the groups, as in \"Groups: None\" (as opposed to \"Groups: Group A, Group B, Group C\").",
+      "message": "Yok"
+   },
+   "note": {
+      "description" : "Similar in function to a \"WARNING:\" prefix. Used for stuff like \"NOTE: Blocking tags can break pages.",
+      "message": "Not:"
+   },
+   "notification_reminder1": {
+      "description" : "First line of the walkthrough reminder/notification. Sentence continued on next line.",
+      "message": "Ghostery'nin temel özelliklerinden bazılarına yakından bakmak için Ghostery yapılandırma rehberine göz atın."
+   },
+   "notification_reminder2": {
+      "description" : "Second line of the walkthrough reminder/notification. Continues the sentence from previous line.",
+      "message": "Ghostery yapılandırma rehberine göz atın."
+   },
+   "notification_reminder_link": {
+      "description" : "Link to the walkthrough/configuration wizard, part of the walkthrough reminder/notification.",
+      "message": "Ghostery'yi Kur"
+   },
+   "notification_update": {
+      "message" : "Ghostery'nin etiket kitaplığı güncellendi."
+   },
+   "notification_update_link": {
+      "description" : "Link to show recently added tags.",
+      "message": "Yenilikleri görmek için buraya tıklayın"
+   },
+   "notification_upgrade": {
+      "description" : "Upgrade message. Shown after Ghostery has gotten upgraded.",
+      "message": "Merhaba! Kendini Ghostery'ye adamış olan olağanüstü çekici ekibimiz, Ghostery'nin yeni bir sürümünü sizlere sunabilmek için çok çalıştı."
+   },
+   "notification_upgrade_link": {
+      "description" : "Upgrade link text.",
+      "message": "Bu sürümdeki nefis yeni özelliklere ve hata düzeltmelerine bir göz atın."
+   },
+   "off": {
+      "message" : "Engellendi"
+   },
+   "old_password_field_label": {
+      "message" : "Eski parola"
+   },
+   "on": {
+      "message" : "İzin verildi"
+   },
+   "options_about_tab": {
+      "description" : "One of three page tabs on the options page; click to show about page.",
+      "message": "Hakkında"
+   },
+   "options_advanced_tab": {
+      "description" : "One of three page tabs on the options page; click to show advanced settings.",
+      "message": "Gelişmiş"
+   },
+   "options_blocking3": {
+      "message" : "Bir etiketi engellediğinizde, bu etiketin sahibi olan üçüncü taraf sağlayıcıyla iletişim kurması engellenir."
+   },
+   "options_general_tab": {
+      "description" : "One of three page tabs on the options page; click to show general/basic settings. Selected/active by default.",
+      "message": "Genel"
+   },
+   "options_header": {
+      "description" : "Header that appears at the top of the options page",
+      "message": "Seçenekler"
+   },
+   "options_lso_blocking3": {
+      "message" : "Bir çerezi engellediğinizde, seçilen üçüncü taraf sağlayıcıların tarayıcınıza çereze yazmaları engellenir.$BREAK$$BREAK$$EM_START$$B_START$Uyarı!$B_END$$EM_END$ Bu özellik, <strong>Beef Taco</strong>, <strong>Cookie Monster</strong> ve <strong>Google Opt-Out</strong> gibi başka çerez takip eklentileriyle birlikte kullanıldığında komut dizisi <b>yanıt vermiyor</b> hatasına yol açabilir. Bu hatayı görürseniz, lütfen bu özelliği ya da çakışan eklentileri devre dışı bırakın.",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "em_end": {
+            "content" : "</em>"
+         },
+         "em_start": {
+            "content" : "<em>"
+         }
+      }
+   },
+   "options_page_title": {
+      "description" : "Title of Ghostery's options page.",
+      "message": "Ghostery Seçenekleri"
+   },
+   "options_saving_exit_message": {
+      "description" : "Message that appears for an instant when saving settings on the options page.",
+      "message": "Kaydetme Seçenekleri"
+   },
+   "panel_advanced_options": {
+      "message" : "Gelişmiş Ayarlar"
+   },
+   "panel_allow_all": {
+      "message" : "Bu Siteye Güven"
+   },
+   "panel_allow_all_tool_tip": {
+      "message" : "Bu sitedeki tüm izleyicilere izin ver."
+   },
+   "panel_allow_all_tool_tip_needs_reload": {
+      "message" : "Güvenilir Sitelerden çıkarmak için tıklayın."
+   },
+   "panel_block_all": {
+      "message" : "Bu Siteyi Kısıtla"
+   },
+   "panel_block_all_tool_tip": {
+      "message" : "Bu sitedeki tüm izleyicileri engelle."
+   },
+   "panel_block_all_tool_tip_needs_reload": {
+      "message" : "Kısıtlanan Sitelerden çıkarmak için tıklayın."
+   },
+   "panel_blocking_block_or_allow": {
+      "message" : "ENGELLE veya İZİN VER"
+   },
+   "panel_blocking_trackers_by_category": {
+      "message" : "KATEGORİLERE GÖRE İZLEYİCİLER"
+   },
+   "panel_blocking_verify_account_message": {
+     "message" : "Ayarlarınızı eşitlemek için lütfen hesabınızı doğrulayın."
+   },
+   "panel_blocking_verify_account_title": {
+      "message" : "Doğrulanmamış Hesap"
+   },
+   "panel_blocking_verify_account_message": {
+      "message" : "Ayarlarınızı eşitlemek ve harika Ghostery özelliklerine erişmek için lütfen e-posta kutunuzu kontrol edin ve hesabınızı doğrulayın."
+   },
+   "panel_blocking_success_message": {
+      "message": "Yaşasın, ayarlarınız eşitlendi."
+   },
+   "panel_blocking_failure_message": {
+      "message": "Eyvah, ayarlarınız eşitlenmedi. Lütfen daha sonra tekrar deneyin."
+   },
+   "panel_button_pause_blocking": {
+      "description" : "Button located at the bottom of the findings panel that pauses blocking.",
+      "message": "Engellemeyi Duraklat"
+   },
+   "panel_button_resume_blocking": {
+      "description" : "Button located at the bottom of the findings panel that resumes blocking.",
+      "message": "Engellemeyi Sürdür"
+   },
+   "panel_button_whitelist_site": {
+      "description" : "Button located at the bottom of the findings panel that whitelists a site.",
+      "message": "Site Beyaz Listede"
+   },
+   "panel_chart_tracker": {
+      "message" : "İzleyici"
+   },
+   "panel_chart_trackers": {
+      "message" : "İzleyici"
+   },
+   "panel_chart_view_all": {
+      "message" : "Tüm izleyicileri görüntüle"
+   },
+   "panel_create_account": {
+      "message" : "Hesap Oluştur"
+   },
+   "panel_email_verification_failed_title": {
+      "message" : "Eyvah!"
+   },
+   "panel_email_verification_failed": {
+      "message" : "Doğrulama e-postanız gönderilirken bir sorun oluştu. Lütfen daha sonra tekrar deneyin."
+   },
+   "panel_email_verification_sent": {
+      "message" : "$BOLD_HTML_STARTS$ Başarılı! $BOLD_HTML_END$ Şu adrese bir doğrulama e-postası gönderildi: $EMAIL$",
+      "placeholders": {
+         "email" : {
+            "content": "$1",
+            "example": "info@ghostery.com"
+         },
+         "bold_html_end": {
+            "content" : "</strong>"
+         },
+         "bold_html_starts": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "panel_forgot_password": {
+      "message" : "Parolanızı mı Unuttunuz?"
+   },
+   "panel_g_allowed": {
+      "message" : "İzin verildi"
+   },
+   "panel_g_blocked": {
+      "message" : "Engellendi"
+   },
+   "panel_help_contact_header": {
+      "message" : "Bize Ulaşın"
+   },
+   "panel_help_faq": {
+      "message" : "Sık Sorulan Sorular"
+   },
+   "panel_help_feedback": {
+      "message" : "Anketimizi Doldurun"
+   },
+   "panel_help_license": {
+      "message" : "Lisans Anlaşması"
+   },
+   "panel_help_privacy_statement": {
+      "message" : "Gizlilik Bildirimi"
+   },
+   "panel_help_questions_header": {
+      "message" : "Sorular ve Yorumlar"
+   },
+   "panel_help_support": {
+      "message" : "Destek"
+   },
+   "panel_help_title": {
+      "message" : "Yardım"
+   },
+   "panel_help_version_header": {
+      "message" : "$BROWSER$ için Ghostery sürümü ",
+      "placeholders": {
+       "browser": {
+         "content": "$1",
+         "example": "Firefox"
+       }
+     }
+   },
+   "panel_menu_blocking": {
+      "message" : "İzleyici Ayarları"
+   },
+   "panel_menu_dashboard": {
+      "message" : "İzleyici Özeti"
+   },
+   "panel_menu_help": {
+      "message" : "Yardım"
+   },
+   "panel_menu_myghostery": {
+      "message" : "Ghostery Profilim"
+   },
+   "panel_menu_report_broken_site": {
+      "message" : "Hatalı Sayfa Bildir"
+   },
+   "panel_menu_submit_tracker": {
+      "message" : "Yeni İzleyici Gönder"
+   },
+   "panel_menu_signin": {
+      "message" : "Oturum aç"
+   },
+   "panel_menu_signout": {
+      "message" : "Oturumu kapat"
+   },
+   "panel_needs_reload": {
+      "description" : "Message that appears at the bottom of the findings panel when a settings has been changed and the page needs to be reloaded to reflect these changes.",
+      "message": "Değişiklikleri görmek için $SPAN_START$buraya tıklayarak sayfayı yeniden yükleyin$SPAN_END$.",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"button\">"
+         }
+      }
+   },
+   "panel_no_trackers_found": {
+      "description" : "Text displayed in the findings panel's apps-div when no tags were found.",
+      "message": "Bu sayfada hiç izleyici bulunamadı"
+   },
+   "panel_not_scanned1": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Bu sayfa taranmadı."
+   },
+   "panel_not_scanned2": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Ghostery sadece \"http\" ve https\" sayfalarını tarar. Başka bir sayfaya geçin; bu sefer gerekeni yapacağıma söz veriyorum."
+   },
+   "panel_settings_about": {
+      "description" : "About button from the findings panel settings bar.",
+      "message": "Geri bildirim"
+   },
+   "panel_settings_options": {
+      "description" : "Options button from the findings panel settings bar.",
+      "message": "Seçenekler"
+   },
+   "panel_settings_share": {
+      "description" : "Share button from the findings panel settings bar.",
+      "message": "Paylaş"
+   },
+   "panel_settings_support": {
+      "description" : "Support button from the findings panel settings bar.",
+      "message": "Destek"
+   },
+   "panel_pause": {
+      "message" : "Duraklat"
+   },
+   "panel_unpause": {
+      "message" : "Devam Et"
+   },
+   "paused_override_status": {
+      "message": "Engelleme Duraklatıldı"
+   },
+   "panel_pause_ghostery_tooltip": {
+      "message" : "Ghostery'yi duraklatmak için tıklayın"
+   },
+   "panel_unpause_ghostery_tooltip": {
+      "message" : "Ghostery duraklatıldı. Engellemeyi etkinleştirmek için tıklayın"
+   },
+   "panel_signin_success_header": {
+      "message" : "Başarılı oldu!"
+   },
+   "panel_signin_success": {
+      "message" : "Oturum açtığınız hesap:"
+   },
+   "panel_signin_success_title": {
+      "message" : "Yumruk havaya! Ghostery hesabınız kullanılmaya hazır!"
+   },
+   "panel_ss_allowed": {
+      "message" : "Sadece bu siteye izin verildi"
+   },
+   "panel_ss_blocked": {
+      "message" : "Sadece bu site engellendi"
+   },
+   "panel_blocking_no_trackers": {
+      "message": "Bu sayfada hiç izleyici bulunamadı"
+   },
+   "panel_blocking_not_scanned_1": {
+      "message": "Bu sayfa taranmadı."
+   },
+   "panel_blocking_not_scanned_2": {
+      "message": "Ghostery sadece \"http\" ve https\" sayfalarını tarar. Başka bir sayfaya geçin; bu sefer gerekeni yapacağıma söz veriyorum."
+   },
+   "panel_sync_complete": {
+      "message" : "Ayarlarınız eşitlendi."
+   },
+   "panel_sync_settings": {
+      "message" : "Ayarları Eşitle"
+   },
+   "panel_table_allowed": {
+      "message" : "İZİN VERİLDİ"
+   },
+   "panel_table_blocked": {
+      "message" : "ENGELLENDİ"
+   },
+   "panel_table_title_category": {
+      "message" : "KATEGORİLER"
+   },
+   "panel_title_blocking": {
+      "message" : "İzleyici Ayarları"
+   },
+   "panel_title_change_password": {
+      "message" : "Parolayı Değiştir"
+   },
+   "panel_title_create_account": {
+      "message" : "Hesap Oluştur"
+   },
+   "panel_title_close": {
+      "message" : "Geri"
+   },
+   "panel_title_dashboard": {
+      "message" : "İzleyici Özeti"
+   },
+   "panel_title_finish": {
+      "message" : "Bitti"
+   },
+   "panel_title_forgot_password": {
+      "message" : "Parolanızı mı Unuttunuz?"
+   },
+   "panel_title_not_scanned": {
+      "description" : "Text at the top of the findings panel that is displayed when a page has not been scanned by Ghostery.",
+      "message": "Sayfa taranmadı"
+   },
+   "panel_title_paused": {
+      "description" : "Text at the top of the findings panel that is displayed when 'pause blocking' is enabled.",
+      "message": "Engelleme $SPAN_START$duraklatıldı$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_title_plural": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if zero or more than one tags were found).",
+      "message": "Ghostery $NUMBER$ izleyici buldu",
+      "placeholders": {
+         "number" : {
+            "content" : "$1",
+            "example": 7
+         }
+      }
+   },
+   "panel_title_singular": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if only one tag was found).",
+      "message": "Ghostery 1 izleyici buldu"
+   },
+   "panel_title_whitelisted": {
+      "description" : "Text at the top of the findings panel that is displayed when 'whitelist site' is enabled.",
+      "message": "Sayfa $SPAN_START$beyaz listede$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_tracker_compatibility_warning": {
+      "description" : "Message that appears when a tag is known to break a specific website if blocked.",
+      "message": "Bu izleyici engellenirse $SITE$ sitesinin bazı kısımları bozuk görüntülenebilir",
+      "placeholders": {
+         "site" : {
+            "content" : "$1",
+            "example": "store.apple.com"
+         }
+      }
+   },
+   "panel_tracker_details_no_info": {
+      "description" : "Message that appears when no tag info is available.",
+      "message": "Üzgünüm, bu izleyici hakkında şu anda bilgi yok."
+   },
+   "panel_tracker_found_sources_title": {
+      "description" : "Title that appears when expanding a findings panel tag, above the list of found sources.",
+      "message": "Saptanan izleyicinin kaynak URL adresleri:"
+   },
+   "panel_tracker_global_block_tooltip": {
+      "description" : "Tooltip that appears over the findings panel's tag global blocking control.",
+      "message": "$APP_NAME$ engelleme durumunu değiştirmek için buraya tıklayın.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_learn_more": {
+      "message" : "Daha fazla bilgi"
+   },
+   "panel_tracker_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "$APP_NAME$ hakkında daha fazla bilgi almak için buraya tıklayın",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_message": {
+      "description" : "Message that appears after setting the site specific unblock to 'on' for a tag in the findings panel.",
+      "message": "$BREAK$$HOST$ üzerinde her zaman izin verilir",
+      "placeholders": {
+         "break" : {
+            "content" : "<br>"
+         },
+         "host": {
+            "content" : "$1",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_off": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "$APP_NAME$ öğesine $HOST$ üzerinde her zaman izin vermek için buraya tıklayın.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_on": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "$APP_NAME$ öğesine $HOST$ üzerinde izin vermeyi durdurmak için buraya tıklayın.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_what_is_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "$APP_NAME$ nedir?",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_verify_account": {
+      "message" : "Hesabı doğrula"
+   },
+   "panel_visualize": {
+      "message" : "Bu izleyicileri eşleştir"
+   },
+   "panel_visualize_tool_tip": {
+      "message" : "Bu Sitedeki İzleyicileri Görselleştir"
+   },
+   "password_field_label": {
+      "message" : "Parola"
+   },
+   "password_requirements": {
+      "message" : "Parola en az 8 karakter içermelidir"
+   },
+   "rate_ghostery_link1": {
+      "description" : "Part one of \"Like Ghostery? Rate It!\"",
+      "message": "Ghostery'yi beğendiniz mi?"
+   },
+   "rate_ghostery_link2": {
+      "description" : "Part two of \"Like Ghostery? Rate It!\"",
+      "message": "Puan verin!"
+   },
+   "save_button_label": {
+      "message" : "Kaydet"
+   },
+   "send_button_label": {
+      "message" : "Gönder"
+   },
+   "server_error_message": {
+      "message" : "Galiba teknik bir sorun yaşıyoruz. Daha sonra tekrar deneyin."
+   },
+   "server_error_title": {
+      "message" : "Kesinti"
+   },
+   "setup_page_category_all_blocked": {
+      "message" : "Bu kategorideki tüm izleyiciler engellendi"
+   },
+   "setup_page_num_blocked": {
+      "message" : "Engellendi"
+   },
+   "survey_link": {
+      "message" : "$LINK_START$Anketimizi Doldurun!$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "survey_link_also": {
+      "message" : "Unutmadan, $LINK_START$Anketimizi Doldurun!$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "tag": {
+      "message" : "Etiket"
+   },
+   "tag_description_getting": {
+      "message" : "Etiket açıklamaları alınıyor..."
+   },
+   "tag_description_none_found": {
+      "message" : "Etiket açıklaması bulunamadı."
+   },
+   "tag_description_read_more": {
+      "message" : "Daha Fazla"
+   },
+   "tags": {
+      "message" : "Etiketler"
+   },
+   "trackers": {
+      "message" : "İzleyici"
+   },
+   "tags_less": {
+      "description" : "Clicking this makes the tag list smaller",
+      "message": "Daha az etiket göster..."
+   },
+   "tags_more": {
+      "description" : "Clicking this expands the list to show all tags",
+      "message": "Daha fazla etiket göster..."
+   },
+   "toggle_collapse_all": {
+      "description" : "Click this to collapse all items, hiding collapsible per-item content.",
+      "message": "Tümünü daralt"
+   },
+   "toggle_expand_all": {
+      "description" : "Click this to expand all items, revealing all content.",
+      "message": "Tümünü genişlet"
+   },
+   "toggle_select_all": {
+      "description" : "Click this to select all items.",
+      "message": "Tümünü seç"
+   },
+   "toggle_select_none": {
+      "description" : "Click this to deselect all items.",
+      "message": "Hiçbirini seçme"
+   },
+   "tracker_browser_filters_reset": {
+      "description" : "Link to reset the tag browser's display filters.",
+      "message": "Aramayı sıfırla"
+   },
+   "tracker_browser_name_filter": {
+      "description" : "Text input filter for the tag browser. Lets you filter by/search for tag names. Part of 'Search for tag name'.",
+      "message": "$SEARCH_FIELD$ ara",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "tag name"
+         }
+      }
+   },
+   "tracker_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the tag browser search input. Should read as 'Search for tag name'.",
+      "message": "etiket adı"
+   },
+   "tracker_browser_type_filter": {
+      "description" : "Dropdown filter for the tag browser. Lets you show only blocked (checked), or only unblocked (unchecked) tags.",
+      "message": "$TYPE$ göster",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "unblocked": {
+      "description" : "Select this to show only unblocked (unchecked) tags in the tag browser. Should read as 'Show unblocked'.",
+      "message": "engellemesi kaldırıldı"
+   },
+   "walkthrough_link": {
+      "description" : "Link to walkthrough/configuration wizard, shown on top of the options page.",
+      "message": "Ghostery'nin temel seçenekleriyle ilgili rehberlik almak için $LINK_START$Ghostery Yapılandırma Sihirbazı$LINK_END$'nı deneyin.",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a href=\"walkthrough.html\" id=\"walkthrough-link\">"
+         }
+      }
+   },
+   "walkthrough_skip_button": {
+      "message" : "Sihirbazı Geç"
+   },
+   "white_black_list_error_invalid_url": {
+      "message" : "Lütfen geçerli bir URL adresi girin."
+   },
+   "whitelist_error_blacklist_url": {
+      "message" : "Bu site, Kısıtlanmış Siteler listenizden kaldırılmış ve Güvenilir Siteler listenize eklenmiş."
+   },
+   "whitelist_error_duplicate_url": {
+      "description" : "Options page site whitelisting error message shown when whitelisting a URL that is already in the whitelist.",
+      "message": "Bu site zaten beyaz listede."
+   },
+   "xul_panel_block_firefox": {
+      "description" : "In the XUL panel, this is a toggle to block a particular app.",
+      "message": "$NAME$ engellensin mi?",
+      "placeholders": {
+         "name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "xul_panel_site_specific_unblock_firefox": {
+      "description" : "In the XUL panel, this is a toggle to un-block a particular app for the web-page the user is on.",
+      "message": "Sadece bu site için engellemesini kaldır"
+   },
+   "xul_panel_view_source_firefox": {
+      "description" : "In the XUL panel, this is the menu option that opens the site that shows source code of the tag.",
+      "message": "Komut Dizisi Kaynağını Görüntüle"
+   },
+   "short_description": {
+      "description": "A short description of this extension (Ghostery).",
+      "message": "Gizliliğinizi koruyun. Ghostery ile web taramalarınızı kimin izlediğini görün."
+  }
+}

@@ -1,32 +1,16 @@
-/*
- * This file is part of the Adblock Plus build tools,
- * Copyright (C) 2006-2014 Eyeo GmbH
- *
- * Adblock Plus is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 3 as
- * published by the Free Software Foundation.
- *
- * Adblock Plus is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
- */
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 Cu.import("resource://gre/modules/Services.jsm");
 
-let validModifiers =
-{
-  ACCEL: null,
-  CTRL: "control",
-  CONTROL: "control",
-  SHIFT: "shift",
-  ALT: "alt",
-  META: "meta",
-  __proto__: null
-};
+let validModifiers = Object.create(null);
+validModifiers.ACCEL = null;
+validModifiers.CTRL = "control";
+validModifiers.CONTROL = "control";
+validModifiers.SHIFT = "shift";
+validModifiers.ALT = "alt";
+validModifiers.META = "meta";
 
 /**
  * Sets the correct value of validModifiers.ACCEL.
@@ -79,7 +63,7 @@ KeySelector.prototype =
     if (!validModifiers.ACCEL)
       initAccelKey();
 
-    this._existingShortcuts = {__proto__: null};
+    this._existingShortcuts = Object.create(null);
 
     let keys = window.document.getElementsByTagName("key");
     for (let i = 0; i < keys.length; i++)
@@ -108,7 +92,7 @@ KeySelector.prototype =
 
       let keyModifiers = key.getAttribute("modifiers");
       if (keyModifiers)
-        for each (let modifier in keyModifiers.toUpperCase().match(/\w+/g))
+        for (let modifier of keyModifiers.toUpperCase().match(/\w+/g))
           if (modifier in validModifiers)
             keyData[validModifiers[modifier]] = true;
 
@@ -123,7 +107,7 @@ KeySelector.prototype =
    */
   selectKey: function(/**String*/ variants) /**Object*/
   {
-    for each (let variant in variants.split(/\s*,\s*/))
+    for (let variant of variants.split(/\s*,\s*/))
     {
       if (!variant)
         continue;
@@ -138,7 +122,7 @@ KeySelector.prototype =
         code: null,
         codeName: null
       };
-      for each (let part in variant.toUpperCase().split(/\s+/))
+      for (let part of variant.toUpperCase().split(/\s+/))
       {
         if (part in validModifiers)
           keyData[validModifiers[part]] = true;

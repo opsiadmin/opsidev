@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -24,12 +24,11 @@ let {FileUtils} = Cu.import("resource://gre/modules/FileUtils.jsm", null);
 let {OS} = Cu.import("resource://gre/modules/osfile.jsm", null);
 let {Task} = Cu.import("resource://gre/modules/Task.jsm", null);
 
-
 let {Prefs} = require("prefs");
 let {Utils} = require("utils");
 
 let firstRead = true;
-const BUFFER_SIZE = 0x8000;  // 32kB
+const BUFFER_SIZE = 0x80000;  // 512kB
 
 let IO = exports.IO =
 {
@@ -70,7 +69,7 @@ let IO = exports.IO =
    * each line read and with a null parameter once the read operation is done.
    * The callback will be called when the operation is done.
    */
-  readFromFile: function(/**nsIFile*/ file, /**Object*/ listener, /**Function*/ callback, /**String*/ timeLineID)
+  readFromFile: function(/**nsIFile*/ file, /**Object*/ listener, /**Function*/ callback)
   {
     try
     {
@@ -81,11 +80,6 @@ let IO = exports.IO =
 
       let onProgress = function(data)
       {
-        if (timeLineID)
-        {
-
-        }
-
         let index = (processing ? -1 : Math.max(data.lastIndexOf("\n"), data.lastIndexOf("\r")));
         if (index >= 0)
         {
@@ -125,11 +119,6 @@ let IO = exports.IO =
         }
         else
           buffer += data;
-
-        if (timeLineID)
-        {
-
-        }
       };
 
       let onSuccess = function()
@@ -141,20 +130,9 @@ let IO = exports.IO =
           return;
         }
 
-        if (timeLineID)
-        {
-
-        }
-
         if (buffer !== "")
           listener.process(buffer);
         listener.process(null);
-
-        if (timeLineID)
-        {
-
-
-        }
 
         callback(null);
       };
@@ -169,16 +147,10 @@ let IO = exports.IO =
         }
 
         callback(e);
-
-        if (timeLineID)
-        {
-
-        }
       };
 
       let decoder = new TextDecoder();
-      let array = new Uint8Array(BUFFER_SIZE);
-      Task.spawn(function()
+      Task.spawn(function*()
       {
         if (firstRead && Services.vc.compare(Utils.platformVersion, "23.0a1") <= 0)
         {
@@ -200,19 +172,15 @@ let IO = exports.IO =
         firstRead = false;
 
         let f = yield OS.File.open(file.path, {read: true});
-        let numBytes;
-        do
+        while (true)
         {
-          numBytes = yield f.readTo(array);
-          if (numBytes)
-          {
-            let data = decoder.decode(numBytes == BUFFER_SIZE ?
-                                      array :
-                                      array.subarray(0, numBytes), {stream: true});
-            onProgress(data);
-          }
-        } while (numBytes);
+          let array = yield f.read(BUFFER_SIZE);
+          if (!array.length)
+            break;
 
+          let data = decoder.decode(array, {stream: true});
+          onProgress(data);
+        }
         yield f.close();
       }.bind(this)).then(onSuccess, onError);
     }
@@ -226,13 +194,13 @@ let IO = exports.IO =
    * Writes string data to a file in UTF-8 format asynchronously. The callback
    * will be called when the write operation is done.
    */
-  writeToFile: function(/**nsIFile*/ file, /**Iterator*/ data, /**Function*/ callback, /**String*/ timeLineID)
+  writeToFile: function(/**nsIFile*/ file, /**Iterator*/ data, /**Function*/ callback)
   {
     try
     {
       let encoder = new TextEncoder();
 
-      Task.spawn(function()
+      Task.spawn(function*()
       {
         // This mimics OS.File.writeAtomic() but writes in chunks.
         let tmpPath = file.path + ".tmp";
@@ -250,7 +218,7 @@ let IO = exports.IO =
           return f.write(array);
         }
 
-        for (let line in data)
+        for (let line of data)
         {
           buf.push(line);
           bufLen += line.length;

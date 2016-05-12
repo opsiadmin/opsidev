@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -19,15 +19,18 @@
  * @fileOverview Component synchronizing filter storage with Matcher instances and ElemHide.
  */
 
+"use strict";
+
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
-
 
 let {FilterStorage} = require("filterStorage");
 let {FilterNotifier} = require("filterNotifier");
 let {ElemHide} = require("elemHide");
+let {CSSRules} = require("cssRules");
 let {defaultMatcher} = require("matcher");
-let {ActiveFilter, RegExpFilter, ElemHideBase} = require("filterClasses");
+let {ActiveFilter, RegExpFilter, ElemHideBase, CSSPropertyFilter} =
+    require("filterClasses");
 let {Prefs} = require("prefs");
 
 /**
@@ -75,7 +78,10 @@ let FilterListener =
     else
       isDirty += factor;
     if (isDirty >= 1)
+    {
+      isDirty = 0;
       FilterStorage.saveToDisk();
+    }
   }
 };
 
@@ -103,18 +109,28 @@ let HistoryPurgeObserver =
  */
 function init()
 {
+  FilterNotifier.on("filter.hitCount", onFilterHitCount);
+  FilterNotifier.on("filter.lastHit", onFilterLastHit);
+  FilterNotifier.on("filter.added", onFilterAdded);
+  FilterNotifier.on("filter.removed", onFilterRemoved);
+  FilterNotifier.on("filter.disabled", onFilterDisabled);
+  FilterNotifier.on("filter.moved", onGenericChange);
 
+  FilterNotifier.on("subscription.added", onSubscriptionAdded);
+  FilterNotifier.on("subscription.removed", onSubscriptionRemoved);
+  FilterNotifier.on("subscription.disabled", onSubscriptionDisabled);
+  FilterNotifier.on("subscription.updated", onSubscriptionUpdated);
+  FilterNotifier.on("subscription.moved", onGenericChange);
+  FilterNotifier.on("subscription.title", onGenericChange);
+  FilterNotifier.on("subscription.fixedTitle", onGenericChange);
+  FilterNotifier.on("subscription.homepage", onGenericChange);
+  FilterNotifier.on("subscription.downloadStatus", onGenericChange);
+  FilterNotifier.on("subscription.lastCheck", onGenericChange);
+  FilterNotifier.on("subscription.errors", onGenericChange);
 
-  FilterNotifier.addListener(function(action, item, newValue, oldValue)
-  {
-    let match = /^(\w+)\.(.*)/.exec(action);
-    if (match && match[1] == "filter")
-      onFilterChange(match[2], item, newValue, oldValue);
-    else if (match && match[1] == "subscription")
-      onSubscriptionChange(match[2], item, newValue, oldValue);
-    else
-      onGenericChange(action, item);
-  });
+  FilterNotifier.on("load", onLoad);
+  FilterNotifier.on("save", onSave);
+
 
   if ("nsIStyleSheetService" in Ci)
     ElemHide.init();
@@ -122,16 +138,11 @@ function init()
     flushElemHide = function() {};    // No global stylesheet in Chrome & Co.
   FilterStorage.loadFromDisk();
 
-
-
   Services.obs.addObserver(HistoryPurgeObserver, "browser:purge-session-history", true);
   onShutdown.add(function()
   {
     Services.obs.removeObserver(HistoryPurgeObserver, "browser:purge-session-history");
   });
-
-
-
 }
 init();
 
@@ -164,7 +175,12 @@ function addFilter(filter)
   if (filter instanceof RegExpFilter)
     defaultMatcher.add(filter);
   else if (filter instanceof ElemHideBase)
-    ElemHide.add(filter);
+  {
+    if (filter instanceof CSSPropertyFilter)
+      CSSRules.add(filter);
+    else
+      ElemHide.add(filter);
+  }
 }
 
 /**
@@ -190,93 +206,128 @@ function removeFilter(filter)
   if (filter instanceof RegExpFilter)
     defaultMatcher.remove(filter);
   else if (filter instanceof ElemHideBase)
-    ElemHide.remove(filter);
+  {
+    if (filter instanceof CSSPropertyFilter)
+      CSSRules.remove(filter);
+    else
+      ElemHide.remove(filter);
+  }
 }
 
-/**
- * Subscription change listener
- */
-function onSubscriptionChange(action, subscription, newValue, oldValue)
+function onSubscriptionAdded(subscription)
 {
   FilterListener.setDirty(1);
 
-  if (action != "added" && action != "removed" && action != "disabled" && action != "updated")
-    return;
-
-  if (action != "removed" && !(subscription.url in FilterStorage.knownSubscriptions))
+  if (!subscription.disabled)
   {
-    // Ignore updates for subscriptions not in the list
-    return;
+    subscription.filters.forEach(addFilter);
+    flushElemHide();
   }
+}
 
-  if ((action == "added" || action == "removed" || action == "updated") && subscription.disabled)
-  {
-    // Ignore adding/removing/updating of disabled subscriptions
-    return;
-  }
+function onSubscriptionRemoved(subscription)
+{
+  FilterListener.setDirty(1);
 
-  if (action == "added" || action == "removed" || action == "disabled")
+  if (!subscription.disabled)
   {
-    let method = (action == "added" || (action == "disabled" && newValue == false) ? addFilter : removeFilter);
-    if (subscription.filters)
-      subscription.filters.forEach(method);
+    subscription.filters.forEach(removeFilter);
+    flushElemHide();
   }
-  else if (action == "updated")
+}
+
+function onSubscriptionDisabled(subscription, newValue)
+{
+  FilterListener.setDirty(1);
+
+  if (subscription.url in FilterStorage.knownSubscriptions)
+  {
+    if (newValue == false)
+      subscription.filters.forEach(addFilter);
+    else
+      subscription.filters.forEach(removeFilter);
+    flushElemHide();
+  }
+}
+
+function onSubscriptionUpdated(subscription)
+{
+  FilterListener.setDirty(1);
+
+  if (subscription.url in FilterStorage.knownSubscriptions &&
+      !subscription.disabled)
   {
     subscription.oldFilters.forEach(removeFilter);
     subscription.filters.forEach(addFilter);
+    flushElemHide();
   }
-
-  flushElemHide();
 }
 
-/**
- * Filter change listener
- */
-function onFilterChange(action, filter, newValue, oldValue)
+function onFilterHitCount(filter, newValue)
 {
-  if (action == "hitCount" && newValue == 0)
-  {
-    // Filter hits are being reset, make sure these changes are saved.
+  if (newValue == 0)
     FilterListener.setDirty(0);
-  }
-  else if (action == "hitCount" || action == "lastHit")
-    FilterListener.setDirty(0.002);
   else
-    FilterListener.setDirty(1);
+    FilterListener.setDirty(0.002);
+}
 
-  if (action != "added" && action != "removed" && action != "disabled")
-    return;
+function onFilterLastHit()
+{
+  FilterListener.setDirty(0.002);
+}
 
-  if ((action == "added" || action == "removed") && filter.disabled)
+function onFilterAdded(filter)
+{
+  FilterListener.setDirty(1);
+
+  if (!filter.disabled)
   {
-    // Ignore adding/removing of disabled filters
-    return;
+    addFilter(filter);
+    flushElemHide();
   }
+}
 
-  if (action == "added" || (action == "disabled" && newValue == false))
+function onFilterRemoved(filter)
+{
+  FilterListener.setDirty(1);
+
+  if (!filter.disabled)
+  {
+    removeFilter(filter);
+    flushElemHide();
+  }
+}
+
+function onFilterDisabled(filter, newValue)
+{
+  FilterListener.setDirty(1);
+
+  if (newValue == false)
     addFilter(filter);
   else
     removeFilter(filter);
   flushElemHide();
 }
 
-/**
- * Generic notification listener
- */
-function onGenericChange(action)
+function onGenericChange()
 {
-  if (action == "load")
-  {
-    isDirty = 0;
+  FilterListener.setDirty(1);
+}
 
-    defaultMatcher.clear();
-    ElemHide.clear();
-    for (let subscription of FilterStorage.subscriptions)
-      if (!subscription.disabled)
-        subscription.filters.forEach(addFilter);
-    flushElemHide();
-  }
-  else if (action == "save")
-    isDirty = 0;
+function onLoad()
+{
+  isDirty = 0;
+
+  defaultMatcher.clear();
+  ElemHide.clear();
+  CSSRules.clear();
+  for (let subscription of FilterStorage.subscriptions)
+    if (!subscription.disabled)
+      subscription.filters.forEach(addFilter);
+  flushElemHide();
+}
+
+function onSave()
+{
+  isDirty = 0;
 }

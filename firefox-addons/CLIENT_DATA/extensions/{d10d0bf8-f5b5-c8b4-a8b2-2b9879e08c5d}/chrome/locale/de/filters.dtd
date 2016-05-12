@@ -1,5 +1,5 @@
 <!ENTITY restore.custom.warning "Alle Ihre eigenen Filter werden durch den Inhalt dieser Datei ersetzt. Wollen Sie fortfahren?">
-<!ENTITY slow.column "&amp;Langsame Filter">
+<!ENTITY slow.column "&amp;Langsam">
 <!ENTITY enabled.column "A&amp;ktiviert">
 <!ENTITY subscription.lastDownload.checksumMismatch "Fehler, Prüfsumme ist falsch, möglicherweise ein Übertragungsfehler">
 <!ENTITY noFiltersInGroup.text "Die gewählte Filtergruppe ist leer.">
@@ -34,7 +34,7 @@
 <!ENTITY subscription.update.label "Filter aktualisieren">
 <!ENTITY dialog.title "Filtereinstellungen von Adblock Plus">
 <!ENTITY addFilter.label "&amp;Filter hinzufügen">
-<!ENTITY subscription.minVersion.warning "Diese Filterliste benötigt eine neuere Version von Adblock Plus, Sie sollten auf die neueste Version von Adblock Plus aktualisieren.">
+<!ENTITY subscription.minVersion.warning "Diese Filterliste benötigt eine neuere Version von Adblock Plus. Sie sollten die neueste Version von Adblock Plus herunterladen.">
 <!ENTITY subscription.lastDownload.invalidURL "Fehler, ungültige Adresse">
 <!ENTITY backup.error "Beim Schreiben der Filter in die Datei ist ein Problem aufgetreten. Bitte stellen Sie sicher, dass die Datei nicht schreibgeschützt ist oder von einem anderen Programm verwendet wird.">
 <!ENTITY filter.moveUp.label "Nach oben verschieben">
@@ -60,7 +60,7 @@
 <!ENTITY backup.label "Neue Sicherung erstellen">
 <!ENTITY find.label "Filter durch&amp;suchen">
 <!ENTITY subscription.moveDown.label "Nach unten verschieben">
-<!ENTITY subscription.lastDownload.connectionError "Fehler, Herunterladen fehlgeschlagen">
+<!ENTITY subscription.lastDownload.connectionError "Fehler, Download fehlgeschlagen">
 <!ENTITY subscription.lastDownload.success "Erfolgreich">
 <!ENTITY subscription.lastDownload.invalidData "Fehler, keine gültige Filterliste">
 <!ENTITY filter.paste.label "Einfügen">

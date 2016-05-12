@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -46,10 +46,17 @@ exports.initAntiAdblockNotification = function initAntiAdblockNotification()
   {
     let urlFilters = [];
     for (let filter of subscription.filters)
+    {
       if (filter instanceof ActiveFilter)
+      {
         for (let domain in filter.domains)
-          if (domain && urlFilters.indexOf(domain) == -1)
-            urlFilters.push(domain);
+        {
+          let urlFilter = "||" + domain + "^$document";
+          if (domain && filter.domains[domain] && urlFilters.indexOf(urlFilter) == -1)
+            urlFilters.push(urlFilter);
+        }
+      }
+    }
     notification.urlFilters = urlFilters;
     Notification.addNotification(notification);
     Notification.addQuestionListener(notification.id, notificationListener);
@@ -65,14 +72,19 @@ exports.initAntiAdblockNotification = function initAntiAdblockNotification()
   if (subscription.lastDownload && subscription.disabled)
     addAntiAdblockNotification(subscription);
 
-  FilterNotifier.addListener(function(action, value, newItem, oldItem)
+  function onSubscriptionChange(subscription)
   {
-    if (!/^subscription\.(updated|removed|disabled)$/.test(action) || value.url != Prefs.subscriptions_antiadblockurl)
+    let url = Prefs.subscriptions_antiadblockurl;
+    if (url != subscription.url)
       return;
 
-    if (action == "subscription.updated")
-      addAntiAdblockNotification(value);
-    else if (action == "subscription.removed" || (action == "subscription.disabled" && !value.disabled))
+    if (url in FilterStorage.knownSubscriptions && !subscription.disabled)
+      addAntiAdblockNotification(subscription);
+    else
       removeAntiAdblockNotification();
-  });
+  }
+
+  FilterNotifier.on("subscription.updated", onSubscriptionChange);
+  FilterNotifier.on("subscription.removed", onSubscriptionChange);
+  FilterNotifier.on("subscription.disabled", onSubscriptionChange);
 }

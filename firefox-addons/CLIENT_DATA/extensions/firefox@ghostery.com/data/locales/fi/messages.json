@@ -1,0 +1,1461 @@
+{
+   "account_creation_privacy_statement" : {
+      "message" : "Hyväksyn Ghosteryn $LINK_PS_START$Tietosuojalausunnossa$LINK_PS_END$ kuvatut tietokäytännöt sekä Ghostery $LINK_UA_START$Käyttöoikeussopimuksessa$LINK_UA_END$ kuvatut ehdot.",
+      "placeholders": {
+         "link_ps_end" : {
+            "content" : "</a>"
+         },
+         "link_ps_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-privacy-statement/\">"
+         },
+         "link_ua_end": {
+            "content" : "</a>"
+         },
+         "link_ua_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-end-user-license-agreem/\">"
+         }
+      }
+   },
+   "account_signin_privacy_statement": {
+      "message": "Oma tili mahdollistaa lisäominaisuuksien käytön, eikä tiliäsi liitetä mihinkään seurantaohjelmien tietoihin, jotka olet päättänyt jakaa kanssamme. Jos haluat tarkempia tietoja siitä, miten Ghostery käyttää tilisi tietoja, tutustu $LINK_FAQ_START$UKK-osioomme$LINK_FAQ_END$.",
+      "placeholders": {
+         "link_faq_end" : {
+            "content" : "</a>"
+         },
+         "link_faq_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/support/faq/ghostery-add-on/\">"
+         }
+      }
+   },
+   "addon_compatibility_warning_firefox": {
+      "description" : "Pop up warning that appears when one or more incompatible extensions are installed alongside Ghostery.",
+      "message": "Näyttää siltä, että käytät myös lisäosaa\/lisäosia <strong>$ADDONS$</strong>. Ghosteryn evästeiden estojärjestelmän tiedetään aiheuttavan yhteensopivuusongelmia tämän laajennuksen \/ näiden laajennusten kanssa, joten se\/ne on nyt <strong>poistettu käytöstä</strong>. Jos haluat ottaa evästeiden estojärjestelmän uudelleen käyttöön, poista tai poista käytöstä lisäosa(t) <strong>$ADDONS$</strong> selaimen lisäosien hallinnasta ja käynnistä selain tarvittaessa uudelleen.",
+      "placeholders": {
+         "addons" : {
+            "content" : "$1",
+            "example": "Yahoo! Toolbar Addon"
+         }
+      }
+   },
+   "alert_bubble": {
+      "description" : "Ghostery's alert bubble is the purple, semi-translucent notification panel that pops up as you browse to show detected tags on the page.",
+      "message": "hälytyskupla"
+   },
+   "alert_bubble_gear_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble's gear.",
+      "message": "Määritä hälytyskuplaa napsauttamalla tästä"
+   },
+   "alert_bubble_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble.",
+      "message": "Hylkää hälytyskupla napsauttamalla tästä"
+   },
+   "all": {
+      "description" : "Default setting in the 'filter by type' dropdown for the tag browser. Doesn't filter anything out. Should read as 'Show all'.",
+      "message": "kaikki"
+   },
+   "backup_export": {
+      "description" : "Instructions for exporting Ghostery settings.",
+      "message": "Tallenna kopio Ghosteryn asetuksista varmuuskopiointia tai siirtoa varten toiselle tietokoneelle napsauttamalla tästä."
+   },
+   "backup_export_button": {
+      "description" : "Button for exporting Ghostery settings.",
+      "message": "Tallenna varmuuskopiointitiedosto"
+   },
+   "backup_export_header": {
+      "description" : "Section header for Export section of the Import/Export page.",
+      "message": "Vie"
+   },
+   "backup_import": {
+      "description" : "Instructions for importing Ghostery settings.",
+      "message": "Valitse aikaisemmin luotu varmuuskopiointitiedosto, jota haluaisit käyttää, ja napsauta \"Tuo\"-painiketta."
+   },
+   "backup_import_button": {
+      "description" : "Button for importing Ghostery settings.",
+      "message": "Tuo"
+   },
+   "backup_import_error": {
+      "description" : "Error message shown when importing a bad file.",
+      "message": "$SPAN_START$Virheellinen varmuuskopiotiedosto.$SPAN_END$ Ota yhteyttä $A_START$tukeen$A_END$.",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"https://getsatisfaction.com/ghostery\">"
+         },
+         "span_end": {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"red\">"
+         }
+      }
+   },
+   "backup_import_header": {
+      "description" : "Section header for Import section of the Import/Export page.",
+      "message": "Tuo"
+   },
+   "backup_import_warning": {
+      "description" : "Warning before importing Ghostery settings.",
+      "message": "VAROITUS Tämä korvaa nykyiset Ghosteryn asetukset."
+   },
+   "backup_options_link": {
+      "description" : "Link back to the main options page.",
+      "message": "Palaa Asetukset-sivulle"
+   },
+   "backup_page_title": {
+      "description" : "Title of Ghostery's Import/Export settings page.",
+      "message": "Tuo\/vie Ghosteryn asetukset"
+   },
+   "banner_check_your_email_title": {
+      "message" : "Tarkista sähköpostisi. Lähetimme sinulle salasanan vaihtolinkin."
+   },
+   "banner_no_such_account_message": {
+      "message" : "Yhyy! Näyttää siltä, etten tunnista käyttäjänimen ja salasanan yhdistelmää. Yritä uudelleen."
+   },
+   "banner_no_such_account_title": {
+      "message" : "Virheellinen sähköpostiosoite tai salasana"
+   },
+   "banner_wrong_email_message": {
+      "message" : "Ghostery ei löytänyt kyseistä sähköpostiosoitetta. Yritä uudelleen."
+   },
+   "banner_wrong_email_title": {
+      "message" : "Onpas outoa."
+   },
+   "blacklist_error_duplicate_url": {
+      "message" : "Tämä sivusto on jo rajoitettu."
+   },
+   "blacklist_error_whitelist_url": {
+      "message" : "Tämä sivusto on poistettu luotettavien sivustojen listalta ja lisätty rajoitettujen sivustojen listalle"
+   },
+   "blocked": {
+      "description" : "Select this to show only blocked (checked) tags in the tag browser. Should read as 'Show blocked'.",
+      "message": "estetty"
+   },
+   "blocked_redirect_action_always_title": {
+      "description" : "Title for the 'Allow always and reload' button on the blocked redirect page.",
+      "message": "Salli ja lataa aina uudelleen."
+   },
+   "blocked_redirect_action_through_once_title": {
+      "description" : "Title for the 'Allow once' button on the blocked redirect page.",
+      "message": "Salli tunnisteet kerran kunnes viimeinen määränpää on saavutettu."
+   },
+   "blocked_redirect_page_title": {
+      "description" : "Page title for blocked_redirect.html which appears when a redirect is blocked.",
+      "message": "Ghostery esti uudelleenohjauksen."
+   },
+   "blocked_redirect_prevent": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked. Should appear inside \"redirect-prevent\" div.",
+      "message": "Ghostery esti uudelleenohjauksen kohteesta $BREAK$ $SP_O_START$$ORIGIN$$SP_END$ kohteeseen $SP_D_START$$DESTINATION$$SP_END$, $BREAK$joka on osa kohdetta $A_START$$APP$$A_END$. $BREAK$",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a id=\"name\" href=\"$4\" target=\"_blank\">"
+         },
+         "app": {
+            "content" : "$3",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "destination": {
+            "content" : "$2"
+         },
+         "origin": {
+            "content" : "$1"
+         },
+         "sp_d_start": {
+            "content" : "<span id=\"destination\">"
+         },
+         "sp_end": {
+            "content" : "</span>"
+         },
+         "sp_o_start": {
+            "content" : "<span id=\"origin\">"
+         }
+      }
+   },
+   "blocked_redirect_url_content": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked and a final 'destination' URL is successfully found.",
+      "message": "Tämä tunniste näyttää uudelleenohjaavan osoitteeseen $BREAK$ $A_START$$REDIRECT_URL$$A_END$ Jos linkki ei näytä oikealta mutta haluat silti jatkaa, valtuuta $APP$ alla olevaa kuvaketta napsauttamalla ja lataa sivu uudelleen.",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"$1\" class=\"ellipsis\" title=\"$1\">"
+         },
+         "app": {
+            "content" : "$2",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "redirect_url": {
+            "content" : "$1"
+         }
+      }
+   },
+   "blocking_filter_name": {
+      "description" : "Description of current search filter",
+      "message": "Näytetään $NUMBER$ tunnistetta, jotka vastaavat nimeä ”$NAME$”",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         }
+      }
+   },
+   "blocking_filter_name_tags": {
+      "description" : "Description of current search filter",
+      "message": "Näytetään $NUMBER$ tunnistetta, jotka vastaavat nimeä ”$NAME$” ja joissa on tunnisteet ”$TAGS$”",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$3</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_filter_tags": {
+      "description" : "Description of current search filter",
+      "message": "Näytetään $NUMBER$ tunnistetta, joissa on tunnisteet ”$TAGS$”",
+      "placeholders": {
+         "number" : {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$2</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_summary_all_small_firefox": {
+      "description" : "All tags / cookies are selected.",
+      "message": "estetään $B_START$kaikki$B_END$",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_none_small_firefox": {
+      "description" : "No tags / cookies are selected.",
+      "message": "ei estetä $B_START$mitään$B_END$",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_small_firefox": {
+      "description" : "Some of the tags / cookies are selected (X out of Y total).",
+      "message": "estetään $NUMBER_SELECTED$\/$NUMBER_TOTAL$",
+      "placeholders": {
+         "number_selected" : {
+            "content" : "<strong>$1",
+            "example": 130
+         },
+         "number_total": {
+            "content" : "$2</strong>",
+            "example": 132
+         }
+      }
+   },
+   "box_dismiss_0s": {
+      "message" : "Älä sulje $SPAN_START$koskaan$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_15s": {
+      "message" : "Sulje $SPAN_START$15 s päästä$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_30s": {
+      "message" : "Sulje $SPAN_START$30 s päästä$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_5s": {
+      "message" : "Sulje $SPAN_START$5 s päästä$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_bl": {
+      "message" : "$SPAN_START$Vasen alakulma$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_br": {
+      "message" : "$SPAN_START$Oikeassa alakulma$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tl": {
+      "message" : "$SPAN_START$Vasemmassa yläkulma$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tr": {
+      "message" : "$SPAN_START$Oikeassa yläkulma$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_hide": {
+      "message" : "Piilota laatikko"
+   },
+   "box_hide_expanded": {
+      "message" : "Piilota violetti laatikko"
+   },
+   "box_looking": {
+      "message" : "Haetaan"
+   },
+   "box_options_expanded": {
+      "message" : "Asetukset"
+   },
+   "box_settings": {
+      "message" : "Asetukset"
+   },
+   "box_settings_expanded": {
+      "message" : "Ghostery-asetukseni"
+   },
+   "box_tracker": {
+      "message" : "Seurantaohjelma"
+   },
+   "box_trackers": {
+      "message" : "Seuraajat"
+   },
+   "browser_button_label_firefox": {
+      "description" : "Ghostery's browser button label, displayed on Firefox's addon customization panel.",
+      "message": "Ghostery"
+   },
+   "browser_button_tooltip": {
+      "description" : "Ghostery's browser button tooltip.",
+      "message": "Näytä Ghosteryn löydöt"
+   },
+   "button_cancel": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "Peruuta"
+   },
+   "button_ok": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "Ok"
+   },
+   "category_ad": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Mainostus"
+   },
+   "category_ad_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "Mainoksia näyttävät seurantaohjelmat."
+   },
+   "category_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Analyysi"
+   },
+   "category_analytics_desc": {
+      "description" : "User-facing description for the Analytics tag category.",
+      "message": "Sivustojen tekijöille tietoja tai analytiikkaa tuottavat seurantaohjelmat."
+   },
+   "category_privacy": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Tietosuoja"
+   },
+   "category_privacy_desc": {
+      "description" : "User-facing description for the Privacy tag category.",
+      "message": "Tietosuojailmoitukset sekä muita tietosuojaan liittyviä asioita."
+   },
+   "category_tracker": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Jäljitteet"
+   },
+   "category_tracker_desc": {
+      "description" : "User-facing description for the Beacons tag category.",
+      "message": "Seuraimet eivät toimi missään muussa kuin seurantatarkoituksessa (jäljitteet, muunnopikselit, yleisön segmentointipikselit, jne.) osuvat jäljitteiden luokkaan"
+   },
+   "category_widget": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Pienoissovellukset"
+   },
+   "category_widget_desc": {
+      "description" : "User-facing description for the Widgets tag category.",
+      "message": "Sivun toimintoja suorittavat seurantaohjelmat (sosiaalisen median painikkeet, kommenttilomakkeet jne.)."
+   },
+   "category_advertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Mainostus"
+   },
+   "category_advertising_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "Suorittaa mainontaa tai mainontaan liittyviä palveluita, kuten tietojen keräämistä, kävijöiden käytösmallien analysointia tai uudelleenkohdistusta."
+   },
+   "category_comments": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Kommentit"
+   },
+   "category_comments_desc": {
+      "description" : "User-facing description for the Comments tag category.",
+      "message": "Mahdollistaa artikkeleiden ja tuotearvioiden kommenttiosiot."
+   },
+   "category_customer_interaction": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Asiakkaan vuorovaikutus"
+   },
+   "category_customer_interaction_desc": {
+      "description" : "User-facing description for the Customer Interaction tag category.",
+      "message": "Sisältää chatin, sähköpostiviestinnän, asiakastuen sekä muita vuorovaikutteisia työkaluja."
+   },
+   "category_essential": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Tarpeellinen"
+   },
+   "category_essential_desc": {
+      "description" : "User-facing description for the Essential tag category.",
+      "message": "Sisältää tunnisteidenhallintasovellukset, tietosuojailmoitukset sekä sivuston toiminnan kannalta kriittiset tekniikat."
+   },
+   "category_pornvertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Aikuisviihdemainos"
+   },
+   "category_pornvertising_desc": {
+      "description" : "User-facing description for the Adult Advertising tag category.",
+      "message": "Suorittaa erityisesti aikuisviihdesivustoille suunniteltuja mainoksiin liittyviä tekniikoita."
+   },
+   "category_site_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Sivuston analytiikka"
+   },
+   "category_site_analytics_desc": {
+      "description" : "User-facing description for the Site Analytics tag category.",
+      "message": "Kerää ja analysoi sivuston käyttöön ja toimintaan liittyviä tietoja."
+   },
+   "category_social_media": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Yhteisömedia"
+   },
+   "category_social_media_desc": {
+      "description" : "User-facing description for the Social Media tag category.",
+      "message": "Integroi sosiaalisen median sivustoihin liittyviä ominaisuuksia."
+   },
+   "category_audio_video_player": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Audio-\/videosoitin"
+   },
+   "category_audio_video_player_desc": {
+      "description" : "User-facing description for the Audio/Video Player tag category.",
+      "message": "Sallii sivustojen julkaista, jakaa ja optimoida video- ja äänisisältöjä."
+   },
+   "change_password_message": {
+      "message" : "Uuden salasanan on oltava vähintään 8 merkkiä pitkä, ja siinä on oltava vähintään yksi numero ja erikoismerkki."
+   },
+   "click2play_allow_always_tooltip": {
+      "description" : "Tooltip that appears over the 'allow always' click2play button.",
+      "message": "Salli ja lataa uudelleen."
+   },
+   "click2play_allow_once_button_tooltip": {
+      "description" : "Tooltip that appears over the click2play replacement for 'social' buttons.",
+      "message": "Ghostery esti ohjelman nimeltä $APP_NAME$. Anna sen ladata vain tämä kerta napsauttamalla tästä.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Twitter Button"
+         }
+      }
+   },
+   "click2play_allow_once_tooltip": {
+      "description" : "Tooltip that appears over the 'allow once' click2play button.",
+      "message": "Salli kerran ja lataa uudelleen."
+   },
+   "click2play_blocked": {
+      "message" : "Ghostery esti ohjelman nimeltä $APP_NAME$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "SoundCloud"
+         }
+      }
+   },
+   "click2play_comment_form": {
+     "message": "Ghostery esti ohjelman $NAME$ tuottamat kommentit.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_review_form": {
+     "message": "Ghostery esti ohjelman $NAME$ tuottamat arviot.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_video_form": {
+     "message": "Ghostery esti videosoittimen nimeltä $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_survey_form": {
+     "message": "Ghostery esti ohjelmalla $NAME$ toteutetun kyselyn.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "company_about": {
+      "description" : "Header for company profiles.",
+      "message": "Tietoja yrityksestä $COMPANY$:",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_affiliations": {
+      "message" : "Toimialajärjestöt:"
+   },
+   "company_description": {
+      "message" : "Yrityksen kuvaus"
+   },
+   "company_in_their_own_words": {
+      "description" : "Label for a description of the company that is provided by the company itself",
+      "message": "Omien sanojensa mukaan"
+   },
+   "company_operates": {
+      "description" : "Followed by a list of products this company offers.",
+      "message": "$COMPANY$ toimii alueella:",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_profile_error": {
+      "message" : "Tietojen lataus osoitteesta ghostery.com ei onnistu."
+   },
+   "company_profile_link": {
+      "message" : "Jatka täydelliseen profiiliin."
+   },
+   "company_tags": {
+      "description" : "Tags here refers to categories we use to group companies based on their business (ie Video Player, Popups, Polls)",
+      "message": "Tunnisteet:"
+   },
+   "company_website": {
+      "message" : "Sivusto"
+   },
+   "confirm_new_password_field_label": {
+      "message" : "Vahvista uusi salasana"
+   },
+   "copyright": {
+      "description" : "Copyright message, shown in page footers.",
+      "message": "$C$ $YEAR$ $GHOSTERY$, osa yritystä $COMPANY_ADDRESS$",
+      "placeholders": {
+         "c" : {
+            "content" : "&copy;"
+         },
+         "company_address": {
+            "content" : "$1",
+            "example": "GHOSTERY, Inc., Such-and-such Street, Such-and-such Floor, New York, NY, Zip Code"
+         },
+         "ghostery": {
+            "content" : "<a href='https://www.ghostery.com' target='_blank'>Ghostery</a>"
+         },
+         "year": {
+            "content" : "2015"
+         }
+      }
+   },
+   "dismiss": {
+      "description" : "Text for a button or link to close a notification.",
+      "message": "Hylkää"
+   },
+   "email_preferences_1": {
+      "message" : "Kyllä kiitos. Haluan saada viestejä, jotka koskevat selailukokemukseeni vaikuttavia tuotteita tai palveluita."
+   },
+   "email_preferences_2": {
+      "message" : "Pitäkää minut ajan tasalla julkaistavista tuotteista."
+   },
+   "email_preferences_header": {
+      "message" : "Sähköpostiasetukset"
+   },
+   "email_confirm_field_label": {
+      "message" : "Vahvista sähköpostiosoite"
+   },
+   "email_field_label": {
+      "message" : "Sähköposti"
+   },
+   "error_email_forgot": {
+      "message" : "Kokeile eri sähköpostiosoitetta. Kyseinen osoite ei ole järjestelmässämme."
+   },
+   "firefox_tools_menu_database_update": {
+      "description" : "Ghostery's update database menu label dipslayed under the ghostery menu.",
+      "message": "Päivitä virheluettelot"
+   },
+   "first_name_field_label": {
+      "message" : "Etunimi (valinnainen)"
+   },
+   "forgot_password_message": {
+      "message" : "Ei hätää, näitä sattuu. Lähetämme sähköpostiisi ohjeet salasanasi vaihtamiseksi"
+   },
+   "ghostery_logo": {
+      "description" : "Alt. text for the Ghostery logo graphic in the header on options and walkthrough pages.",
+      "message": "Ghostery-logo"
+   },
+   "invalid_email": {
+      "message" : "Perjantai! Järjestelmässämme ei ole tuota sähköpostiosoitetta."
+   },
+   "invalid_email_confirmation": {
+      "message" : "Sähköpostiosoitteesi eivät vastaa toisiaan"
+   },
+   "invalid_email_forgot": {
+    "message": "Hei tyyppi! Anna toimiva sähköpostiosoite."
+   },
+   "error_email_forgot": {
+    "message": "Hmm, en löydä antamaasi sähköpostiosoitetta. Haluatko kokeilla toista osoitetta?"
+   },
+   "invalid_email_create": {
+      "message" : "Anna toimiva sähköpostiosoite"
+   },
+   "invalid_email_login": {
+    "message": "Hei tyyppi! Anna toimiva sähköpostiosoite."
+   },
+   "invalid_email_used": {
+      "message" : "Sähköpostiosoite on jo käytössä."
+   },
+   "last_name_field_label": {
+      "message" : "Sukunimi (valinnainen)"
+   },
+   "library_never_updated": {
+      "description" : "Text shown in the case when no tag library updates have yet happened.",
+      "message": "Automaattisia päivityksiä suositellaan."
+   },
+   "library_update_already_updated": {
+      "description" : "Text shown in the case when the tag library did not need to be updated from remote servers since it's already the latest copy.",
+      "message": "Kirjasto on jo ajan tasalla."
+   },
+   "library_update_failed": {
+      "description" : "Tag library update action failed.",
+      "message": "Päivitys epäonnistui. Yritä myöhemmin uudelleen."
+   },
+   "library_update_in_progress": {
+      "description" : "Indicates an update is in progress (might have a spinner graphic next to it).",
+      "message": "Ladataan..."
+   },
+   "library_update_now_link": {
+      "message" : "Päivitä nyt."
+   },
+   "library_update_successful": {
+      "description" : "Tag library update action completed successfully.",
+      "message": "Onnistui!"
+   },
+   "library_updated_on": {
+      "description" : "Text shown when a tag library update has happened at least once.",
+      "message": "Seurantaohjelmien kirjasto synkronoitiin viimeksi $DATE$",
+      "placeholders": {
+         "date" : {
+            "content" : "$1",
+            "example": "Wed Oct 12 2011"
+         }
+      }
+   },
+   "locally_added_tracker": {
+      "description" : "Tag that was manually added by the user. This text will be displayed on the app browser next to the tag name.",
+      "message": "$APP_NAME$ (lisätty paikallisesti)",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1"
+         }
+      }
+   },
+   "lso_browser_name_filter": {
+      "description" : "Text input filter for the cookie browser. Lets you filter by/search for cookie names. Part of 'Search for cookie name'.",
+      "message": "Hae ehdolla $SEARCH_FIELD$",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "cookie name"
+         }
+      }
+   },
+   "lso_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the cookie browser search input. Should read as 'Search for cookie name'.",
+      "message": "evästeen nimi"
+   },
+   "lso_browser_type_filter": {
+      "description" : "Dropdown filter for the cookie browser. Lets you show only blocked (checked), or only unblocked (unchecked) cookies.",
+      "message": "Näytä $TYPE$",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "new_password_field_label": {
+      "message" : "Uusi salasana"
+   },
+   "new_since_last_update": {
+      "description" : "Select this to filter the tag browser to show only the tags added to the library since last update. Should read as 'Show new since last update'.",
+      "message": "uutta viimeisimmän päivityksen jälkeen"
+   },
+   "no_results": {
+      "description" : "This is shown when the user performed a search or applied some other filter so that all items got filtered out.",
+      "message": "Ei tuloksia."
+   },
+   "none": {
+      "description" : "Used to say that this item does not belong to any of the groups, as in \"Groups: None\" (as opposed to \"Groups: Group A, Group B, Group C\").",
+      "message": "Ei mitään"
+   },
+   "note": {
+      "description" : "Similar in function to a \"WARNING:\" prefix. Used for stuff like \"NOTE: Blocking tags can break pages.",
+      "message": "Huomautus:"
+   },
+   "notification_reminder1": {
+      "description" : "First line of the walkthrough reminder/notification. Sentence continued on next line.",
+      "message": "Katso Ghosteryn asetusten esittely, jos haluat tarkastella lähemmin joitakin Ghosteryn tärkeimpiä ominaisuuksia."
+   },
+   "notification_reminder2": {
+      "description" : "Second line of the walkthrough reminder/notification. Continues the sentence from previous line.",
+      "message": "jos haluat tarkastella lähemmin joitakin Ghosteryn tärkeimpiä ominaisuuksia."
+   },
+   "notification_reminder_link": {
+      "description" : "Link to the walkthrough/configuration wizard, part of the walkthrough reminder/notification.",
+      "message": "Määritä Ghostery"
+   },
+   "notification_update": {
+      "message" : "Ghosteryn tunnistekirjasto on päivitetty."
+   },
+   "notification_update_link": {
+      "description" : "Link to show recently added tags.",
+      "message": "Katso mitä uutta?"
+   },
+   "notification_upgrade": {
+      "description" : "Upgrade message. Shown after Ghostery has gotten upgraded.",
+      "message": "Hei sinä siellä! Työllensä omistautunut ja omituisen mielenkiintoinen tiimimme on paiskinut töitä hullun lailla ja julkaissut Ghosteryn uuden version."
+   },
+   "notification_upgrade_link": {
+      "description" : "Upgrade link text.",
+      "message": "Tutustu tämän version uusiin ominaisuuksiin ja ohjelmavirheiden korjauksiin."
+   },
+   "off": {
+      "message" : "Estetty"
+   },
+   "old_password_field_label": {
+      "message" : "Vanha salasana"
+   },
+   "on": {
+      "message" : "Sallittu"
+   },
+   "options_about_tab": {
+      "description" : "One of three page tabs on the options page; click to show about page.",
+      "message": "Tietoja"
+   },
+   "options_advanced_tab": {
+      "description" : "One of three page tabs on the options page; click to show advanced settings.",
+      "message": "Edistynyt"
+   },
+   "options_blocking3": {
+      "message" : "Jos estät tunnisteen, kyseinen tunniste ei pysty enää kommunikoimaan sen ulkopuolisen toimittajan kanssa."
+   },
+   "options_general_tab": {
+      "description" : "One of three page tabs on the options page; click to show general/basic settings. Selected/active by default.",
+      "message": "Yleistä"
+   },
+   "options_header": {
+      "description" : "Header that appears at the top of the options page",
+      "message": "Asetukset"
+   },
+   "options_lso_blocking3": {
+      "message" : "Jos estät evästeen, tietyt ulkopuoliset toimittajat eivät pysty tallentamaan evästeitä selaimeesi.$BREAK$$BREAK$$EM_START$$B_START$Warning!$B_END$$EM_END$ Jos tätä ominaisuutta käytetään yhtä aikaa muiden evästeidenhallintaohjelmien kuten <strong>Beef Tacon</strong>, <strong>Cookie Monsterin</strong> tai <strong>Google Opt-Outin</strong> kanssa, se voi aiheuttaa vastaamaton <b>komentosarja -virheitä</b>. Jos tämä virhe ilmenee, yritä olla poistamatta tämä ominaisuus käytöstä ja aiheuttamasta ristiriitaa lisäosille.",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "em_end": {
+            "content" : "</em>"
+         },
+         "em_start": {
+            "content" : "<em>"
+         }
+      }
+   },
+   "options_page_title": {
+      "description" : "Title of Ghostery's options page.",
+      "message": "Ghostery-asetukset"
+   },
+   "options_saving_exit_message": {
+      "description" : "Message that appears for an instant when saving settings on the options page.",
+      "message": "Tallennusasetukset"
+   },
+   "panel_advanced_options": {
+      "message" : "Lisäasetukset"
+   },
+   "panel_allow_all": {
+      "message" : "Luota sivustoon"
+   },
+   "panel_allow_all_tool_tip": {
+      "message" : "Salli kaikki seurantaohjelmat tällä sivustolla."
+   },
+   "panel_allow_all_tool_tip_needs_reload": {
+      "message" : "Napsauta ja poista luotettavista sivustoista."
+   },
+   "panel_block_all": {
+      "message" : "Rajoita sivustoa"
+   },
+   "panel_block_all_tool_tip": {
+      "message" : "Estä kaikki seurantaohjelmat tällä sivustolla."
+   },
+   "panel_block_all_tool_tip_needs_reload": {
+      "message" : "Napsauta ja poista rajoitetuista sivustoista."
+   },
+   "panel_blocking_block_or_allow": {
+      "message" : "ESTÄ tai SALLI"
+   },
+   "panel_blocking_trackers_by_category": {
+      "message" : "SEURANTAOHJELMAT LUOKITTAIN"
+   },
+   "panel_blocking_verify_account_message": {
+     "message" : "Vahvista tilisi, jos haluat synkronoida asetuksesi."
+   },
+   "panel_blocking_verify_account_title": {
+      "message" : "Vahvistamaton tili"
+   },
+   "panel_blocking_verify_account_message": {
+      "message" : "Tarkista sähköpostisi ja vahvista tilisi, jotta voit synkronoida asetuksesi ja käyttää Ghosteryn loistavia toimintoja."
+   },
+   "panel_blocking_success_message": {
+      "message": "Siistiä! Asetuksesi on synkronoitu."
+   },
+   "panel_blocking_failure_message": {
+      "message": "Dou! Asetustesi synkronointi epäonnistui. Yritä myöhemmin uudelleen."
+   },
+   "panel_button_pause_blocking": {
+      "description" : "Button located at the bottom of the findings panel that pauses blocking.",
+      "message": "Keskeytä estäminen"
+   },
+   "panel_button_resume_blocking": {
+      "description" : "Button located at the bottom of the findings panel that resumes blocking.",
+      "message": "Jatka estämistä"
+   },
+   "panel_button_whitelist_site": {
+      "description" : "Button located at the bottom of the findings panel that whitelists a site.",
+      "message": "Lisää sallittuihin sivustoihin"
+   },
+   "panel_chart_tracker": {
+      "message" : "Seurantaohjelma"
+   },
+   "panel_chart_trackers": {
+      "message" : "Seuraajat"
+   },
+   "panel_chart_view_all": {
+      "message" : "Näytä kaikki seurantaohjelmat"
+   },
+   "panel_create_account": {
+      "message" : "Luo tili"
+   },
+   "panel_email_verification_failed_title": {
+      "message" : "Hups!"
+   },
+   "panel_email_verification_failed": {
+      "message" : "Vahvistusviestisi lähettämisessä tapahtui virhe. Yritä myöhemmin uudelleen."
+   },
+   "panel_email_verification_sent": {
+      "message" : "$BOLD_HTML_STARTS$ Onnistui! $BOLD_HTML_END$ Tilin vahvistusviesti on lähetetty osoitteeseen $EMAIL$",
+      "placeholders": {
+         "email" : {
+            "content": "$1",
+            "example": "info@ghostery.com"
+         },
+         "bold_html_end": {
+            "content" : "</strong>"
+         },
+         "bold_html_starts": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "panel_forgot_password": {
+      "message" : "Unohditko salasanasi?"
+   },
+   "panel_g_allowed": {
+      "message" : "Sallittu"
+   },
+   "panel_g_blocked": {
+      "message" : "Estetty"
+   },
+   "panel_help_contact_header": {
+      "message" : "Näin voit ottaa yhteyttä meihin"
+   },
+   "panel_help_faq": {
+      "message" : "Usein kysyttyä"
+   },
+   "panel_help_feedback": {
+      "message" : "Osallistu kyselyymme"
+   },
+   "panel_help_license": {
+      "message" : "Käyttöoikeussopimus"
+   },
+   "panel_help_privacy_statement": {
+      "message" : "Tietosuojalausunto"
+   },
+   "panel_help_questions_header": {
+      "message" : "Kysymykset ja kommentit"
+   },
+   "panel_help_support": {
+      "message" : "Tuki"
+   },
+   "panel_help_title": {
+      "message" : "Ohje"
+   },
+   "panel_help_version_header": {
+      "message" : "Ghostery: $BROWSER$ -versio ",
+      "placeholders": {
+       "browser": {
+         "content": "$1",
+         "example": "Firefox"
+       }
+     }
+   },
+   "panel_menu_blocking": {
+      "message" : "Seurantaohjelmien asetukset"
+   },
+   "panel_menu_dashboard": {
+      "message" : "Seurantaohjelmien yhteenveto"
+   },
+   "panel_menu_help": {
+      "message" : "Ohje"
+   },
+   "panel_menu_myghostery": {
+      "message" : "Minun Ghosteryni"
+   },
+   "panel_menu_report_broken_site": {
+      "message" : "Ilmoita toimimattomasta sivusta"
+   },
+   "panel_menu_submit_tracker": {
+      "message" : "Kirjaa uusi seurantaohjelma"
+   },
+   "panel_menu_signin": {
+      "message" : "Kirjaudu sisään"
+   },
+   "panel_menu_signout": {
+      "message" : "Kirjaudu ulos"
+   },
+   "panel_needs_reload": {
+      "description" : "Message that appears at the bottom of the findings panel when a settings has been changed and the page needs to be reloaded to reflect these changes.",
+      "message": "$SPAN_START$Päivitä sivu tästä$SPAN_END$, jotta näet muutokset.",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"button\">"
+         }
+      }
+   },
+   "panel_no_trackers_found": {
+      "description" : "Text displayed in the findings panel's apps-div when no tags were found.",
+      "message": "Tällä sivustolla ei havaittu seurantaohjelmia"
+   },
+   "panel_not_scanned1": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Tätä sivua ei skannattu."
+   },
+   "panel_not_scanned2": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Ghostery tutkii vain http- ja https-sivuja. Siirry jollekin toiselle sivulle niin lupaan näyttää, mitä osaan."
+   },
+   "panel_settings_about": {
+      "description" : "About button from the findings panel settings bar.",
+      "message": "Palaute"
+   },
+   "panel_settings_options": {
+      "description" : "Options button from the findings panel settings bar.",
+      "message": "Asetukset"
+   },
+   "panel_settings_share": {
+      "description" : "Share button from the findings panel settings bar.",
+      "message": "Jaa"
+   },
+   "panel_settings_support": {
+      "description" : "Support button from the findings panel settings bar.",
+      "message": "Tuki"
+   },
+   "panel_pause": {
+      "message" : "Keskeytä"
+   },
+   "panel_unpause": {
+      "message" : "Jatka"
+   },
+   "paused_override_status": {
+      "message": "Esto keskeytetty"
+   },
+   "panel_pause_ghostery_tooltip": {
+      "message" : "Keskeytä Ghostery napsauttamalla"
+   },
+   "panel_unpause_ghostery_tooltip": {
+      "message" : "Ghostery on keskeytetty. Ota estotoiminto käyttöön napsauttamalla"
+   },
+   "panel_signin_success_header": {
+      "message" : "Onnistui!"
+   },
+   "panel_signin_success": {
+      "message" : "Olet kirjautunut käyttäjänä"
+   },
+   "panel_signin_success_title": {
+      "message" : "Tuuletuksen paikka! Ghostery-tilisi on käyttövalmiina!"
+   },
+   "panel_ss_allowed": {
+      "message" : "Sallittu vain tällä sivustolla"
+   },
+   "panel_ss_blocked": {
+      "message" : "Estetty vain tällä sivustolla"
+   },
+   "panel_blocking_no_trackers": {
+      "message": "Tällä sivustolla ei havaittu seurantaohjelmia"
+   },
+   "panel_blocking_not_scanned_1": {
+      "message": "Tätä sivua ei skannattu."
+   },
+   "panel_blocking_not_scanned_2": {
+      "message": "Ghostery tutkii vain http- ja https-sivuja. Siirry jollekin toiselle sivulle niin lupaan näyttää, mitä osaan."
+   },
+   "panel_sync_complete": {
+      "message" : "Asetuksesi on synkronoitu."
+   },
+   "panel_sync_settings": {
+      "message" : "Synkronoi asetukset"
+   },
+   "panel_table_allowed": {
+      "message" : "SALLITTU"
+   },
+   "panel_table_blocked": {
+      "message" : "ESTETTY"
+   },
+   "panel_table_title_category": {
+      "message" : "LUOKAT"
+   },
+   "panel_title_blocking": {
+      "message" : "Seurantaohjelmien asetukset"
+   },
+   "panel_title_change_password": {
+      "message" : "Vaihda salasana"
+   },
+   "panel_title_create_account": {
+      "message" : "Luo tili"
+   },
+   "panel_title_close": {
+      "message" : "Takaisin"
+   },
+   "panel_title_dashboard": {
+      "message" : "Seurantaohjelmien yhteenveto"
+   },
+   "panel_title_finish": {
+      "message" : "Lopeta"
+   },
+   "panel_title_forgot_password": {
+      "message" : "Unohditko salasanasi?"
+   },
+   "panel_title_not_scanned": {
+      "description" : "Text at the top of the findings panel that is displayed when a page has not been scanned by Ghostery.",
+      "message": "Sivua ei ole skannattu"
+   },
+   "panel_title_paused": {
+      "description" : "Text at the top of the findings panel that is displayed when 'pause blocking' is enabled.",
+      "message": "Estotoiminto on $SPAN_START$keskeytetty$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_title_plural": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if zero or more than one tags were found).",
+      "message": "Ghostery löysi $NUMBER$ seurantaohjelmaa",
+      "placeholders": {
+         "number" : {
+            "content" : "$1",
+            "example": 7
+         }
+      }
+   },
+   "panel_title_singular": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if only one tag was found).",
+      "message": "Ghostery löysi 1 seuraimen"
+   },
+   "panel_title_whitelisted": {
+      "description" : "Text at the top of the findings panel that is displayed when 'whitelist site' is enabled.",
+      "message": "Sivusto on $SPAN_START$sallittujen luettelossa$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_tracker_compatibility_warning": {
+      "description" : "Message that appears when a tag is known to break a specific website if blocked.",
+      "message": "Tämän seurantaohjelman estäminen voi rikkoa sivuston $SITE$ joitakin osia",
+      "placeholders": {
+         "site" : {
+            "content" : "$1",
+            "example": "store.apple.com"
+         }
+      }
+   },
+   "panel_tracker_details_no_info": {
+      "description" : "Message that appears when no tag info is available.",
+      "message": "Tästä seurantaohjelmasta ei valitettavasti ole tietoja saatavilla."
+   },
+   "panel_tracker_found_sources_title": {
+      "description" : "Title that appears when expanding a findings panel tag, above the list of found sources.",
+      "message": "Havaitun seuraajan lähde-URL:t:"
+   },
+   "panel_tracker_global_block_tooltip": {
+      "description" : "Tooltip that appears over the findings panel's tag global blocking control.",
+      "message": "Napsauta tästä, kun haluat muuttaa ohjelman $APP_NAME$ estoasetusta.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_learn_more": {
+      "message" : "Lue lisää"
+   },
+   "panel_tracker_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "Napsauta tästä, kun haluat lisätietoja ohjelmasta $APP_NAME$",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_message": {
+      "description" : "Message that appears after setting the site specific unblock to 'on' for a tag in the findings panel.",
+      "message": "Sallittu aina kohteessa $BREAK$$HOST$",
+      "placeholders": {
+         "break" : {
+            "content" : "<br>"
+         },
+         "host": {
+            "content" : "$1",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_off": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "Napsauta tästä, jos haluat sallia ohjelman $APP_NAME$ aina kohteessa $HOST$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_on": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "Napsauta tästä, jos et halua enää sallia ohjelmaa $APP_NAME$ kohteessa $HOST$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_what_is_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "Mikä on $APP_NAME$?",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_verify_account": {
+      "message" : "Vahvista tili"
+   },
+   "panel_visualize": {
+      "message" : "Selvitä seurantaohjelmien sijainti"
+   },
+   "panel_visualize_tool_tip": {
+      "message" : "Näytä tämän sivuston seurantaohjelmat visuaalisena esityksenä"
+   },
+   "password_field_label": {
+      "message" : "Salasana"
+   },
+   "password_requirements": {
+      "message" : "Salasanan on oltava vähintään 8 merkkiä pitkä"
+   },
+   "rate_ghostery_link1": {
+      "description" : "Part one of \"Like Ghostery? Rate It!\"",
+      "message": "Tykkäätkö Ghosterystä?"
+   },
+   "rate_ghostery_link2": {
+      "description" : "Part two of \"Like Ghostery? Rate It!\"",
+      "message": "Arvioi se!"
+   },
+   "save_button_label": {
+      "message" : "Tallenna"
+   },
+   "send_button_label": {
+      "message" : "Lähetä"
+   },
+   "server_error_message": {
+      "message" : "Meillä vaikuttaisi olevan teknisiä ongelmia. Yritä myöhemmin uudelleen."
+   },
+   "server_error_title": {
+      "message" : "Mutka matkassa"
+   },
+   "setup_page_category_all_blocked": {
+      "message" : "Kaikki tämän luokan seurantaohjelmat ovat estetty"
+   },
+   "setup_page_num_blocked": {
+      "message" : "Estetty"
+   },
+   "survey_link": {
+      "message" : "$LINK_START$Osallistu kyselyymme!$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "survey_link_also": {
+      "message" : "Muista myös $LINK_START$osallistua kyselyymme!$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "tag": {
+      "message" : "Tunniste"
+   },
+   "tag_description_getting": {
+      "message" : "Haetaan tunnisteen kuvausta..."
+   },
+   "tag_description_none_found": {
+      "message" : "Tunnisteen kuvausta ei löytynyt."
+   },
+   "tag_description_read_more": {
+      "message" : "Lue lisää"
+   },
+   "tags": {
+      "message" : "Tunnisteet"
+   },
+   "trackers": {
+      "message" : "Seuraajat"
+   },
+   "tags_less": {
+      "description" : "Clicking this makes the tag list smaller",
+      "message": "Näytä vähemmän tunnisteita"
+   },
+   "tags_more": {
+      "description" : "Clicking this expands the list to show all tags",
+      "message": "Näytä lisää tunnisteitä..."
+   },
+   "toggle_collapse_all": {
+      "description" : "Click this to collapse all items, hiding collapsible per-item content.",
+      "message": "Kutista kaikki"
+   },
+   "toggle_expand_all": {
+      "description" : "Click this to expand all items, revealing all content.",
+      "message": "Laajenna kaikki"
+   },
+   "toggle_select_all": {
+      "description" : "Click this to select all items.",
+      "message": "Valitse kaikki"
+   },
+   "toggle_select_none": {
+      "description" : "Click this to deselect all items.",
+      "message": "Valitse ei ketään"
+   },
+   "tracker_browser_filters_reset": {
+      "description" : "Link to reset the tag browser's display filters.",
+      "message": "Palauta haku"
+   },
+   "tracker_browser_name_filter": {
+      "description" : "Text input filter for the tag browser. Lets you filter by/search for tag names. Part of 'Search for tag name'.",
+      "message": "Hae ehdolla $SEARCH_FIELD$",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "tag name"
+         }
+      }
+   },
+   "tracker_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the tag browser search input. Should read as 'Search for tag name'.",
+      "message": "tunnisteen nimi"
+   },
+   "tracker_browser_type_filter": {
+      "description" : "Dropdown filter for the tag browser. Lets you show only blocked (checked), or only unblocked (unchecked) tags.",
+      "message": "Näytä $TYPE$",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "unblocked": {
+      "description" : "Select this to show only unblocked (unchecked) tags in the tag browser. Should read as 'Show unblocked'.",
+      "message": "esto poistettu"
+   },
+   "walkthrough_link": {
+      "description" : "Link to walkthrough/configuration wizard, shown on top of the options page.",
+      "message": "Jos haluat nähdä esittelyn Ghosteryn tärkeimmistä ominaisuuksista, kokeile $LINK_START$Ghosteryn ohjattua määritystoimintoa$LINK_END$.",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a href=\"walkthrough.html\" id=\"walkthrough-link\">"
+         }
+      }
+   },
+   "walkthrough_skip_button": {
+      "message" : "Ohita ohjattu toiminto"
+   },
+   "white_black_list_error_invalid_url": {
+      "message" : "Anna kelvollinen URL."
+   },
+   "whitelist_error_blacklist_url": {
+      "message" : "Tämä sivusto on poistettu rajoitettujen sivustojen listaltasi ja lisätty luotettavien sivustojen listallesi."
+   },
+   "whitelist_error_duplicate_url": {
+      "description" : "Options page site whitelisting error message shown when whitelisting a URL that is already in the whitelist.",
+      "message": "Tämä sivusto on jo hyväksyttyjen listalla"
+   },
+   "xul_panel_block_firefox": {
+      "description" : "In the XUL panel, this is a toggle to block a particular app.",
+      "message": "Estetäänkö $NAME$?",
+      "placeholders": {
+         "name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "xul_panel_site_specific_unblock_firefox": {
+      "description" : "In the XUL panel, this is a toggle to un-block a particular app for the web-page the user is on.",
+      "message": "Poista esto vain tästä sivustosta"
+   },
+   "xul_panel_view_source_firefox": {
+      "description" : "In the XUL panel, this is the menu option that opens the site that shows source code of the tag.",
+      "message": "Näytä komentosarjan lähde"
+   },
+   "short_description": {
+      "description": "A short description of this extension (Ghostery).",
+      "message": "Suojaa yksityisyytesi. Katso Ghosteryn avulla, kuka seuraa verkkoselailuasi."
+  }
+}

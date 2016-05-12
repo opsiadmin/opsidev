@@ -1,5 +1,5 @@
 [Package]
-version: 2
+version: 3
 depends: 
 incremental: False
 
@@ -9,7 +9,7 @@ id: firefox-addons
 name: firefox-addons
 description: firefox-addons
 advice: adblockplus & noscript
-version: 2.0
+version: 3.0
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -64,6 +64,8 @@ values: ["off", "on"]
 default: ["off"]
 
 [Changelog]
+20160512: neue versionen der addons
+
 firefox-addons (1.0-1) testing; urgency=low
 
   * Initial package

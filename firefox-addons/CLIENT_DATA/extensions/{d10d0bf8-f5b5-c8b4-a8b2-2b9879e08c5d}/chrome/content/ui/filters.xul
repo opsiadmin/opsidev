@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <!--
-  - This file is part of Adblock Plus <http://adblockplus.org/>,
-  - Copyright (C) 2006-2014 Eyeo GmbH
+  - This file is part of Adblock Plus <https://adblockplus.org/>,
+  - Copyright (C) 2006-2016 Eyeo GmbH
   -
   - Adblock Plus is free software: you can redistribute it and/or modify
   - it under the terms of the GNU General Public License version 3 as
@@ -187,7 +187,7 @@
                 <hbox align="center">
                   <deck class="titleBox" flex="1" selectedIndex="0" onselect="event.stopPropagation();">
                     <description ondblclick="if (event.button == 0) TitleEditor.start(this, true);">
-                      <description class="title" value="{subscription.title}" flex="1" crop="end"/>
+                      <description class="title" value="{getSubscriptionTitle(subscription)}" flex="1" crop="end"/>
                       (<if condition="{isExternal}">
                         <description value="&subscription.external.label;"/>
                       <else/>
@@ -246,7 +246,7 @@
               </button>
             </hbox>
 
-            <description class="warning" hidden="{!subscription.upgradeRequired}">&subscription.minVersion.warning;</description>
+            <description class="warning" hidden="{!upgradeRequired}">&subscription.minVersion.warning;</description>
             <description class="warning" hidden="{!disabledFilters}">
               &subscription.disabledFilters.warning;
               <description class="link" value="&subscription.disabledFilters.enable;" onclick="SubscriptionActions.enableFilters(this);"/>
@@ -287,7 +287,7 @@
               checked="{subscription.disabled ? 'false' : 'true'}" oncommand="SubscriptionActions.setDisabled(this, !this.checked);"/>
             <hbox align="center" flex="1">
               <deck class="titleBox" flex="1" selectedIndex="0" onselect="event.stopPropagation();">
-                <description class="title" value="{subscription.title}" crop="end" ondblclick="if (event.button == 0) TitleEditor.start(this, true);"/>
+                <description class="title" value="{getSubscriptionTitle(subscription)}" crop="end" ondblclick="if (event.button == 0) TitleEditor.start(this, true);"/>
                 <textbox oncontextmenu="event.stopPropagation();" class="titleEditor" onkeypress="TitleEditor.keyPress(event);" onblur="TitleEditor.end(true);"/>
               </deck>
             </hbox>
@@ -383,7 +383,7 @@
       _backupError="&backup.error;" _restoreError="&restore.error;"
       _restoreCompleteWarning="&restore.complete.warning;" _restoreCustomWarning="&restore.custom.warning;"
       _restoreVersionWarning="&restore.minVersion.warning;"
-      oncommand="if (event.target == this) Utils.runAsync(function() this.open = true, this);">
+      oncommand="if (event.target == this) Utils.runAsync(() => this.open = true);">
     <menupopup onpopupshowing="Backup.fillRestorePopup();">
       <menuitem id="backup" key="backup-key" label="&backup.label;…" oncommand="Backup.backupToFile();"/>
       <menuseparator/>

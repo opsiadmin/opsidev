@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -193,7 +193,7 @@ var Backup =
 
             if (Utils.confirm(window, warning, E("backupButton").getAttribute("_restoreDialogTitle")))
             {
-              let subscriptions = FilterStorage.subscriptions.filter(function(s) s instanceof SpecialSubscription);
+              let subscriptions = FilterStorage.subscriptions.filter(s => s instanceof SpecialSubscription);
               for (let i = 0; i < subscriptions.length; i++)
                 FilterStorage.removeSubscription(subscriptions[i]);
 
@@ -290,7 +290,7 @@ var Backup =
    */
   backupCustomFilters: function(/**nsIFile*/ file)
   {
-    let subscriptions = FilterStorage.subscriptions.filter(function(s) s instanceof SpecialSubscription);
+    let subscriptions = FilterStorage.subscriptions.filter(s => s instanceof SpecialSubscription);
     let minVersion = "2.0"
     let list = [];
     for (let i = 0; i < subscriptions.length; i++)
@@ -299,7 +299,7 @@ var Backup =
       let typeAddition = "";
       if (subscription.defaults)
         typeAddition = "/" + subscription.defaults.join("/");
-      list.push("! [" + subscription.title + "]" + typeAddition);
+      list.push("! [" + getSubscriptionTitle(subscription) + "]" + typeAddition);
       for (let j = 0; j < subscription.filters.length; j++)
       {
         let filter = subscription.filters[j];
@@ -313,6 +313,12 @@ var Backup =
 
         if (filter instanceof ElemHideException && Services.vc.compare(minVersion, "2.1") < 0)
           minVersion = "2.1";
+
+        if (filter instanceof RegExpFilter && filter.contentType & (RegExpFilter.typeMap.GENERICHIDE | RegExpFilter.typeMap.GENERICBLOCK) && Services.vc.compare(minVersion, "2.6.12") < 0)
+          minVersion = "2.6.12";
+
+        if (filter instanceof CSSPropertyFilter && Services.vc.compare(minVersion, "2.7.3") < 0)
+          minVersion = "2.7.3";
       }
     }
     list.unshift("[Adblock Plus " + minVersion + "]");
@@ -325,13 +331,7 @@ var Backup =
     if (checksum)
       list.splice(1, 0, "! Checksum: " + checksum);
 
-    function generator()
-    {
-      for (let i = 0; i < list.length; i++)
-        yield list[i];
-    }
-
-    IO.writeToFile(file, generator(), function(e)
+    IO.writeToFile(file, list, function(e)
     {
       if (e)
       {

@@ -1,0 +1,1461 @@
+{
+   "account_creation_privacy_statement" : {
+      "message" : "J'accepte les pratiques de Ghostery concernant les données, énoncées dans sa $LINK_PS_START$Déclaration de confidentialité$LINK_PS_END$ et dans les conditions de son $LINK_UA_START$Contrat de licence$LINK_UA_END$.",
+      "placeholders": {
+         "link_ps_end" : {
+            "content" : "</a>"
+         },
+         "link_ps_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-privacy-statement/\">"
+         },
+         "link_ua_end": {
+            "content" : "</a>"
+         },
+         "link_ua_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/about-us/privacy-statements/ghostery-browser-extension/ghostery-browser-extension-end-user-license-agreem/\">"
+         }
+      }
+   },
+   "account_signin_privacy_statement": {
+      "message": "Votre compte vous permet d'accéder à des fonctionnalités avancées qui ne sont pas liées aux données de mouchards que vous avez choisi de partager avec nous. Pour des informations spécifiques sur notre utilisation des données de compte, consultez notre $LINK_FAQ_START$FAQ$LINK_FAQ_END$.",
+      "placeholders": {
+         "link_faq_end" : {
+            "content" : "</a>"
+         },
+         "link_faq_start": {
+            "content" : "<a target=\"_blank\" href=\"https://www.ghostery.com/support/faq/ghostery-add-on/\">"
+         }
+      }
+   },
+   "addon_compatibility_warning_firefox": {
+      "description" : "Pop up warning that appears when one or more incompatible extensions are installed alongside Ghostery.",
+      "message": "Il semble que vous utilisez également <strong>$ADDONS$</strong>. Malheureusement, le système Ghostery de blocage des cookies est réputé pour poser problème avec cette extension, et il a été <strong>désactivé</strong>. Pour le réactiver, veuillez désactiver ou supprimer <strong>$ADDONS$</strong> à l'aide du bouton gestionnaire d'extensions, et redémarrez votre navigateur si vous y êtes invité.",
+      "placeholders": {
+         "addons" : {
+            "content" : "$1",
+            "example": "Yahoo! Toolbar Addon"
+         }
+      }
+   },
+   "alert_bubble": {
+      "description" : "Ghostery's alert bubble is the purple, semi-translucent notification panel that pops up as you browse to show detected tags on the page.",
+      "message": "info-bulle d'alerte"
+   },
+   "alert_bubble_gear_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble's gear.",
+      "message": "Cliquez pour configurer l'info-bulle d'alerte"
+   },
+   "alert_bubble_tooltip": {
+      "description" : "Tooltip that appears when hovering over the alert bubble.",
+      "message": "Cliquez pour ignorer l'info-bulle d'alerte"
+   },
+   "all": {
+      "description" : "Default setting in the 'filter by type' dropdown for the tag browser. Doesn't filter anything out. Should read as 'Show all'.",
+      "message": "tout"
+   },
+   "backup_export": {
+      "description" : "Instructions for exporting Ghostery settings.",
+      "message": "Cliquez sur ce bouton pour enregistrer une copie des préférences Ghostery afin de les sauvegarder ou de les transférer sur un autre ordinateur."
+   },
+   "backup_export_button": {
+      "description" : "Button for exporting Ghostery settings.",
+      "message": "Enregistrer le fichier de sauvegarde"
+   },
+   "backup_export_header": {
+      "description" : "Section header for Export section of the Import/Export page.",
+      "message": "Exportation"
+   },
+   "backup_import": {
+      "description" : "Instructions for importing Ghostery settings.",
+      "message": "Choisissez le fichier de sauvegarde créé précédemment que vous souhaitez utiliser, puis cliquez sur le bouton \"Importer\"."
+   },
+   "backup_import_button": {
+      "description" : "Button for importing Ghostery settings.",
+      "message": "Importer"
+   },
+   "backup_import_error": {
+      "description" : "Error message shown when importing a bad file.",
+      "message": "$SPAN_START$Fichier de sauvegarde invalide.$SPAN_END$ Veuillez contacter $A_START$l'assistance$A_END$.",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"https://getsatisfaction.com/ghostery\">"
+         },
+         "span_end": {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"red\">"
+         }
+      }
+   },
+   "backup_import_header": {
+      "description" : "Section header for Import section of the Import/Export page.",
+      "message": "Importer"
+   },
+   "backup_import_warning": {
+      "description" : "Warning before importing Ghostery settings.",
+      "message": "ATTENTION Vos paramètres Ghostery actuels vont être remplacés."
+   },
+   "backup_options_link": {
+      "description" : "Link back to the main options page.",
+      "message": "Retour à la page des options"
+   },
+   "backup_page_title": {
+      "description" : "Title of Ghostery's Import/Export settings page.",
+      "message": "Importation\/Exportation des paramètres Ghostery"
+   },
+   "banner_check_your_email_title": {
+      "message" : "Veuillez consulter vos e-mails rapidement, vous allez recevoir un lien pour réinitialiser votre mot de passe."
+   },
+   "banner_no_such_account_message": {
+      "message" : "Zut ! On dirait que je ne reconnais pas cette combinaison nom d'utilisateur et mot de passe. Veuillez réessayer. "
+   },
+   "banner_no_such_account_title": {
+      "message" : "E-mail ou mot de passe incorrect"
+   },
+   "banner_wrong_email_message": {
+      "message" : "Ghostery n'a pas trouvé cette adresse e-mail. Réessayez."
+   },
+   "banner_wrong_email_title": {
+      "message" : "C'est inquiétant."
+   },
+   "blacklist_error_duplicate_url": {
+      "message" : "Ce site est déjà à accès limité."
+   },
+   "blacklist_error_whitelist_url": {
+      "message" : "Ce site a été supprimé de votre liste de sites de confiance, et ajouté à votre liste de sites à accès limité."
+   },
+   "blocked": {
+      "description" : "Select this to show only blocked (checked) tags in the tag browser. Should read as 'Show blocked'.",
+      "message": "bloqué"
+   },
+   "blocked_redirect_action_always_title": {
+      "description" : "Title for the 'Allow always and reload' button on the blocked redirect page.",
+      "message": "Toujours autoriser et recharger."
+   },
+   "blocked_redirect_action_through_once_title": {
+      "description" : "Title for the 'Allow once' button on the blocked redirect page.",
+      "message": "Autoriser les tags une fois, jusqu'à ce que la destination finale soit atteinte. "
+   },
+   "blocked_redirect_page_title": {
+      "description" : "Page title for blocked_redirect.html which appears when a redirect is blocked.",
+      "message": "Ghostery a empêché une redirection."
+   },
+   "blocked_redirect_prevent": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked. Should appear inside \"redirect-prevent\" div.",
+      "message": "Ghostery a empêché une redirection de $BREAK$ $SP_O_START$$ORIGIN$$SP_END$ vers $SP_D_START$$DESTINATION$$SP_END$, $BREAK$qui fait partie de $A_START$$APP$$A_END$. $BREAK$",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a id=\"name\" href=\"$4\" target=\"_blank\">"
+         },
+         "app": {
+            "content" : "$3",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "destination": {
+            "content" : "$2"
+         },
+         "origin": {
+            "content" : "$1"
+         },
+         "sp_d_start": {
+            "content" : "<span id=\"destination\">"
+         },
+         "sp_end": {
+            "content" : "</span>"
+         },
+         "sp_o_start": {
+            "content" : "<span id=\"origin\">"
+         }
+      }
+   },
+   "blocked_redirect_url_content": {
+      "description" : "Text appearing on block_redirect.html when a redirect is blocked and a final 'destination' URL is successfully found.",
+      "message": "Ce tag s'affiche et semble rediriger vers  $BREAK$ $A_START$$REDIRECT_URL$$A_END$ Si ce lien semble incorrect et si vous souhaitez continuer, cliquez sur l'icône ci-ressous pour autoriser $APP$ et rechargez la page.",
+      "placeholders": {
+         "a_end" : {
+            "content" : "</a>"
+         },
+         "a_start": {
+            "content" : "<a href=\"$1\" class=\"ellipsis\" title=\"$1\">"
+         },
+         "app": {
+            "content" : "$2",
+            "example": "DoubleClick"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "redirect_url": {
+            "content" : "$1"
+         }
+      }
+   },
+   "blocking_filter_name": {
+      "description" : "Description of current search filter",
+      "message": "Afficher $NUMBER$ des tags correspondant à '$NAME$'",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         }
+      }
+   },
+   "blocking_filter_name_tags": {
+      "description" : "Description of current search filter",
+      "message": "Afficher des $NUMBER$ tags correspondant à '$NAME$' et comprenant les tags : $TAGS$",
+      "placeholders": {
+         "name" : {
+            "content" : "<strong>$2</strong>",
+            "example": "google"
+         },
+         "number": {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$3</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_filter_tags": {
+      "description" : "Description of current search filter",
+      "message": "Afficher les $NUMBER$ tags comprenant les tags : $TAGS$",
+      "placeholders": {
+         "number" : {
+            "content" : "<strong>$1</strong>"
+         },
+         "tags": {
+            "content" : "<strong>$2</strong>",
+            "example": "Behavior Tracking, Popups, Social"
+         }
+      }
+   },
+   "blocking_summary_all_small_firefox": {
+      "description" : "All tags / cookies are selected.",
+      "message": "bloquer $B_START$tous$B_END$",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_none_small_firefox": {
+      "description" : "No tags / cookies are selected.",
+      "message": "bloquer $B_START$aucun$B_END$",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "blocking_summary_small_firefox": {
+      "description" : "Some of the tags / cookies are selected (X out of Y total).",
+      "message": "bloquer $NUMBER_SELECTED$ sur $NUMBER_TOTAL$",
+      "placeholders": {
+         "number_selected" : {
+            "content" : "<strong>$1",
+            "example": 130
+         },
+         "number_total": {
+            "content" : "$2</strong>",
+            "example": 132
+         }
+      }
+   },
+   "box_dismiss_0s": {
+      "message" : "Rejeter $SPAN_START$jamais$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_15s": {
+      "message" : "Rejeter $SPAN_START$après 15 secondes$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_30s": {
+      "message" : "Rejeter $SPAN_START$après 30 secondes$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_dismiss_5s": {
+      "message" : "Rejeter $SPAN_START$après 5 secondes$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_bl": {
+      "message" : "Afficher $SPAN_START$en bas à gauche$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_br": {
+      "message" : "Afficher $SPAN_START$en bas à droitet$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tl": {
+      "message" : "Afficher $SPAN_START$en haut à gauche$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_display_tr": {
+      "message" : "Afficher $SPAN_START$en haut à droite$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span>"
+         }
+      }
+   },
+   "box_hide": {
+      "message" : "Masquer la fenêtre"
+   },
+   "box_hide_expanded": {
+      "message" : "Masquer la boîte violette"
+   },
+   "box_looking": {
+      "message" : "Recherche"
+   },
+   "box_options_expanded": {
+      "message" : "Options"
+   },
+   "box_settings": {
+      "message" : "Paramètres"
+   },
+   "box_settings_expanded": {
+      "message" : "Mes paramètres Ghostery"
+   },
+   "box_tracker": {
+      "message" : "Mouchard"
+   },
+   "box_trackers": {
+      "message" : "Mouchards"
+   },
+   "browser_button_label_firefox": {
+      "description" : "Ghostery's browser button label, displayed on Firefox's addon customization panel.",
+      "message": "Ghostery"
+   },
+   "browser_button_tooltip": {
+      "description" : "Ghostery's browser button tooltip.",
+      "message": "Afficher les résultats de Ghostery"
+   },
+   "button_cancel": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "Annuler"
+   },
+   "button_ok": {
+      "description" : "Part of a confirmation dialog. Clicking this cancels the action.",
+      "message": "OK"
+   },
+   "category_ad": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Publicité"
+   },
+   "category_ad_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "Mouchards publicitaires"
+   },
+   "category_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Analyses"
+   },
+   "category_analytics_desc": {
+      "description" : "User-facing description for the Analytics tag category.",
+      "message": "Mouchards de recherche ou d'analyse pour les éditeurs de sites Web."
+   },
+   "category_privacy": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Confidentialité"
+   },
+   "category_privacy_desc": {
+      "description" : "User-facing description for the Privacy tag category.",
+      "message": "Déclarations de confidentialité et certains autres éléments concernant la confidentialité."
+   },
+   "category_tracker": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Signaux"
+   },
+   "category_tracker_desc": {
+      "description" : "User-facing description for the Beacons tag category.",
+      "message": "Les mouchards qui ne servent qu'à assurer le suivi (balises, pixels de conversion, pixels de segmentation d'audience, etc.) entrent dans la catégorie Balises."
+   },
+   "category_widget": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Widgets"
+   },
+   "category_widget_desc": {
+      "description" : "User-facing description for the Widgets tag category.",
+      "message": "Mouchards garantissant les fonctionnalités de la page (boutons de réseaux sociaux, formulaires de commentaires, etc.)."
+   },
+   "category_advertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Publicité"
+   },
+   "category_advertising_desc": {
+      "description" : "User-facing description for the Advertising tag category.",
+      "message": "Assure des services liés à la publicité, comme le recueil de données, l'analyse ou le reciblage de comportement."
+   },
+   "category_comments": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Commentaires"
+   },
+   "category_comments_desc": {
+      "description" : "User-facing description for the Comments tag category.",
+      "message": "Active des sections à commentaires pour les articles et les revues de produits."
+   },
+   "category_customer_interaction": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Interaction entre consommateurs"
+   },
+   "category_customer_interaction_desc": {
+      "description" : "User-facing description for the Customer Interaction tag category.",
+      "message": "Comprend un chat, une messagerie e-mail, une assistance clientèle et d'autres outils de communication."
+   },
+   "category_essential": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Essentiel"
+   },
+   "category_essential_desc": {
+      "description" : "User-facing description for the Essential tag category.",
+      "message": "Comprend des gestionnaires de balises, des notices de confidentialité, et des technologies essentielles au fonctionnement d'un site Web."
+   },
+   "category_pornvertising": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Publicité pour adultes"
+   },
+   "category_pornvertising_desc": {
+      "description" : "User-facing description for the Adult Advertising tag category.",
+      "message": "Assure une technologie publicitaire conçue spécialement pour les sites pour adultes."
+   },
+   "category_site_analytics": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Analyse du site"
+   },
+   "category_site_analytics_desc": {
+      "description" : "User-facing description for the Site Analytics tag category.",
+      "message": "Rassemble et analyse les données liées à l'utilisation et aux performances d'un site."
+   },
+   "category_social_media": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Médias sociaux"
+   },
+   "category_social_media_desc": {
+      "description" : "User-facing description for the Social Media tag category.",
+      "message": "Intègre des fonctionnalités liées aux sites de réseaux sociaux."
+   },
+   "category_audio_video_player": {
+      "description" : "Ghostery organizes tags by category. This is one of several tag categories.",
+      "message": "Lecteur audio\/vidéo"
+   },
+   "category_audio_video_player_desc": {
+      "description" : "User-facing description for the Audio/Video Player tag category.",
+      "message": "Autorise la publication, la distribution et l'optimisation des contenus vidéo et audio sur les sites Web."
+   },
+   "change_password_message": {
+      "message" : "Le nouveau mot de passe doit comporter au moins 8 caractères, un chiffre et un symbole."
+   },
+   "click2play_allow_always_tooltip": {
+      "description" : "Tooltip that appears over the 'allow always' click2play button.",
+      "message": "Autorisez et rechargez."
+   },
+   "click2play_allow_once_button_tooltip": {
+      "description" : "Tooltip that appears over the click2play replacement for 'social' buttons.",
+      "message": "Ghostery a bloqué $APP_NAME$. Cliquez ici pour l'autoriser et le charger juste pour cette fois.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Twitter Button"
+         }
+      }
+   },
+   "click2play_allow_once_tooltip": {
+      "description" : "Tooltip that appears over the 'allow once' click2play button.",
+      "message": "Autorisez une fois et rechargez."
+   },
+   "click2play_blocked": {
+      "message" : "Ghostery a bloqué $APP_NAME$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "SoundCloud"
+         }
+      }
+   },
+   "click2play_comment_form": {
+     "message": "Ghostery a bloqué les commentaires émis par $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_review_form": {
+     "message": "Ghostery a bloqué les revues émises par $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_video_form": {
+     "message": "Ghostery a bloqué le lecteur vidéo $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "click2play_survey_form": {
+     "message": "Ghostery a bloqué l'enquête émise par $NAME$.",
+     "placeholders": {
+       "name": {
+         "content": "$1",
+         "example": "Disqus"
+       }
+     }
+   },
+   "company_about": {
+      "description" : "Header for company profiles.",
+      "message": "À propos de $COMPANY$ :",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_affiliations": {
+      "message" : "Affiliations dans l'industrie :"
+   },
+   "company_description": {
+      "message" : "Description de la société"
+   },
+   "company_in_their_own_words": {
+      "description" : "Label for a description of the company that is provided by the company itself",
+      "message": "Avec leurs propres mots"
+   },
+   "company_operates": {
+      "description" : "Followed by a list of products this company offers.",
+      "message": "$COMPANY$ exploite :",
+      "placeholders": {
+         "company" : {
+            "content" : "$1",
+            "example": "Google"
+         }
+      }
+   },
+   "company_profile_error": {
+      "message" : "Impossible de charger les données de ghostery.com"
+   },
+   "company_profile_link": {
+      "message" : "Passer au profil complet"
+   },
+   "company_tags": {
+      "description" : "Tags here refers to categories we use to group companies based on their business (ie Video Player, Popups, Polls)",
+      "message": "Balises :"
+   },
+   "company_website": {
+      "message" : "Site internet:"
+   },
+   "confirm_new_password_field_label": {
+      "message" : "Confirmer le nouveau mot de passe"
+   },
+   "copyright": {
+      "description" : "Copyright message, shown in page footers.",
+      "message": "$C$ $YEAR$ $GHOSTERY$, une filiale de $COMPANY_ADDRESS$",
+      "placeholders": {
+         "c" : {
+            "content" : "&copy;"
+         },
+         "company_address": {
+            "content" : "$1",
+            "example": "GHOSTERY, Inc., Such-and-such Street, Such-and-such Floor, New York, NY, Zip Code"
+         },
+         "ghostery": {
+            "content" : "<a href='https://www.ghostery.com' target='_blank'>Ghostery</a>"
+         },
+         "year": {
+            "content" : "2015"
+         }
+      }
+   },
+   "dismiss": {
+      "description" : "Text for a button or link to close a notification.",
+      "message": "Rejeter"
+   },
+   "email_preferences_1": {
+      "message" : "Oui, je souhaite recevoir des informations sur les produits ou services liés à mon expérience de navigation."
+   },
+   "email_preferences_2": {
+      "message" : "Tenez-moi informé des nouvelles versions des produits."
+   },
+   "email_preferences_header": {
+      "message" : "Préférences des e-mails"
+   },
+   "email_confirm_field_label": {
+      "message" : "Confirmer l'e-mail"
+   },
+   "email_field_label": {
+      "message" : "E-mail"
+   },
+   "error_email_forgot": {
+      "message" : "Essayez un autre e-mail, nous ne connaissons pas celui-ci."
+   },
+   "firefox_tools_menu_database_update": {
+      "description" : "Ghostery's update database menu label dipslayed under the ghostery menu.",
+      "message": "Mettre à jour les listes de bogues"
+   },
+   "first_name_field_label": {
+      "message" : "Prénom (facultatif)"
+   },
+   "forgot_password_message": {
+      "message" : "Allez, ça arrive à tout le monde. Nous allons vous envoyer des instructions par e-mail pour réinitialiser votre mot de passe."
+   },
+   "ghostery_logo": {
+      "description" : "Alt. text for the Ghostery logo graphic in the header on options and walkthrough pages.",
+      "message": "Logo Ghostery"
+   },
+   "invalid_email": {
+      "message" : "Mince ! Cet e-mail ne figure pas sur notre système."
+   },
+   "invalid_email_confirmation": {
+      "message" : "Vos e-mails ne correspondent pas."
+   },
+   "invalid_email_forgot": {
+    "message": "Hey, vous devez saisir une adresse e-mail authentique. "
+   },
+   "error_email_forgot": {
+    "message": "Hmm, je ne trouve pas ce e-mail. Vous pouvez peut-être en essayer un autre ?"
+   },
+   "invalid_email_create": {
+      "message" : "Veuillez saisir une adresse e-mail valide. "
+   },
+   "invalid_email_login": {
+    "message": "Hey, vous devez saisir une adresse e-mail authentique. "
+   },
+   "invalid_email_used": {
+      "message" : "Cet e-mail est déjà utilisé."
+   },
+   "last_name_field_label": {
+      "message" : "Nom (facultatif)"
+   },
+   "library_never_updated": {
+      "description" : "Text shown in the case when no tag library updates have yet happened.",
+      "message": "Les mises à jour automatiques sont fortement recommandées."
+   },
+   "library_update_already_updated": {
+      "description" : "Text shown in the case when the tag library did not need to be updated from remote servers since it's already the latest copy.",
+      "message": "Bibliothèque déjà à jour."
+   },
+   "library_update_failed": {
+      "description" : "Tag library update action failed.",
+      "message": "Désolé, la mise à jour a échoué. Veuillez réessayer plus tard."
+   },
+   "library_update_in_progress": {
+      "description" : "Indicates an update is in progress (might have a spinner graphic next to it).",
+      "message": "Mise à jour en cours..."
+   },
+   "library_update_now_link": {
+      "message" : "Effectuez une mise à jour maintenant."
+   },
+   "library_update_successful": {
+      "description" : "Tag library update action completed successfully.",
+      "message": "Réussi !"
+   },
+   "library_updated_on": {
+      "description" : "Text shown when a tag library update has happened at least once.",
+      "message": "La bibliothèque de mouchards a été synchronisée pour la dernière fois le $DATE$",
+      "placeholders": {
+         "date" : {
+            "content" : "$1",
+            "example": "Wed Oct 12 2011"
+         }
+      }
+   },
+   "locally_added_tracker": {
+      "description" : "Tag that was manually added by the user. This text will be displayed on the app browser next to the tag name.",
+      "message": "$APP_NAME$ (Ajoutés localement)",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1"
+         }
+      }
+   },
+   "lso_browser_name_filter": {
+      "description" : "Text input filter for the cookie browser. Lets you filter by/search for cookie names. Part of 'Search for cookie name'.",
+      "message": "Rechercher $SEARCH_FIELD$",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "cookie name"
+         }
+      }
+   },
+   "lso_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the cookie browser search input. Should read as 'Search for cookie name'.",
+      "message": "nom du cookie"
+   },
+   "lso_browser_type_filter": {
+      "description" : "Dropdown filter for the cookie browser. Lets you show only blocked (checked), or only unblocked (unchecked) cookies.",
+      "message": "Afficher $TYPE$",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "new_password_field_label": {
+      "message" : "Nouveau mot de passe"
+   },
+   "new_since_last_update": {
+      "description" : "Select this to filter the tag browser to show only the tags added to the library since last update. Should read as 'Show new since last update'.",
+      "message": "nouveau depuis la dernière mise à jour"
+   },
+   "no_results": {
+      "description" : "This is shown when the user performed a search or applied some other filter so that all items got filtered out.",
+      "message": "Aucun résultat."
+   },
+   "none": {
+      "description" : "Used to say that this item does not belong to any of the groups, as in \"Groups: None\" (as opposed to \"Groups: Group A, Group B, Group C\").",
+      "message": "Aucun"
+   },
+   "note": {
+      "description" : "Similar in function to a \"WARNING:\" prefix. Used for stuff like \"NOTE: Blocking tags can break pages.",
+      "message": "Remarque :"
+   },
+   "notification_reminder1": {
+      "description" : "First line of the walkthrough reminder/notification. Sentence continued on next line.",
+      "message": "Consultez la présentation de la configuration de Ghostery pour en savoir plus sur les fonctionnalités principales de Ghostery."
+   },
+   "notification_reminder2": {
+      "description" : "Second line of the walkthrough reminder/notification. Continues the sentence from previous line.",
+      "message": "pour obtenir une description précise de certaines fonctions essentielles de Ghostery."
+   },
+   "notification_reminder_link": {
+      "description" : "Link to the walkthrough/configuration wizard, part of the walkthrough reminder/notification.",
+      "message": "Configurer Ghostery"
+   },
+   "notification_update": {
+      "message" : "La bibliothèque de tags Ghostery a été mise à jour."
+   },
+   "notification_update_link": {
+      "description" : "Link to show recently added tags.",
+      "message": "Cliquez ici pour découvrir les nouveautés"
+   },
+   "notification_upgrade": {
+      "description" : "Upgrade message. Shown after Ghostery has gotten upgraded.",
+      "message": "Salut ! Notre équipe dévouée et singulièrement attirante a travaillé dur pour lancer une nouvelle version de Ghostery."
+   },
+   "notification_upgrade_link": {
+      "description" : "Upgrade link text.",
+      "message": "Venez découvrir ces nouvelles super fonctionnalités et les réparations de incidents."
+   },
+   "off": {
+      "message" : "Bloqué"
+   },
+   "old_password_field_label": {
+      "message" : "Ancien mot de passe"
+   },
+   "on": {
+      "message" : "Autorisé"
+   },
+   "options_about_tab": {
+      "description" : "One of three page tabs on the options page; click to show about page.",
+      "message": "A propos"
+   },
+   "options_advanced_tab": {
+      "description" : "One of three page tabs on the options page; click to show advanced settings.",
+      "message": "Avancé"
+   },
+   "options_blocking3": {
+      "message" : "Lorsque vous bloquez un tag, ce dernier ne peut plus communiquer avec son fournisseur tiers."
+   },
+   "options_general_tab": {
+      "description" : "One of three page tabs on the options page; click to show general/basic settings. Selected/active by default.",
+      "message": "Général"
+   },
+   "options_header": {
+      "description" : "Header that appears at the top of the options page",
+      "message": "Options"
+   },
+   "options_lso_blocking3": {
+      "message" : "Lorsque vous bloquez un cookie, les fournisseurs tiers sélectionnés ne peuvent plus écrire des cookies sur votre navigateur.$BREAK$$BREAK$$EM_START$$B_START$Attention !$B_END$$EM_END$ Si vous associez cette fonctionnalité à d'autres extensions de surveillance des cookies telles que <strong>Beef Taco</strong>, <strong>Cookie Monster</strong>, et <strong>Google Opt-Out</strong>, cette fonctionnalité peut provoquer des erreurs <b>d'absence de réponse de certains scripts</b>. Si vous êtes concerné par cette erreur, veuillez essayer de désactiver cette fonctionnalité ou les extensions conflictuelles.",
+      "placeholders": {
+         "b_end" : {
+            "content" : "</strong>"
+         },
+         "b_start": {
+            "content" : "<strong>"
+         },
+         "break": {
+            "content" : "<br>"
+         },
+         "em_end": {
+            "content" : "</em>"
+         },
+         "em_start": {
+            "content" : "<em>"
+         }
+      }
+   },
+   "options_page_title": {
+      "description" : "Title of Ghostery's options page.",
+      "message": "Options Ghostery"
+   },
+   "options_saving_exit_message": {
+      "description" : "Message that appears for an instant when saving settings on the options page.",
+      "message": "Options d'enregistrement"
+   },
+   "panel_advanced_options": {
+      "message" : "Paramètres avancés"
+   },
+   "panel_allow_all": {
+      "message" : "Faire confiance à ce site"
+   },
+   "panel_allow_all_tool_tip": {
+      "message" : "Autoriser tous les mouchards sur ce site."
+   },
+   "panel_allow_all_tool_tip_needs_reload": {
+      "message" : "Cliquez pour retirer des sites de confiance."
+   },
+   "panel_block_all": {
+      "message" : "Limiter l'accès à ce site"
+   },
+   "panel_block_all_tool_tip": {
+      "message" : "Bloquer tous les mouchards sur ce site."
+   },
+   "panel_block_all_tool_tip_needs_reload": {
+      "message" : "Cliquez pour le retirer des sites à accès limité."
+   },
+   "panel_blocking_block_or_allow": {
+      "message" : "BLOQUER ou AUTORISER"
+   },
+   "panel_blocking_trackers_by_category": {
+      "message" : "MOUCHARDS PAR CATÉGORIE"
+   },
+   "panel_blocking_verify_account_message": {
+     "message" : "Pour synchroniser vos paramètres, veuillez vérifier votre compte."
+   },
+   "panel_blocking_verify_account_title": {
+      "message" : "Compte non-vérifié"
+   },
+   "panel_blocking_verify_account_message": {
+      "message" : "Pour synchroniser vos paramètres et accéder à de super fonctionnalités Ghostery, veuillez consulter vos e-mails pour vérifier votre compte."
+   },
+   "panel_blocking_success_message": {
+      "message": "Youpi, vos paramètres sont synchronisés."
+   },
+   "panel_blocking_failure_message": {
+      "message": "Doh, vos paramètres ne se sont pas synchronisés. Veuillez réessayer plus tard."
+   },
+   "panel_button_pause_blocking": {
+      "description" : "Button located at the bottom of the findings panel that pauses blocking.",
+      "message": "Suspendre le blocage"
+   },
+   "panel_button_resume_blocking": {
+      "description" : "Button located at the bottom of the findings panel that resumes blocking.",
+      "message": "Reprendre le blocage"
+   },
+   "panel_button_whitelist_site": {
+      "description" : "Button located at the bottom of the findings panel that whitelists a site.",
+      "message": "Autoriser le site web"
+   },
+   "panel_chart_tracker": {
+      "message" : "Mouchard"
+   },
+   "panel_chart_trackers": {
+      "message" : "Mouchards"
+   },
+   "panel_chart_view_all": {
+      "message" : "Consulter tous les mouchards"
+   },
+   "panel_create_account": {
+      "message" : "Créer un compte"
+   },
+   "panel_email_verification_failed_title": {
+      "message" : "Oups !"
+   },
+   "panel_email_verification_failed": {
+      "message" : "Une erreur s'est produite lors de l'envoi de l'e-mail de vérification. Veuillez réessayer plus tard."
+   },
+   "panel_email_verification_sent": {
+      "message" : "$BOLD_HTML_STARTS$ Réussite ! $BOLD_HTML_END$ Un e-mail de vérification du compte a été envoyé à $EMAIL$",
+      "placeholders": {
+         "email" : {
+            "content": "$1",
+            "example": "info@ghostery.com"
+         },
+         "bold_html_end": {
+            "content" : "</strong>"
+         },
+         "bold_html_starts": {
+            "content" : "<strong>"
+         }
+      }
+   },
+   "panel_forgot_password": {
+      "message" : "Mot de passe oublié ?"
+   },
+   "panel_g_allowed": {
+      "message" : "Autorisé"
+   },
+   "panel_g_blocked": {
+      "message" : "Bloqué"
+   },
+   "panel_help_contact_header": {
+      "message" : "Comment nous contacter"
+   },
+   "panel_help_faq": {
+      "message" : "Foire aux questions"
+   },
+   "panel_help_feedback": {
+      "message" : "Participez à notre enquête"
+   },
+   "panel_help_license": {
+      "message" : "Contrat de licence"
+   },
+   "panel_help_privacy_statement": {
+      "message" : "Déclaration de confidentialité"
+   },
+   "panel_help_questions_header": {
+      "message" : "Questions et commentaires"
+   },
+   "panel_help_support": {
+      "message" : "Assistance"
+   },
+   "panel_help_title": {
+      "message" : "Aide"
+   },
+   "panel_help_version_header": {
+      "message" : "Ghostery pour la version $BROWSER$ ",
+      "placeholders": {
+       "browser": {
+         "content": "$1",
+         "example": "Firefox"
+       }
+     }
+   },
+   "panel_menu_blocking": {
+      "message" : "Paramètres des mouchards"
+   },
+   "panel_menu_dashboard": {
+      "message" : "Résumé des mouchards"
+   },
+   "panel_menu_help": {
+      "message" : "Aide"
+   },
+   "panel_menu_myghostery": {
+      "message" : "Mon Ghostery"
+   },
+   "panel_menu_report_broken_site": {
+      "message" : "Signaler la séparation de page"
+   },
+   "panel_menu_submit_tracker": {
+      "message" : "Soumettre un nouveau mouchard"
+   },
+   "panel_menu_signin": {
+      "message" : "S'inscrire"
+   },
+   "panel_menu_signout": {
+      "message" : "Se déconnecter"
+   },
+   "panel_needs_reload": {
+      "description" : "Message that appears at the bottom of the findings panel when a settings has been changed and the page needs to be reloaded to reflect these changes.",
+      "message": "$SPAN_START$Cliquez pour actualiser la page$SPAN_END$ et voir les modifications.",
+      "placeholders": {
+         "span_end" : {
+            "content" : "</span>"
+         },
+         "span_start": {
+            "content" : "<span class=\"button\">"
+         }
+      }
+   },
+   "panel_no_trackers_found": {
+      "description" : "Text displayed in the findings panel's apps-div when no tags were found.",
+      "message": "Aucun mouchard n'a été détecté sur cette page"
+   },
+   "panel_not_scanned1": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Cette page n'a pas été analysée."
+   },
+   "panel_not_scanned2": {
+      "description" : "Text displayed in the findings panel's apps-div when the page has not been scanned.",
+      "message": "Ghostery ne scanne que les pages « http » et « https ». Rendez-vous sur une autre page, et je vous promets qu'on fera le travail."
+   },
+   "panel_settings_about": {
+      "description" : "About button from the findings panel settings bar.",
+      "message": "Opinion"
+   },
+   "panel_settings_options": {
+      "description" : "Options button from the findings panel settings bar.",
+      "message": "Options"
+   },
+   "panel_settings_share": {
+      "description" : "Share button from the findings panel settings bar.",
+      "message": "Partager"
+   },
+   "panel_settings_support": {
+      "description" : "Support button from the findings panel settings bar.",
+      "message": "Assistance"
+   },
+   "panel_pause": {
+      "message" : "Suspendre"
+   },
+   "panel_unpause": {
+      "message" : "Reprendre"
+   },
+   "paused_override_status": {
+      "message": "Le blocage est suspendu"
+   },
+   "panel_pause_ghostery_tooltip": {
+      "message" : "Cliquez pour suspendre Ghostery"
+   },
+   "panel_unpause_ghostery_tooltip": {
+      "message" : "Ghostery est suspendu. Cliquez pour activer le blocage"
+   },
+   "panel_signin_success_header": {
+      "message" : "Réussi !"
+   },
+   "panel_signin_success": {
+      "message" : "Vous êtes inscrit comme"
+   },
+   "panel_signin_success_title": {
+      "message" : "Youpi ! Votre compte Ghostery est prêt !"
+   },
+   "panel_ss_allowed": {
+      "message" : "Autorisé sur ce site uniquement"
+   },
+   "panel_ss_blocked": {
+      "message" : "Bloqué sur ce site uniquement"
+   },
+   "panel_blocking_no_trackers": {
+      "message": "Aucun mouchard n'a été détecté sur cette page"
+   },
+   "panel_blocking_not_scanned_1": {
+      "message": "Cette page n'a pas été analysée."
+   },
+   "panel_blocking_not_scanned_2": {
+      "message": "Ghostery ne scanne que les pages « http » et « https ». Rendez-vous sur une autre page, et je vous promets qu'on fera le travail."
+   },
+   "panel_sync_complete": {
+      "message" : "Vos paramètres ont été synchronisés."
+   },
+   "panel_sync_settings": {
+      "message" : "Synchroniser les paramètres"
+   },
+   "panel_table_allowed": {
+      "message" : "AUTORISÉ"
+   },
+   "panel_table_blocked": {
+      "message" : "BLOQUÉ"
+   },
+   "panel_table_title_category": {
+      "message" : "CATÉGORIES"
+   },
+   "panel_title_blocking": {
+      "message" : "Paramètres des mouchards"
+   },
+   "panel_title_change_password": {
+      "message" : "Modifier le mot de passe"
+   },
+   "panel_title_create_account": {
+      "message" : "Créer un compte"
+   },
+   "panel_title_close": {
+      "message" : "Retour"
+   },
+   "panel_title_dashboard": {
+      "message" : "Résumé des mouchards"
+   },
+   "panel_title_finish": {
+      "message" : "Terminer"
+   },
+   "panel_title_forgot_password": {
+      "message" : "Mot de passe oublié ?"
+   },
+   "panel_title_not_scanned": {
+      "description" : "Text at the top of the findings panel that is displayed when a page has not been scanned by Ghostery.",
+      "message": "Page non analysée"
+   },
+   "panel_title_paused": {
+      "description" : "Text at the top of the findings panel that is displayed when 'pause blocking' is enabled.",
+      "message": "Le blocage est $SPAN_START$suspendu$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_title_plural": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if zero or more than one tags were found).",
+      "message": "Ghostery a détecté $NUMBER$ mouchards",
+      "placeholders": {
+         "number" : {
+            "content" : "$1",
+            "example": 7
+         }
+      }
+   },
+   "panel_title_singular": {
+      "description" : "Text at the top of the findings panel that reads the amount of tags found on the page (if only one tag was found).",
+      "message": "Détecté 1 mouchard"
+   },
+   "panel_title_whitelisted": {
+      "description" : "Text at the top of the findings panel that is displayed when 'whitelist site' is enabled.",
+      "message": "Ce site fait partie $SPAN_START$de la liste blanche$SPAN_END$",
+      "placeholders": {
+         "span_end" : {
+            "content" : "$2"
+         },
+         "span_start": {
+            "content" : "$1"
+         }
+      }
+   },
+   "panel_tracker_compatibility_warning": {
+      "description" : "Message that appears when a tag is known to break a specific website if blocked.",
+      "message": "Le fait de bloquer ce mouchard peut occasionner des failles de $SITE$",
+      "placeholders": {
+         "site" : {
+            "content" : "$1",
+            "example": "store.apple.com"
+         }
+      }
+   },
+   "panel_tracker_details_no_info": {
+      "description" : "Message that appears when no tag info is available.",
+      "message": "Désolé, ces informations sont actuellement indisponibles pour ce mouchard."
+   },
+   "panel_tracker_found_sources_title": {
+      "description" : "Title that appears when expanding a findings panel tag, above the list of found sources.",
+      "message": "URL source du mouchard détecté :"
+   },
+   "panel_tracker_global_block_tooltip": {
+      "description" : "Tooltip that appears over the findings panel's tag global blocking control.",
+      "message": "Cliquez ici pour bloquer $APP_NAME$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_learn_more": {
+      "message" : "En savoir plus"
+   },
+   "panel_tracker_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "Cliquez ici pour obtenir plus d'informations sur $APP_NAME$",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_message": {
+      "description" : "Message that appears after setting the site specific unblock to 'on' for a tag in the findings panel.",
+      "message": "Toujours autorisé sur $BREAK$$HOST$",
+      "placeholders": {
+         "break" : {
+            "content" : "<br>"
+         },
+         "host": {
+            "content" : "$1",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_off": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "Cliquez ici pour toujours autoriser $APP_NAME$ sur $HOST$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_site_specific_unblock_tooltip_on": {
+      "description" : "Tooltip that appears over the findings panel tag site-specific unblock control.",
+      "message": "Cliquez ici pour arrêter d'autoriser $APP_NAME$ sur $HOST$.",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         },
+         "host": {
+            "content" : "$2",
+            "example": "www.google.com"
+         }
+      }
+   },
+   "panel_tracker_what_is_more_info": {
+      "description" : "Link that appears under each findings panel tag when expanding the tag's found sources. It links to the ghostery.com info page for that app.",
+      "message": "Qu'est-ce que $APP_NAME$ ?",
+      "placeholders": {
+         "app_name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "panel_verify_account": {
+      "message" : "Vérifier le compte"
+   },
+   "panel_visualize": {
+      "message" : "Cartographier ces mouchards"
+   },
+   "panel_visualize_tool_tip": {
+      "message" : "Visualiser les mouchards sur ce site"
+   },
+   "password_field_label": {
+      "message" : "Mot de passe"
+   },
+   "password_requirements": {
+      "message" : "Le mot de passe doit comporter au moins 8 caractères"
+   },
+   "rate_ghostery_link1": {
+      "description" : "Part one of \"Like Ghostery? Rate It!\"",
+      "message": "Vous aimez Ghostery ?"
+   },
+   "rate_ghostery_link2": {
+      "description" : "Part two of \"Like Ghostery? Rate It!\"",
+      "message": "Donnez-lui une note !"
+   },
+   "save_button_label": {
+      "message" : "Enregistrer"
+   },
+   "send_button_label": {
+      "message" : "Envoyer"
+   },
+   "server_error_message": {
+      "message" : "Nous rencontrons apparemment un problème technique. Réessayez plus tard."
+   },
+   "server_error_title": {
+      "message" : "Oups"
+   },
+   "setup_page_category_all_blocked": {
+      "message" : "Tous les mouchards de cette catégorie sont bloqués."
+   },
+   "setup_page_num_blocked": {
+      "message" : "Bloqué"
+   },
+   "survey_link": {
+      "message" : "$LINK_START$Répondre à notre enquête !$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "survey_link_also": {
+      "message" : "De même, $LINK_START$répondez à notre enquête !$LINK_END$",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a target=\"_blank\" href=\"$1\">"
+         }
+      }
+   },
+   "tag": {
+      "message" : "Tag"
+   },
+   "tag_description_getting": {
+      "message" : "Recherche en cours de la description du tag..."
+   },
+   "tag_description_none_found": {
+      "message" : "Aucune description du tag."
+   },
+   "tag_description_read_more": {
+      "message" : "En savoir plus"
+   },
+   "tags": {
+      "message" : "Tags"
+   },
+   "trackers": {
+      "message" : "Mouchards"
+   },
+   "tags_less": {
+      "description" : "Clicking this makes the tag list smaller",
+      "message": "Afficher moins de balises..."
+   },
+   "tags_more": {
+      "description" : "Clicking this expands the list to show all tags",
+      "message": "Afficher plus de balises..."
+   },
+   "toggle_collapse_all": {
+      "description" : "Click this to collapse all items, hiding collapsible per-item content.",
+      "message": "Réduire tout"
+   },
+   "toggle_expand_all": {
+      "description" : "Click this to expand all items, revealing all content.",
+      "message": "Agrandir tout"
+   },
+   "toggle_select_all": {
+      "description" : "Click this to select all items.",
+      "message": "Sélectionner tout"
+   },
+   "toggle_select_none": {
+      "description" : "Click this to deselect all items.",
+      "message": "Ne rien sélectionner"
+   },
+   "tracker_browser_filters_reset": {
+      "description" : "Link to reset the tag browser's display filters.",
+      "message": "Réinitialiser la recherche"
+   },
+   "tracker_browser_name_filter": {
+      "description" : "Text input filter for the tag browser. Lets you filter by/search for tag names. Part of 'Search for tag name'.",
+      "message": "Rechercher $SEARCH_FIELD$",
+      "placeholders": {
+         "search_field" : {
+            "content" : "$1",
+            "example": "tag name"
+         }
+      }
+   },
+   "tracker_browser_name_filter_placeholder": {
+      "description" : "Placeholder text for the tag browser search input. Should read as 'Search for tag name'.",
+      "message": "nom du tag"
+   },
+   "tracker_browser_type_filter": {
+      "description" : "Dropdown filter for the tag browser. Lets you show only blocked (checked), or only unblocked (unchecked) tags.",
+      "message": "Afficher $TYPE$",
+      "placeholders": {
+         "type" : {
+            "content" : "$1",
+            "example": "blocked"
+         }
+      }
+   },
+   "unblocked": {
+      "description" : "Select this to show only unblocked (unchecked) tags in the tag browser. Should read as 'Show unblocked'.",
+      "message": "non bloqués"
+   },
+   "walkthrough_link": {
+      "description" : "Link to walkthrough/configuration wizard, shown on top of the options page.",
+      "message": "Essayez l'$LINK_START$assistant de configuration de Ghostery$LINK_END$ pour une présentation des options principales de Ghostery.",
+      "placeholders": {
+         "link_end" : {
+            "content" : "</a>"
+         },
+         "link_start": {
+            "content" : "<a href=\"walkthrough.html\" id=\"walkthrough-link\">"
+         }
+      }
+   },
+   "walkthrough_skip_button": {
+      "message" : "Ignorer l'assistant"
+   },
+   "white_black_list_error_invalid_url": {
+      "message" : "Veuillez saisir une URL valide."
+   },
+   "whitelist_error_blacklist_url": {
+      "message" : "Ce site a été retiré de votre liste de sites à accès limité, et a été ajouté à votre liste de sites de confiance."
+   },
+   "whitelist_error_duplicate_url": {
+      "description" : "Options page site whitelisting error message shown when whitelisting a URL that is already in the whitelist.",
+      "message": "Ce site fait déjà partie de la liste blanche."
+   },
+   "xul_panel_block_firefox": {
+      "description" : "In the XUL panel, this is a toggle to block a particular app.",
+      "message": "Bloquer $NAME$ ?",
+      "placeholders": {
+         "name" : {
+            "content" : "$1",
+            "example": "Google Analytics"
+         }
+      }
+   },
+   "xul_panel_site_specific_unblock_firefox": {
+      "description" : "In the XUL panel, this is a toggle to un-block a particular app for the web-page the user is on.",
+      "message": "Annuler le blocage pour ce site uniquement"
+   },
+   "xul_panel_view_source_firefox": {
+      "description" : "In the XUL panel, this is the menu option that opens the site that shows source code of the tag.",
+      "message": "Afficher la source du script"
+   },
+   "short_description": {
+      "description": "A short description of this extension (Ghostery).",
+      "message": "Protégez votre vie privée. Vérifiez qui surveille votre navigation Web grâce à Ghostery."
+  }
+}

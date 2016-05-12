@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -26,8 +26,20 @@ var FilterSearch =
    */
   init: function()
   {
+    let filters = E("filtersTree");
+    for (let prop in FilterSearch.fakeBrowser)
+      filters[prop] = FilterSearch.fakeBrowser[prop];
+    Object.defineProperty(filters, "_lastSearchString", {
+      get: function()
+      {
+        return this.finder.searchString;
+      },
+      enumerable: true,
+      configurable: true
+    });
+
     let findbar = E("findbar");
-    findbar.browser = FilterSearch.fakeBrowser;
+    findbar.browser = filters;
 
     findbar.addEventListener("keypress", function(event)
     {
@@ -78,7 +90,7 @@ var FilterSearch =
     // Now go through the other subscriptions
     let result = Ci.nsITypeAheadFind.FIND_FOUND;
     let subscriptions = FilterStorage.subscriptions.slice();
-    subscriptions.sort(function(s1, s2) (s1 instanceof SpecialSubscription) - (s2 instanceof SpecialSubscription));
+    subscriptions.sort((s1, s2) => (s1 instanceof SpecialSubscription) - (s2 instanceof SpecialSubscription));
     let current = subscriptions.indexOf(FilterView.subscription);
     direction = direction || 1;
     for (let i = current + direction; ; i+= direction)
@@ -115,10 +127,10 @@ var FilterSearch =
           if (oldFocus)
           {
             oldFocus.focus();
-            Utils.runAsync(oldFocus.focus, oldFocus);
+            Utils.runAsync(() => oldFocus.focus());
           }
 
-          Utils.runAsync(findText, null, text, direction, direction == 1 ? -1 : subscription.filters.length);
+          Utils.runAsync(() => findText(text, direction, direction == 1 ? -1 :  subscription.filters.length));
           return result;
         }
       }
@@ -194,6 +206,12 @@ FilterSearch.fakeBrowser =
         this._resultListeners.splice(index, 1);
     },
 
+    getInitialSelection: function()
+    {
+      for (let listener of this._resultListeners)
+        listener.onCurrentSelection(null, true);
+    },
+
     // Irrelevant for us
     requestMatchesCount: function(searchString, matchLimit, linksOnly) {},
     highlight: function(highlight, word) {},
@@ -203,57 +221,6 @@ FilterSearch.fakeBrowser =
     keyPress: function() {}
   },
 
-  get _lastSearchString()
-  {
-    return this.finder.searchString;
-  },
-
-  // This was used before Firefox 27 instead of the "finder" property.
-  fastFind:
-  {
-    get searchString()
-    {
-      return FilterSearch.fakeBrowser.finder.searchString;
-    },
-
-    set searchString(searchString)
-    {
-      FilterSearch.fakeBrowser.finder.searchString = searchString;
-    },
-
-    foundLink: null,
-    foundEditable: null,
-
-    get caseSensitive()
-    {
-      return FilterSearch.fakeBrowser.finder.caseSensitive;
-    },
-
-    set caseSensitive(caseSensitive)
-    {
-      FilterSearch.fakeBrowser.finder.caseSensitive = caseSensitive;
-    },
-
-    get currentWindow() FilterSearch.fakeBrowser.contentWindow,
-
-    find: function(searchString, linksOnly)
-    {
-      FilterSearch.fakeBrowser.finder.fastFind(searchString, linksOnly);
-      return FilterSearch.fakeBrowser.finder.lastResult;
-    },
-
-    findAgain: function(findBackwards, linksOnly)
-    {
-      FilterSearch.fakeBrowser.finder.findAgain(findBackwards, linksOnly);
-      return FilterSearch.fakeBrowser.finder.lastResult;
-    },
-
-    // Irrelevant for us
-    init: function() {},
-    setDocShell: function() {},
-    setSelectionModeAndRepaint: function() {},
-    collapseSelection: function() {}
-  },
   currentURI: Utils.makeURI("http://example.com/"),
   contentWindow:
   {
@@ -271,14 +238,40 @@ FilterSearch.fakeBrowser =
     },
   },
 
-  addEventListener: function(event, handler, capture)
+  messageManager:
   {
-    E("filtersTree").addEventListener(event, handler, capture);
-  },
-  removeEventListener: function(event, handler, capture)
-  {
-    E("filtersTree").addEventListener(event, handler, capture);
-  },
+    _messageMap: {
+      "Findbar:Mouseup": "mouseup",
+      "Findbar:Keypress": "keypress"
+    },
+
+    _messageFromEvent: function(event)
+    {
+      for (let message in this._messageMap)
+        if (this._messageMap[message] == event.type)
+          return {target: event.currentTarget, name: message, data: event};
+      return null;
+    },
+
+    addMessageListener: function(message, listener)
+    {
+      if (!this._messageMap.hasOwnProperty(message))
+        return;
+
+      if (!("_ABPHandler" in listener))
+        listener._ABPHandler = (event) => listener.receiveMessage(this._messageFromEvent(event));
+
+      E("filtersTree").addEventListener(this._messageMap[message], listener._ABPHandler, false);
+    },
+
+    removeMessageListener: function(message, listener)
+    {
+      if (this._messageMap.hasOwnProperty(message) && listener._ABPHandler)
+        E("filtersTree").removeEventListener(this._messageMap[message], listener._ABPHandler, false);
+    },
+
+    sendAsyncMessage: function() {}
+  }
 };
 
 window.addEventListener("load", function()

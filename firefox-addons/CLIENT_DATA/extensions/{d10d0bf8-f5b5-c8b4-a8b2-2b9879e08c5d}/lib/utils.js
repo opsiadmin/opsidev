@@ -1,6 +1,6 @@
 /*
- * This file is part of Adblock Plus <http://adblockplus.org/>,
- * Copyright (C) 2006-2014 Eyeo GmbH
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-2016 Eyeo GmbH
  *
  * Adblock Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -45,18 +45,6 @@ let Utils = exports.Utils =
   {
     let {addonVersion} = require("info");
     return addonVersion;
-  },
-
-  /**
-   * Returns whether we are running in Fennec, for Fennec-specific hacks
-   * @type Boolean
-   */
-  get isFennec()
-  {
-    let {application} = require("info");
-    let result = (application == "fennec" || application == "fennec2");
-    Object.defineProperty(this, "isFennec", {value: result});
-    return result;
   },
 
   /**
@@ -213,19 +201,12 @@ let Utils = exports.Utils =
 
   /**
    * Posts an action to the event queue of the current thread to run it
-   * asynchronously. Any additional parameters to this function are passed
-   * as parameters to the callback.
+   * asynchronously.
+   * @param {function} callback
    */
-  runAsync: function(/**Function*/ callback, /**Object*/ thisPtr)
+  runAsync: function(callback)
   {
-    let params = Array.prototype.slice.call(arguments, 2);
-    let runnable = {
-      run: function()
-      {
-        callback.apply(thisPtr, params);
-      }
-    };
-    Services.tm.currentThread.dispatch(runnable, Ci.nsIEventTarget.DISPATCH_NORMAL);
+    Services.tm.currentThread.dispatch(callback, Ci.nsIEventTarget.DISPATCH_NORMAL);
   },
 
   /**
@@ -251,7 +232,7 @@ let Utils = exports.Utils =
   /**
    * Generates filter subscription checksum.
    *
-   * @param {Array of String} lines filter subscription lines (with checksum line removed)
+   * @param {string[]} lines filter subscription lines (with checksum line removed)
    * @return {String} checksum or null
    */
   generateChecksum: function(lines)
@@ -400,8 +381,12 @@ let Utils = exports.Utils =
 
   /**
    * Verifies RSA signature. The public key and signature should be base64-encoded.
+   * @param {string} key
+   * @param {string} signature
+   * @param {string} data
+   * @return {boolean}
    */
-  verifySignature: function(/**String*/ key, /**String*/ signature, /**String*/ data) /**Boolean*/
+  verifySignature: function(key, signature, data)
   {
     if (!Utils.crypto)
       return false;
@@ -612,8 +597,6 @@ XPCOMUtils.defineLazyServiceGetter(Utils, "windowWatcher", "@mozilla.org/embedco
 XPCOMUtils.defineLazyServiceGetter(Utils, "chromeRegistry", "@mozilla.org/chrome/chrome-registry;1", "nsIXULChromeRegistry");
 XPCOMUtils.defineLazyServiceGetter(Utils, "systemPrincipal", "@mozilla.org/systemprincipal;1", "nsIPrincipal");
 XPCOMUtils.defineLazyServiceGetter(Utils, "dateFormatter", "@mozilla.org/intl/scriptabledateformat;1", "nsIScriptableDateFormat");
-XPCOMUtils.defineLazyServiceGetter(Utils, "childMessageManager", "@mozilla.org/childprocessmessagemanager;1", "nsISyncMessageSender");
-XPCOMUtils.defineLazyServiceGetter(Utils, "parentMessageManager", "@mozilla.org/parentprocessmessagemanager;1", "nsIFrameMessageManager");
 XPCOMUtils.defineLazyServiceGetter(Utils, "httpProtocol", "@mozilla.org/network/protocol;1?name=http", "nsIHttpProtocolHandler");
 XPCOMUtils.defineLazyServiceGetter(Utils, "clipboard", "@mozilla.org/widget/clipboard;1", "nsIClipboard");
 XPCOMUtils.defineLazyServiceGetter(Utils, "clipboardHelper", "@mozilla.org/widget/clipboardhelper;1", "nsIClipboardHelper");
@@ -621,7 +604,7 @@ XPCOMUtils.defineLazyGetter(Utils, "crypto", function()
 {
   try
   {
-    let ctypes = Components.utils.import("resource://gre/modules/ctypes.jsm", null).ctypes;
+    let ctypes = Cu.import("resource://gre/modules/ctypes.jsm", null).ctypes;
 
     let nsslib;
     try
@@ -631,7 +614,12 @@ XPCOMUtils.defineLazyGetter(Utils, "crypto", function()
     catch (e)
     {
       // It seems that on Mac OS X the full path name needs to be specified
-      let file = Services.dirsvc.get("GreD", Ci.nsILocalFile);
+      let file;
+      // Gecko 35 added GreBinD key, see https://bugzilla.mozilla.org/show_bug.cgi?id=1077099
+      if (Services.dirsvc.has("GreBinD"))
+        file = Services.dirsvc.get("GreBinD", Ci.nsILocalFile);
+      else
+        file = Services.dirsvc.get("GreD", Ci.nsILocalFile);
       file.append(ctypes.libraryName("nss3"));
       nsslib = ctypes.open(file.path);
     }
